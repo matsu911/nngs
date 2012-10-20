@@ -257,7 +257,7 @@ int main(int argc, char *argv[])
     fclose(fp);
   }
 
-  // mink_init();
+   /* mink_init(); */
   if (conffile.admin_name) create_admin_account(conffile.admin_name );
   Logit("Server up and running.");
   main_event_loop();

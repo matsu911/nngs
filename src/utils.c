@@ -131,8 +131,6 @@ static FILE * pvafopen(int p, int num, const char * mode, va_list ap);
 
 
 extern int vfprintf(FILE *fp, const char *fmt, va_list ap);
-extern int snprintf(char *dst, size_t dstlen, const char *fmt, ...);
-extern int vsnprintf(char *dst, size_t dstlen, const char *fmt, va_list ap);
 extern FILE * popen(const char *cmd, const char *mode);
 extern int pclose(FILE *fp);
 extern char *tempnam(const char *dir, const char *pfx);

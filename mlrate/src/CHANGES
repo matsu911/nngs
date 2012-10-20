@@ -1,0 +1,22 @@
+1.2     Added "no update option" (-u) to anchor. This makes it possible
+        to reset the anchoring state after manually adjusted sval.
+        Circular dependency check now drops the player with the fewest
+        number of games.
+        Fixed bugs in the "directory db" functions, player entries are now
+        actually created.
+
+1.1     Added check for circular dependencies, various minor bug fixes,
+        removed temporary NNGS-specific stuff, made it compile quietly
+        on Linux with -Wall even, and made it compile on FreeBSD.
+        (Also moved it from sccs to cvs on the internal development
+         platform; all sccsid variables were removed, email addresses
+         and copyright headers updated.)
+
+1.0.3   Fixed sign bug in anchor and "ignore" parsing in mlrate.
+
+1.0.2   Fixed the Makefile and installation routines. Doesn't require
+        gnu-make any more.
+
+1.0.1   Some minor bug fixes.
+
+1.0     First release.

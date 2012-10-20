@@ -1,0 +1,194 @@
+$Id: README,v 1.3 2002/01/27 17:56:52 pem Exp $
+
+		     mlrate - Maximum Likelihood Rating
+
+
+    Copyright (C) 1998-2002  Per-Erik Martin
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+
+
+0 Comments, bug reports and distribution
+
+  Comments and bug reports can be sent to pem@pem.nu.
+  The source is available at http://www.pem.nu/mlrate/.
+
+
+1 Compiling
+
+  Edit the Makefile. You should not need to change anything except perhaps
+  the CC, CFLAGS, and LDLIBS definitions.  It's known to compile and run
+  under Solaris 2.8, Linux, and FreeBSD 4.3, using gcc 2.9.
+  You should have GNU make, but it might work with others. If you don't
+  have GNU make, it's strongly suggested that you get it from
+  http://www.gnu.org/software/make/make.html. (In particular, the FreeBSD
+  make is a real pain in the neck.)
+  To use 'anchor', you need either ndbm or gdbm. Then type:
+
+    make
+
+
+2 Installing
+
+  You will probably not have these programs installed in a general bin
+  directory (but if you want to, that's ok too). Pick a directory where you
+  want to run ratings, say "/my/place", then:
+
+    make BINDIR=/my/place install
+
+
+3 Creating a ratings directory
+
+  You can of course set things up any way you like, but a quick start may
+  be to use the mkrundir.sh script. Using the same BINDIR as above, and
+  assuming you want a run-time directory name /my/ratings:
+
+    ./mkrundir.sh /my/place /my/ratings
+
+  The rundir can be the same as the bindir. This will link binaries (if
+  necessary) and copy the samle scripts and config files to rundir.
+
+
+4 Setting up the ratings system
+
+  4.1 Getting indata
+
+    You (of course) need results to run the ratings system. You probably
+    need some 20-50 players with at least 5 games each to get something
+    useful. The game results should be stored in a file with this format:
+
+      "white" wrank "black" brank handcap komi winner date
+
+    The ranks can be an integer followed by a 'd' or 'k' (but not 'p'!), or
+    a '-'. Winner is either 'B' or 'W', and the date is in ISO format.
+    For example:
+
+      "pem" - "mal" - 3 -5.5 B 1998-03-22
+      "yabo" 2k "pem" 4k 3 0.5 B 1998-03-29
+
+    The names must be quoted as shown. Within the names, " and \ are quoted
+    with a \, like in "Allan \"Taisha\" Johnson".
+
+    NNGS note: If you are running an NNGS clone, note that it probably
+    generates a results file in the format used by Pettersen's program,
+    which is slightly different. You need to either change this in the
+    server code, or add output to a new results file with the format above
+    (if you are already running Pettersen's system as well). If you already
+    have results in the old format, the program old2newres converts old
+    results to the format above.
+
+
+  4.1 Configuring mlrate
+
+    Edit the file mlrate.conf if needed. In particular, mark the name of the
+    "start value" file (default: sval). "results ..." should point to the
+    results file you are using. Create an svalfile, containing a floating
+    point number, let's say 25.0. You can now do a test-run of the program:
+
+      ./mlrate -v - mlrate.conf
+
+    With enough results, this should produce a first attempt to a rating. If
+    not (aborting after 1000 iterations), you probably don't have good
+    enough indata yet.
+    Note that handicap games are important in any rating system. The more
+    handicap games, the more likely it is to converge, and the better
+    ratings you get. In particular, the results from a single non-handicap
+    tournament is not likely to produce any ratings.
+
+
+  4.2 Tuning mlrate
+
+    Look at the resulting ratings and the graph. Adjust the value in 'sval'
+    and try again until you get the ratings at the level you want.
+
+
+  4.3 The Ignore file
+
+    In the mlrate config file, you can set an "ignore file". This file
+    should contain names of players you don't want in the ratings system for
+    some reason. The syntax is simply one name per line. Lines beginning
+    with # and blank lines are ignored.
+
+
+  4.4 Automatic mlrate
+
+    Look at the shell script mlrate.sh. Change the definitions in the
+    beginning according to your setup. In particular, make sure it agrees
+    with mlrate.conf on which files are being used.
+
+    This script can be used either to run mlrate by hand, but is also
+    suitable to be run by cron. It shift log files and other files.
+    Up to 10 old copies of log and graph files will be kept.
+
+
+5 Anchoring
+
+  The system can be run without any anchoring, but in the long run (and
+  especially when being run automatically), you may want to anchor the
+  system. The anchor program is used to automatically select a set of
+  (potential) anchors. Loosely speaking, it selects "strong players who's
+  ratings should not change significantly since the previous run".
+
+
+  5.1 Configuring anchor
+
+    Edit the file anchor.conf. In particular, make sure it agrees with
+    mlrate.conf and mlrate.sh on which files are being used. Testrun the
+    program:
+
+      echo 0 | ./anchor anchor.conf
+
+    This should print a large number on the first line, followed by the
+    selected anchors. If you don't get any anchors, you must either relax
+    the criteria in anchor.conf, or wait until you have more players and/or
+    games in the system.
+
+
+  5.2 Automatic anchoring
+
+    Edit the shell script anchor.sh. Change the definitions in the beginning
+    according to your setup. In particular, make sure it agrees with the
+    other files mentioned above on which files are being used.
+
+    If you want anchor to be run before each run of mlrate, edit the
+    mlrate.sh script; uncommend the "./anchor.sh" line at the end.
+
+    It is also possible to run anchor.sh separately, for instance if you
+    want to run it less frequently than mlrate.sh.
+
+    anchor.sh shift logs, anchors, and sval files; up to 10 old copies are
+    kept.
+
+
+6 The output
+
+  The results are always printed by mlrate as text, on standard output or on
+  a file (ratings in mlrate.conf) in this form:
+
+    Name       Rank  Rate     W+L   =Games  -Low  +High
+    ---------- ----- -----  --------------  ----- -----
+    Autoban      7d* 37.40    2+2   =    4  -0.75 +0.85
+    Alldead      7d* 36.87    4+3   =    7  -0.66 +0.77
+    jw           7d* 36.26   27+15  =   42  -0.50 +0.46
+    Wart         6d* 35.76   22+15  =   37  -0.20 +0.21
+    jupzup       6d  35.74    2+1   =    3  -1.25 +1.74
+    higher       6d  35.72    6+1   =    7  -1.62 +1.30
+    auau         6d* 35.45    7+10  =   17  -0.86 +0.65
+    CAUT         6d  35.31    4+3   =    7  -1.83 +2.07
+
+  If a database is used, the results are also stored in that. This is useful
+  for fast lookup from within a go server for instance. See rdbm.h for the
+  API, and rdbmtool.c for an example of how to access the database.
+

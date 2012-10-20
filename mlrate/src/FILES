@@ -1,0 +1,59 @@
+$Id: FILES,v 1.2 2002/01/27 17:56:52 pem Exp $
+
+
+The programs are:  mlrate  anchor  old2newres  t2res  rdbmtool  itime
+
+Scripts and config files
+------------------------
+mkrundir.sh		Creates runtime directory for mlrate.
+sample-mlrate.conf	Config file for mlrate.
+sample-anchor.conf	Config file for anchor.
+sample-mlrate.sh	Shell script for running mlrate and anchor.sh.
+sample-anchor.sh	Shift logs and other files, and runs anchor.
+
+The rating
+----------
+mlrate.c	The main rating program. Reads inputs, calls mlrate(),
+		prints output.
+
+mlr.[ch]	The ML rating algorithm.
+
+anchor.c	Independent of mlrate, selects anchors and adjusts the
+		mlrate's start value if needed.
+
+The datatypes and procedures
+----------------------------
+pg.h		Common header file for player.h and game.h.
+player.[ch]	The player data type.
+game.[ch]	The game data type.
+rank.[ch]	The irank data type. Conversion routines between internal
+		ratings and strings (like "2k" and "1d").
+weight.[ch]	Computes the weight of a game.
+result.[ch]	Reads a result file.
+oldresult.c	Reads an old-style result file.
+cmd.[ch]	Reads a config file.
+circular.[ch]	Checks for circular dependencies.
+
+The database (optional)
+-----------------------
+rdbm.[ch]	Ratings database interface. (Uses [ng]dbm.)
+rdbmtool.c	A simple tool to handle a ratings database.
+
+Error handling
+--------------
+error.[ch]	Error handling routines.
+
+The hash table
+--------------
+shash.[ch]	Simple hash table (used by player.c).
+ilog2.[ch]	Compute the 2-logarithm of an unsigned integer.
+list.[ch]	A general list type.
+list_types.h	Types for list.[ch].
+
+Some tools
+----------
+old2newres.c	Converts old-style results into new-style.
+t2res.c		Tool to convert (simplified) tournament tables to input
+		suitable for the rate program.
+itime.c		A trivial program that prints the internal system time.
+		(Useful when debugging with "fixed" weighting of games.)

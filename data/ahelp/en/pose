@@ -1,0 +1,13 @@
+
+USAGE: pose user command
+
+RESTRICTED TO ADMINISTRATORS.
+
+Executes 'command' as if it were typed by 'user'.
+
+This is useful for testing and debugging, and may be used on robots and
+administrators own test users.
+
+NOTE: Do NOT use this on normal users without their consent. Most will
+      consider this a violation of their personal integrity.
+

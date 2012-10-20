@@ -1,0 +1,9 @@
+
+Usage: unnotify [joueur]
+
+  Enlève 'joueur' de votre liste de notification. Si un joueur n'est pas
+précisé, la commande enlèvera *tous* les joueurs de votre liste de
+notification.
+
+Voir Aussi: notify znotify
+

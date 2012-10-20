@@ -1,0 +1,9 @@
+
+USAGE: free
+
+This turnes a rated game into an unrated (free) game.
+Use unfree to turn an already free game into a rated game.
+Either user can type free, as long as it is before the first move.
+
+SEE ALSO: match unfree
+

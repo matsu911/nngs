@@ -1,0 +1,32 @@
+Usage: sgf [username]
+
+This command is a handy way to get the last few games that a player has 
+played so that you can email them to yourself.
+
+Example:
+
+sgf pem
+Completed games for pem:
+              xsl-pem-31-20-35          fanzhen-pem-01-19-09
+Found 2 completed games.
+
+If you wanted a copy of the match between xsl and pem, you would type:
+
+mail me xsl-pem-31-20-35
+
+Or, NNGS now uses a better filename convention:
+
+sgf pem
+Completed games for pem:
+           pem-kenw-9509201448
+Found 1 completed games.
+
+so you would type:
+
+mail me pem-kenw-9509201448
+
+This game was played on September 20th, 1995 at 14:48 local server time.
+
+see also: mail
+
+

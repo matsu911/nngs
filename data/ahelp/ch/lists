@@ -1,0 +1,15 @@
+一些清單的檔案:
+
+你可以使用 +/-/= 來改變這些清單。 
+
+範例:
+
+  +listname member    (將 member 加入 listname)
+
+  -listname member    (將 member 從 listname 中移除)
+
+  =listname           (列出 listname 整份名單)
+
+  =                   (列出所有名單和他們的等級)
+
+

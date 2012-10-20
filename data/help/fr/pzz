@@ -1,0 +1,19 @@
+
+pzz joueur texte
+
+Si le joueur NaKunOeil passe la commande:
+
+pzz tromp empoigne son épée et te charge en criant! 
+
+alors tromp verra:
+
+^ NaKunOeil empoigne son épée et te charge en criant!
+
+C'est comme un "zz personnel" ou un "it personnel".
+
+La touche * contiendra "pzz tromp" si NaKunOeil voulait envoyer un autre
+pzz, comme '.' avec 'tell'.
+
+
+Voir Aussi: zz it dfive dlag
+

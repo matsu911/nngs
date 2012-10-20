@@ -1,0 +1,9 @@
+
+USAGE: reset
+
+This command resets your wins/losses and games as Black and White.
+Some people don't like to keep track of their games played, so we provide
+this command.
+
+SEE ALSO: match stats
+

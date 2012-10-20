@@ -1,0 +1,8 @@
+
+USAGE: lchan [n]
+
+Prints the ten last yells (or zz:s) in the current channel, or the
+given channel n. You must be in a channel to use lchan on it.
+
+SEE ALSO: yell tell zz
+

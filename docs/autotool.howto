@@ -1,0 +1,87 @@
+-------------------------------------------------------------------------
+-- AUTOTOOL.README
+-------------------------------------------------------------------------
+
+Just a quick autotool guide that I had to piece together to make this work.
+I'll add more comments as needed.
+
+Useful links:
+http://www.cygnus.com/~tromey/automake/  # Automake homepage
+http://sources.redhat.com/autobook/autobook/autobook_toc.html
+
+
+- start with the files configure.in acconfig.h Makefile.am
+- in configure.in be sure to give the location of a real file for
+    AC_INIT(src/nngsmain.c)
+- in configure.in be sure to specify Makefiles to create in
+    AC_OUTPUT([Makefile src/Makefile nrat/Makefile])
+    !!! AC_OUTPUT MUST be the LAST line in configure.in !!!
+
+
+- run 'aclocal' -- omit flags if not needed...
+..aclocal only needs configure.in to run
+  ACLOCAL_FLAGS="-I /usr/local/share/aclocal" aclocal
+
+
+- run 'autoconf' to create ./configure 
+..needs gawk (available from ftp://ftp.gnu.org/pub)
+
+
+- run 'autoheader' to create config.h.in
+.. needs acconfig.h to define all possible variables that it can set
+.. created config.h.in so it needs to be rerun when adding extra HAVE_*_H's
+
+
+- run 'automake -a -c' (add missing, copy)
+.. needs Makefile.am (and probably more)
+.. creates Makefile.in
+.. creates files: missing install.sh, mkinstalldirs (with --add-missing option)
+   These may just be symlinks, use the --copy flag to make copies instead
+.. Don't FORGET to add output files to AC_OUTPUT if you add new dirs!!!
+   --verbose is a helpful option to see which Makefiles are being generated
+
+
+- run './configure'
+.. this guy needs all files created by the previous commands
+   (or maybe just Makefile.in, but to generate that you need the rest)
+.. a useful option is --prefix=/this/is/where/I/want/it/installed/
+
+
+If there are dependency errors or something does not work, here 
+are some things to try:
+make distclean  // this should be the pristine sources
+
+If there are macro errors, or other errors that may be coming from the 
+autoconf stuff, then just regenerate everything:
+aclocal; autoconf; autoheader; automake -a -c
+
+If there is an error in the Makefiles (there should not be) be sure that 
+you are using GNU make- esp. errors along the following lines:
+make: Fatal error in reader: Makefile, line 207: = missing from
+replacement macro reference
+
+
+NOTE:
+  Before packaging up the files, please run a 'make distclean'.  This will 
+also get rid of any stray configuration files left around.  This also
+removes the .deps directories which get created when running the make.
+  Also, don't forget to modify the version in configure.in.
+
+Use diff to generate patches:
+* Make clean in both directories.
+* Remove (or dont ;-) the symlinks to mlrate in both directories
+* failure to do so will cause the diff to become too bloated
+From the parent directory, do:
+
+diff -ruN nngs-1.1.15 nngs-1.1.15joe6pack >nngs-1.1.15joe6pack.patch
+
+Applying patches to the source tree.
+The diff-file can be used to 'edit' an existing source-tree.
+This is done by the 'patch' program.
+From the parent-directory do:
+patch -p1 -d nngs-1.1.15 <nngs-1.1.15joe6pack.patch
+
+* you may be interested in 'patch's warnings/errors. To collect
+them into a file, add "2>&1 > sixpack.patchlog" (without the quotes)
+to the 'patch'-commandline.
+

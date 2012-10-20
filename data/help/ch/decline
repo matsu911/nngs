@@ -1,0 +1,18 @@
+指令: decline
+
+用法: decline [1-n, match, draw, adjourn, abort,
+               takeback, switch, simul, all, player]
+說明:
+
+  拒絕別人對你的要求。如果你只接到一份請求, 那麼光下 decline 不加任何參數便可
+拒絕之。如果不只一份, 例如: 多人或多次收到別人的 match 邀請, 那麼你必須確實指
+定那一個才是你要拒絕的。有下列方式: (1) 用數目 (2) 依要求的形式, 例如 decline
+ abort  (3) 全部拒絕: decline all (4) 依使用者, 即拒絕當初提出要求的人, 例如:
+decline MacReady
+
+速成範例:
+  decline         當只有一個人提出要求時, 這樣便可回絕。
+  decline adjourn 回絕你的對手請求打掛。
+  decline all     拒絕所有目前你收到的要求或邀請。
+
+相關指令: accept pending match draw adjourn abort takeback switch simul

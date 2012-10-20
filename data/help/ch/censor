@@ -1,0 +1,14 @@
+指令: censor
+
+用法: censor [使用者]
+
+說明:
+
+  將 "使用者" 加入您的 Censor 表列中. 列於 Censor 表列中之人您將無法 (也不想)
+聽到他的訊息。 如省略 "使用者" 此參數, 則顯示出您所有列在 Censor 名單上的人。
+
+速成範例:
+  censor tweet   那麼 tweet 怎麼叫怎麼對你吼你都看不到了。:-] just for example!
+
+相關指令: uncensor tell shout say
+相關指令: set tell stats

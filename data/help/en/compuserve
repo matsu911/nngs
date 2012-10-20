@@ -1,0 +1,88 @@
+
+ How to access Go servers (IGS & NNGS) using Compuserve
+
+ There are really only 2 differences between Compuserve (CIS) telnet
+ and 'normal' telnet sessions.  1. ':' required between address & port
+ number 2. LF line control instead of CR
+
+ Understanding these two differences is all that is needed to connect
+ with CIS, but I'll go into more detail for those (like me) who haven't
+ a clue what they really mean.
+
+ Difference #1 is simply a matter of including the ':' when typing the
+ specific site address.  (igs.nuri.net:6969 for IGS and
+ nngs.cosmic.org:9696 for NNGS)
+
+
+ Some clients allow toggling of CR & LF within the client (Like winigc).
+ This can overcome reason number 2, and should be sufficiant to make
+ such clients work fine over CIS telnet.
+
+ If your client doesn't have a CR-LF toggle, then you simply must toggle
+ it with CIS.  While in CIS Telnet, use <CTRL-]> to jump out into the
+ control invironment, where CIS will give you a menu option. Select
+ option 2 (to toggle the CR/LF) and then return to telnet. In my
+ experience, this is required every time, (scripts handle it well) but
+ perhaps someone can point out a more permenant fix.
+
+ That is all there is to it! Still, it may help to have a detailed,
+ step-by- step walk-through, so here it is.
+
+ If you do get garbage on the output below, it is no problem. Assume CIS
+ is sending what I say it is, and there will be no problem.  If you
+ really want it correct, simply switch the settings to 7 bit,even parity
+ 1 stop bit, and things should clear up. (I personally DON'T make this
+ adjustment)
+
+ I will assume that you are doing everything from the client, which is
+ my preference personally.
+
+ CIS shows  Type          Explaination
+
+           ATDT####       dial up your
+                          CIS node.
+                          substitute
+                          phone number
+                          in '##'
+ Host Name: CIS
+ User ID:   ####          your ID ##
+ password:  ****          your password
+ <intro message>          just wait for
+                          menu
+
+ <menu>     Go Telnet     ignore options
+                          just go telnet
+ <menu>     8             select option
+                          for access a
+                          specific site
+ site name: igs.nuri.net:6969
+ <igs should come up now>
+(or)
+ site name: nngs.cosmic.org:9696
+ <NNGS should come up now>
+
+           CTRL-]         go to toggle
+                          menu CR-LF
+ <menu>     2             toggle it
+
+ At this point, you should return to telnet to see the login screen as
+ you left it.
+
+ Login      NNNN          your acct name
+
+ The rest is covered in the FAQ, about guest accounts, registering
+ accounts and so on. You have a good connection to IGS now.  During a
+ session, your CF should stay toggled by itself, until you leave Telnet,
+ or CIS.
+
+ Good luck!
+
+ This message was forced into 40 column.  Anyone who wants a different
+ format can e-mail me. I hope someone includes this into the FAQ/help
+ files or whatever.  Tailor as you see fit.
+
+ * Erik Van Riper re-formatted the text into 80 columns
+
+ Matt Lasley 74724.3454@compuserve.com
+ cricket
+

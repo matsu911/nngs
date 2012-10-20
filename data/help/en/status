@@ -1,0 +1,10 @@
+
+USAGE: status [game|player [size]]
+
+Looks at a game in progress, given either by the game number, or one
+of the players' name. Without arguments it shows the board of the game
+currently being played or observed (which isn't very useful).
+"size" specifies the board size (when otherwise ambiguous).
+
+SEE ALSO: look
+

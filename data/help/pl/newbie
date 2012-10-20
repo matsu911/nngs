@@ -1,0 +1,114 @@
+Informacje podstawowe 
+-
+Jeœli jesteœ pocz¹tkuj¹cym u¿ytkownikiem serwerów Go uwa¿nie przeczytaj poni¿szy
+tekst, oszczêdzi ci on wielu frustracji i pomo¿e w cieszeniu siê gra, nawet jeœli korzystasz z zaawansowanego programu typu klient.
+
+Wydawanie poleceñ na serwerze odbywa siê poprzez wybór opcji, naciskanie
+przycisków itp. w programie klienta lub poprzez wydawanie komend bezpoœrednio 
+z linii poleceñ w programie klient.
+
+Poni¿ej znajduj¹ siê proste opisy komend. Ich szerszy opis mo¿na uzyskaæ za pomoc¹:
+'help nazwa komendy' gdzie nazwa komendy to komenda na temat której chcemy uzyskaæ
+pomoc.
+
+Zamiast wpisywaæ cale s³owo helpp wystarczy zast¹piæ je znakiem zapytania:
+'? nazwa komendy '.
+
+Wpisuj¹c powy¿sze w linii komend terminala pamiêtaæ nale¿y, i¿ apostrofy maja byæ
+pominiête, tutaj u¿ywane s¹ tylko po to aby wyró¿niæ tekst wpisywany w terminalu 
+od tekstu opisu.
+
+Prosimy zauwa¿yæ, i¿ identyfikatory graczy rozró¿niaj¹ du¿e i ma³e litery ('Jasiu'
+i 'jasiu' to dwa ro¿ne identyfikatory). W przypadku komend mo¿emy wpisywaæ je
+du¿ymi lub ma³ymi literami
+
+W nawiasach [] podano opcje, które mog¹ a nie musza wystêpowaæ w danej komendzie.
+Jeœli jednak chcesz wykonaæ komendê z jakimiœ opcjami to wpisz komendê i pomiñ
+nawiasy:
+
+
+Przyklad1:  help status
+Przyklad2:  ? observe
+-
+STATS [identyfikator] 
+Wyœwietla informacje o danym graczu 
+	Jeœli nie podasz ¿adnej poci i wpiszesz po prostu 'stats' (bez apostrofów
+	oczywiœcie!) otrzymasz informacje o sobie
+-
+WHO   
+	Wyœwietla listê wszystkich obecnych. Komenda ta zawiera sporo ciekawych opcji.
+      Opcje te opisane s¹ w pomocy dla komendy 'who'  
+-
+GAMES 
+	Wyœwietla listê tocz¹cych siê girê. 
+-
+OBSERVE numer gry
+	Rozpoczyna obserwacje gry o numerze numer gry. Podanie numer jest konieczne. 
+-
+KIBITZ wiadomoœæ
+	Wysy³a ci¹g "wiadomoœæ". U¿ywana jest do komentowania obserwowanych gier.  
+	Wszystko co zostanie wys³ane za pomoc¹ tej komendy widoczne jest dla 
+      obserwuj¹cych grê lecz nie dla graczy.  
+ 	Zamiast Kibitz uzywac mozna apostrofu:
+'kibitz dobry ruch' jest to¿samy z '" dobry ruch' 
+-
+TELL  identyfikator wiadomoœæ 
+	Komenda umo¿liwia rozmawianie z innymi graczami. Za pomoc¹ komendy
+       
+ 	Gdy zwracamy siê do kogoœ po raz pierwszy musimy u¿yæ komendy
+      'tell identyfikator'. Za drugim razem mo¿emy zast¹piæ ja  kropka:
+
+	Pierwszy kontakt:
+		'tell Jasiu czeœæ, zagramy?'
+	Gracz Jasiu zobaczy 
+		*Krzyœ*: czeœæ, zagramy?
+	Gracz Jasiu odpowiada:
+		*Jasiu*: czeœæ, chêtnie
+	Drugi kontakt:
+		'. no to zaczynamy !'
+-
+-
+VARIABLES
+	Podgl¹d ustawieñ domyœlnych. Zmienia siê je za pomoc¹ komendy 'set'. 
+-
+SET switch ON/OFF/1/0
+	Zmiana ustawieñ. Zobacz 'Help set'.  Informacje szczegó³owe uzyskamy wpisuj¹c
+	'help set'  
+	Za pomoc¹ set mo¿na wpisywaæ informacje na swój temat które bêd¹ pokazywa³y siê w 
+      naszym opisie. 
+	Przyk³ad: 'set 1 Czeœæ jestem Jaœ Kowalski '
+		Pierwsza linia opisu ustawiona bêdzie na: Czeœæ jestem Jaœ Kowalski
+                'set 2 Mieszkam w Polsce'
+		Druga linia opisu ustawiona bêdzie na: Czeœæ jestem Jaœ Kowalski
+	id ...
+-
+QUIT
+	Zakoñcz sesje.
+ -
+<Komendy dostêpne w trakcie gry>
+-
+SAY  wiadomoœæ
+	Wysy³a wiadomoœæ o treœci _wiadomoœæ do przeciwnika.
+
+RESIGN
+	Poddaje partie.
+
+ADJOURN
+	Proœba o odroczenie gry. Grê mo¿na odroczyæ tylko gdy zgodz¹ siê obaj gracze.  
+  
+UNDO
+	Cofa wykonany ruch. O cofniecie ruch prosiæ wolno jedynie w przypadku omy³kowego
+      umieszczenia kamienia na planszy (tzw. pyto lub clicko). Nawet w takim przypadku
+      Twój przeciwnik pod ¿adnym pozorem nie ma obowi¹zku zgodziæ siê na cofniecie ruchu. 
+ 
+ADDTIME time
+	Dodaje czas przeciwnikowi. 
+
+PASS
+	Pas. Trzy pasy koñcz¹ grê.  
+
+DONE
+	Komenda koñcz¹ca proces liczenia. Wpisz ja po zakoñczeniu osuwania martwych kamieni.
+ 	Gdy obaj gracze wpisz¹ 'done' system podliczy terytoria i zakoñczy grê. 
+-
+

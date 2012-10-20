@@ -1,0 +1,32 @@
+
+USAGE: inchannel [0-99]
+       channels [0-99]
+
+Displays a list of all users currently tuned to the named
+channel. If the channel number is omitted, displays a list of ALL
+existing channels
+
+  For example, you may see a channel that looks like:
+
+Channel 33: (-) Geeks place
+ geek
+
+That shows that geek is in channel 33, and the channel has no status (-).
+If you saw:
+
+Channel 33: (L) Geeks place
+ geek
+
+That means the channel is locked to further people entering the channel
+(possibly a private discussion).
+
+If you saw:
+
+Channel 33: (D) Geeks place
+ geek
+
+That means the channel has the Do Not Disturb flag set.  This means you have
+to be in the channel to yell into it.
+
+SEE ALSO: ctitle channel tell lock unlock zz dnd invite
+

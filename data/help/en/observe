@@ -1,0 +1,12 @@
+
+USAGE: observe n
+
+Puts or removes a game from your observation list (toggles for a given 
+game).  "Observe" alone will remove all games from your observation list.
+
+You give the game number you want to observe.
+
+Example:  observe 4
+
+SEE ALSO: all games
+

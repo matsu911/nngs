@@ -1,0 +1,21 @@
+   
+USAGE: done
+   
+This is the final command to end a game.
+   
+First each player passes and the dead stones are removed. If
+you want to, you can then check the points for both players with
+the "score" command. However, after both players have typed "done"
+the NNGS computer will count and announce the score and then allow
+the players to start new games. 
+   
+NOTE: After both players have typed "done", it is no longer 
+possible to undo or change anything about the game. Before you type 
+"done", we recommend that you first use the "score" command so that 
+you can make sure you have cleaned up the board completely. If a 
+player has forgotten to remove one or more dead stones, you will see 
+that the score is incorrect, and you will have a chance to remove 
+any dead stones before typing "done".
+         
+SEE ALSO: match
+   

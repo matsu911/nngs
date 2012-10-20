@@ -1,0 +1,11 @@
+Sk³adnia:  dnd [numer_kana³u]
+
+Komenda ta pozwala na zablokowanie dostêpu do kana³u osobom z zewn¹trz. 
+Po jej wprowadzeniu nikt poza osobami ju¿ w nim przebywaj¹cymi nie mo¿e 
+Wejœæ ani s³yszeæ rozmów na tym kanale.   
+
+Aby cofn¹æ i otworzyæ kana³ nale¿y powtórnie wprowadziæ komendê dnd numer_kana³u
+
+Zobacz tak¿e:  ctitle inchannel channel zz
+
+

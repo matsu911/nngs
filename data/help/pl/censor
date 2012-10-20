@@ -1,0 +1,11 @@
+Sk³adnia: CENSOR [identyfikator]
+-
+  Umieszcza osobê okreœlon¹ danym identyfikatorem  na Twojej liœcie osób
+"persona non grata". Osoby te zostan¹ ca³kowicie zablokowane i nie bêd¹ 
+mia³y mo¿liwoœci wysy³ania Ci ¿adnych wiadomoœci oraz proponowania gier.
+-
+
+ Komenda ta, jeœli wpisze siê ja bez identyfikatora wyœwietli cala listê
+zablokowanych osób.  
+-
+Zobacz tak¿e: UNCENSOR, TELL, SHOUT, SAY

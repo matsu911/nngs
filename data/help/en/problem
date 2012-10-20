@@ -1,0 +1,78 @@
+
+USAGE:  problem [n]
+
+There are many life and death problems here, (sometimes more than one per 
+problem #), all W to move.  The presence of other problems do not affect
+ladders.
+
+Please note:  tgigc users will have to upgrade their clients, to version 3.3
+or above to use these.  Available at ftp.xmission.com in 
+pub/users/s/sabaki/tgigc33.zip
+
+Example:  problem 4  
+
+     This will give you problem number 4.  
+
+Typing problem by itself will give you the next problem number you have 
+in sequence of 1 - x, where x is the last problem number (currently 81).
+This information is stored between logons, and can be viewed under
+"variables".
+
+Please note that because this type of thing has never been done before, all
+the clients behave in slightly different ways.  We simply present the board
+positions to you, it is always W to play, no matter what your client says.
+
+The problems are from a book called "Xuan Xuan Qi Jing" (in English, it
+means "Mysterious Go Classic" or, as Boar puts it, "The book of
+Mysterious Go", it is a chinese go classic published (maybe) 800 years
+ago.
+
+References: (from Harry Fearnley's post to r.g.g. 10/17/95)
+
+=========================================================================
+
+ Some Chinese names in PinYin -- not sure if correct!  English titles are
+ guesses -- I hope that they are helpful.
+ 
+ My thanks to John Fairbairn for his help in compiling this list.
+ 
+ 
+  #  | Title(Jap/Chinese)      Author           (dates)      Publ date
+ ----|-------------------------------------------------------------------   
+  1a |  - /XuanXuan QiJing     Yan TianZhang & Yan DeFu      1347(??1349)
+  1b | Gengen Gokyo / -        Ed. Honinbo Sansa             1630
+  1c | Gengen Gokyo / -        20 editions                   Edo & Meiji 
+ 
+       `Mysterious ...'/ `The Gateway to All Marvels' # Problems = 290/349?
+ ---------------------------------------------------------------------------
+     |
+  2  | Kanzufu / Guan Zi Pu    Meijin Guo BuiLing            1689
+     |                         (Ed. Tao ShiYu et al)
+       `Manual of Endgame Positions'                  # Problems = 1,454
+       
+ ---------------------------------------------------------------------------
+  3a | Hatsuyoron / FaYangLun  Inoue Inseki    (1673-1692)   1713
+     | (a.k.a. Fudanzakura)
+  3b | Hatsuyoron              Ed. Honinbo Shusai            1914
+       `Develop (Yang) Theory' / `Development Theory'  # Problems = 183/201?
+ ---------------------------------------------------------------------------
+     |
+  4  | Gokyo Shumyo            Hayashi Genbi   (1778-1861)   1811
+       / QiJingZhongMiao
+ 
+       `Brilliancies from Go Classics'                 # Problems = 505/515?
+ ---------------------------------------------------------------------------
+     |
+  5  | Shikatsu Myoki          Honinbo Shusai  (1874-1940)   1910
+       `Life and Death Brilliant Stratagems            # Problems = 168
+ ---------------------------------------------------------------------------
+     |
+  6  | Genkan / ShuanNan       Akaboshi Intetsu     ?          ?
+ 
+       `Mysterious Overview'                           # Problems = 69
+ ---------------------------------------------------------------------------
+
+=========================================================================
+
+SEE ALSO: Your local bookstore.
+

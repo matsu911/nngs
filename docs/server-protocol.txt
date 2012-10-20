@@ -1,0 +1,168 @@
+/*
+this info comes directly from xgospel-1.12d/goserver.l available from
+  http://gailly.net/go.html
+  http://gailly.net/xgospel/index.html (docs page)
+*/
+
+
+/*
+ * From a message sent by Tim Casey to clients@panda-igs.joyjoy.net 25 Nov 1998
+ *
+  0,	UNKNOWN	 unknown
+  1,    PROMPT	 A Prompt (never)
+  2,	BEEP	 \7 telnet
+  3,	BOARD	 Board being drawn
+  4,	DOWN	 The server is going down
+  5,	ERROR	 An error reported
+  6,    FIL	 File being sent      (not used)
+  7,	GAMES	 Games listing
+  8,    HELP	 Help file
+  9,	INFO	 Generic info
+ 10,	LAST	 Last command
+    10 File
+    jl @ Thu Nov 26 02:54:29 1998
+    10 File
+ 11,    KIBITZ	 Kibitz strings
+ 12,	LOAD	 Loading a game
+ 13,	LOOK_M	 Look
+    13 The date on the game is Tue Nov 24 02:06:20 1998
+    13 Black adjourned from this game.
+ 14,    MESSAGE	 Message lising
+ 15,    MOVE	 Move #:(B) A1
+ 16,	OBSERVE	 Observe report
+ 17,	REFRESH	 Refresh of a board
+ 18,    SAVED	 Stored command
+    18 jl-jloup             
+    18 Found 1 stored games.
+ 19,    SAY	 Say string
+    51 Say in game 10
+
+    19 *jloup*: test 4
+ 20,    SCORE_M	 Score report
+ 21,    SHOUT	 Shout string
+ 22,    STATUS	 Current Game status
+    22 jl 30k  0 880 9 F 0.5 0
+    22 jloup NR  0 835 9 F 0.5 0
+    22  0: 413333330
+    22  1: 133333333
+    22  2: 333333333
+    22  3: 333333333
+    22  4: 333333333
+    22  5: 333333333
+    22  6: 333333333
+    22  7: 333333330
+    22  8: 333333305
+    20 jl (W:O):  1.5 to jloup (B:#):  1.0
+    
+    9 game completed.
+    1 7
+    
+    21 {Game 57: jl vs jloup : W  1.5 B  1.0}
+    1 5
+    
+    9 Removed game file jl-jloup from database.
+ 23,	STORED	 Stored games   (not used)
+ 24,    TELL	 Tell string
+    2 
+
+    24 *jloup*:  test
+ 25,	THIST	 Thist report
+    * (1) results -kido
+    25 File
+    kido       [ 4d*](W) : wildwolf   [ 4d ](B) H 0 K  5.5 19x19 W+Resign 26-00-34 R
+    kido       [ 4d*](B) : niubi      [ 4d*](W) H 0 K  5.5 19x19 B+Time 26-01-24 R
+    25 File
+ 26,	TIM	 times command
+    * (1) time 16
+    26 Game : 16
+    26 White(tw) : -0:01 (B) 6
+    26 Black(agneau) : 0:50 (B) 8
+    9 White 5 Black 5
+    1 8
+ 27,	WHO	 who command
+ 28,	UNDO	 Undo report
+    (undo 139 3)
+    28 jl undid the last move (D4) .
+    28 jl undid the last move (D16) .
+    28 jl undid the last move (R4) .
+
+    15 Game 139 I: jl (0 0 -1) vs jl (0 50 -1)
+    15   0(B): Q16
+    9 Game is titled: cafard-freeheart-27-20-34
+    1 6
+   when observing and with undo of a capture:
+    1 8
+    2 
+    28 Undo in game 38: kerbrat vs African1d:  P15  Q15
+    1 8
+
+ 29,    SHOW 	 Shout string       (super user command)
+ 30,	TRANS	 Translation info
+ 31,    not used
+ 32,	YELL	 Channel yelling
+    1 5
+
+    32 70:jl:  test 2
+    1 5
+ 33,    TEACH	 teaching game      (not used)
+ 34,	SGF_M	 SGF file
+ 35,	AUTOMAT	 Automatch anouncement
+ 36,	AUTOASK	 Automatch accept
+ 37,   TTT_BOARD tic tac toe
+ 38,	CHOICES  game choices
+	choice
+	38  2:* tic-tac-toe
+	38  1:  go
+	38  3:  shogi
+	38  4:  chinese-chess
+	1 5
+      The one with a * is not public.
+ 39,	VERSION  IGS VERSION: IGS entry on %02d - %02d - %04d\r\n
+ 40,    DOT	 your . string
+ 41,	CLIVRFY  Client verify message
+ 42,	USER	 Long user report
+ 43,	SGF_F	 SGF command output
+ 44,	REGLOG	 The reregister reg log.
+ 45,	FOLLOWS	 A follow pl messages.
+ 46,	IGS	 multi listing of players.
+    * (1) igs
+    46 NR   zz         26k* rockthing  10k  mats       6k*  tim        5k*  yslll   
+
+    46 1d   xray       1d*  Ucanrun    7k*  jyz        NR   guest4944  2k*  salem   
+ 47,	CAPTURE  Capture messages    (after command "cmatch" = Capture match)
+    15 Game 17 I: jl (0 894 -1) vs jloup (2 884 -1)
+    15   4(B): C1 B1 A1
+    2 Game saved.
+    ... much later when W plays:
+    * (1) A1 115
+    47 Black has captured 2 stones.
+    15 Game 17 I: jl (0 778 -1) vs jloup (2 884 -1)
+    15   5(W): A1
+    1 6
+ 48,	ADJOURN  Multigame adjourn
+    1 6
+    9 Your opponent requests an adjournment.
+    48 Game 36 jloup requests an adjournment
+    9 Use <adjourn> to adjourn, or <decline adjourn> to decline.
+    1 6
+
+    1 6
+    9 Your opponent has lost his/her connection.
+    48 Game 9 has been adjourned by xgospel
+    9 Game has been adjourned.
+    9 Game saved.
+    1 5
+
+ 49,	REMOVING Multigame stone removal
+    9 Removing @ A1
+    49 Game 57 jloup is removing @ A1
+ 50,	GOERR	 An error in a move
+    5 Illegal move.
+    50 Game #11
+    5 Cannot place a stone in an occupied place
+    1 6
+ 51,	SAY_MG	 Say multigame	<-- last
+    51 Say in game 10
+
+    19 *jloup*: test 4
+*/

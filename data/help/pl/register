@@ -1,0 +1,19 @@
+Sk³adnia: REGISTER identyfikator email imiê nazwisko
+   
+ 
+   
+Przyk³ad:
+
+Wpisanie komendy:
+
+register  madga magda_r@poczta.pl Magda Rogowska
+
+Zarejestruje u¿ytkownika o idnetyfikatorze magda i wyœle pod adres magda_r@poczta.pl has³o u¿ytkownika.
+
+Nastêpnie nale¿y odczytaæ has³o i zalogowaæ siê u¿ywaj¹c swojego identyfikatora i has³a.
+
+Podanie imienia i nazwiska nie jest wymagane ale warto je podaæ.
+
+Zobacz tak¿e: password
+
+

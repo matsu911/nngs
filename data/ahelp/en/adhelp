@@ -1,0 +1,11 @@
+
+USAGE: ahelp [topic]
+ALIAS: adhelp
+
+RESTRICTED TO ADMINISTRATORS.
+
+If topic is specified:  Prints help on the given administrator topic.
+If topic is omitted:  Lists commands that only administrators may use.
+
+SEE ALSO: help
+

@@ -1,0 +1,14 @@
+指令: join
+
+用法: join [ladder name]
+
+說明:
+
+    這個指令讓你可以加入某個指定的排名賽, 如果不加任何參數, 便會顯示所有你可
+加入的排名賽。
+
+速成範例:
+  join ladder9      加入九路排名棋賽。
+  join              顯示所有的排名賽。
+
+相關指令:  drop match ladder9 ladder19

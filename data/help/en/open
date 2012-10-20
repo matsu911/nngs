@@ -1,0 +1,8 @@
+
+USAGE: open
+
+Toggles your 'open' variable. Equivalent to "set open".  When open is
+set to 1, you are open to receive match requests from other users.
+
+SEE ALSO: variables set toggle
+

@@ -1,0 +1,31 @@
+
+USAGE: rresults [user]
+
+Results gives you your (or specified user) history of RATED games.
+
+Note that these are *potentially* rated games (that is, they were not
+"free", and not against NR-players, nor unregistered players). They
+may not yet have been included in your rating. (For instance if an
+opponent only had a set rank but not rating when the game was played,
+and he/she still has no rating.)
+
+Here is a sample:
+
+Winner     rank  col   loser      rank  col hcp komi  size  result  ident
+
+Supratic   [12k*](B) : ManyFaces3 [10k*](W) H 3 K 0.5 19x19 B+32.5 9908231806
+ManyFaces3 [10k*](W) : jimm       [ 6k*](B) H 0 K 0.5 19x19 W+0.5 9908231848
+jimm       [ 6k*](B) : ManyFaces3 [ 9k*](W) H 0 K 0.5 19x19 B+46.5 990823191
+
+winner:  The winner of the match.
+rank:    The rank.
+col:     The color played.
+loser:   The loser of the match.
+hcp:     The handicap.
+komi:    The komi of the game.
+size:    The size of the board played.
+result:  The result of the match.
+ident:   The way to identify the match, in day-hour-minute.
+
+SEE ALSO: match results rating
+

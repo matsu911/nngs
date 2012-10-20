@@ -1,0 +1,11 @@
+Usage: decline [match, adjourn, all, player]
+
+  Décliner une offre qu'on vous a été faite. S'il n'y a aucun paramètre et
+qu'il n'y a qu'une seule offre, c'est celle là que vous refusez. Si vous
+avez reçu plusieurs offres en attente -- par exemple plusieurs offres de
+match -- alors vous devez préciser laquelle vous souhaitez décliner.
+Vous pouvez préciser l'offre à rejeter: (1) Par son nom; (2) Par son
+type, ex: "decline abort"; (3) Toutes les offres ("decline all"); ou
+(4) Par le nom du joueur qui vous a fait l'offre ("decline Dupont").
+
+Voir Aussi: accept pending match adjourn 

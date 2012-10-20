@@ -1,0 +1,28 @@
+
+USAGE: time [game]
+
+Shows how much time is left in the specified game.
+
+The argument may be either a game number or the name of a
+player involved in a game.  If no argument is given, the game
+you are playing is used.
+
+Example:
+
+#> time 2
+Game : 2
+White(leeje) : 3:58
+Black(gg) : 13:04
+
+#> time zxl
+Game : 4
+White(sure) : 7:43
+Black(zxl) : 8:18
+
+NOTE: This will notify the server of the clock status of game.
+      It a player has run out of time, "time" will make him/her
+      lose on time. (Otherwise the game may still be adjourned,
+      or the opponent can do "addtime".
+
+SEE ALSO: addtime pause adjourn
+

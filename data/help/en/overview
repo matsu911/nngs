@@ -1,0 +1,130 @@
+   
+                               OVERVIEW
+   
+                 The Complete List of Available Commands
+                            For NNGS Users
+   
+NOTE: For almost all of the following commands, "help command" will
+      give you complete explanations.  Examples: help who, help rank,
+      help match, help adjourn.
+   
+accept       Accepts a request (match, komi, done, etc)
+addtime      Give extra time to your opponent's clock
+adjourn      Requests that a game be saved for later play
+admins       Lists available admins online.
+alias        Personal shortcuts for server commands
+all          Lists the observers of a game
+automail     Makes NNGS automatically email you all your completed games
+awho         Lists people currently on server with enhanced information
+ayt          ("Are you there?")  Check that your server connection is active
+beep         Sends a beep to a player.
+best         Lists registered players in ladder order
+busy         "Set busy" to inform about your unavailability
+censor       Puts a user on a list so that you will not hear them
+channel      Enter or exit a channel
+client       Sets the client type
+commands     Lists all the commands available to you
+credits      Gives credit where credit is due
+ctitle       Sets the title of a game
+date         Displays the current date and time
+decline      Do not accept a request
+dnd          Sets the Do-Not-Disturb flag on a channel
+done         Final command of a game after removing the dead stones
+drop         Leave a ladder list
+emote        Emotes various feelings or actions
+erase        Erase all messages left for you
+etiquette    Gives references for helpful behaviors on the server
+event        Sets the event of a game
+find         Finds registered players by thei email address
+free         Sets a game non-rated
+fteach       Turns a game into a teaching game
+games        List active games
+geek         Explains esoteric concept of geekdom
+ginfo        Shows the title and event of a game
+git          Just like it, but as gshout
+gshout       A go-related shout
+handicap     Sets the handicap of a game
+handles      Find handles used at an email site (like "find" on IGS)
+help (or ?)  List all commands in columns, or help on a given topic
+? aga        Information about the American Go Association
+? changes    Lists recent NNGS news in reverse order
+? extra      Lists unique features of NNGS
+? gobot      About the game replaying robot
+? login      View the opening screen
+? motd       View the "Message of the Day"
+? newbie     List of commands for a person new to the Internet
+? opening    Announcement about opening of NNGS
+? overview   Displays this list of the available commands
+? request    About the game replaying robot
+? sourcecode Information about availability of server source code
+? welcome    Presents users with special lists of commands
+inchannel    Lists the people in the channels
+info         Sets the personal information in your stats
+invite       Invite someone to a channel
+it           Just like shout, but message is preceded by your name
+join         Join the ongoing ladder tournament
+kibitz       Comment on a current game without the players hearing you
+kiseido      Information on Kiseido, for Go Books, etc.
+komi         Sets the komi of a game
+ladder       Same as "ladder19"
+ladder19     The 19 x 19 ladder tournament ("ladder 19")
+ladder9      The 9 x 9 ladder tournament ("ladder 9")
+last         List the last people who logged in to the Go server
+lchan        Lists the last yells in a channel
+load         Resume a game interrupted by adjournment or disconnection
+lock         Locks a channel
+logons       Logons <username> show when the user was around
+look         Views a stored game
+mail me      For sending game records to your email address
+match        Offer a game
+messages     Record a comment for someone to see when the log in
+mhelp        Mails a help file to your email address
+mmess        Mail messages
+moreinfo     List more info files
+moves        Used by specific clients to catch up on the correct board
+observe      Watch a game
+open         Be available, or not, for match offers
+pair-go      Team game with two players on each side (same as "Rengo"). 
+password     Change your password
+pause        Request that your game and clock wait for you to return
+pending      List pending items, such as match and komi
+percent      See where you fall in terms of NNGS ratings
+pzz          Personal zz, like tell
+quit         Exit the server
+rank         Record you claimed rank
+rating       Print a player's rating
+refresh      Used by specific clients to catch up on the correct board
+register     Become a member of the Go server, so you can play games
+reset        Resets the win/loss, black/white counters in stats
+resign       Give up a game instead of making all the final moves
+results      Lists the last games played on the server or by an individual
+rresults     Lists the last rated games played by an individual
+say          Comment privately to an opponent during a game, or afterwards
+score        Attempts to score a game
+set          Control the variables in your account
+sgf          Lists game records available to be emailed.
+shout        Mention something heard by all players, unless they use censor
+sresign      Resignes an adjourned (stored) game
+stats        Information about a player
+stored       List of adjourned games for a player
+suggest      Suggests handicap and komi between rated players
+teach        Starts a teaching (demonstration) game
+tell         Make a comment to a player currently present on the server
+time         Display the remaining time in a game
+title        Sets the title of a game
+tmatch       Like match, but for a tournament game (no tells!)
+touch        Keep a stored (adjourned) game alive
+translate    Translate go terms to/from different languages
+unalias      Remove a personal shortcut definition (opposite of "alias")
+uncensor     Remove a person from your censored list
+undo         Allows an opponent to change his/her mind about a move
+unfree       Makes a free game rated again
+unlock       Unlocks a channel
+unpause      Resume the clock in a game (see "pause")
+uptime       Display the server statistics
+variables    Shows the variable definitions of a person
+who          List of those logged in (see "awho")
+withdraw     Change your mind about a request you have made (see pending)
+yell         Tell to a channel
+zz           Like "it" but in a channel
+

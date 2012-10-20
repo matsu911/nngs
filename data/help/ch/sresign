@@ -1,0 +1,20 @@
+指令: sresign
+
+用法: sresign whitename-blackname
+
+說明:
+
+這個指令讓你可以在打掛的棋局認輸。
+
+例如: 首先, 找出你想認輸的那一局, 輸入 "stored"。
+如果你是 "axe" 而且跟 ManyFaces 有一盤未結束的棋局, 將會看到:
+
+Stored games for axe:
+             axe-manyfaces
+Found 1 stored games.
+
+如果你想投降此局, 你的對手並不需要在線上, 只要輸入:
+
+sresign axe-manyfaces
+
+相關指令: resign, match, stored

@@ -1,0 +1,17 @@
+Sk³adnia: set  [zmienna wartoœæ]
+
+Zmiana wartoœci zmiennych (zobacz help variables) nastêpuje za pomoc¹ komendy toggle lub przez bezpoœrednie ustawienie ich wartoœci.
+
+Przyk³ad:
+Twoja zmienna open ustawiona jest na 0
+
+Aby ustawiæ j¹ na 1 nale¿y wpisaæ:
+
+Toggle open
+
+Lub set open 1
+
+
+
+Zobacz tak¿e: variables 
+

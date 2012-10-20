@@ -1,0 +1,8 @@
+
+USAGE: yell [text]
+
+Equivalent to "tell ,", for talking in the current channel. The short
+command is ";". Without argument, the current setting of ; is printed.
+
+SEE ALSO: tell
+

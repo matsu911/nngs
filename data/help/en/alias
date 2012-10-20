@@ -1,0 +1,43 @@
+
+USAGE: alias [word [string]]
+
+Sets up a command alias so that "word" is equivalent to typing "string".
+If "string" is omitted then the current value of "word" is displayed. If
+both parameters are omitted, then all of your aliases are displayed.
+
+  "alias" -- lists all aliases you have created
+  "alias word"  -- gives your alias for "word"
+  "alias word string" -- creates/updates an alias for you so that typing
+                         "word" is equivalent to typing "string"
+
+Note 1: Aliases are not transitive. This sequence of commands --
+
+    alias foo bar
+    alias bar baz
+
+will NOT result in "foo" being equivalent to "baz".
+
+Note 2: You may not create an alias for the quit command.
+
+Here are standard aliases (everyone has them by default):
+  a             accept
+  bye           quit
+  exit          quit
+  h             help
+  hi            history
+  logout        quit
+  m             match
+  p             who a
+  players       who a
+  sh            shout  [note: this alias may have been disabled]
+  t             tell
+  vars          variables
+  w             who
+  .             tell .
+  ,             tell ,
+  !             shout
+  ?             help 
+  ^             tell the-last-person-who-told-you-something
+
+SEE ALSO: unalias
+

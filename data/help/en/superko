@@ -1,0 +1,7 @@
+
+The rules used by NNGS are based on positional superko and
+allow triple ko to be played out rather than drawn.
+
+A turn is either a pass, or a move that doesn't repeat an 
+earlier grid coloring.
+

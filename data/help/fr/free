@@ -1,0 +1,14 @@
+
+usage: free
+
+La commande free doit être utilisée avant que le joueur ne joue
+son premier coup.
+
+C'est un "toggle" entre un partie non classée et une partie de
+classement.
+
+L'un ou l'autre des joueurs peut taper free, tant que c'est avant son
+premier coup.
+
+Voir Aussi: match
+

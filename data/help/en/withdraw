@@ -1,0 +1,17 @@
+
+USAGE: withdraw [1-n, match, adjourn, all, player]
+
+Withdraws an offer that you have made. If no parameter is given and
+there is only one offer, the withdraw command with rescind your offer. If
+you have more than one offer pending (for example multiple match offers)
+then you must specify which offer you want to withdraw. You can choose the
+offer by number, by type, all offers, or by the player's name to whom you
+are making the offer.
+
+NOTE: Several types of requests are withdrawn by NNGS automatically in
+      certain situations.  For example, if you have made a match request to
+      user2 but then accept a match request from user1, NNGS starts your
+      match with user1 and withdraws your offer to user2.
+
+SEE ALSO: accept pending match adjourn
+

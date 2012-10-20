@@ -1,0 +1,34 @@
+
+   SHOUT message
+
+Affiche un message d'une ligne aux autres joueurs. A part pour
+l'émetteur et ceux qui ont désactivé la commande, les autres verront
+votre pseudo précédé d'une flèche et suivi du message. Vous
+pouvez aussi vous servir le raccourci, ou alias, "!" au lieu de "shout". 
+
+EXEMPLES RAPIDES (lorsque "player" est votre pseudo ou nom sur ce
+server):
+
+   Commande:  shout S'il vous plait, aidez un débutant.
+    Résultat:  --> john dit S'il vous plait, aidez un débutant.
+
+DÉSACTIVER VOUS 'GITs'--s'ils le veulent, les autres peuvent faire ce
+qui suit:
+
+   Taper "toggle gshout" pour arrêter tout "gshout" et "gits" entrant.
+
+   Tape "censor player" pour arrêter tous les 'tell's et 'shout's et
+   'gits' *de vous* à partir de maintenant.
+
+POINT IMPORTANT: s'il vous plait, n'utilisez 'git' que s'il est
+nécessaire pour tout le monde d'entendre votre message. Autrement, il
+est sage, et apprécié, d'utiliser 'tell' pour parler à des gens en
+particulier, ou d'entrer dans un canal pour s'amuser avec quelques
+personnes.
+
+NOTE TECHNIQUE: Un shout entouré de doubles points d'exclamation vient
+de la maintenance du serveur. Par example, "!!Pro game in five
+minutes!!" est une annonce de l'administration de PLGS.
+
+Voir Aussi: it gshout tell say yell who awho toggle set variables censor 
+channel alias

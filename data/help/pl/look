@@ -1,0 +1,22 @@
+Sk³adnia: look [bia³e-czarne]
+
+Komenda ta otwiera zachowan¹ grê bez mo¿liwoœci jej kontynuowania.
+
+Przyk³ad:
+
+Sprawdzamy jakie zachowane gry ma gracz dosaku:
+
+Stored dosaku
+
+Otrzymujemy:
+
+dosaku-Seigen   dosaku-sakata  dosaku-shusaku
+
+ 
+Aby zobaczyæ grê dosaku-sakata wprowadzamy komendê:
+
+look dosaku-sakata
+
+Zobacz tak¿e: stored sgf
+
+

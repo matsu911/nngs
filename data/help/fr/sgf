@@ -1,0 +1,33 @@
+Usage: sgf [nom_d_utilisateur]
+
+Cette commande est un bon moyen de récupérer les dernières parties que
+quelqu'un à jouées pour vous les mailer.
+
+Exemple:
+
+sgf pem
+Completed games for pem:
+              xsl-pem-31-20-35          fanzhen-pem-01-19-09
+Found 2 completed games.
+
+Si vous vouliez une copie de la partie entre xsl et pem, vous taperiez:
+
+mail me xsl-pem-31-20-35
+
+Ou, PLGS utilise maintenant une meilleure convention de noms de
+fichiers:
+
+sgf pem
+Completed games for pem:
+           pem-kenw-9509201448
+Found 1 completed games.
+
+alors vous taperiez:
+
+mail me pem-kenw-9509201448
+
+Cette partie à été jouée le 20 Septembre 1995 à 14:48 heure locale du
+serveur.
+
+Voir Aussi: mail
+

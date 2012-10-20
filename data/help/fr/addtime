@@ -1,0 +1,15 @@
+Usage: addtime [minutes]
+
+    Rajoute du temps supplémentaire (en minutes) à la pendule de votre
+adversaire pendant une partie.
+
+    Principalement, vous utilisez la commande d'ajout de temps lorsque vous
+ne voulez pas que votre adversaire s'inquiète trop du temps restant sur
+sa pendule, sur le point de tomber, et ainsi de suite. C'est une
+commande utile lorsque que votre adversaire signale des problèmes de
+transmission (lag).  Vous n'êtes pas du tout obligé de donner plus de
+temps à votre adversaire, bien sûr. Si vous estimez avoir régulièrement besoin
+de plus de temps quand vous jouer, envisager de jouer avec des temps de jeu
+plus longs.
+
+Voir Aussi: match

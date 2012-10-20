@@ -1,0 +1,80 @@
+
+USAGE: rank r
+   
+You set your rank.  It is then displayed by the command "who" or in
+the first entry on the rank line in "stats".  (Don not confuse this
+with "set rank" which sets the *information* about your rank.)
+   
+QUICK-START EXAMPLES: By typing "rank 3k", you are taking a rank of
+3-kyu; with "rank 2d" you are taking a rank of 2-dan.
+   
+SUGGESTED        AGA    CHINA  EUROPE    IGS    JAPAN    KOREA   NNGS
+EQUIVALENCES:    ---    -----  ------    ---    -----    -----   ----
+                 27K     30K     29K    25-30k   26K
+                 26K     29K     28K             25K          
+                 25K     28K     27K             24K          
+                 24K     27K     26K             23K          
+                 23K     26K     25K             22K          
+                 22K     25K     24K             21K             25k
+                 21K     24K     23K             20K             24k 
+                 20K     23K     22K             19K             23k
+                 19K     22K     21K             18K             22k
+                 18K     21K     20K             17K             21k
+   
+   
+                 AGA    CHINA  EUROPE    IGS   JAPAN     KOREA   NNGS
+                 ---    -----  ------    ---   -----     -----   ----
+                 17K     20K     19K             16K             20k
+                 16K     19K     18K             15K             19k
+                 15K     18K     17K             14K             18k
+                 14K     17K     16K     24k     13K             17k 
+                 13K     16K     15K     23k     12K             16k 
+                 12K     15K     14K     22k     11K     18Gup   15k 
+                 11K     14K     13K     21k     10K     17Gup   14k
+                 10K     13K     12K     20k      9K     16Gup   13k
+                  9K     12K     11K     19k      8K     15Gup   12k
+                  8K     11K     10K     17k      7K     14Gup   11k
+                  7K     10K      9K     16k      6K     13Gup   10k
+                  6K      9K      8K     14k      5K     12Gup    9k
+                  5K      8K      7K     13k      4K     11Gup    8k
+                  4K      7K      6K     11k      3K     10Gup    7k
+                  3K      6K      5K     10k      2K      9Gup    6k
+                  2K      5K      4K      8k      1K      8Gup    5k
+                  1K      4K      3K      7k      1D      7Gup    4k
+                  1D      3K      2K      5k      2D      6Gup    3k
+   
+   
+SUGGESTED        AGA    CHINA  EUROPE     IGS   JAPAN     KOREA   NNGS
+EQUIVALENCES:    ---    -----  ------     ---   -----     -----   ----
+                  2D      2K      1K      4k      3D      5Gup    2k
+                  3D      1K      1D      2k      4D      4Gup    1k
+                  4D      1D      2D      1k    4-5D      3Gup    1d
+                  5D      2D      3D      1d    5-6D      2Gup    2d
+                  6D      3D      4D      2d      6D      1Gup    3d
+                6-7D    4-5D      5D    3-4d    6-7D      1Gup    4d
+                  7D      6D    6-7D      5d    6-7D      1Gup  5-6d
+     
+If you are not certain of your rank, please play a few games as NR
+before deciding, or ask an administrator for a suggestion.
+   
+CAUTION: At best, these rank conversions are approximate, and will vary
+         among individuals.  Below 9 kyu or "9 gup," they probably are
+         even less reliable. 
+   
+         You must also use the "set rank <text>" command to explain your
+         rank in some way, or your rank will not be saved between logins. 
+   
+For example, "set rank 3 dan in Shanghai, China" or "3 kyu Korean, 4 dan
+AGA, and 1 dan* on IGS."  Type "stats" to see the results of all these
+commands, or try the "awho" command. 
+   
+YOUR OPTIONS: 30k-1k, 1d-6d, ???, and NR.  Anything above 6d must be set
+by an administrator.  (Only professional associations can set "p", or
+professional, ranks.)
+   
+NOTE: Once the rating system has assigned a rating, that rating will be
+replace the rank in the who listing.  Ranks or ratings have no standing
+in the NNGS ladder.
+   
+SEE ALSO: ratings rating percent who awho arden ladder best
+

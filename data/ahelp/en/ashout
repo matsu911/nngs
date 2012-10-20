@@ -1,0 +1,9 @@
+
+USAGE: ashout message
+
+RESTRICTED TO ADMINISTRATORS.
+
+Shouts message to the admin channel. The short form is #.
+
+SEE ALSO: shout yell
+

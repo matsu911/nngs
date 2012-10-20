@@ -1,0 +1,10 @@
+指令: refresh
+
+用法: refresh [game]
+
+說明:
+
+  重新顯示指定的棋局以及棋盤狀態。如果沒有指定那個 "game", 則重新顯示你正在
+進行或是正在觀看的棋局。
+  
+相關指令: games observe style

@@ -1,0 +1,23 @@
+
+USAGE: best ladder-number range
+
+Displays a complete list, in order, of the 19 x 19 ladder.  If specified,
+it will display the named ladder and only players in certain positions. 
+
+QUICK-START EXAMPLES: 
+
+  "Best" will display the best player on the server in the 19x19 ladder. 
+
+  "Best 19" lists all members of Ladder19, in position order. 
+
+  "Best 9" lists all members of Ladder9, in position order.
+
+  "Best 19 7-12" lists only positions 7 to 12 of the Ladder19.
+
+  "Best 9 1-22" lists only positions 1-22 of the Ladder9.
+
+CAUTION: If you want a range of positions, you must specify the ladder
+number.  Therefore, "best 3-12" will not work. 
+
+SEE ALSO: rank ladder ladder19 ladder9
+

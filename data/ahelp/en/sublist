@@ -1,0 +1,7 @@
+
+USAGE: sublist list player
+
+Remove 'player' from the list 'list'.
+
+SEE ALSO: showlist addlist + -
+

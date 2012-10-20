@@ -1,0 +1,170 @@
+-------------------------------------------------------------------
+-- NNGS SERVER TODO LIST
+-------------------------------------------------------------------
+
+
+>>GENERAL
+- get help docs etc. automatically installed
+- get rid of Makefiles installed automatically by wildcard expansion
+- ensure that default data files that are installed (ladder files?)
+    will not overwrite existing data files
+- figure out how to REQUIRE things: crypt.h for example
+
+>>INTERNATIONALIZATION
+<CQ> can rxvt display chinese characters?  if so, how?
+<drow> CQ: rxvt-ml, IIRC
+
+- allow language order (eg. chi jap eng) for fallback sequence
+- <Lo-lan-do> CQ: http://www.cl.cam.ac.uk/~mgk25/unicode.html
+- <Lo-lan-do> CQ: I'll be glad to provide details if/when you ask me.
+- <Lo-lan-do> CQ: GNU recode
+- <willy> oh, and man 7 utf-8 is good
+- translate help files
+- translate messages to other languages
+
+
+>>BUGS
+- see file 'BUGS'.  Fix them.  Send patches to the mailing list.
+
+
+>>CODE
+- clean up header files included all over the place
+   ...get rid of stdincludes.h completely: just need to move ulong def.
+
+- Read configuration from .cnf file at startup
+  <<-- 1.1.19 done!
+- detach from ctty and fork twice to daemonise
+  <<-- 1.1.19 done!
+- get rid off excessive logging
+
+- clean up parray[].pstatus protostate - mess when restoring old games.
+
+- change ALL date/time (in filenames ...) to UTC: avoid foldover at DST-changes.
+  <<-- 1.1.1x done!
+
+>>FUNCTIONALITY
+- change mail queue: don't invoke sendmail, run a cron job?
+- for debug, don't use mailprog but give passwds out online?
+- autodetect mailer from configure scripts
+  <<-- 1.1.19 done!
+
+- for forgotten passwds, let people authenticate with user name and email
+  address and get the passwd automatically mailed to them.
+
+- problem when entering dead groups in telnet mode
+- call external program (Gnu Go ???) for final scoring.
+- allow external program(gnugo) to estimate/recalculate final score.
+  This will add some extra steps to the game-state, because we can't
+  afford to wait() for the external process.
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-- ENHANCEMENT SUGGESTIONS
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+Implement Network connectivity between NNGS servers
+
+>> advantages
+... unlimited uptime
+... almost no lag (people can log in to a 'close' server)
+.... each server timestamps the moves
+... more opponents
+
+>> disadvantages/issues to resolve
+- where do files reside?
+... player files
+... game records
+- is just synchronizing them enough?
+- globalizing name spaces
+- implement a DB backend somewhere?
+  This is a big problem that
+
+- how to pass moves
+... special 'server' accounts on each server?
+
+- file locking must be implemented so several server processes can run on one machine or network
+... this is a special case of the superserver
+... file locking is not hard to implement
+
+- communication
+... take advantage of IRC code?
+... have special communication daemons that the servers can fork?
+
+The most interesting solution is to have a set of super-servers that just handle data.  This data includes player data, games played, people logged in, etc.  This is not difficult to implement because it's just another abstraction layer on top of all the file interfacing routines, login/logout routines, etc.  This is probably the most workable solution.
+
+AvK: IMO the best way to go would be :
+- (1): split nngs into a "core" server, just handling lean data,
+  , and a "skin" server, doing all the formatting / converting.
+  The skin would be most subject to futile changes, but these could not
+  take down the core-server.
+- (2) augment the core-servers to establish core<-->core connections.
+Personally, I would like the core-server to be format-free. Some
+"tagged" interchange format will do, (don't say XML ...).
+There will always be problems wrt distribution of data, and with timing.
+Distribution:
+- let only one site keep an authorative copy of the players data.
+  Others can/may keep copies, but these should be considered cache.
+- to avoid name-clashes, two-level names (avk@cosmic or avk.lgs) could be
+  introduced. One-level names could be permitted as long as they are
+  unambiguous.
+
+Timing:
+- Ignore. The net is getting faster. Netlag will always exist. It is
+  part of the game.
+- extend the core-core protocol to establish and communicate the value
+  of the delays. wrt the core<-->user connection: ignore it.
+-------------------------------------------------------------------
+- untimed games: play one move whenever you log on
+have one move per 2 days minumum or something
+kind of like correspondence chess
+-------------------------------------------------------------------
+include bots:
+- gobot
+- livebot (by ooops on LGS telnet lgs.hinet.net 9696)
+-------------------------------------------------------------------
+These should come from a default channel title text file, or at least a header file.
+
+PUBLIC void channel_init()
+channel.c:      carray[i].Title = mystrdup("Admins House");
+channel.c:      carray[i].Title = mystrdup("Tournament Players Lounge");
+channel.c:      carray[i].Title = mystrdup("Robin's hood");
+channel.c:      carray[i].Title = mystrdup("Easy conversation in Japanese");
+channel.c:      carray[i].Title = mystrdup("NNGS Bar and Grill");
+channel.c:      carray[i].Title = mystrdup("To set the channel title, see \"help ctitle\"");
+channel.c:      carray[i].Title = mystrdup("Den svenska kanalen (Swedish)");
+channel.c:      carray[i].Title = mystrdup("Der deutsche Kanal (German)");
+channel.c:      carray[i].Title = mystrdup("｢日本語チャンネル」 (Japanese)");
+channel.c:      carray[i].Title = mystrdup("The Korean channel");
+channel.c:      carray[i].Title = mystrdup("ﾖﾐﾎﾄﾆｵｵﾀ (Chinese)");
+channel.c:      carray[i].Title = mystrdup("The Girls Club / Happy Channel :-)");
+channel.c:      carray[i].Title = mystrdup("No Title");
+-------------------------------------------------------------------
+<eek>  with plans of making NNGS clones from different continents connect to each other.
+The advantage of connecting the servers would have been to increase the player pool and
+at the same time diminish the effect of net lag which was worse than it is now.
+Not that the games would go quicker,
+but the loss of thinking time would be less, sich each user's time was measured against the closest server.
+-------------------------------------------------------------------
+Olaf Martens <martens@manhattan.lt>
+For now, I have only two suggestions. I would like that NNGS e-mails sgf
+files as attachments to the user, not inside the e-mail message as text.
+That would make it more convenient. Maybe it would also be useful to offer
+a setting where the user can choose if he wants the file to be sent as
+attachment or as text message.
+-------------------------------------------------------------------
+Olaf Martens <martens@manhattan.lt>
+We have an lchan command on NNGS. Would it be possible to have something
+similar for tell? I frequently get disconnected from the internet because
+the phone line dies or my ISP disconnects me. In this case I stay as
+'ghost' on the server, and the person who is talking to me keeps sending me
+tell messages without knowing I don't see them. When I get back online we
+have to figure what message I got last, and the other person has to repeat
+the rest. Would be easier just to type 'ltell' or similar and get the last
+10-15 tells repeated like lchan does for channel messages.
+

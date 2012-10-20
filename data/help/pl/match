@@ -1,0 +1,14 @@
+Sk³adnia: match [przeciwnik kolor rozmiar czas byoyomi]
+ 
+
+Ofreta gry.
+
+Przyk³ad:
+
+Match takemiya b 19 1 15
+
+Powy¿sza komenda przeœle ofertê gry do gracza o identyfikatorze takemiya. Proponujesz abyœ gra³ czarnymi, na planszy 19x19 czas podstawowy 1 minuta i 15 minut byo-yomi.
+
+ 
+Zobacz tak¿e: decline games moves open komi quiet refresh say score verbose
+

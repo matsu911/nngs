@@ -1,0 +1,20 @@
+Sk³adnia: rating [idetyfikator]
+
+Podaje rozszerzon¹ informacjê o sile gry. Jeœli nie zostanie podany identyfikator wyœwietlona zostanie informacja o Tobie
+
+Przyk³ad
+
+  rating Mocarz
+
+MOcarz: 4d* (3312) Rated Games: 61
+Confidence = 98.89 percent
+All rated wins: 46
+All rated losses: 26
+Rated wins versus rated players: 41
+Rated losses versus rated players: 20
+High confidence wins: 11
+High confidence losses: 7
+
+
+
+

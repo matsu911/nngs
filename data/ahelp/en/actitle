@@ -1,0 +1,9 @@
+
+USAGE: actitle channel_number title
+
+RESTRICTED TO ADMINISTRATORS.
+
+This command allows you to set the title of a channel.
+
+SEE ALSO: channel ctitle
+

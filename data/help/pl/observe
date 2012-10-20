@@ -1,0 +1,16 @@
+
+Sk³adnia: OBSERVE [Numer_gry]
+-
+  Dodaje grê do listy gier obserwowanych, Komenda wprowadzona ponownie
+  z tym samym numerem gry usuwa te grê z listy gier obserwowanych. 
+  U¿ycie samego OBSERVE bez podania numeru gry usuwa wszystkie gry
+  z listy gier obserwowanych.
+-
+  Domyœlnie zdefiniowany jest alias 'ob', którego mo¿na u¿ywaæ zamiast
+  pe³nej komendy OBSERVE. 
+-
+Przyk³ad:
+  observe 4
+  ob 12
+-
+Zobacz tak¿e: UNOBSERVE, ALL, GAMES

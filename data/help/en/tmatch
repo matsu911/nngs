@@ -1,0 +1,9 @@
+
+USAGE: tmatch opponent color size time byo-yomi
+
+Requests (or acknowledges) a tournament game. This is exactly like "match",
+but makes it impossible for other people than the opponent to use "tell"
+to the players.
+
+SEE ALSO: match
+

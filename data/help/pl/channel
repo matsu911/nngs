@@ -1,0 +1,33 @@
+Sk³adnia: CHANNEL numer_kana³u 
+-
+WejdŸ na (lub póŸniej opuœæ)kana³, który jest czymœ w rodzaju wydzielonego
+pomieszczenia, w którym grupa osób mo¿e prowadziæ rozmowê nie s³yszana
+przez innych. 
+Korzystanie z kana³ów jest lepszym i czêsto wygodniejszym sposobem 
+komunikowania siê ni¿ u¿ywanie komend 'shout' wysy³aj¹cej wiadomoœci 
+do wszystkich u¿ytkowników serwera.
+ 
+-
+PRZYKLADY:
+-
+   1) Wpisz 'inchannel' lub 'channel' aby zobaczyæ listê wszystkich kana³ów. 
+   2) Nastêpnie, jeœli chcesz wejœæ na kana³ np. 55 wpisz 'channel 55'
+   3) U¿ywaj 'tell' znaku ';' lub komendy 'yell' aby rozmawiaæ z innymi osobami
+      na tym samym kanale 
+      Mo¿esz wpisaæ:
+	 '; czeœæ, jak siê macie' a wszyscy obecni na kanale 55 us³ysz¹ Twoj¹
+		wiadomoœæ. 
+       ' tell 55 czeœæ, jak siê macie' a wszyscy obecni na kanale 55 us³ysz¹    
+            Twoj¹	wiadomoœæ. 
+       ' yell 55 czeœæ, jak siê macie' a wszyscy obecni na kanale 55 us³ysz¹ 
+            Twoj¹ wiadomoœæ. 
+
+    4) Aby opuœciæ kana³ ponownie wpisz: channel 55 
+    5) Jeœli chcesz utworzyæ nowy kana³ wpisz : channel numer_kana³u
+-
+  Jeœli nie opuœcisz kana³u przed zakoñczeniem sesji, automatycznie wejdziesz
+na dany kana³ przy nastêpnym po³¹czeniu z serwerem. 
+
+-
+Zobacz tak¿e: inchannel, yell, ctitle, dnd
+

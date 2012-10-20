@@ -1,0 +1,14 @@
+
+Sk³adnia:  teach [rozmiar_planszy]
+
+Komenda ta pozwala na rozegranie gry szkoleniowej z samym sob¹.
+Przyk³ad:
+
+teach 19
+
+rozpocznie grê na planszy 19X19 tak, i¿ bêdziesz mia³ mo¿liwoœæ stawiaæ kamienia obu w obu kolorach. 
+
+Warto ja wykorzystac do przegl¹dania gier zawodowych, demonstrowania gry pocz¹tkuj¹cym lub analizy w³asnej partii.  
+
+Zobacz tak¿e:   match ginfo
+

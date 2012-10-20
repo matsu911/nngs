@@ -1,0 +1,12 @@
+Sk³adnia undo [numer]
+
+Cofa ostatni ruch przeciwnika. 
+W grach szkoleniowych u¿ywaæ mo¿na undo z parametrem:
+
+    undo 5
+
+cofnie ostatnich piêæ ruchów. 
+
+Proszenie o cofniêcie ruchu jest przyjete w przypadku oczywistych pomy³ek przy wprowadzaniu ruchu. Cofanie ruch w grze tylko dlatego, i¿ by³a to pomy³ka z regu³y nie jest mile widziane.
+
+

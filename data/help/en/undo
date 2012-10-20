@@ -1,0 +1,14 @@
+
+USAGE: undo [n]
+
+Here's an example: suppose you are playing White and your opponent
+has just placed a piece on a point where it can be easily captured.
+Your opponent might realize the weak move he/she made and request an
+undo. You would simply type "undo" to undo their move.
+
+In teaching and fteaching games, a player can specify a number, like:
+
+  undo 5
+
+and that will undo the last 5 moves.
+

@@ -1,0 +1,18 @@
+使用 winigc 有問題嗎? 以下就是一些常見問題的解答:
+
+Q: 我在下棋時或是 reload game 之後 mouse 不能 work, 怎麼辦?
+
+A: 請將 File 中有一項 IGS User name 填入你所用的 user name,
+   詳情請看 Help 選單的 Contents 中的 FAQ。
+ 
+   有些舊版本的 winigc 可能會不能用, 所以建議你換成新的版本.
+      140.114.29.44 的 /Go-chess/clients
+   下有提供較新的版本.
+
+Q: 為什麼每行訊息前面都有一些數字?
+A: 先 toggle client on
+   再 logout, login 就可以解決了.
+ 
+   若還有其它問題, 請找在站上的 admin, 留 message 給他們, 或用 note
+留言。
+

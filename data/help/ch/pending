@@ -1,0 +1,9 @@
+指令: pending
+
+用法: pending
+
+說明:
+
+  顯示所有你對別人提出的要求, 或是別人對你提出的。
+
+相關指令: accept decline match draw adjourn abort takeback

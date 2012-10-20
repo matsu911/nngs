@@ -1,0 +1,10 @@
+
+
+These are the memory allocation routines present in the 1.0.0 NNGS
+version.  They are replaced by the system memory management routines,
+and the debugging capability they provided is replaced in part by the
+dmalloc memory debugging library.  They can still be compiled in with a
+definition of USE_PEM_MALLOC in config.h
+
+--Nils.
+

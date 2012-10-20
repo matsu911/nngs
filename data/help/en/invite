@@ -1,0 +1,16 @@
+
+USAGE: invite user channel
+
+If you are in channel 99, and you are "vida", and sunny joins the server...
+you may want to invite sunny to channel 99.  So, vida can enter:
+
+  invite sunny 99
+
+and sunny will get:
+
+  vida invites you to channel 99
+
+The channel number is optional, the default is what your ; is set to.
+
+SEE ALSO: channel inchannel zz dnd lock unlock 
+

@@ -1,0 +1,8 @@
+
+USAGE: admins
+
+This command lists all the admins available online to help you
+(unless they are playing a game at the moment).
+
+SEE ALSO: who awho
+

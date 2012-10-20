@@ -1,0 +1,39 @@
+
+A computer opponent is usually available, called "ManyFaces".  It is
+the current North American Computer Go Champion, and has placed highly in
+world competition (2nd 1994, 3rd+4th 1995, 2nd+4th 1988).
+
+It has an 8 Kyu diploma from the Japanese Nihon-Kiin, and is ranked about
+10 Kyu on the American AGA scale.
+
+It understands English in a primitive way.  Feel free to converse with it.
+It can learn new vocabulary and simple facts (like "I am smart").  It
+can answer simple questions like "Who is dove" or "What's the score".
+
+If it repeats something that it learned that you don't like, use
+"Who said that?" to find out where it learned it.  Be cautious what you
+teach it since it never forgets, and you don't know who it will tell later.
+
+It prefers to play with a variety of opponents, so when someone finishes
+a game with it, it will decline a new game from the same person for a few
+minutes.
+
+Currently it cannot undo a move, so try not to make typos.
+
+It doesn't like escapers, so if you adjourn or quit a game after move 25,
+it won't let you start a new game for 3 days.  You can of course load
+the old one.
+
+You can ask it to resign, and if it thinks it is way behind, it will.
+
+Please e-mail and questions or comments to David Fotland at
+fotland@cup.hp.com.  Don't pester the system administrators about ManyFaces.
+
+Additional copies can be run if someone volunteers time on an HP workstation.
+
+A DOS version of this program, with a very nice graphics interface, and
+many useful features (joseki tutor, rules tutorial, go problems, commented
+professional games, move suggestion, ...) is available from
+
+Ishi Press International (800)859-2086
+

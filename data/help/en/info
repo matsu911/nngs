@@ -1,0 +1,21 @@
+
+USAGE: info [string]
+
+Sets the first "Info:" line in your stats.
+
+You may have up to 10 info lines.  This command sets the first info
+line in your stats to [string].  If there are already other info lines
+the new line will appear first (that is, above the other lines).
+
+To set a specific info line, other than the first one, use:
+
+  set 1 [string]
+  set 2 [string]
+    ...
+  set 9 [string]
+
+To erase a specific info line use the set command without any string.
+For example, to erase info line 1 use "set 1".
+
+SEE ALSO: set variables stats
+

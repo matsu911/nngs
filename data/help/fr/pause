@@ -1,0 +1,10 @@
+Usage: pause
+
+  Requête de votre adversaire pour interrompre la partie. 
+Si votre adversaire vous a envoyé une demande de pause, la même commande
+'pause' (ou accept) acceptera la demande. 
+ 
+  Cela remonte les pendules à l'heure du dernier coup. Pour reprendre le
+cours du jeu utiliser "unpause".
+  
+Voir Aussi: accept unpause

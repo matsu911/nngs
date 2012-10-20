@@ -1,0 +1,20 @@
+指令: results
+
+用法: results [user]
+
+說明:
+
+列出整個系統, 或是某位使用者下棋的紀錄。
+
+實例: 輸入 results 之後:
+
+Syncanph   [ 2d*](W) : byakko     [ 1d ](B) H 0 K 0.5 19x19 W+Resign 9608122212
+ligi       [ 3k ](B) : byakko     [ 1d ](W) H 2 K 0.5 19x19 B+Resign 9608122309
+Cut        [ 8k ](W) : ManyFaces  [ 9k*](B) H 3 K 0.5 19x19 W+Resign 9608131111
+chuang     [ 2d*](W) : ManyFaces  [ 9k*](B) H 9 K 0.5 19x19 W+Resign 9608131132
+hjhgo      [ 8k ](B) : MikeChu    [ 6k ](W) H 0 K 0.5 19x19 B+Resign 9608131321
+└─┬─┘ └┬┘┬    └─┬─┘ └┬┘┬ └┘ └┬┘└┬┘└─┬┘ └─┬─┘
+   勝者     棋力 持子     敗者     棋力 持子 讓子 貼目 棋盤   結果    對局時間
+
+相關指令: match
+

@@ -1,0 +1,7 @@
+
+USAGE: ctitle channel_number title
+
+This command allows you to set the title of a channel that you are in.  
+
+SEE ALSO: channel inchannel
+

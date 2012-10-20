@@ -1,0 +1,13 @@
+Sk³adnia mhelp [nazwa pliku]
+ 
+
+Wysy³a kopie pliku pomocy pod Twój adres.  
+
+PRZYK£ADY:
+   mhelp overview  przyœle Ci plik "overview" 
+   mhelp tell      otrzymasz plik pomocy z "tell" 
+   mhelp           wyœwietli wszystkie dostêpne pliki pomocy 
+
+Zobacz tak¿e: help, ?, help overview  
+
+

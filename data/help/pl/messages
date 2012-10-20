@@ -1,0 +1,13 @@
+Sk³adnia: messages [identyfikator wiadomoœæ]
+
+Przesy³a u¿ytkownikowi o danym identyfikatorze wiadomoœæ poprzez system wewnêtrznej poczty  
+
+Komenda bez podania argumentów wyœwietla wiadomoœci, które przys³ano Tobie.
+
+W³asne wiadomoœci usuwa siê komend¹ erase.
+
+Mo¿na mieæ maksimum 40 wiadomoœci tak wiêc pamiêtajcie o ich usuwaniu!
+
+
+See also: erase tell
+

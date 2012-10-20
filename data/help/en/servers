@@ -1,0 +1,70 @@
+
+REFERENCE: Game Servers
+
+The Internet game servers are places accesssible by telnet where you can
+play innumerable players, both human and machine, from all over the world.
+You can connect to one of the servers with the command:
+
+                  telnet <host machine's address> <port number>
+
+(Please be careful not to include the angle brackets "< >".)
+
+BADUK/GO/WEIQI SERVERS
+          Japan:  igs.joyjoy.net 6969                (210.134.78.92 6969)
+     The Cosmos:  nngs.cosmic.org 9696               (198.36.217.60 9696)
+         Taiwan:  lgs.hinet.net 9696                 (210.65.1.245 9696)
+          China:  cws.weiqi.net 9696                 (202.98.15.15 9696)
+                  weiqi.haplink.com.cn 8888
+          Japan:  wing.gr.jp 1515                    (210.158.192.40 1515)
+          Korea:  kgs.kiseido.com (requires java, uses different protocol)
+
+THE FOLLOWING APPEAR TO BE DEFUNCT
+        Germany:  grizu.uni-regensburg.de 9696       (132.199.208.131 9696)
+          China:  jet.ncic.ac.cn 9696                (159.226.43.26 9696)
+
+BACKGAMMON SERVER
+            USA:  fibs.com 4321 (205.149.189.55)
+         Sweden:  fraggel65.mdstud.chalmers.se 4321  (129.16.235.153)
+
+BRIDGE SERVER
+  United States:  vanderbilt.okbridge.com 1729
+
+CHINESE CHESS SERVER
+  United States:  coolidge.harvard.edu 5555          (128.103.28.15 5555)
+
+Ragnarok (MULTI USER DUNGEON WITH A GO PLAYER)
+  United States:  rag.com 2222
+
+Three Kingdoms (MULTI USER DUNGEON WITHOUT A GO PLAYER)
+  United States:  marble.confusion.net 5000
+
+OTHELLO SERVER
+          Japan:  external.nj.nec.com                (138.15.10.2 5000)
+
+WESTERN CHESS SERVERS
+      Australia:  lux.latrobe.edu.au 5000            (131.172.4.3 5000)
+        Denmark:  anemone.daimi.aau.dk 5000          (130.225.18.58 5000)
+    Netherlands:  dds.hacktic.nl 5000                (193.78.33.69 5000)
+  United States:  ics.onenet.net 5000                (164.58.253.10 5000)
+                  chess.pitt.edu 5000                (136.142.81.40 5000)
+                  ics.onenet.net 5000
+                  chess.lm.com 5000
+BACKUP CHESS SERVERS
+  United States:  iris4.metiu.ucsb.edu (128.111.246.4) 5000
+                  coot.lcs.mit.edu (18.52.0.70) 5000
+                  news.panix.com (198.7.0.1) 5000
+
+WESTERN CHESS SERVERS: UP-TO-DATE INFO
+        Denmark:  finger -l tange@daimi.aau.dk
+         France:  finger -l wallez@lune.enst-bretagne.fr
+  United States:  finger -l chess@ics.onenet.net
+  United States:  finger -l chess@chess.uoknor.edu
+
+WORDGAME SERVER
+  United States:  eel.st.usm.edu 7777
+
+Please send any corrections or updated information to:
+WGC@nngs.cosmic.org  ("Attention: Servers Update").
+
+Thank you.
+

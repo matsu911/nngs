@@ -1,0 +1,10 @@
+Sk³adnia: stored [identyfikator]
+
+Podaje iloœæ gier nie zakoñczonych przez gracza o danym identyfikatorze:
+
+Przyk³ad: stored Jasiu
+
+Jeœli pominiesz identyfikator serwer zwróci iloœæ gier nie zakoñczonych przez ciebie. 
+
+Zobacz tak¿e: load look
+

@@ -1,0 +1,5 @@
+Usage: unalias mot
+
+  Enlève l'alias pour "mot".
+
+Voir Aussi: alias

@@ -1,0 +1,8 @@
+Usage: allobservers [partie,nom]
+
+  Si une 'partie' est précisée, tous les joueurs observant cette partie sont
+affichés. Si la 'partie' n'est pas précisée, les joueurs observant n'IMPORTE
+quelle partie sont tous affichés.
+
+Voir Aussi: observe
+

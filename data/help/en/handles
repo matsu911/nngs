@@ -1,0 +1,10 @@
+
+USAGE: handles [name/pattern]
+
+Displays a list of registered players who have handles matching
+"pattern".  For example, the command "handles e" would display all
+handles beginning with "e".
+
+Can also be used to determine if the player [name] has an account
+here.
+

@@ -1,0 +1,32 @@
+Sk³adnia : inchannel [0-99]
+
+Wyœwietla osoby obecne na danym kanale. Jeœli pomin¹æ numer kana³u wyœwietlone zostan¹ wszystkie osoby na wszystkich kana³ach
+
+Przyk³ad:
+
+inchannel 55
+
+wyœwietli:
+
+Channel 55: (-) polski kana³
+Jasiu, Stasiu, Marysia
+
+Trzy osoby obecna na kanale, kana³ ma tytu³ 'polski kanal' 
+
+Jeœli wyœwietlone zostanie:
+
+Channel 55: (L) polski kana³
+Jasiu, Stasiu, Marysia 
+
+Oznaczaæ to bêdzie, i¿ kana³ jest zamkniêty dla osób z zewn¹trz komend¹ lock. 
+
+Jeœli wyœwietlone zostanie:
+
+Channel 55: (D) polski kana³
+Jasiu, Stasiu, Marysia 
+
+Oznaczaæ to bêdzie, i¿ kana³ ten jest zamkniêty komend¹ dnd.  
+
+Zobacz tak¿e: ctitle channel tell lock unlock zz dnd invite
+
+

@@ -1,0 +1,8 @@
+
+USAGE: debug [n]
+
+RESTRICTED TO ADMINISTRATORS.
+
+Sets the debug level to "n". With no argument, the current level
+is printed. This is of no use for others than code maintainers.
+

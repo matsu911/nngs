@@ -1,0 +1,36 @@
+
+    aban: Revoke logins from `banned' IP-number-ranges.
+
+RESTRICTED TO ADMINISTRATORS.
+
+USAGE: aban [+-*/?!] [ipnumber|name] [ipnumber]
+
+  aban := show banned ip-ranges
+
+  aban + <range> := add a range to be banned.
+
+  aban - <range> := remove a range to be banned.
+
+  aban * <name> := add a player's ipaddres to banned ranges.
+
+  aban / <name> := remove a player's ipaddres from banned ranges.
+
+  aban ? <range> := check if range is currently beeing banned;
+                  report (connected) players in range
+
+  aban ! := remove current sessions from banned ip-ranges
+
+
+`iprange' can be either a range, or a single ip-address.
+
+  Overlapping or touching ranges are automatically combined,
+removing a range from the middle of an existing range will
+cause it to be split in two.
+
+ The ranges are maintained in memory, a persistent copy is also
+kept in a file, which is read at startup. When ranges are altered
+(using one of the +-*/ commands) , aban does not affect connected
+sessions. Use `aban !' explicitely to remove these.
+
+SEE ALSO: chkpl chksc chkip nuke
+

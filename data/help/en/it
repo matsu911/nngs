@@ -1,0 +1,32 @@
+
+USAGE: it message
+
+This is a fun, stylish command, but does the same thing as shout.
+
+Display your one-line message to other users.  Except for the shouter and
+those who have disabled their shouts, the others will see an arrow
+followed by your handle and the message.  
+
+QUICK-START EXAMPLES (where "player" is your handle or name on this server):
+
+    Command:  it says please help the newbie.
+     Result:  --> john says please help the newbie. 
+ 
+    Command:  it says please help the newbie.
+     Result:  --> john says please help the newbie. 
+
+DISABLING YOUR "ITS"--if they wish, others can do the following:
+
+   Use "toggle s" to stop all incoming shouts and "its".
+
+   Use "censor player" to stop all tells, shouts and "its" *from you* from
+   now on. 
+
+IMPORTANT HINT: please use "it" only if it is necessary for everyone to
+hear your comment.  Otherwise, it is wise, and considerate, to use tell to
+speak with specific individuals, or to enter a channel to have fun with a
+few people. 
+
+SEE ALSO: shout gshout tell say yell who awho toggle set variables censor
+          channel alias git
+

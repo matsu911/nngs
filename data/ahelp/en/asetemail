@@ -1,0 +1,8 @@
+
+USAGE: asetemail player [email]
+
+RESTRICTED TO ADMINISTRATORS.
+
+Sets the email address of the player to the word given. If email is
+omitted then the player's email address is cleared.
+

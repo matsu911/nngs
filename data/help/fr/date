@@ -1,0 +1,4 @@
+Usage: date
+
+  Affiche la date locale au serveur, ainsi que la date GMT (Greenwich
+  Mean Time)

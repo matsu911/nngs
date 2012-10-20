@@ -1,0 +1,6 @@
+
+USAGE: quit
+ALIAS: exit logout
+
+Exits from the server.
+

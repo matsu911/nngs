@@ -1,0 +1,15 @@
+
+   MHELP fichier
+
+Mail une copie d'un fichier d'aide à votre adresse.
+
+EXEMPLES RAPIDES:
+
+   mhelp overview  vous envoie une copie de l'aide "overview"
+   mhelp tell      mail le fichier "tell" 
+   mhelp channel   mail le fichier "channel"
+   mhelp           liste toutes les commandes d'aide à l'écran. (comme ?)
+
+Voir Aussi: help, ?, help overview  
+(s'il vous plait, ne mettez pas les virgules)
+

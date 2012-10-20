@@ -1,0 +1,8 @@
+
+USAGE: unpause
+
+Restarts the clocks on a paused game. You do not need your opponent's
+consent to restart the game clock.
+  
+SEE ALSO: pause time
+

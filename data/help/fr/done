@@ -1,0 +1,21 @@
+   
+   DONE
+   
+C'est la commande finale pour terminer une partie.
+   
+   D'abord chaque joueur passe et les pierres sont enlevées. Si vous le
+voulez, vous pouvez alors vérifier les points de chacun des joueurs avec
+la commande "score". De toutes façons, après que les deux joueurs aient
+tapé "done", le serveur PLGS va compter et annoncer le score et
+permettre alors aux joueurs à recommencer une nouvelle partie.
+   
+NOTE: après que les deux joueurs aient tapé "done", il n'est plus
+possible de refaire ou de changer quoi que ce soit de la partie. Avant
+de taper "done" nous conseillons d'abord d'utiliser la commande "score"
+pour s'assurer que vous avez complètement nettoyé le go ban. Si l'un des
+joueurs a oublié d'enlever une ou plusieurs pierres mortes, vous
+constaterez que le score est erroné, et vous aurez encore la possibité
+de retirer toute pierre morte avant de taper "done".
+         
+Voir Aussi: match
+   

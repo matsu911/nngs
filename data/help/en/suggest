@@ -1,0 +1,45 @@
+   
+USAGE: suggest opponent1 [opponent2]
+   
+The suggest command lets the NNGS computer make a recommendation
+for the correct number of handicap stones and the komi value against
+an opponent. It also can get you the same information about two other
+players.
+   
+   
+EXAMPLE 1:
+   
+   (You are pem, with a rating of 2653, and eek has a rating of 2921.)
+   
+   You type:      suggest eek
+   
+   You get back:  I suggest that pem play Black against eek:
+                  For 19x19:  Take 3 handicap stones and set komi to -2.5.
+                  For 13x13:  Take 1 handicap stones and set komi to -6.5.
+                  For   9x9:  Take 1 handicap stones and set komi to 0.5.   
+   
+   
+EXAMPLE 2: 
+   
+   (You are still pem.)
+   
+   You now type:  suggest Erik shong
+   
+   You get back:  I suggest that Erik play Black against shong:
+                  For 19x19:  Take 9 handicap stones and set komi to 5.5.
+                  For 13x13:  Take 3 handicap stones and set komi to -2.5.
+                  For   9x9:  Take 2 handicap stones and set komi to 1.5.   
+   
+NOTES:
+   
+If you are NR, or if you do not yet have a rating, then the server
+cannot suggest anything.  The same goes for the opponent you choose.
+   
+   
+THANKS:
+   
+Special thanks to Erik Ekholm (d89-eek@nada.kth.se) for the idea and
+the source code to implement this idea.
+   
+SEE ALSO: match komi handicap rating
+

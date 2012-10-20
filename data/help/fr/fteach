@@ -1,0 +1,21 @@
+
+fteach
+
+  Cette commande autorise deux joueurs à passer d'une nouvelle partie, ou
+une partie en cours, en une partie non classée de leçon. Cela positionne
+les kibbitzes pour les joueurs (pour entendre les questions ou
+commentaires kibbitzés), et positionne aussi les "undo" multiples (voir
+help undo).
+
+  Cette commande à été créée pour remplacer les leçons faites dans les
+canaux, où les commentaires ne sont pas sauvegardés.
+
+  S'il vous plait, notez que les variations ne sont pas sauvegardées,
+ainsi certains commentaires (la plupart ? ) seront sans sens. Peut-être
+ce ne sera plus le cas un jour. :)
+
+  Pour utiliser cela, chaque joueur doit taper "fteach" à un moment
+pendant la partie.
+
+Voir Aussi:  teach undo
+

@@ -1,0 +1,26 @@
+
+Usage: find [-]nom
+
+Utilisé pour trouver des utilisateurs par leur nom ou leur adresse mail.
+
+Exemple:  find sss
+
+renvoie:
+
+    Matched player: sss         at address sss@iohk.com
+    Matched player: sssg        at address sss@iohk.com
+
+et:      find -iohk
+
+renvoie:
+
+    Matched player: chl         at address chl@iohk.com
+    Matched player: spirt       at address maxng@iohk.com
+    Matched player: sss         at address sss@iohk.com
+    Matched player: sssg        at address sss@iohk.com
+
+En d'autres termes, s'il n'y a pas de -, alors vous recherchez dans la
+partie 'user' de l'adresse mail. Si vous ajoutez - devant, ça renvoie
+les emails dont toute partie correspond avec ce que vous avez mis après
+le -.
+

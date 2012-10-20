@@ -1,0 +1,24 @@
+
+USAGE: remplayer name
+
+RESTRICTED TO ADMINISTRATORS.
+
+Deletes an account. A copy of its files are saved under .rem.* which can
+be found in the appropriate directory (in case of accident).
+   
+The account details, messages, games and logons are all saved as 'zombie'
+files. These zombie accounts are not listed in handles nor total.
+
+NOTES: Removing a player can be very BAD IDEA! In particular, NEVER remove
+       an account which has, or had, a rating. (Inactive accounts will
+       expire automatically, eventually.)
+
+       It is not possible to revive a removed account from within the server.
+
+       The only safe use is removing new accounts with offensive names
+       or faulty email addresses (failed registrations).
+
+       To stop access please do "asetpasswd name *" instead.
+
+SEE ALSO: nuke aban
+

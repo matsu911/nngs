@@ -1,0 +1,13 @@
+
+USAGE: score [game]
+
+Displays what the server thinks the score of the given game is,
+using both Chinese and Japanese scoring methods.
+
+With no argument, displays the score of the game you are playing.
+
+NOTE: This will usually not produce any useful result until the end
+      of the game, when all prisoners have been removed.
+
+SEE ALSO: done
+

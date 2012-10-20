@@ -1,0 +1,6 @@
+
+USAGE: choice gametype
+
+This choses the type of game. Currently, NNGS only supports Go, so the
+argument is ignored and the command does nothing.
+

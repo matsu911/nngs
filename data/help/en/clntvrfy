@@ -1,0 +1,6 @@
+
+USAGE: clntvrfy word command
+
+This is a test function. "word" is echoed back, and "command"
+is executed by the server.
+

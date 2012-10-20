@@ -1,0 +1,9 @@
+
+USAGE: bell
+
+This toggle the "bell" variable; it is equivalent to "set bell".
+If bell is on, a ^G (ctrl-G) is sent when a board update is done
+and when the "beep" command is used.
+
+SEE ALSO: variables set beep
+

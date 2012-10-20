@@ -1,0 +1,6 @@
+
+USAGE: help [topic]
+
+Prints help on the given topic.
+If topic is omitted then a list of valid topics is printed.
+

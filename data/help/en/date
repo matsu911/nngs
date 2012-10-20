@@ -1,0 +1,8 @@
+
+USAGE: date
+
+Displays the date at the server location, and displays GMT (Greenwich
+Mean Time.)
+
+SEE ALSO: uptime
+

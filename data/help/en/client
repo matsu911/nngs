@@ -1,0 +1,41 @@
+
+USAGE: client 4
+
+This command changes your client setting in your "variables" setting.
+Using this variable 
+
+  a) helps us identify what clients are being used
+  b) allows us to write in client-specific features
+
+  The current values are:
+
+  0 -- unknown
+  1 -- telnet
+  2 -- xigc
+  3 -- winigc
+  4 -- wigc
+  5 -- cgoban
+  6 -- java
+  7 -- tgigc
+  8 -- tgwin
+  9 -- figc
+  10 - pcigc
+  11 - goservant
+  12 - macgo
+  13 - amigaigc
+  14 - haiclient
+  15 - igc
+  16 - kgo
+  17 - nextgo
+  18 - os2igc
+  19 - stigc
+  20 - xgospel
+  21 - tkgc
+  22 - jagoclient
+  23 - gtkgo
+  
+Client authors are urged to update their clients to automatically issue
+this command at login.
+  
+SEE ALSO: set
+  

@@ -1,0 +1,746 @@
+
+*** Don't forget to change AM_INIT_AUTOMAKE([nngssrv], [1.1.1]) ***
+*** then re-run autoconf to regenerate configure from configure.in ***
+
+
+1.1.22 AvK 2007-02-24, 2009-05-20, 2009-08-30
+- added more configuarable items:
+  - idle_check_interval
+  - ratings-intervals
+  - max_idle
+  - max_login_idle
+  - rating_read_interval
+  - ladder_sift_interval
+  - conffile.default_komi19
+  - conffile.default_komi13
+  - conffile.default_komi9
+- changed rdbm_open()s to use xyfilename() instead of hard-coded pathnames.
+- idem xystat() for nratingsfile.
+- fixed missing spaces in install-scripts for datafiles/directories.
+- replaced all references to [v]snprintf() by my_[v]snprintf()
+This was needed because the library-functions MAY return values >= dstlen.
+- introduced automatic creation of admin-account
+- removed various function-static buffers
+- instead added utils.c/poolstr_dup() as a poor man's garbage collector.
+- allow logfile to have the datetime at the beginning of the lines,
+instead of at the end.
+- refixed missing space in install-data shell scripts.
+
+1.1.21 AvK 2007-02-21
+- added default_komi and default_komi9 to configurable items.
+- silly tell-command returned prematurely.
+- Say/tell/shout/kibitz/channel/etc-Formatstrings. Sigh.
+- Removed some more double-indexing of [pg]array.
+- (GIFU2006) fixed bugs that were introduced (in 1.1.15??) 
+by changing calloc() -->> malloc(); added some memset()...
+- use server_http (instead of hardcoded nngs.cosmic.org) in last line
+of usage-command.
+- added handling of dotted quad in lists/ban file
+- network.c : netstruct.in_full is never set to anything != zero.
+plan to reuse it.
+- moved more tunable constants to the conffile.
+- added fromport (portnumber) into netstruct.
+- changed return form xystat() to be st_size iff stat() returns >=0
+- changed player_write() to only clear is_dirty if file was written
+succesfully. (defined by newsize > oldsize/2, which seems fair enough).
+This will result in NNGS to retry writing if previous writes were
+unsuccessful (caused by disk-full conditions).
+Previously, playerfiles could get truncated on disk-full conditions.
+
+1.1.20 AvK 2005-10-19
+- removed a silly bug (looking for a sentinel in command_list, while there was
+no sentinel. Problem was that it compiled fine on my home machines (probably
+cause of padding/packing/alingment of global variables)
+(thanks to  Guoliang Cao for reporting it, and insisting on it beeing fixed!)
+- removed vsnprintf() <--> Logit() mutual recursion. Sigh.
+- added some language subdirs to the CVS
+- added want_fork and want_mail_child - booleans, for ease of running under a debugger.
+- fixed incorrect incorrect handling of NULL-configurationstrings.
+1.1.19_1 AvK 2005-10-15
+- fixed missing language-subdirs for help and ahelp. Don't mention the war!
+- fixed handling of empty chroot_xxx variables
+- removed reference to memory - subdir (now considered obsolete)
+- removed libladder. It's functions now live in ordinary objects
+- changed NNGSRATED #define to 0 (zero) -->> Default: no need for mlrate
+1.1.19 AvK 2005-10-11
+- removed unnecessary extern from function declarations in headers.
+- renamed the ladder functions. They all start with ladder_ now.
+- renamed globals in mink.c to mink_*
+- Added support for chroot(). Set CHROOT_DIR to empty if you don't want it.
+  - chroot/fork will probably only work on unix/linux platforms.
+    windows people don't seem to need security, anyway.
+  chroot() involves a lot of changes.
+  - the tempfile-mechanism needs a /tmp/ subdirectory in jail.
+  for safety: if chroot is wanted but impossible: nngssrv should fail.
+  sending mail from the program needs to be changed for chroot():
+  a direct client to a SMTP 'mta' needs to be set up. (the mail-binary needs
+  access to the / or /usr filesystem anyway.
+  - sending mail by SMTP needs gethostbyname(), which needs /etc/resolv.conf
+  and/or/ /etc/hosts, which should be present in the jail, and need to
+  be copied there. a working DNS will also be needed, if mail is
+  realayed to any other MTA than "localhost"
+  because mail can block (either way ...) a separate spooling mechanism
+  plus a child-process are needed.
+  - chroot/smtp will *probably not work on windows*.
+- new files : conffile.[ch].
+  All the pahnames/strings/configuration-items are now kept
+  in a configfile (textfile) , which is read at startup.
+  a Fixed filename 'nngs.cnf' is assumed (from current directory)
+  , an alternate path/file can be specified by a '-c path/file' option
+  on the commandline.
+  If no conffile is found, a nngs.cnf IS WRITTEN in the
+  current directory. This will contain the "compiled in" pathnames.
+  This file is intended to serve as a template for further customisation.
+  Note: not all combinations of pathnames are valid, but it will now be
+  -at least- possible to put the data and binary into separate locations
+  , and split the data into 'constant' files (eg helpfiles) and
+  'variable' (players/games/results) parts.
+  - started to put boolean variables into conffile (allow_unregistered)
+- changed some of the configuration-items (filename-suffixes)
+  to "non configurable", and dropped them from autoconf.
+- changed LOG_FILE//log_file to contain the full pathname. Now you can put
+  the logfile anywhere you want.
+  The logfile.portnumber-feature has been removed. If you want it, you'll
+  have to edit the conffile.
+- idem for logons
+- New files udp_command.[ch] An attempt at udp interface.
+  This is intended for a PHP web interface on a "local" machine. Putting a
+  "standard" client interface into PHP (including login/password: persistent
+  sessions) was too hard for me.
+  The protocol is basically "commandline over datagrams" which seems
+  silly at first glance, but it works. Great tool for monitoring/debugging
+  an active server, too.
+  The udp-socket normally binds to 127.0.0.1 (localhost) port 9696/udp,
+  this to avoid unnecessary vulnarabilities.
+- Player-db rework. Sorting out the variables into "persistent" and
+  "session-instanciated" variables (which *should* behave different on when
+  swapping slots) Found some variables that where never even referenced or
+  used :-] Moved fields into substructs && massive renaming.
+- more renaming ... trying to get rid off 1-letter variables && double
+- added some comment on ip_ban.c, which I am very fond of...
+  indexing.
+
+1.1.18 2005-07-13 AvK
+- removed excessive debugging in the log file
+- nrat/ contents moved to src/ changes to makefiles//config
+  Had to ask sourceforge.net crew to fix this in the CVS
+- Attributions && Credits ...
+- renames:
+  - player_forget() to player_unfix(), which is more appropriate
+  - misc variables in playerd/gamedb (flags.is_rated,is_client)
+  - changed some more booleans to bitfields (dNd --> is_private)
+  - some of the #defines: PAIR --> WANT_PAIR
+- Bugfix: find_part_login() when there was an exact + one or more partial
+  matches, it returned -2. It now returns the exact match, once there is one.
+- combined game.{Teach/Teach2} variables into .teach.
+  still allowing teach2 variable when reading game from file.
+  [this will disappear, eventually]
+- cleaned up network.c
+  - changed lots of "else if" in main loop to "continue"
+  - cleaned up telnet IAC-processing
+  - Attempt to remove some duplicated code
+  - Used fd_top+1 as first arg for select()
+  - (style) replaced silly enum by OldFashioned Defines ...
+- cruft removal
+  - removed (()) parenthesis
+  - replaced some if()if(b) -->> if (a && b)
+  - some more (p == NULL) -->> (!p)
+- tabs/spaces/indent
+- removed ADMIN_LEVELS. They are always enabled, now.
+  If you dont want them: dont use them. They wont harm you.
+
+1.1.17 2005-05-25 AvK
+- lots of timing/byo-yomi. Changed all of the timekeeping to
+  0.1 second ticks. Only filedates/logons/gamestarts are still time_t.
+  Timekeeping is basically done on the "heartbeat". This goes
+  for all the "active" games, whether they will receive a move on
+  this select() event or not. The heartbeat can only apply the 1st
+  byo, afterwards the the move will do the checking (+foldover of byo).
+- changed one of the two info-strings to:
+  "You have 5:00 minutes and 25 stones", which seems more appropriate.
+  Hope that won't break clients...
+- the usual renaming of variables.
+- autoconf/aautomake seem to have been changed. Again.
+- changed the ugly macros in language.c. Still ugly.
+
+1.1.16  2004-11-21 AvK
+
+- Lots of autoconf/automake stuff fixed in data/ dir
+  (install appeared to work only on linux platforms)
+- Removed [0-9] from one-letter-subdirectories in {player,games,
+  cgames,player_data}. Names are not allowed to start with a digit.
+- Added {cgames,player_data} to installation makefiles.
+  Still more to go; I added missing.h file to supply missing prototypes
+  ([v]snprintf, popen,pclose, random)
+- Changed most of the buffers in network.c (back) to signed char.
+  The only place where an unsigned char is needed, is in the telnet IAC-
+  handling. Also changed some pointers (into the inputbuffer) to offsets.
+- Added a clumsy-but-fully-functional implementation for [v]snprintf()
+  in src/utils.c. Tested on TRU64 (aka OSF1) V4.0. It works.
+- changed default setting for want_adminlevels to yes.
+
+1.1.15  2004-11-03 AvK
+
+- Corrected clock-keeping (black's 1st move used white's clock ...)
+  (this was caused by 'courtesy' for handicap, which is negotiated before
+   black's first move)
+- #ifdeffed out by WANT_HANDICAP_COURTESY (defaults to 0)
+- renamed struct player.[bw]xxxx variables; put all repeating
+  group-variables for [bw] into (sub) structs for [bw].
+  (this makes the patch rather large :-)
+- combined .inbyo and .numovertime members:
+  a player is "in byo yomi" iff his numovertime > 0.
+- fixed if(timeleft==0) where if(time_type==0) was meant.
+- uncommented a call to game_update_times(): observers now get the
+  correct time
+- fixed filename-generation, including links.
+- In previous versions, some of the pathname-construction seem to have
+  been damaged ...
+  The current implementation stores two links to the sgffile:
+  (for players "Jimmy White" && "Karen Black")
+  .../b/jimmy-karen-20040919
+  .../k/jimmy-karen-20040919
+  The same for the stored/unfinished jimmy-karen versions
+  stored/sgf/"mail me" work now!
+  'stored' , 'load' , 'sgf' , 'results' commands work now (for both players)
+   xyfopen(FILENAME_CGAMES_bs_s_s, "w", wname, bname, fdate);
+   xyfopen(FILENAME_CGAMES_ws_s_s, "w", wname, bname, fdate);
+  now refer to the filename for black/white's perspective, respectively.
+- replaced some more sprintf(fname, "%s/player_data/%c/%s.%s"
+  by xyfilename()
+- changed semantics of pmailfile(). It now just takes subject and pathname.
+  No more filename construction inside.
+- changed [bw]player(). these are used to extract playernames from
+  pathname. rather clumsy.
+- changed some of the historyfile modes back to "a" :-[
+- fixed parray[] freeslot allocation problems. boot_out() now
+  works as expected.
+  - created player_find_sloppy(), player_write()
+    , player_swap(), player_swapslots() functions
+  - added comment to playerdb.h to document cacheing.
+  - player_zero() now only has one argument.
+  - removed excess player_forget() in com_nuke()
+- Login/logout is now recorded properly.
+- added #if ALL_USERS_ARE_REGISTERED to remove lines that served
+  my "lazy testing" attitude :-] .
+  per default, the server now stores games FOR REGISTERED PLAYERS ONLY.
+- Fixed the "black 1st move stealing time from white" -bug.
+- fixed ignored EPIPE in select/read. Defunct connections now are
+  properly shut down.
+- added aban command for banning ipranges: connections from
+  banned ip-addresses are closed immedately after accept(). See ahelp aban
+  - new files: src/ip_ban.[ch]
+  - (admin) command
+  - support functions
+  - ahelp - file
+  - .../lists/ban[.default] : persistent storage for the ban list.
+- revised host/network byte order. Variables are always in host order
+  , until they are handed to/from the network layer.
+- changed some of the network functions to return void
+- changed the default for MODE_FOR_DIR back to 0.
+  Now, the server is not supposed to create any directories.
+- Replaced all exit() calls by main_exit()
+- The gettimeofday() function won't accept the 2nd argument anymore.
+  changed it to NULL.
+
+[stylistic/cleanup]
+- renamed the player_array-bitfields to {is_valid,is_dirty,is_connected,...}
+- grouped the variables for b/w into a repeating-group struct.
+- removed leading underscores from #defines (are reserved for library-use)
+- fixed most of the 'const' warnings. Builds cleaner now!
+- changed some indexes to unsigned to avoid
+  'compare signed to unsigned'- warnings
+- Changed some more "if (*string != '\0') {}" into "if (*string) {}"
+- added string.h // strings.h, changed their order,
+- added hard-coded prototypes for snprintf/ftruncate/popen/pclose/strcasecmp.
+  This seems to be a header/ac/am problem, but I don't want
+  to understand ac/am ...
+- removed some commented-out code.
+- removed/changed some hostnames/emailadresses from cosmic.org
+  to localhost. Just to avoid flooding the wrong victims...
+- removed unused argument from create_new_gomatch & game_write_complete()
+  Seems to have been FICS heritage...
+- changed some more XXXSIZE constants by sizeof, where appropriate.
+- changed some functions to return void; where appropiate.
+- added the users&admins to the README
+- put net_close() into process_disconnection() They were always used together.
+- added % and \\ to list of characters we don't want in filenames
+- renamed com_check{PLAYER,IP,SOCKET}() to com_chk_player() et.al.
+- changed dotQuad() to be a _just_a_bit_more_ re-entrant ;-}
+- removed redundant c++ stuff from emote.h
+- rewrote some double indexing [[]], (which hurts my eyes)
+- replaced some calloc()s by malloc()s
+- added some goto's for readability 8-}
+- removed cruft from playerdb.h
+- whitespace :-]
+- misc changes (renamed some variables :-)
+
+1.1.14  2002-07-24
+- NOTE: using gcc-3.1.1 gives many new 'implicit declaration' warnings
+- added check for endian.h (used in src/utils.c)
+- updated for mlrate-1.1.0
+...OLD mlrate versions are now incompatible with NNGSSRV!!
+...major change: rdbm_open has new second arg: 1=write, 0=read
+...note: there are no redb_store calls, so I opened all files '0'
+- main patches leading to nngs1.1.14: (all by AvK)
+- (renamed)
+  - #defines:
+    TYPE_GO -->> GAMETYPE_GO, etc
+    MAX_PLAYER -->> PARRAY_SIZE, removed duplicate definition...
+    net_maxConn -->> CONNECTION_COUNT
+    net_maxListen -->> LISTEN_COUNT
+  - variables/functions :
+    gamedb.c: send_goboard_to() x ->> yy
+    network.c: i -->> fd
+    network.c: conns[] -->> netarray[]
+    parray.state -->> parray.protostate
+    parray.fullName -->> parray.fullname
+    parray.status -->> parray.pstatus, PLAYER_FREE -->> PSTATUS_FREE,etc
+    garray.status -->> garray.gstatus, GAME_FREE -->> GSTATUS_FREE,etc
+    p_num -->> parray_top
+    g_num -->> garray_top
+    garray.Title -->> garray.gtitle
+    carray.Title -->> carray.ctitle
+    player_find() -->> player_find_fd()
+- (big)
+  - made parray[] into a cache for both connected and unconnected players
+    - added the slotstat struct with bitfields for slotstate and LRU
+    - .registered field moved to slotstat.
+    - changed get_empty_slot
+    - changed all references to parray to use the new fields
+    - changed most tests on parray.status to instead use
+      - parray.slotstat.inuse (slot occupied)
+      - parray.slotstat.active (player is connected)
+      - parray.slotstat.online (player is connected and logged on)
+      - (pstatus= PSTATUS_LOOKING) no longer used, removed #define
+    - new functions to remove the need for (p<0) playernumbers:
+      - player_fetch() for lookups; replaces player_search()
+      - player_forget() to decrease reference-count after use
+      - player_dirty() to touch dirty-bit
+    - changed most instances of player_save() to player_dirty()
+    - new function player_dumpslot(int p) for use in Logit() etc.
+  - compacted cmd_tell(), renamed it to do_tell(), integrated do_beep
+  - bloat-reduction: (re)merged com_gmatch() com_tmatch() and com_gomatch()
+    they now all call com_xmatch() ...
+  - new file: nrat/pending.[ch]
+    rewrote pending-stuff. Replaced the per-player arrays of pending structs
+    by one global linked list of them. Also removed the (need for) duplicates
+    of pendings (both the "from" and the "to" player had a copy).
+- (small)
+  - fixed "toggle quiet" BUG
+  - fixed ": unknown command" BUG
+  - fixed fd-leaks in game_read() and game_save()
+  - removed sentinel from command_list and friends. fixed off-by-one error.
+  - introduced global timevariable lastClock (mainly maintained
+    by select-loop) and removed most of the systemcalls to time()
+  - introduced an index-array to speed up socketfd-->>parray slot lookups.
+    player_find_fd() uses this index
+  - compacted who_ok()
+  - new function parse_rank() to translate {12,k} into {19}, etc
+  - rewrote the silly parsing in com_ranked()
+  - compacted com_spair()
+  - replaced endiantest in dotQuad() by !(BYTE_ORDER==LITTLE_ENDIAN)
+    , this needs <endian.h>
+  - allow NULL struct stat argument to xystat() (if for exist only)
+  - changed logging of "input from fd not in parray" stuff
+  - replaced some -1 by COM_BADFD, where appropriate :-)
+  - added CODE_CR1 sendcode. It can ber OR'ed with a normal sendcode,
+    and results in a \n being prepended to the sendcode.
+  - introduced MIMIC_NNGS_1205 for cosmetic regression testing
+  - modified and reinstalled SIGPIPE-handler. Maybe because of
+    the supernatural speed, automated testing occcasionally still
+    yields an uncaught SIGPIPE. Could be two fd's closing within the
+    same select()-tick.
+  - replaced [r]index() (which is a BSD-ism) by str[r]chr() (which should
+    be standard C).
+  - changed datetime in filenames for games (ccyymmddhhmm) to be UTC.
+  - file_[bw]player treat their arg as const; skip leading directory,
+    return pointers to static buffers.
+  - replaced strcmp() by strcasecmp() when reading player data.
+  - fixed coredump in com_logons()
+  - added servername + version to com_uptime() - output.
+- (misc)
+  - rewrote some heavily indented nested if/else's
+  - some indentation
+  - changed some (xx==0) to (!xx)
+  - changed some '\0' into 0
+  - changed all sizeof(TYPE) to sizeof variable.
+    (technically, this should be "sizeof lvalue", I think)
+  - changed some sizeof(variable) to sizeof variable
+    (there is no precedence lossage possible, here)
+    NOTE p = malloc(sizeof *p) is less dependent on future typo's
+  - removed some commented-out code
+  - removed some outdated comments
+  - got rid of most of the "const" warnings.
+    added "const" to some function arguments.
+  - SGF:
+    - changed sgf to write CP[CoPyright...] instead of CoPyright[...]
+    - added FF[4], AP[name: version] properties.
+  - added socket-fd to login/logout Logit()s
+  - changed some local functions to static
+  - replaced some subscript-range tests to use COUNTOF() instead of
+    a constant
+  - introduced IFNULL(a,b) macro for conveniance
+  - com_uptime() fixed. count_players() + count_games()
+    all-time-high depended on left-to-right evaluation of function-args.
+  - removed excess parenthesis, eg in return(xx);
+  - replaced some explicit prompting by calls to pcn_out_prompt()
+  - updated BUGS+README
+- (future)
+  - Added stuff to TODO :-(
+  - I want unregistered players to be just another level (the lowest)
+    of ADMIN_LEVEL.
+    In the new system ADMIN_UNREG=1. ADMIN_REGISTERED=2.
+    ADMIN_USER=0 is kept to promote previous enumeration to the new one.
+    In the future, the meaning of slotstat.registered will be restricted to
+    "has to be saved in file"
+
+
+1.1.13  2001-12-03
+- readded sys/time.h in utils.c for timezone definition
+- added TIME_WITH_SYS_TIME includes in network.c, utils.c
+- fixed 'coredump in moves command when in client mode' bug
+- added avk to AUTHORS file (finally :)
+[avk]
+- utils.c: pxysend_file(): replaced printf(stderr,...)  by Logit() to logfile.
+- replaced FORMAT_ by FORMAT_empty. points to "", so no need to translate :-)
+- replaced literal 2 by MIN_NAME in name length check.
+- savechar() et.al: replaced silly or-list by strchr()/strcspn() calls.
+  put bad characters in unsafechars[] array;
+- misc stuff:
+  - removed some commented out code
+  - etc
+
+
+
+1.1.12  2001-10-09
+- checked for sys/times.h and added it to nrat/gamedb.c for time_t def
+- check: sys/stat.h utime.h errno.h ctype.h netdb.h arpa/inet.h
+         arpa/telnet.h signal.h
+- update to work with autoconf 2.52, automake 1.5
+- updated almost all includes to use autoconf confirmed files
+- removed sys/time.h sys/times.h and replaced with time.h  This should
+  be enough and is the 'correct' way to include these.
+- removed sys/dir.h from configure since its not used.
+- updated includes in header files to use config.h defs
+- NOTE: ALL includes (except the really basic ones without which the
+  system would be unusable, i.e. stdio, stdlib, etc.) should be in the
+  configuration preprocessor directives and have configure checks.
+[mgrant]
+- added AC_CHECK_TYPE (ulong,unsigned long)
+- added #include <config.h> in mink.c
+- fixed the netinet/in.h include in configure.in
+
+
+
+1.1.11  2001-10-08
+- small dirclose bug fixed in language.c
+[AvK]
+Some minor changes, mainly to src/mink.[ch]
+- replaced "typedef struct { ... } name;" by "struct tag { ...};"
+  similar changes in all corresponding references(eg function prototypes)
+  IIRC, the "tagless structure" is a (Microsoft extension to C.
+  NB the typedef is not needed. Most sourcefiles (that #include the .h file)
+  only need the function prototypes. In these cases, inclomplete types will do.
+- replaced 'ulong' by 'xulong', added typedef for xulong.
+  this should stop us depending on /sys/types.h for ulong
+- Misc stuff:
+  - removed some more casts of [mc]alloc()'s return value type.
+  - changed some "sizeof(type)" into "sizeof name"
+[mgrant]
+- NOGUEST and RESTRICTED_REGISTRATION defines in nngsconfig.h
+- saved game load bugfix
+
+
+
+1.1.10  2001-07-18
+- changed help dir installation privs to 755
+- typed 'char' to 'int' to get rid of warnings where necessary (is*(); calls)
+- added data/lists directory to installation
+- added docs/admin.howto to show how to set up an admin account
+- moved adhelp/* to adhelp/en/* to make admin dirs language sensitive
+- renamed directory 'admin' to 'ahelp'
+- changed ADMIN_DIR to AHELP_DIR and adhelp_dir to ahelp_dir
+[AvK]
+- comproc.c :com_who() changed some -1's to 0
+  (an unsigned was assigned -1,or compared to -1)
+  This assumes that no lower ranks than 30k exist.
+- com_help(), com_adhelp(): replaced popen("ls -C") by
+  search_index(), first attempt to do multi-column formatting...
+- removed some #ifdeffed out code. More to go.
+- Reshuffled some FILENAME_xxx #defines, to make help/ahelp
+  work. Some of the code relies on:
+  #define FILENAME_HELP_l_index (FILENAME_HELP_l+5)
+  etcetera. It's a bit ugly, but it works...
+- added #ifdefs to language.[ch] to avoid preprocessor-redef warnings.
+- changed some manifest constants to sizeof's
+- fixed the helpdirs/init. Now, *both* help/ and ahelp/ are supposed
+  to have language subdirs (en, ch, ge, etc). At initialisation time,
+  an .index is created in each of these dirs, containing the names
+  of the available helpitems. This list includes *both* the language
+  itself, and english. (So if a helpfile is absent in the particular
+  language, but is present in english, it will be listed, and shown)
+- help_init() is now called explicitely at startup.
+- added spaces in the VARS: line in the player file, for countability.
+  it seems to parse OK.
+
+
+
+1.1.9  2001-06-26
+[AvK]
+- added french and polish to language definitions so they can be used
+- fixed language-dependent helpfiles. If no helpfile
+  for the particular language is found, the LANGUAGE_DEFAULT
+  is tried. This also involves search_directory, which has been
+  replaced by search_index. At program init an .index file
+  is written into each language subdir.
+  For the admin-commands, things remain the same. (english only)
+- added a few cases (and some goto's) to pvafopen. please don't tell EWD :-)
+- changed a few instances of FILENAME_s_s to FILENAME_cs_s
+  (for player-dir one-letter subdirs)
+- added two more languages (polish+french) to the switches.
+  created a struct for the  languages to live in.
+- created xyopendir(), wrapper around opendir()
+- got rid of some const warnings. Still more to go ...
+- fixed emote2.c. It works now, it seems.
+- removed some more unneeded typedefs. Only mink.[ch] is left
+  unaltered. Next step will be cleaning up the headers,
+  and moving the struct {} to the corresponding .c files,
+  if the callers only need an incomlete type.
+- compacted the com_shout() and com_gshout() functions.
+- #ifdeffed out some unused functions. Once ok, someone should clean up.
+- remove more pathname-construction from the code)
+  - created the xpsend_command() function.
+- did some renaming, for clarity.
+- removed one more (cast*)malloc
+- etc.
+
+
+
+1.1.8  2001-06-11
+[Nils]
+- added german message translation
+- data/messages: added default.logout
+- data/help: separated all four languages
+- data/Makefile.am: use this makefile to install all sublevels
+- removed data/*/Makefile*; no longer necessary
+[Sean Dwyer  <ewe2@can.org.au>]
+- nrat/comproc.c:5434 added -ta -la options to fix intergo translation
+  problems, but translate command probably needs some verbiage avoidance
+  logic. possibly only a problem for newer versions of intergo.
+- nrat/*.c made sure that <dmalloc.h> is included LAST
+- toplevel configure.in: added logic for MAILPROGRAM, ADMINLEVELS and dmalloc.
+- toplevel acconfig.h: added MAILPROGRAM and ADMINLEVELS, also USING_DMALLOC.
+- src/nngsconfig.h: commented out the MAILPROGRAM defines and added config.h
+  logic for extra stuff.
+- src/*.c make sure that <dmalloc.h> is included LAST.
+[AvK]
+- fix the char[xxx] -variables-problems.
+  (I don't know where the empty values for parray[].name,password,et al
+  came from. Given the Logit() in the source, they must be a known problem.
+  could you take look at the older srcs, for a rough indication when they
+  started ?
+- split the long arglist for variables into manageable chunks of 8.
+  (there is some ansi/posix limit, 16 IIRC)
+- created the framework for language-dependant message-dirs.
+  Basic scheme is, that subdirectories can be created below mess_dir,
+  named "ch" , "de", and a symlink named "en"
+  # ln -fs ./ en
+  does the trick for me.
+  The abbreviations should have corresponding code
+  in language.c:language_prefix()
+- Removed the PUBLIC / PRIVATE braindamage
+- (for grep-ability) renamed parray.name -> parray.pname
+- Created UNUSED() macro to shut off warnings concerning unused
+  function arguments. Compiles a lot cleaner now. :-)
+- Fixed some AdminLevels being compared to non-#defined constants.
+- Unified channel/ochannel code, combined some globals.
+  The ochannels are now located at channelnumber 100 and above
+- fixed some instances of if(!parray[p].name), which had been
+  changed from pointer to array. The same for most char[] members
+  of the parray struct.
+- reorganised the two-column "who" code. It is a bit smaller now ...
+  (but still ugly)
+- replaced some more sprintf(filename,...), ... lines, by xyfunction()s
+- player_save(): split up long fprintf() into many smaller ones.
+- removed some more struct typedefs
+- removed some useless casts: "if ((int) strlen(cp) < 3)"
+- etc.
+[Nicol Schraudolph <schraudo@inf.ethz.ch>]
+- added SGF territory recording in saved games via 'TB' and 'TW' tags
+
+
+
+1.1.7  2001-05-18
+- WARNING: This version is alpha quality due to the many changes!!
+- NOTE: If you find it's close to beta-stable, you're lucky :)
+- translation hacked in in part courtesy of LGS server code
+- this version is the first in a series intended to get many NNGS
+  based servers to use a common source code again to speed up
+  development and allow all to profit from it
+[AvK]
+- Language
+  New files: src/utils.[ch]
+  new command: com_language()
+  replaced *most of* the pprinf(int p,char *format, ...) calls
+  by pcn_out(int p,int num,...)
+  enumerated all formats in utils/formats.h
+  merged chinese translation.
+- enumerated filenames/dirnames.
+  new function FILE * xyfopen(int num, ...) opens files, and handles pathname
+  construction. It should replace xfopen(), eventually.
+  removed most of the oldstyle fileopening.
+- wrapped crypt() into mycrypt() to allow workaround for
+  platforms with broken crypt()
+- altered command_list, added qsort(), now the list doesn't have to
+  be sorted alphabetically, and commands can be grouped.
+- MISC:
+  - removed some innecessary casts. ((int) TYPE_INT)
+  - did some renaming, to make command-parsing more readable.
+  - replaced some more #defined constants by sizeof
+  - removed some more while(!feof()) { braindamage ; }
+  - changed some more : if(parray[p].admin_level)
+    to if(parray[p].admin_level >= ADMIN_ADMIN),  etc
+  - altered who_terse to mimic 1.1.2 style output.
+  - removed some typedef's for structs. C is not C++ :-)
+  - available_space() now returns space in K. To avoid wraparound on
+    larger filesystems. It seems to be unused, though :-)
+
+
+1.1.6  2001-03-29
+[AvK]
+- renamed nrat/code.h to nrat/servercodes.h
+  Moved the server-state codes (WAITING,PLAYING,...) to this file,
+  renamed them to STAT_WAITING, etc.
+- changed do_copy() semantics (off by one)
+  now it should be safe to do:
+  char buff[xxx]; do_copy( buff, "blablablablabla", sizeof buff);
+- changed all do_copy(a,b,xxx) to do_copy(a,b, sizeof a)
+  (note: this will fail of course if a is a pointer ...)
+- fixed fopen ("*/players_dir/*") to use global char * stats_dir instead.
+- replaced all fopen() s by xfopen()
+- removed most of the Logit("Could not open file ...") calls. this is handled
+  by xopen, now.
+- new function xfopen(). It performs fopen(), but does logging, too.
+  If global mode_for_dirs is set, it will create nonexisting directories
+  in the path, but only for write-mode opens.
+- added some more global pathnames stuff.
+- removed some innecessary casts.
+- changed some if(pointer != NULL) into if(pointer)
+- the same for if(pointer == NULL) into (!pointer)
+- added #ifdef __linux__ case for fsstat() freespace calculation.
+- etc.
+
+
+
+1.1.5  2001-03-19
+- moved memory code (malloc.* salloc.*) into memory/* and made it a .a
+- made some functions static in mink.c to avoid warnings
+- created hash dirs under player and game dirs.  How many more are missing?
+- added docs/portforwarding
+- added 'tags' target to Makefile.am
+- warning cleanups
+[AvK]
+- fixed the missing prompt on login.
+- rewrote emote2.c (new file) in C It does not work as expected yet
+  but it seems stable ...
+- avoided the while(!feof(fp)) {} stuff, replaced by while(fgets())
+- removed some globally visible typedeffed structs.
+- replaced (hopefully) all strdup() by mystrdup().
+- removed (potentially dangerous) casts of malloc()s returnvalue
+  and included stdlib.h where necessary.
+- renamed client - #defines IGC -> CLIENT_IGC, etc.
+- various cleanup of "bad" style
+- removed some avoidable strlen() s, etc.
+- added some pathnames/constants for SERVER_HTTP, etc.
+NOTE:
+- there are loads of warnings about "const" omitted, and unused
+  args for some of the com_xxx().
+
+
+
+1.1.4  2001-03-13
+- patched segfault in 'uptime' command if ladder files are bad
+- added default ladder9 and ladder19 files to installation
+- added Makefile.am to data/ladder
+- renamed all files that are generated or customized to either
+   default.filename (message/*) or filename.example (ladder/*)
+- fixed to build on cygwin >= 1.1.8 (Jens Yllman <jens.yllman@swipnet.se>)
+- do not use malloc() and salloc() for cygwin
+- added #ifdef __CYGWIN__ typedef unsigned long ulong; to mink.h
+- removed all header files from stdincludes.h (faster compiles, cleaner)
+    required ones are in the .c and .h files that need them
+- removed stdincludes.h: no longer needed
+    ulong comes from sys/types.h or is defined in mink.h for CYGWIN
+- removed glue.h and added contents to nngsmain.h
+- cleaned header files out of .h files in nrat/*.c
+- BASICALLY: major header reorganization to have minimal includes everywhere
+- changed remaining two ASSERT() calls to assert()
+- commented out ASSERT() and SWAP() calls in common.h
+- removed salloc.h include from common.h: should be included individually
+- added NNGS_ALL_WARNINGS to Makefiles- plenty of stuff to clean up!
+- put PEMs malloc and salloc code in #ifdef USE_PEM_MALLOC- see config.h
+   for now #define it manually in config.h if desired
+[AvK]
+- large patch from (A van Kessel <Adriaan.van.Kessel@rivm.nl>)
+0) nrat/playerdb.h:
+	changed names of #defines (ERROR,INFO,MOVE, etc)
+	into CODE_ERROR, CODE_INFO,CODE_MOVE, etc	
+	put these into a new file "code.h"
+	this should make things a bit more greppable
+
+1) xxxproc.c: changed pprintf(p,"%sXXXX", SendCode(p, NAME), ...)
+	into cpprintf(p, CODE_NAME, "XXXX", ...)
+	similar for pprint_prompt() -> cpprint_prompt()
+	( I needed to split some pprintf()s into two, because they
+	started with "\n", or they contained 2 SendCode()s )
+
+2) utils.c /utils.h:
+	created cpprintf() and cpprint_prompt(). These take the
+	igs - result code as their 2nd argument.
+	NOTE: I don't know if my use of varargs passing is correct
+	there. Please check.
+
+3) utils.c: changed some
+	char buff[LINE_MAX ];
+	fgets(buff,LINE_MAX, fd);
+	into
+	char buff[LINE_MAX ];
+	fgets(buff,sizeof buff, fd);
+	this should be more robust.
+
+
+1.1.3  2001-03-05
+- changed GNUGO references in configure.in to NNGS
+- more details for path definitions in configure.h
+- added 'data' subdir with all default files that need to be there
+   help info admin messages
+- got all files from data/* to be installed in $datadir
+- moved filename definitions from nngsmain.h to configure.in
+- nngsmain.c: removed duplicate port code: the server only runs on one port
+
+
+1.1.2  2001-03-04
+- moved FILE + DIR definitions from nngsconfig.h and addded to configure.in
+- added "config.h" to most files as a result
+
+
+1.1.1  2001-01-04
+- fixed compilation with mlrate 1.0.4 (libmlr.a)
+- better logfile error messages
+- removed unnecessary LINUX prototypes from .h files; now autoconf'ed
+- removed GOOD_STDIO definition: not used, and replaced by autoconf
+
+
+1.1.0  2001-01-03
+- autoconf/header/make used for building
+- moved source code into src/ dir
+- moved unused code into oldsrc/ dir
+- created docs/ dir and put autotool doc into it
+- dbm code in nrat/*c is broken (at least for non-linux)
+
+
+1.0.0
+- initial NNGS Server code from http://nngs.cosmic.org/src
+  Version: NNGS #1623 Tue Dec 26 08:59:39 CST 2000
+

@@ -1,0 +1,19 @@
+Usage: kibitz message
+
+  Envoie votre message à tous les observateurs d'une partie.
+
+  ' est un alias de kibitz.
+  (ainsi que ")
+  Les deux sont enregistrés dans la partie.
+
+  Si vous regardez plusieurs parties, vous pouvez préciser le numéro de
+la partie pour diriger votre kibitz vers la bonne partie. Pour kibitzer
+la partie 4, vous taperiez:
+ 
+       kibitz 4 c3 est un bon coup
+  ou
+
+       ' 4 c3 est un bon coup
+
+Voir Aussi: censor observe
+

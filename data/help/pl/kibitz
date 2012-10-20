@@ -1,0 +1,17 @@
+
+Sk³adnia: KIBITZ _wiadomoœæ
+-
+  Wysy³a _wiadomoœæ do wszystkich osób obserwuj¹cych grê. 
+-
+" jest skrótem (aliasem) dla komendy KIBITZ 
+-
+  Jeœli obserwujesz wiêcej ni¿ jedn¹ grê mo¿esz pod¹æ numer gry
+aby Twoja wiadomoœæ trafi³a do w³aœciwych graczy. Aby wys³aæ 
+  wiadomoœæ do graczy obserwuj¹cych grê nr 4 wpisz: 
+- 
+       kibitz 4 c3 to dobry ruch
+  lub 
+
+       "4 c3 to dobry ruch
+-
+Zobacz tak¿e: CHATTER, TERMINAL, OBSERVE, UNOBSERVER, ALL, CENSOR

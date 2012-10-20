@@ -1,0 +1,1930 @@
+This Go modem protocol was developed by Bruce Wilcox, with input from
+David Fotland, Anders Kierulf, and other computer Go Programmers.  It will
+be avilable in the next releases of NEMESIS and Many Faces of Go.
+We hope that all Go programs will implement this protocol
+so that all Go program users will be able to play go by phone, no matter
+which program they own, and so that computer/computer competitions can be
+played without needing an operator to type moves back and forth.
+
+The protocol is followed by the code used to implement it from Nemesis and
+Many Faces.  We make this code available royalty free, for use for any purpose,
+commercial or otherwise.
+
+NEMESIS and Many Faces will use this protocol in the upcoming North American
+Computer Go Championship at the Go Congress.  We hope that other programs
+at this competition will also implement it.
+
+Bruce volunteers to help with final testing of your modem protocol code.
+
+-David Fotland (Author of Many Faces of GO)
+
+
+
+	Standard Go Modem Protocol - Revision 1.0
+
+The Standard Go Modem Protocol is intended to facilitate 
+computerized remote Go play and discussion between  two players. 
+Tranmission requirements are: 8 data bits, 1 stop bit, no parity.  
+Baud rate to be agreed upon by the players. The protocol consists of 
+two parts: a message format and a usage protocol.
+
+The protocol is maintained by  Bruce Wilcox of Toyogo, Inc.  If you 
+need new codes (e.g., query, extended command) assigned, call or fax 
+for them.  In North America call toll-free 800-869-6469. Otherwise 
+call 808-396-5526 or Fax 808-396-4126. Or write to: PO Box 
+25460, Honolulu, HI 96825
+
+Features of the protocol: 
+
+1. Easy parsing.  Independent of any prior characters, you can 
+distinguish talk text, start of packet message, and other packet 
+bytes.  Knowing when a message is done is easy.  All required 
+commands take 4 bytes. Required input buffer size is only 4 bytes.  
+Additional incoming characters can be discarded or, if talk, echoed 
+to user's talk window. Format does not conflict with control 
+characters (e.g., Ctrl-S and Ctrl-Q).
+
+2. Strong text support. Text can be optionally checksummed, if 
+getting it correct is important. Support for multi-byte foreign 
+languages.
+
+3. High reliability. Checksum is large relative to  packet size, and 
+additional checks exist on some critical commands. Packets 
+are small. Programs can also autoverify board and time 
+correspondence.
+ Programs detecting errors of other program or unable to handle 
+messages of some kind can tell foe via DENY.
+
+4. Minimal modem traffic. No continuous token passing, only passing 
+signals to execute and acknowledge commands.
+
+5. Extensibility. Provisions for program specific extensions (via 
+Extension command).
+
+6. Future Compatibility .  Ability to recognize limitations of foe 
+program and retain backward compatibility in the face of protocol 
+revisions via QUERY and ANSWER comands.
+
+7. Simple code.  The minimal set is easy. Send and receive {OK,  
+MOVE, TAKEBACK, NEWGAME}, respond with ANSWER of 0 to any 
+QUERY, and cancel any command you have pending if you receive a 
+DENY. Don't do anything with incoming talk, or transmit outgoing 
+talk. 
+
+Message Format
+
+The standard packet message is 4 bytes, consisting of a header byte 
+with sequencing information, a checksum byte, and a two-byte 
+command. Individual text bytes intended as optional TALK for the 
+other's talk window may be sent outside of the packet and are not 
+subject to synchronization and checksum protection. However if the 
+language involved requires multiple bytes per character (e.g., 
+Japanese), such messages must be transmitted using the extended 
+String command to insure character sequencing is preserved.  All 
+packet bytes but the packet start byte have their top (sign) bit 
+turned on. The discussion below assumes the two machines/players 
+are labelled you and him. 
+
+	1. Start Byte- 0000 00hy  
+The start byte has 6 fixed bits, his sequence bit (h) and your 
+sequence bit (y). The sequence bits  determine if his incoming 
+command is old or new, and whether he has seen or not seen your 
+most recent command sent to him. Maximizing the fixed bits 
+minimizes mistaken start byte recognition. If a new start byte is 
+detected before the full 4 bytes of a previous packet are read, the 
+old bytes are discarded. 
+
+	2. Checksum Byte - 1sss ssss 
+Top bit always on. Checksum (s)  of any message (including the 
+variable length Extended command)  is created by summing into 
+unsigned int  the 1st, 3rd and 4th message bytes, and using only the 
+bottom 7 bits. If a program receives a command with a bad 
+checksum, it should just discard the message.
+
+	3,4 Command 2-byte - 1ccc rvvv 1vvv vvvv
+Top bit of each byte is always on. ccc is 3-bit command (8 basic 
+commands). vvv vvv vvvv is a 10-bit value for use with commands. A 
+reserved (r) bit of 0 separates the two fields. TEST FOR IT. Future 
+commands or data or whatever may use it and break your code if you 
+don't.  Types are:
+
+	0. OK - 1000 0111 1111 1111
+Value must be all 1's.  OK means I got your command ok, and is given 
+whether or not the command is executed without error by recipient. 
+This releases sender, who cannot transmit  any new commands until 
+he receives it. ANYTIME you have been sent a command and are 
+expected to send an OK, you may instead send a command with a new 
+sequence number for you and his current sequence number.  This acts 
+as an implicit OK, and a command to him which cannot be in conflict 
+with a new command from him (see CONFLICT at the end of command 
+list).  This property is explicitly used in the Query-Answer protocol. 
+DENYis an alternate response instead of OK. OK is not a true 
+command. You do not send back an OK in response to OK. No response 
+is needed or expected. You also do not send back OK in response to a 
+QUERY. You must send an ANSWER command.
+
+	1. DENY command - 1001 0000 1000 0000
+If you wish to reject a command (can't do it or whatever), you can 
+deny it by sending back the DENY command instead of an OK. He 
+should treat your deny just as he would conflict, by retracting his 
+command. However he does not revert his or your sequence ids. As a normal
+command, DENY is rebroadcast until he sends you an OK (explicit or 
+implicit), and he will undo his command and stop broadcasting it to 
+you whenever he sees your denial. Don't DENY a denial. If a command 
+is part of a series of commands to be sent (not a part of an extended 
+multiple command), the sender should cancel sending the remaining 
+queued up commands. E.g., if a game record is being sent as a series 
+of commands, sending it should stop as soon as a move is denied. If a 
+denial is given on an extended multiple command, all of its 
+subcommands must be undone.
+
+ 	2. NEWGAME command - 1002 0000 1000 0000
+Clear your board back to empty, and clear all query knowledge. The 
+sender guarantees he has the correct conditions. A good (but not 
+required) response to NEWGAME would be to use QUERY instead of OK, 
+to discover the playing conditions. If you are unable to query, it is 
+presumed the conditions are already set up correctly.  As soon as the 
+OK is complete (either to NEWGAME or to a series of queries 
+followed by the final answer) Black may send his first move.  It is 
+important to wait for an OK, instead of embedding the first move 
+command as an implicit ok, to allow both sides to complete any 
+querying they want to do. If a DENY is received in the query process, 
+the game is aborted. Whoever is BLACK should send the NEWGAME on 
+startup, but the recipient should not assume from the receipt of 
+NEWGAME that he is WHITE, but should use the query system instead 
+or have been set up. [If two humans play, then it doesn't matter who 
+initiated the NEWGAME, but if two computers are playing, you want 
+the game to automatically start in an orderly fashion. Therefore, 
+behavior on startup is that whoever is to be BLACK send the 
+NEWGAME, and whoever is to be WHITE sends no commands until it is 
+received (he may talk all he wants). ]
+ 
+NEWGAME can be sent in the middle of a game, in which case it 
+terminates the game 
+and starts another (game parameters determined by sender).
+
+	3. Query command- 1011 0sqq 1qqq qqqq
+THE QUERY COMMAND IS OPTIONAL. YOU DO NOT HAVE TO MAKE A 
+QUERY. The command asks a question, and the response comes in a 
+corresponding Answer command. Do not send an OK when you receive 
+a query. Send only an ANSWER. Otherwise your answer might get 
+conflicted and be lost.  When an answer is received by the querier, 
+he, in turn, will need to acknowledge it with an OK.  If the querier 
+does not like the answer he got, he should send back a DENYinstead 
+of an OK, which indicates the answer is unacceptable. The only query 
+with a fixed meaning is the "What game are you" query. The meaning 
+an interpretation of all other queries depends upon the game 
+selected. Toyogo is not a clearinghouse for the meaning of queries in 
+games other than Go.
+
+Bit s is on if the question is "Do you support extended command q?"
+Answer is:   15 - the answer is Yes    0- the answer is No.
+
+Bit s is off if the question is one of the following:
+
+	0 = What game are you playing?
+Answer 0 = unknown 1 = Go  2 = Chess  3 = Othello . If your program 
+only supports one kind of game, this question is unimportant to it.
+
+	1 = How big is your modem buffer ?
+Answer is multiplier of 16 bytes above the minimal 4 byte buffer.  
+E.g., 0 = 4 byte minumum  1= 20 bytes  2= 36 bytes 
+
+	2 = What version of the protocol do you understand?
+Answer is 0, the initial version.
+
+	3 = How many stones on your board? 
+Answer is 0 is if you have no answer, or else its the number of 
+stones on the board after you finish executing any command awaiting 
+OK.  Don't ask before the first voluntary move has been played; 
+otherwise the answer is not well defined (he may not have put 
+handicap stones on the board yet).
+
+	4 = How much time has Black spent ?
+Answer is 0 if you have no answer, or the number of minutes 
+(rounded) spent by Black. There is no requirement that the Queryer 
+use the answer. If he does, the recommended use is to set Black's 
+clock to the minimum of the answer and the Queryer's own value. 
+Time spent is the question, not time used, for two reasons. First, the 
+value field is not interpreted as a signed number and Black could 
+have spent his entire time allotment (be in byo-yomi or worse). 
+Second, programs do not necessarily support the same time limits as 
+interface choices. But if they support time, they know how much has 
+been spent. Range is up to 1023 minutes (about 17 hours), error 
+between programs is no more than 1 minute.
+
+	5 = How much time has White spent?
+Same concept as 4 above.
+
+	6 = What character set do you use?
+Answer: 0 = unknown  1= English (ascii)  2= Japanese.  Other codes 
+assigned on request.
+
+If the querier can match the language he should do so. If he cant,  
+text defaults to the character sets of each machine (best of luck). If 
+the language is a multi-byte character language (e.g., Japanese), text 
+sent outside of the packets is in English. Text sent using the 
+extended String command is multi-byte oriented (format currently 
+unspecified) and represents that language.  Accidental dropping of 1 
+byte of a multibyte string destroys the meaning of all other bytes, 
+hence passing multi-byte languages via the checksummed packet is 
+required. The notion of character set is used in supporting talk  
+between two programs echoed into a talk window. Supporting talk is 
+optional.
+ 
+	7 = What rules are you using?
+Answer: 0 = unknown 1 = Japanese 2 = Ing Chinese (SST laws).
+
+	8 = What handicap are you set for?
+Answer: 0 = unknown 1 = even 2..n are handicaps.  See discussion of 
+handicaps under MOVE command.
+
+	9 = What is the board size?
+Answer: 0 = unknown.  N > 0 is NxN board size.
+
+	10 = What is the time limit per player
+Answer: 0 = unknown.  N>0 is time in minutes.
+
+	11 = What color is the computer playing on your side.
+Answer: 0 = unknown. 1 = White 2 = Black
+
+	 12 = who are you ?
+Answer is:. 0- unknown  1- NEMESIS   2- MANY FACES OF GO  3-
+SMART GO BOARD  4-GOLIATH   5- GO INTELLECT   6- STAR OF 
+POLAND.  Other ids will be assigned in future on demand. Contact 
+Toyogo. If a program needs to identify its version number, a new 
+Version # query will be created.
+
+SETUP AGREEMENT:  The game setup parameters can be established 
+between the two programs by query/answer. Whoever gets the first 
+query command through can thereafter read off all the settings of 
+the other program and either verify that they  match, set himself up 
+accordingly, or issue a DENY.  If the querier gets back a 0 response, 
+either he doesn't care, or he stops proceeding into the game.  How 
+the initial query command occurs and by whom is not specified 
+(since it is not required to happen), but subject to program 
+implementation. Be reminded that this feature may not even be 
+supported by a program. In that case it is the responsibility of the 
+two humans to see that the programs are set up correctly.
+
+	4. Answer command - 1100 0aaa 1aaa aaaa
+THE ONLY REQUIRED ANSWER IS 0, if you haven't implemented any 
+other answers. Sent back in response to QUERY, instead of OK. See 
+Query for interpretation of a. A program is not required to QUERY, 
+nor to do anything with the answer.   If you receive an ANSWER, you 
+must acknowledge it with an OK.
+
+	5. Move command - 1101 0pii 1iii iiii
+Interpretation of the move command is game specific. For the game 
+of Go, top value bit (p) is 1 if player to move is white or 0 if black.   
+9 bit value (i)  is a board intersection value or 0 for pass.  
+Intersection values run 1 at A1, 2 at B1 ... with value wrapping at 
+end of row (varies with board size) so next row is A2.  Range for 
+19x19 board is thus 1...361 (A1 ...T19). A1 is in the lower left corner
+and the letter I is omitted.  A program is required to 
+remember all the moves from the root position to the current 
+position. It may, but is not required to, remember moves played later 
+than the current position which have been taken back.  A  move 
+always extends the current record of moves as the next move in 
+sequence. A dumb program keeps no history of moves taken back, so 
+extending the current move sequence is a simple matter. Complex 
+programs may track variations or continuations, and may need to 
+decide whether such a sequence is a replacement of the retracted 
+moves, or a variant or what.  Such decisions are the domain of the 
+individual program. The program must only insure that the board 
+stays consistent between the two programs. Also, while one may 
+assume a program will not transmit an illegal move, the receiving 
+program may check for that and issue a DENY instead of an OK if such 
+a move is detected.  
+
+Moves transmitted are moves that players (human or computer) have 
+a choice about. See handicaps.
+
+
+Handicap moves:
+Handicap stones are a particularly thorny problem. The underlying 
+premise of the protocol is that  a pair of computers is shared 
+cooperatively. Either player may place any color stones at any time, 
+so there is no inherent program knowledge of who is Black and who 
+is White. Therefore it is not clear who should send handicap moves 
+to whom. Both programs might send the other messages about 
+handicap stones, either in lump, in conflict, or intermixed with each 
+other.  Also, programs may represent handicap moves as either a 
+contiguous sequence of Black moves, or a sequence of a Black move 
+and White passes. Also handicap stones may be represented 
+internally from other moves. The receiving program cannot tell what 
+kind of move a stone is unless it knows the handicap in advance. So, 
+with that can of worms in mind:
+
+  Japanese Handicap Rules:
+	Under Japanese rules, programs DO NOT transmit handicap setup 
+stones. The first move transmitted will be White's first move. The 
+placement of handicap stones for handicaps greater than 1 under 
+Japanese rules on a 19x19 board use these intersections in order: D4 
+Q16 D16 Q4 (K10 when handicap is odd)  D10  Q10 K4 K16. E.g., 2 
+stones at D4 & Q16, 5 stones at D4, Q16, D16, Q4, K10, 6 stones at 
+D4, Q16, D16, Q4, D10, Q10. On odd board sizes of 13x13 and up, the 
+corner handicaps are always on the 4th line and the center . On the 
+9x9 and 11x11, handicaps are on the 3rd line and the center. Order of 
+placement always mimics the 19x19 case. Handicaps on  even board 
+sizes, sizes under 9x9, or handicaps beyond 9 stones are not 
+predetermined by the standard.
+
+Reminder, if you transmit the moves of a game record, don't 
+transmit the handicap stones under Japanese rules .
+
+  Chinese Handicap Rules:
+	The handicap passes by White are not transmitted. 
+
+Transmitting game records:
+How a handicap game record under Japanese rules can be transmitted 
+depends upon the sophistication of the receiving program. To 
+transmit a game record, first transmit the NEWGAME command. Then, 
+if the receiving program is sophisticated, it can query for the 
+handicap and set itself up appropriately. The handcap under Japanese 
+rules is not transmitted. If the receiving program is dumb, it will 
+not know about the handicap.  So you determine if he has asked you, 
+and if not, you should ask him about his handicap prior to sending 
+your recorded moves. If his handicap is set up correctly, send the 
+moves w/o the handicaps. If his handicap is anything but correct, 
+decline to send. If you want, if his handicap is even, you could send 
+him all moves including the handicap, but the standard does not 
+require it. If you want to take the lazy approach, always transmit 
+the game as an even game.
+
+	6. Take back move command- 1110 0ttt 1ttt tttt
+The meaning of taking back a move is game specific. In Go, it is 
+taking back a move a player had a 
+choice about. Under Japanese rules  Black's handicap moves are fixed 
+and cannot be taken back.  Under Chinese rules White's passes are 
+required. Hence, taking back a move means removing a Black handicap 
+stone, and any White passes needed to accomplish this. 
+
+Value t is how many moves to retract, and ranges from 0 to 1023. 
+Taking back 0 has no effect. A turn may consist of multiple moves 
+(e.g., the SETUP command in "Standard Format" for text records. The 
+meaning of take back is retracting a move, not a turn.  If a program 
+is unable to obey the Take back move command given it,  it may 
+respond with a DENY instead of an OK.
+
+	7. Extended command - 1111 0mmm 1mmm mmmm   1nnn nnnn 1sss ssss
+
+SUPPORT OF EXTENDED COMMANDS IS OPTIONAL. Do not send such a 
+command unless you have queried and discovered that recipient 
+supports it. Also be aware that receiver's buffer size may not fit 
+everything you want to send and you might have to break it into 
+smaller chunks. You should determine his buffer size with a QUERY command.
+
+The value of the extended command is how many MORE bytes follow 
+after the basic four. At a minimum, the value is two.  The first 
+following byte has the extended command name (n). The second 
+following byte is a checksum (s) computed for the extended part of 
+the message (bytes 5, 7...4+m).  Programmers wishing an assigned 
+name can contact Toyogo. Commands created can be optionally 
+supported by more than one program. Programs are not required to 
+support extended commands. They may discard such a message if 
+they wish, but if queried about such support they 
+must be able to answer NO.  Current extended command names are:
+
+	0 - String 1000 0000
+The contents are to be displayed as talk output. They are analogous 
+to text sent outside of packets except 1) they are secure 
+(checksummed) and 2) they can represent multi-byte languages if 
+needed.
+
+	1. Replay 1000 0001  1nnn nnnn  1nnn nnnn
+If a program keeps track of moves taken back, then this command is 
+the inverse of TAKE BACK. The third and fourth extended bytes (n) are the 
+count of how many moves to replay.
+
+	15 - Multiple 1000 1111
+The contents are multiple commands (without individual header and 
+checksum bytes) intended to be executed as one. The purpose is to 
+speed up response to complex sequences of actions, and/or to insure 
+control is retained by sender for the duration of the sequence. OK, 
+DENY, QUERY, ANSWER, and the multiple extended command MAY NOT 
+be used within a multiple command. 
+
+CONFLICT - If both players send commands at each other at the same 
+time, this is detected as a conflict. Conflict is detected when you 
+receive a new command from him while you are awaiting his OK, and 
+the new command does not have your current sequence number.  
+Programs detecting conflict are required to retract their command 
+(decrement their sequence id, stop waiting for an OK on their 
+command, and undo any effects their command had on them.  E.g., if 
+they placed the move of the MOVE command, they should unplace it. 
+It is not essential that both programs detect the conflict, though 
+they will if there are no tranmission problems.
+
+A program which is in the middle of a sequence of commands it 
+wishes to send, may decide to retry transmitting its conflicted 
+command after a random delay (so the two programs don't stay in 
+conflict).  If it receives an intervening foe command before it has 
+completed its own list, it may issue a DENY if accepting his 
+command would be a problem.  Issuing a DENY prohibits him from 
+continuing his attempt to send you his command.  If he sends you a 
+DENY in the middle of your sequence, you must stop sending further 
+commands from that sequence. DONT DENY A DENY.
+
+AUTOMATIC CHECKING & TIME SYNCHRONIZATION:  QUERY can be used 
+on a regular basis to check that the stone count matches and keep 
+the player times in synch.  This can be done automatically by the 
+program, but such commands should be kept from interfering 
+(CONFLICT) with user commands without good cause.  To avoid 
+conflict with foe user, send an automated QUERY whenever you would 
+send an OK.  You are not safe from your own user unless you buffer 
+his command for execution for when the query/answer/ok is 
+complete or otherwise prevent him from executing a command until 
+then. 
+
+TALK TEXT outside of packets are sent with top bit off (7bit ascii 
+notation). CTRL G must make sound or flash or equivalent when 
+printed into talk area. CTRL-H  (Ascii 8, backspace) should have the 
+correct effect on both machines. Text is intended to be echoed into 
+the talk window of the other machine. Usually you will also echo the 
+talk into your own window as it is typed. Supporting talk windows is 
+not required, and a program may just discard incoming text if it 
+wishes.
+
+INITIAL CONDITIONS - The protocol requirements for using the 
+format are as follows:
+1. Sequence IDs  for you and he both start at 0.
+2. Your sequence ID is incremented before creating a new non-OK 
+message, and is incorporated into the message. THE FIRST MESSAGE 
+EVER SENT WILL HAVE A START BYTE OF 0100 0001, which says foe's 
+last message was 0, and my new sequence value is 1.
+3. Any program can spontaneously send the first command.  You 
+should assume a program  cannot accept any extended commands and 
+answers 0 to any query until you query successfully otherwise.
+4. His sequence ID is taken from the incoming command after it is 
+successfully validated by you. 
+5. When you transmit a non-OK command, you are prohibited from 
+transmitting any NEW commands until you receive or infer an OK 
+from an incoming message of his.
+6. After you transmit a non-OK command, if you receive no 
+acknowledgement from him within some time period, you should 
+retransmit the same message. Retransmission changes no sequence 
+data. 
+
+PARSING:  Incoming characters fall into 3 classes: text, start byte, 
+other command bytes.  Text is any non-start byte having the top bit 
+off.  If you detect other command bytes and have no corresponding 
+start byte, just discard the extraneous command bytes.
+
+STATE ACTION CHART:
+You have just received a message. Your current sequence id is B of 
+{A,B}. His last sequence ID you saw was 2 of {1,2}.  What should you 
+do and what does it mean?
+
+Neutral:   (sitting idle with no transmission,  you have no unfinished 
+commands)
+
+OK(any)	
+OK(B2)  
+	indicates repeated OK. Others impossible. Discard all.
+CMD(A1,A2)
+	New or Old command not possible to receive.  Discard.
+CMD(B1)	
+	Normal New command. Do it + send back OK(before or after).
+CMD(B2)	
+	Old Command . He hasnt seen my OK yet. Resend last comand
+	(implicit OK or real OK).
+
+OKWait:    (retransmiting your  command every n seconds until 
+OK received or  implied)
+	
+OK(A1,A2,B1) 
+	Not possible. Discard.
+OK(B2)	
+	Normal OK. Terminate OK Wait (Go to neutral state).
+CMD(A1)	
+	New Command from him, he hasn't seen my command yet.
+	This is conflict. Do not respond with an OK! Undo my command, 
+	revert my sequence id, don't update his id, and go to neutral. If he 
+	sees my command, he will do likewise.  If he doesn't see my 
+	command he will rebroadcast his and win the toss.
+CMD(A2)	
+	Old Command, he hasn't seen my new command. He was unaware of 
+	my OK at that time. Discard. Retransmit your command ahead of 
+timeout rebroadcast if you want to.
+CMD(B1)	
+	New Command from him, but he has seen my command. He must 
+	have sent OK and I missed it or has some reason to insure we 
+don't conflict. Go to neutral state and then do command+ send 
+	back OK (before or after).
+CMD(B2)	
+	Not possible. Discard.
+
+TIMING:
+The protocol allows a program to make its own choice about when to 
+send a command or an OK. The most simple & inefficient way is to 
+send the command, wait for his OKand then execute your command. If 
+he sends his OK after he has completed execution, that means 
+delaying the time of two machines implementing the command.  
+However, if you do not wait for his OK before executing your 
+command, you must be prepared to undo the command if conflict 
+arises. If he can send the OK upon successful receipt of your 
+command, both of you can process the command in parallel.
+
+Programs may also choose their own rebroadcast frequency. Several 
+seconds should be allowed for the receiving program to execute and 
+acknowledge the command, but there is no requirement, since 
+thereceiver can just discard any messages it wishes.
+
+If both programs generate an automatic QUERY or NEWGAME on 
+startup the two programs may get a CONFLICT. If the programs back 
+off and try again later, they may still conflict.  The protocol does 
+not prevent an infinite loop in such a situation. Our advice is that if 
+you CONFLICT and you are using a loop to try again, you should select 
+a random delay within an ever increasing delay range.  You may need 
+to delay longer than the other program's rebroadcast delay to 
+succeed.  Alternatively after n conflicts without an accepted 
+command on either side, you might stop and report to the user. He 
+should be able to reinitiate the loop at his discretion.  We 
+recommend that the first command sent be a NEWGAME command by 
+whoever is Black. The receiver can query to establish game 
+parameters, and then Black can send his first move.
+
+
+
+This is the code used by Nemesis to implement this protocol, written for
+Lightspeed C on the Mac.
+
+#include <nemheaders>
+#define MaxBuffer (96 + 5)		/* 1 byte for length code, the rest for buffer */
+/* the code allows room to listen to some extended commands, but doesnt use them */
+#define Obuffer 5	/* we only write 4 byte messages (+ length) */
+INT pending = 0;			/* characters expected to receive to finish packet*/
+#define CTRL_G 0x07		/* talk recognizes CTRL_G as sound */
+/* 8 Commands are in COMMANDBITS */
+#define COMMANDBITS 0x70		/* mask holding all commands */
+#define OKMSG 0x00
+#define DENY 0x10
+#define RESET 0x20
+#define QUERY 0x30
+#define RESPONSE 0x40
+#define MOVE 0x50
+#define TAKEBACK 0x60
+#define EXTENDED 0x70
+#define STRING 0x00
+#define REPLAY 0x01
+/* QUERY types are */
+#define FEATUREBIT 0x0400 /* asks if you support extended command named */
+#define GAMEID 0			/* what game  1 = go */
+#define HOWBIG 1			/* your buffer size in 16byte units above 4 byte minimum */
+#define PROTOCOLID 2		/* Currently Protocol version is 0 */
+#define BOARDVERIFY 3		/* number of stones on board after current command finished.*/
+#define BLACKTIMEUSED 4		/* seconds spent by black */
+#define WHITETIMEUSED 5		/* seconds spent by white */
+#define LANGUAGE 6 			/* what character set */
+#define WHATRULES	7 			/* what rules */
+#define WHATHANDICAP 8
+#define WHATSIZE 9
+#define WHATTIME 10
+#define WHATCOLOR 11
+#define WHOAREYOU 12			/* what program. I am NEMESIS */
+/* answers are */
+#define NEMESIS 1
+#define WHITEMOVE 0x0200	/* bit on move to indicate White color */
+static unsigned char nconflicts = 0; /* conflicts in progress */
+#define RETRYDELAY (4 SECONDS)		/* how long I wait for OK before rebroadcasting */
+#define QUERYDELAY (120 SECONDS)	/* how often I poll to keep time consistent */
+unsigned char outmbuffer[Obuffer],inmbuffer[MaxBuffer];
+long timesent = 0;		/* to tell when to rebroadcast */
+static char oursequence = 0; 	/* our last sequencing bit */
+static char hissequence = 0; 	/* his last sequencing bit */
+static long timequery = 0; 		/* to tell when to reverify */
+static int lastquery = -1;		/* If i have a query awaiting an answer */
+static unsigned int querycnt = -1; /* for cycling thru my queries */
+static unsigned int movecnt = -1;	/* to tell when to rebroadcast board verify */
+INT modemmove = -1; 		/* echo expected for this location, dont send it out */
+
+/* HOST SPECIFIC MODEM ROUTINES */
+VOIDFN OutModem (echo) INTM echo; {/* transfer serial output*/
+	long count = (long)outmbuffer[0]; unsigned int pt,val; 
+	/* send new message */
+	outuser(M_FIXTIME,0,0); /* update time */
+	timesent = time_count; /* when we sent the message*/
+	if (FSWrite(ModemOut, &count, outmbuffer+1) != noErr) return -1;}
+	
+	
+int InModem () {/* transfer serial input into input buffer*/
+/* CALLED REPEATEDLY FROM EVENT LOOP */
+	long one = 1,cnt; int type,val; unsigned char c;
+   	SerGetBuf(ModemIn, &cnt); /* bytes available to be read */
+	while (cnt-- > 0) { /* read all available characters in buffer */
+		if (FSRead(ModemIn, &one, &c) != noErr) {/* failed to read */
+			return -1;}
+		if (c > 3 && c < 128) {/* talk character */
+			if (pending) pending = inmbuffer[0] = 0;
+			rawabsorb(c);
+			continue;}
+		
+		/* start of packet recognized -- will need 4 bytes */
+		if (c < 4) {
+			pending = 4;
+			inmbuffer[0] = 0;}
+			
+		/* Have a command byte, discard if not expected, absorb if expected*/
+		if (pending){ 
+	  		inmbuffer[++inmbuffer[0]] = c; /* move it to buffer */
+	  		--pending;
+			if (inmbuffer[0] == 4) { /* have 1st 4 bytes complete */
+				if (!checksum()) { /* BAD CHECKSUM */
+					inmbuffer[0] = 0;
+					continue;}
+				type = gett(inmbuffer); /* lets see if it is an extended command */
+				val = getv(inmbuffer); /* and get size */
+				if (type == EXTENDED) {
+					if ((val + 5) <= MaxBuffer) pending = val;/* accept read*/
+					else {
+						senddeny("extended too big");
+						inmbuffer[0] = 0;}}}}}
+	return dominput();}/* see what you have */
+
+
+
+/* GENERIC MODEM ROUTINES */
+
+
+INTFN resetmodem(
+	) {/* clear the modem interface */
+	
+	modemwaiting = inmbuffer[0] = 	oursequence = hissequence = 0;}
+static VOID mylisten(text) char *text; {
+	listen(text);} /* this sends text to my talk window */
+static VOID myoutmodem(n)  INTM n; {
+	OutModem(n);}
+VOIDFN SendTalk(c) char c; {/* our keyboard letter we sent to us and him */
+	char msg[2];
+	msg[0] = c;
+	msg[1] = 0;
+	mylisten(msg); /* tell my talk */
+	outmbuffer[0] = 1;
+	outmbuffer[1] = c;
+	myoutmodem(FALSE);} /* tell out modem */
+	
+static void xmit(OK) INTM OK; {/* add header into message */
+	unsigned int sum;
+	outmbuffer[0] = 4; /* message is this long */
+	if (!OK) oursequence ^= 1; /* flip our sequence */
+	outmbuffer[3] |= 0x80; /* required  bit */
+	outmbuffer[4] |= 0x80; /* required bit */
+	sum = outmbuffer[1] =  (hissequence << 1) | oursequence;
+	sum += outmbuffer[3] + outmbuffer[4];
+	outmbuffer[2] = sum | 0x80; /* put out checksum */
+	myoutmodem(TRUE);} /* send the completed message */
+			
+static void sendcmd(cmd,val) INTM cmd,val; {/* send out command */
+	if (cmd == QUERY) lastquery = val;
+	outmbuffer[4] = val & 0x7f;
+	outmbuffer[3] = (val >> 7) & 0x03;
+	outmbuffer[3] |= cmd;
+	xmit(0);
+	modemwaiting = 2;}
+	
+VOIDFN senddeny(msg) char *msg; {
+	/* msg just tells us why we are denying him */
+	sendcmd(DENY,0);}
+	
+static void sendok(type) INTM type; {/* ok his last message */
+	nconflicts = 0;
+	
+	/* automatic polling, unless he is querying us */
+	if (type == QUERY); /* requires RESPOND and not ack so dont */
+	else if ((movecnt % 10) == 9) { /* auto poll for stone count periodically */
+		sendcmd(QUERY,BOARDVERIFY);/* doublecheck the board */
+		++movecnt;}
+	else if (G(NOWPLAYING) == S_PLAYING && (time_count - timequery) > QUERYDELAY) {/* low level status first */
+		sendcmd(QUERY,(querycnt & 1) ? BLACKTIMEUSED : WHITETIMEUSED);
+		timequery = time_count;} /* dont query again for a while */
+	else {
+		outmbuffer[3] = 0x07; /* ack command, reserved bit, and message */
+		outmbuffer[4] = 0xff; /* ack message */
+		xmit(TRUE);}}/* send OK */
+	
+VOIDFN SendMove (
+	pt,multi) INTM pt,multi; {/* move encoded color etc */
+	register INT loc = LOCATION(pt), color = WHOPLAYED(pt),where; char junk[30];
+	where = loc;
+	/* if move is during handicap setup, dont echo forced moves */
+	/* tested before move is placed on board */
+	if (G(HANDICAP) > 1 && gethandicap() < G(HANDICAP)) return TRUE; /* not enough black stones yet*/
+			
+	if (where) where = X(where) + ((Y(where) - 1) * G(BDSIZE)); /* grid ref */
+	++movecnt;		/* autopoll of stone count*/
+	sendcmd(MOVE + ((color == WHITE) ? 0x04 : 0),where);}
+			
+VOIDFN SendNewGame(
+	) { /* clear */
+	
+	sendcmd(RESET,0);}
+		
+VOIDFN SendUnmove(
+	n) INTM n; {/* retract this many moves */
+	
+	++movecnt;			/* autopoll stone count */
+	sendcmd(TAKEBACK,n);} /* only done by a user anyway */
+VOIDFN rawabsorb(c) unsigned char c; { /* echo what he ships immediately*/
+	
+	char msg[2];
+	if (c == CTRL_G) outuser(DOSOUND,OTHERBEEP,0); /* sound beep  */
+	else  {
+		msg[0] = c;
+		msg[1] = 0;
+		mylisten(msg);}} /* says his message */
+		
+INTFN checksum() {
+	unsigned char c;
+	c =  ((inmbuffer[1] + inmbuffer[3] + inmbuffer[4]) | 0X0080) & 0x00ff;
+	return (c == inmbuffer[2]);}
+		
+INTFN gett(buf) unsigned char *buf; {
+	return buf[3] & COMMANDBITS;}	/* 3 bit type */
+INTFN getv(buf) unsigned char *buf; {
+	return (buf[4] & 0x7f) | ((buf[3] & 0x07) << 7);} /* 10 bit value field */
+static void undolast(deny) INTM deny; {/* take back last command */
+	register INT type = gett(outmbuffer), val = getv(outmbuffer); INT tmp;
+	lastquery = -1; /* there is no query pending now */
+	
+	if (type == MOVE) {
+		if (deny) setflag(NOWPLAYING,S_STOPPED); /* stop trying */
+		unmove();}
+	else if (type == TAKEBACK) {
+		tmp = NTURN + val;
+		while (NTURN < tmp) doforward(0);} 
+		
+	/* nothing to do for QUERY, RESPOND, EXTENDED */
+	}
+static INT bdcount() {
+	register INT i,n = 0;
+	SWEEP361 if (ISSTONE(i)) ++n;
+	return n;}
+	
+static INT inpmove(val) INTM val; {
+	register INT tmp,pt,ans;
+	tmp = (val & WHITEMOVE) ? WHITE : BLACK; /* who is to play */
+	pt = LOCATION(val) - 1;
+	pt = MAKECOORD( (pt % G(BDSIZE)) + 1, (pt / G(BDSIZE)) + 1);
+	if (!legalcheck(pt,tmp)) { /* illegal move */
+		senddeny("illegal move"); /* send a denial */
+		return 0;}
+	if (tmp != nextplayer()) G(FLIPTURN) =  NTURN; /* switch mover */
+	cmdval = pt;
+	cmd2val = 0;
+	modemmove = pt; /* we got this by modem -- clear it when it echos*/
+	++movecnt;
+			
+	ans = ClickedAtPoint(pt,0,0,0); /* see if incoming move has legal context (his move) */
+	if (!ans) senddeny("not his turn"); /* send a denial */
+	return ans;}
+	
+static int nemabsorb() { /* eat nemesis data */
+	INT i,j,ans = 0,pt,val = getv(inmbuffer),type = gett(inmbuffer),him,us,tmp,oldquery = lastquery;
+	unsigned int sum; long time;
+
+	us = (inmbuffer[1] & 0x02) >> 1;	/* his last seen message of ours */
+	him = inmbuffer[1] & 0x01;			/* his current message id */
+	/* VALIDATE OK COMMAND */
+	if (type == OKMSG) { /* OK command */
+		if (us != oursequence || him != hissequence); 
+		else if (!modemwaiting); 
+		else  nconflicts = modemwaiting = 0; /* normal OK */
+		goto exit;}
+		
+	/* validate command */
+/* STATE: NEUTRAL */
+	if (!modemwaiting) {/* we are in neutral */
+/* CASE 2: he is repeating an old command */
+		if (him == hissequence) {
+			/* CASE B: he knows our last command but has missed our OK */
+			if (us == oursequence) 	myoutmodem(TRUE); /* repeat OK as an echo*/
+				 /* he didnt see our OK, help him */
+			/* CASE A: he doesnt know our last command -- since it cleared, not possible */
+			;
+			goto exit;}
+/* CASE 1: he is sending a new command */
+		/* CASE A: he doesnt know our last command, but it cleared - not possible */
+		else if (us != oursequence) {/* his new command does not recognize our old command*/
+			goto exit;}
+		/* CASE B drops thru: he has new message and he saw our last command so he is ok.*/}
+/* STATE: OK_WAIT */
+/* CASE B: he knows our last command */
+	else if (us == oursequence) { /* we have a command pending, he has seen our command */
+		/* CASE 2: he sends old command-- cant do that and know of our command */
+		if (him == hissequence) {/* he repeats his old command */
+			goto exit;} /* not possible */
+		/* CASE 1: he sends new command knowing of our old one-- implicit OK */
+		else modemwaiting = FALSE;} /* we must have missed his OK */
+	
+/* CASE A: he does not know of our command yet */
+	else { /* he has not seen our command */
+		/* CASE 2: he sends old command-- he missed OK */
+		if (him == hissequence) myoutmodem(TRUE);/* repeated old cmd, our resend will fix him*/
+		/* CASE 1: he sends new command */
+		else { /* His Command in Conflict with ours */
+			++nconflicts;
+			oursequence ^= 1; /* revert to before we shipped command */
+			/* leave his sequence alone-pretend we didnt hear his command */
+			/* he will hear us and quit, or echo and win. */
+			modemwaiting = FALSE;
+			undolast(nconflicts > 4);}/* UNDO COMMAND */
+		goto exit;} /* ignore his command */
+		
+	hissequence = him; /* we recognize his command */		
+	/* screen his command for legality with us */
+	if (type == MOVE) { /* verify a move loc or pas loc */
+		ans = inpmove(val); /* setup move or decline */
+		if (!ans) goto exit;}
+	else if (type == TAKEBACK) {
+		if (NTURN < val) {
+			senddeny("takeback too big"); /* deny */
+			goto exit;}
+		modemmove = 1000;} /* came by modem */
+	else if (type == DENY) {
+		undolast(TRUE);}
+	else if (type == EXTENDED) {
+		senddeny("Extended not accepted");
+		goto exit;}
+				
+	/* send an acknowledge *//* the command is self-consistent */
+	sendok(type);	/* release him (except QUERY)... we expect to do his command */
+	if (type == TAKEBACK) {
+		++movecnt;
+		tmp = NTURN - val; /* go back to this turn */
+		while (NTURN > tmp && NTURN > 0) dobackup(TRUE);} 
+	else if (type == QUERY) {/* give him an answer */
+		tmp = 0;
+		/* If his query freed us from OK-wait, this will put us back again in it */
+		if (val & FEATUREBIT) tmp = 0; /* we dont do windows etc */
+		else if (val == GAMEID) tmp = 1; /* go */
+		else if (val == HOWBIG) tmp = (MaxBuffer - 5) / 16;
+		else if (val == PROTOCOLID) tmp = NEMESIS;
+		else if (val == BOARDVERIFY) tmp = bdcount();
+		else if (val == BLACKTIMEUSED) tmp = (INT) (bticks/60) ;
+		else if (val == WHITETIMEUSED) tmp = (INT) (wticks/60);
+		else if (val == LANGUAGE) tmp = 1; /* english ascii*/
+		else if (val == WHATRULES) tmp = G(CHINESERULES) + 1;
+	else if (val == WHATHANDICAP) {
+			tmp = G(HANDICAP);
+			if (tmp < 2) tmp = 1;}
+		else if (val == WHATTIME) tmp = G(TIMELIMIT);
+		else if (val == WHATSIZE) tmp = G(BDSIZE);
+		else if (val == WHATCOLOR) { /* what computer color */
+			if (bcomputer() && !wcomputer()) tmp = 2;
+			else if (wcomputer() && !bcomputer()) tmp = 1;}
+		else if (val == WHOAREYOU) tmp = NEMESIS; /* react negatively to questions */
+		
+		sendcmd(RESPONSE,tmp);}
+	else if (type == RESPONSE) {/* answer to my question */
+		if (oldquery == BOARDVERIFY) {
+			sprintf(myouttext,"\r<Board count mismatch he=%d me=%d>",val,bdcount());
+			if (val != 0 && val != bdcount()) mylisten(myouttext);}
+		else if (oldquery == BLACKTIMEUSED && val != 0) {/* settle on min time */
+			time = val * 60;
+			if (bticks > time) bticks = time;}
+		else if (oldquery == WHITETIMEUSED && val != 0) {/* settle on min time */
+			time = val * 60;
+			if (wticks > time) wticks = time;}
+		lastquery = -1;} /* I will not recognize future response w/o query */
+	else if (type == RESET) {/* refresh */
+		outuser(M_NEWGAME,0,0);
+		modemwaiting = 0;}
+	
+	/* eat off message accepted */
+exit: inmbuffer[0] = 0; /* we only allow 1 message in buffer */	
+	return ans;}
+INTFN dominput() {
+	if (inmbuffer[0] == 0 || pending) {/* no message completed yet */
+		if (modemwaiting) {/* we are expected a message */
+			if ((time_count - timesent) >= RETRYDELAY) myoutmodem(2);}} /* repeat the message as an echo*/
+	else if (G(MODEM_STATE) == 2 && !inside) return nemabsorb(); /* we have a command to eat */
+	return 0;}
+
+
+
+This is the code used by Many Faces of Go to implement this protocol, written
+in Microsoft C 6.0 for the IBM-PC.  It includes a serial COM port interrupt
+handler.
+
+
+# include <stdio.h>
+# include "g2hd.h"
+# include "keys.h"
+
+/* Copyright 1991 david fotland.  Permission granted to use this
+ * code for any commercial or noncommercial purposes as long as this
+ * copyright notice is not removed.  This code was written for 
+ * Microsoft C 6.0
+ */
+
+#ifdef __STDC__
+
+static void putcommand(char *com);
+void putamove(int ptr);
+int domodem();
+static void fillsendpacket();
+static void sendthepacket();
+void displaychar(char c, int side);
+static void domodemcommand();
+static void takeback();
+void puttakeback(int n);
+static void putquery(int query);
+
+#else
+
+static void putcommand();
+void putamove();
+int domodem();
+static void fillsendpacket();
+static void sendthepacket();
+void displaychar();
+static void domodemcommand();
+static void takeback();
+void puttakeback();
+static void putquery();
+
+#endif
+
+
+/* modem interface routines.  putmodem() puts a single character out through
+ * the modem.  getmodem() gets a single character from the modem or returns
+ * FALSE if one is not available.  The host interface is through
+ * putmodem() for typed characters for the talk window, and
+ * putamove(), puttakeback(), and putreset() for commands.
+ * The host should call domodem() frequently.
+ * displaychar() is called to display input characters in the talk window.
+ * domodemcommand() is called to parse the modem command string.
+ *
+ * Modem format is:
+ *
+ * Bytes outside of packet - 0CCCCCCC.
+ *  C is character to echo to the talk window.  All characters typed during
+ *  a game are echoed in the local talk window and sent over the modem.
+ *  The ^G character should ring the bell, not be echoed into the window.
+ *
+ * Byte 1 - 000000AS  (Start packet)
+ *  A is Ack bit - same as seq from previous received command
+ *  S is Seq bit - toggle for each sent command except OK
+ * Byte 2 - 1KKKKKKK
+ *  K is checksum - sum of bytes 1,3,4.  Received packets with checksum
+ *   errors are ignored.
+ * Byte 3,4 - 1CCCRVVV  1VVVVVVV
+ *  C is command, R is reserved, V is value.
+ *   Commands:
+ *   0 - OK.  Value is 0.  Send in response to received command other than
+ *      OK.  Used to detect simultaneous actions and conflicts.  Do 
+ *      not accept new move or retract from user until see OK for previous
+ *      command.  If no OK for two seconds, send command again (with same
+ *      Seq).
+ *   1 - Denial.  Deny receipt of last command.
+ *   2 - Reset.  Clear board and start new game - does not reset sequence 
+ *       numbers
+ *   3 - Query.  Value is:
+ *       1EEEEEEE - Do you support extended command E?
+ *           Respond with 0x0f: Yes, 0: No
+ *       Others described in code below.
+ *   4 - Response.  Value as described above.  Sent in response to a query
+ *       command.
+ *   5 - Move. MSB of value is 0: Black, 1: White.  Rest of value is square
+ *      number.  0: pass, 1: lower left corner, boardsize: lower right corner.
+ *   6 - Take back.  Value is number of moves to take back (0-1023)
+ *   7 - Extended command.  Value is number of additional bytes (1-1024)
+ *
+ * Additional byte 1 - 1EEEEEEE
+ *   E is extended command
+ * Additional byte 2 - 1KKKKKKK
+ *   K is checksum: Sum of all additional bytes except this one.  Received
+ *   packets with checksum errors are ignored.
+ */
+
+
+# define WHITEUNDO 1024
+# define TAKEBACK 2048
+# define PROTOCOL_VERSION 0
+# define PROGRAM_ID 2
+# define EXTRABUFSIZE 16
+# define STARTMASK 0xfc
+# define STARTVAL 0
+
+/* commands */
+
+# define HLACMD 0
+# define DENIALCMD 1
+# define RESETCMD 2
+# define QUERYCMD 3
+# define RESPONDCMD 4
+# define MOVECMD 5
+# define TAKEBACKCMD 6
+# define EXTENDEDCMD 7
+# define STRINGCMD 0
+# define MULTICMD 15
+
+/* queries */
+
+# define QUERYGAME 0
+# define QUERYBUF 1
+# define QUERYPROTOCOL 2
+# define QUERYSTONES 3
+# define QUERYBTIME 4
+# define QUERYWTIME 5
+# define QUERYCHARSET 6
+# define QUERYRULES 7
+# define QUERYHANDICAP 8
+# define QUERYBOARDSIZE 9
+# define QUERYTIMELIMIT 10
+# define QUERYCOLOR 11
+# define QUERYWHO 12
+
+# define QUERYSTRING 0x400
+# define QUERYMULTI 0x40f
+
+/* responses to QUERYWHO */
+
+# define NEMESIS 1
+# define MFGO 2
+# define SMARTGO 3
+# define GOLIATH 4
+# define GOINT 5
+# define STARPOL 6
+
+extern int modemconnected;     /* modem connection exists */
+extern char colordisplayed[];  /* color displayed on board per point */
+extern list_t highlighted;     /* points that are highlighted */
+extern int compmoveinprogress; /* computer is thinking */
+
+list_t undocommands = EOL;  /* commands for undo */
+unsigned char hostdata[4];  /* command ready to send */
+unsigned char sentdata[4];  /* command most recently sent */
+unsigned char recdata[4];   /* data most recently received */
+
+char recextra[EXTRABUFSIZE];  /* buffer for extra received data */
+char sendextra[EXTRABUFSIZE];  /* buffer to accumulate output multiple command */
+int hisbuffersize = 0;  /* his extra buffer size */
+int hesupportsmulti = FALSE;
+int hesupportsstring = FALSE;
+int whoishe = 0;
+int hishandicap = 0;
+int hisboardsize = 0;
+int hisrules = 0;
+
+int querylist[] = { QUERYWHO, QUERYRULES, QUERYHANDICAP, QUERYBOARDSIZE, -1};  /* queries to send at startup */
+int nextquery = 0;      /* next query in querylist to send */
+int lastquerysent = 0;  /* which query does response match? */
+
+int mylastseq = 0;  /* my last sequence number */
+int hislastseq = 0;  /* his last sequence number */
+
+int hisprotocolversion = PROTOCOL_VERSION;
+int hisprogramid = PROGRAM_ID;  /* assume talking to myself */
+char waitinghighack = FALSE;  /* waiting for acknowledgement */
+int querysent;   /* which query did I send */
+int denycount = 0;  /* how many consecutive denials */
+
+long sendtime,firstsendtime;  /* when did I send last */
+int randtime = 0;  /* random timeout to resend after conflict or deny */
+
+/* set up to query again when start new game */
+
+newquery(){
+	if(querylist[nextquery] == -1)nextquery = 1;
+	}
+
+/* calculate the checksum of packet p */
+
+static unsigned char checksum(p)
+unsigned char p[4];{
+	unsigned char sum;
+	int i;
+	sum = p[0] + p[2] + p[3];       
+	sum |= 0x80;  /* set sign bit */
+	return(sum);
+	}
+
+
+/* put the two byte command in com into hostdata and make it ready to send */
+
+static void putcommand(com)
+char com[2]; {	
+	hostdata[0] = 0x0;  /* make first byte */
+	hostdata[2] = com[0] | 0x80;
+	hostdata[3] = com[1] | 0x80;
+	fillsendpacket();
+	mylastseq = sentdata[0] & 1;
+	sendthepacket();
+	sendtime = time10();
+	firstsendtime = sendtime;
+	}
+
+/* send him an OK */
+
+static void putack(){
+	unsigned char sendc[2];
+	if(querylist[nextquery] != -1){  /* can send next query instead of HLA */
+		putquery(querylist[nextquery]);
+		return;
+		}
+	sendc[0] = (HLACMD << 4) | 7;
+	sendc[1] = 0xff;
+	putcommand(sendc);
+	}
+
+/* deny his command - force him to undo it - send take back 0. */
+
+static void putdenial(){
+	unsigned char sendc[2];
+	waitinghighack = TRUE;
+	sendc[0] = DENIALCMD << 4;
+	sendc[1] = 0x0;
+	putcommand(sendc);
+	}
+
+/* send a new game command */
+
+void putreset(){
+	unsigned char sendc[2];
+	waitinghighack = TRUE;
+	sendc[0] = RESETCMD << 4;
+	sendc[1] = 0x0;
+	putcommand(sendc);
+	}
+
+
+/* send a move over the modem.  mvs[ptr] contains the location of
+ * the move (0-360, or PASS).  mvcolor[ptr] is the color of the move
+ * (0-black, 1-white).
+ */
+
+void putamove(ptr)
+int ptr; {
+	unsigned char sendc[2];
+	int val,x,y;
+	if(!modemconnected)return;
+	if(waitinghighack){
+		outerr("Internal error - not ready for command!\n");
+		return;
+		}
+	waitinghighack = TRUE;
+
+	sendc[0] = MOVECMD << 4;
+	if(mvcolor[ptr] == WHITECOLOR)sendc[0] |= 1 << 2;
+	if(mvs[ptr] == PASS)
+		val = 0;
+	else {
+		x = xval[mvs[ptr]];
+		y = yval[mvs[ptr]];
+		val = x+1+boardsize*(boardsize-y-1);
+		}
+	sendc[1] = val;
+	sendc[0] |= val >> 7;
+	outstatus("Sending");
+	adflist(TAKEBACK,&undocommands);  /* put take back on undo list */
+	putcommand(sendc);
+	}
+
+/* take back n moves.  must be called while moves are still in mvs[] */
+
+void puttakeback(n)
+int n; {
+	unsigned char sendc[2];
+	int i;
+	if(!modemconnected)return;
+	if(waitinghighack){
+		outerr("Internal error - not ready for command!\n");
+		return;
+		}
+	waitinghighack = TRUE;
+	sendc[0] = TAKEBACKCMD << 4;
+	sendc[0] |= n >> 7;
+	sendc[1] = n & 0x7f;
+	outstatus("Sending");
+	for(i = msptr; i > msptr-n && i >= 0; --i)
+		adflist((WHITEUNDO*(mvcolor[i] == WHITECOLOR))+mvs[i],&undocommands);
+	putcommand(sendc);
+	}
+
+
+/* query the other program.  */
+
+static void putquery(query)
+int query; {
+	unsigned char sendc[2];
+	if(!modemconnected)return;
+	if(waitinghighack){
+		outerr("Internal error - not ready for command!\n");
+		return;
+		}
+	lastquerysent = query;
+	waitinghighack = TRUE;
+	sendc[0] = QUERYCMD << 4;
+	sendc[0] |= (query >> 7) & 7;
+	sendc[1] = query;
+	putcommand(sendc);
+	}
+
+/* respond to a query */
+
+static void putresponse(){
+	int query,n,i;
+	unsigned char sendc[2];
+	waitinghighack = TRUE;
+	query = (recdata[3] & 0x7f) | (recdata[2] << 7);
+	query &= 0x3ff;
+	sendc[0] = RESPONDCMD << 4;
+	sendc[1] = 0;
+	switch(query){
+	      case QUERYGAME:
+		sendc[1] = 1;  /* GO */
+		break;
+	      case QUERYWHO:
+		sendc[1] = PROGRAM_ID;
+		break;
+	      case QUERYBUF:
+		sendc[1] = 4 + EXTRABUFSIZE/16;
+		break;
+	      case QUERYPROTOCOL:
+		sendc[1] = PROTOCOL_VERSION;
+		break;
+	      case QUERYSTONES:
+		n = 0;
+		for(i = 0; i < boardsquare; ++i)
+			if(colordisplayed[i] != NOCOLOR)++n;
+		sendc[1] = n;
+		break;
+	      case QUERYCHARSET:
+		sendc[1] = 1;  /* ascii */
+		break;
+	      case QUERYRULES:
+		sendc[1] = chineseflag + 1;
+		break;
+		case QUERYHANDICAP:
+		sendc[1] = handicap;
+		if(sendc[1] = 0)sendc[1] = 1;
+		break;
+		case QUERYBOARDSIZE:
+		sendc[1] = boardsize;
+		break;
+	      case QUERYCOLOR:
+		if(cplay[WHITECOLOR])sendc[1] = 1;
+		else if(cplay[BLACKCOLOR])sendc[1] = 2;
+		break;
+	      case QUERYSTRING:
+		sendc[1] = 0;  /* no string support yet */
+		break;
+	      case QUERYMULTI:
+		sendc[1] = 0;  /* no multisupport yet */
+		break;
+		}
+	putcommand(sendc);
+	}
+
+
+/* domodem handles the modem interaction.  It 
+ * reads an acknowledges any packet available from the
+ * input port and executes the command.
+ * it returns TRUE if a command was executed, or a move was taken back.
+ */
+
+int domodem(){
+	long t;
+	unsigned char seq,ack,hla;
+	int command,retval = FALSE;
+	if(!modemconnected)return(FALSE);
+	while(getpacket()){  /* handle input packet */
+		seq = recdata[0] & 1;
+		ack = (recdata[0] & 2) >> 1;
+		command = (recdata[2] >> 4) & 0x7;
+
+		if(!waitinghighack){
+			if(command == HLACMD)continue;
+			else if(ack != mylastseq)continue;
+			else if(seq == hislastseq)  
+				putack();  /* he missed HLA, resend */
+			else {
+				hislastseq = seq;
+				domodemcommand();
+				retval = TRUE;
+				}
+			}
+		else {  /* waiting for OK */
+			if(command == HLACMD){
+				if(ack != mylastseq || seq != hislastseq)
+					continue;  /* sequence error */
+				waitinghighack = FALSE;
+				denycount = 0;
+				gamestatus();  /* tell user ready for command */
+				killist(&undocommands);
+				}
+			else if(seq == hislastseq)continue;
+			else if(ack == mylastseq){
+				waitinghighack = FALSE;
+				gamestatus();  /* tell user ready for command */
+				hislastseq = seq;
+				domodemcommand();
+				killist(&undocommands);
+				retval = TRUE;
+				}
+			else {
+				randtime = rand()%400+200;  /* back off for random time 2-6 seconds */
+				clearerror();
+				outerr("Conflict with opponent");
+				takeback();  /* conflict */
+				mylastseq = 1-mylastseq;
+				retval = TRUE;
+				waitinghighack = FALSE;
+				continue;
+				}
+			}
+		}
+
+	t = time10();
+
+	/* timeout - send packet again or give up */
+
+	if(waitinghighack && t-sendtime > 200){  /* 2 seconds */
+		if(t-firstsendtime > 6000){  /* 60 seconds */
+			outerr("Missing command acknowlege, continuing");
+			waitinghighack = FALSE;
+			gamestatus();
+			killist(&undocommands);
+			}
+		else {
+			sendtime = t;
+			sendthepacket();
+			}
+		}
+	return(retval);
+	}
+
+/* fill the send packet */
+
+static void fillsendpacket(){
+	int i,command;
+	char *dummy = NULL;
+	for(i = 0; i < 4; ++i)sentdata[i] = hostdata[i];
+	command = (sentdata[2] >> 4) & 0x7;
+	if(command == HLACMD)
+		sentdata[0] |= mylastseq;  /* set up sequence number */
+	else
+		sentdata[0] |= 1-mylastseq;  /* set up sequence number */
+	sentdata[0] |= hislastseq << 1;  /* ack his last message */
+	sentdata[1] = checksum(sentdata);
+	}
+
+
+/* sendthepacket sends a packet through the modem */
+
+static void sendthepacket() {
+	int i,command;
+	char buf[100];
+	for(i = 0; i < 4; ++i)
+		putmodem(sentdata[i]);
+#ifndef PCMIN
+	if(debug != 0){
+		command = (sentdata[2] >> 4) & 0x7;
+		sprintf(buf,"sent cmd %d, ack %d, seq %d\n",command,(sentdata[0]&2)>>1,sentdata[0] & 1);
+		outerr(buf);
+		}
+#endif
+	}
+
+
+/* get packet assembles a packet from the modem input.  It returns TRUE
+ * if a packet has been assembled in receivepacket, and FALSE otherwise.
+ * if it returns FALSE, there are no more characters in the modem input buffer.
+ * it handles characters outside of packets.
+ */
+
+static char nextpacketbyte;
+static int nextextrabyte,numextrabytes;
+
+static char receivestate = 0;
+/* 0 - waiting for start of packet
+ * 1 - reading packet
+ * 2 - reading extra data
+ */
+
+# define COUNTLIMIT 1000
+ 
+int getpacket(){
+	unsigned char c;
+	int command,count = 0,flag;
+	char buf[100];
+	while((flag = getmodem(&c)) || receivestate && count++ < COUNTLIMIT){
+		if(!flag)continue;
+				/* get a character from the modem if available */
+				/* if get first character of a packet, spin wait for rest */
+		switch(receivestate){
+		      case 0:  /* idle, looking for start of packet */
+#ifndef PCMIN
+			if(debug != 0 && (c&STARTMASK) != STARTVAL){
+				sprintf(buf,"%x\n",c);
+				outerr(buf);
+				}		      
+#endif				
+			if((c&STARTMASK) == STARTVAL){  /* start ofpacket */
+				receivestate = 1;
+				recdata[0] = c;
+				nextpacketbyte = 1;
+				}
+			else if(c&0x80)break;  /* error */
+			else displaychar(c,1);  /* character outside of packet, display it */
+			break;
+		      case 1:  /* reading packet */
+			if((c&0x80) == 0){ /* error */
+				if((c & STARTMASK) == STARTVAL){
+					receivestate = 1;
+					recdata[0] = c;
+					nextpacketbyte = 1;
+					break;
+					}
+				else {
+					receivestate = 0;
+					displaychar(c,1);
+					}
+				break;
+				}
+			recdata[nextpacketbyte++] = c;
+			if(nextpacketbyte == 4){  /* check for extra bytes */
+				command = (recdata[2] >> 4) & 0x7;
+				if(command == EXTENDEDCMD){ 
+					receivestate = 2;
+					nextextrabyte = 0;
+					numextrabytes = recdata[3] & 0x7f;
+					numextrabytes |= ((int)recdata[2] & 7) << 7;
+					}
+				else { /* done, no extra bytes */
+					receivestate = 0;
+#ifndef PCMIN
+					if(debug != 0){
+						command = (recdata[2] >> 4) & 7;
+						sprintf(buf,"getpacket: cmd %d ack %d seq %d\n",command,(recdata[0] & 2)>>1, recdata[0] & 1);
+						outerr(buf);
+						if(checksum(recdata) != recdata[1])
+							outerr("checksum error");
+						}
+#endif
+					return(checksum(recdata) == recdata[1]);  
+					/* good packet if checksum matches */
+					}
+				}
+			break;
+		      case 2:
+			if((c&0x80) == 0){ /* error */
+				if((c & STARTMASK) == STARTVAL){
+					receivestate = 1;
+					recdata[0] = c;
+					nextpacketbyte = 1;
+					break;
+					}
+				else {
+					receivestate = 0;
+					displaychar(c,1);
+					}
+				break;
+				}
+			if(nextextrabyte < EXTRABUFSIZE)  /* dump extras */
+				recextra[nextextrabyte] = c;
+			nextextrabyte++;
+			if(nextextrabyte == numextrabytes){  /* done */
+				receivestate = 0;
+				return(numextrabytes <= EXTRABUFSIZE && checksum(recdata) == recdata[1]);
+				}
+			break;
+			}
+		}
+	return(FALSE);
+	}
+
+/* output a local message and send it over the modem */
+
+putmsg(s)
+char *s; {
+	outerr(s);
+	while(*s != 0){
+		putmodem(*s);
+		s++;
+		}
+	}
+
+/* execute commands received over the modem.  If waiting for high level
+ * ack, ignore command and undo save commands
+ */
+
+static void domodemcommand(){
+	int s,num,i,command,x,y;
+	char buf[100];
+
+
+	command = (recdata[2] >> 4) & 0x7;
+
+#ifndef PCMIN
+	if(debug != 0){
+		sprintf(buf,"got cmd %d\n",command);
+		outerr(buf);
+		}
+#endif
+
+	if(recdata[2] & 8){  /* reserved bit - don't know what this means */
+		putdenial();
+		return;
+		}
+
+	switch(command){
+	      case  DENIALCMD:
+		putack();
+		takeback();
+		denycount++;
+		if(denycount > 3){
+			turnoffcplay();
+			outerr("Opponent denying moves.  Stopping computer play");
+			}
+		break;
+	      case QUERYCMD:
+		putresponse();
+		break;
+	      case RESETCMD:
+		if(compmoveinprogress){  /* can't take back moves while computer is thinking */
+			putdenial();
+			putmsg("\n\nComputer thinking, command denied.\n");
+			break;
+			}
+		nextquery = 0;
+		putack();
+		mailgame();
+#ifdef PC	       
+		mouseShow(HIDECURSOR);  /* hide the mouse */
+#endif		
+		newgame();  /* initialize for new game */
+#ifdef PC		
+		if(havemouse)mouseShow(SHOWCURSOR);
+#endif	
+		break;
+
+	       case TAKEBACKCMD:  /* take back */
+		if(compmoveinprogress){  /* can't take back moves while computer is thinking */
+			putdenial();
+			putmsg("\n\nComputer thinking, command denied.\n");
+			break;
+			}
+		num = recdata[3] & 0x7f;
+		num |= (recdata[2] & 7) << 7;
+
+		if(num > msptr-handicap){
+			putdenial();
+			putmsg("\n\nCan't take back handicap stones.\n");
+			break;
+			}
+
+		putack();
+#ifdef PC	       
+		mouseShow(HIDECURSOR);
+#endif		
+		if(num == 0)break;
+		clearerror();
+		outerr("Retracting move\n");
+		for(i = 0; i < num; ++i){
+			if(msptr > 0)
+				retractmove(FALSE);  /* retract but don't send */
+			}
+		outerr("Done\n");
+		gamestatus();
+#ifdef PC		
+		if(havemouse)mouseShow(SHOWCURSOR);
+#endif	
+		break;
+	      case MOVECMD:
+		if(compmoveinprogress){  /* can't make moves while computer is thinking */
+			putdenial();
+			putmsg("\n\nComputer thinking, command denied.\n");
+			break;
+			}
+		mvcolor[msptr] = (recdata[2] & 4) >> 2;
+		s = ((int)recdata[2] << 7) | (recdata[3] & 0x7f);
+		s &= 0x1ff;
+		if(s == 0)
+			mvs[msptr] = PASS;
+		else {
+			s--;
+			x = s%boardsize;
+			y = s/boardsize;
+			mvs[msptr] = boardsize*(boardsize-y-1)+x;
+			}
+		if(mvs[msptr] != PASS && (mvs[msptr] >= boardsquare ||
+			mvs[msptr] < 0 || S_COLOR(mvs[msptr]) != NOCOLOR)){  /* got illegal move */
+			putdenial();
+			putmsg("\n\nIllegal move: denied.\n");
+			break;
+			}
+		putack();
+#ifdef PC	      
+		mouseShow(HIDECURSOR);
+#endif		
+		check(FALSE);  /* make the move */
+		gamestatus();
+#ifdef PC		
+		if(havemouse)mouseShow(SHOWCURSOR);
+#endif		
+		break;
+	      case RESPONDCMD:
+		num = recdata[3] & 0x7f;
+		num |= (recdata[2] & 7) << 7;
+		nextquery++;  /* prepare to send next query */
+		switch(lastquerysent){
+		      case QUERYBUF:
+			hisbuffersize = num*16 + 4;
+			break;
+		      case QUERYSTRING:
+			hesupportsstring = num;
+			break;
+		      case QUERYMULTI:
+			hesupportsmulti = num;
+			break;
+		      case QUERYHANDICAP:
+			hishandicap = num;
+			if(hishandicap == 1 && handicap != 0 || hishandicap > 1 && hishandicap != handicap){
+				if(hishandicap == 1)hishandicap = 0;
+				sprintf(buf,"His handicap (%d) and your handicap (%d) are different!",hishandicap,handicap);
+				outerr(buf);
+				}
+			break;
+			case QUERYBOARDSIZE:
+			hisboardsize = num;
+			if(hisboardsize != 0 && hisboardsize != boardsize){
+				sprintf(buf,"His board size (%d) and your board size (%d) are different!",hisboardsize,boardsize);
+				outerr(buf);
+				}
+			break;
+			case QUERYRULES:
+			hisrules = num;
+			if(hisrules != 0 && hisrules-1 != chineseflag)
+				outerr("He is playing different rules than you");
+			break;
+		      case QUERYWHO:
+			whoishe = num;
+			outerr("Connected to ");
+			switch(whoishe){
+			      case NEMESIS:
+				outerr("Nemesis");
+				break;
+			      case MFGO:
+				outerr("Many Faces of Go");
+				break;
+			      case SMARTGO:
+				outerr("Smart Go Board");
+				break;
+			      case GOLIATH:
+				outerr("Goliath");
+				break;
+			      case GOINT:
+				outerr("Go Intellect");
+				break;
+			      case STARPOL:
+				outerr("Star of Poland");
+				break;
+			      default:
+				outerr("Unknown");
+				break;
+				}
+			break;
+			}
+		putack();  /* might send next query */
+		break;
+	      default:
+		putdenial();  /* tell him I don't understand his command */
+		}
+	}
+
+/* take back the last command */
+
+static void takeback(){
+	list_t ptr;
+#ifdef PC	       
+	mouseShow(HIDECURSOR);
+#endif		
+	for(ptr = undocommands; ptr != EOL; ptr = link[ptr])
+		if(list[ptr] == TAKEBACK)
+			if(msptr > 0){
+				retractmove(FALSE);  /* retract, but don't send */
+				}
+		else {
+			mvcolor[msptr] = (list[ptr] & WHITEUNDO) == WHITEUNDO;
+			mvs[msptr] = list[ptr] & 511;
+			check(FALSE);
+			gamestatus();
+			}
+#ifdef PC		
+	if(havemouse)mouseShow(SHOWCURSOR);
+#endif	
+	killist(&undocommands);
+	gamestatus();
+	}
+
+
+
+/**************************************************************************
+ *
+ *   Serial com port for IBM-PC
+ *
+ **************************************************************************/
+
+
+# define RS232 0x14 /* serial communication BIOS interrrupt */
+# define COMBUFSIZE 68
+
+char icombuf[COMBUFSIZE];
+
+int icbfront = 0, icbback = 0;
+int vector = 0;  /* interrupt vector substituted */
+unsigned int portaddr;  /* com port base address */
+unsigned int portnum;  /* com port number */
+int mask;  /* interrupt enable mask for 8259 */
+
+void modemintoff(){
+	int tmp;
+	if(!modemconnected)return;
+	_disable();
+	tmp = inp(0x21);
+	tmp &= ~mask;          /* turn off com port interrupt mask */
+	outp(0x21,tmp);
+	_enable();
+	}
+
+void modeminton(){
+	int tmp;
+	if(!modemconnected)return;
+	_disable();
+	tmp = inp(0x21);
+	tmp |= mask;          /* turn off com port interrupt mask */
+	outp(0x21,tmp);
+	_enable();
+	}
+
+
+static void (_interrupt _far *old)();  /* old handler address */
+
+/* handle COM port interrupt for "Data received".
+ * IMPORTANT NOTE:  This interrupt handler assumes a vaid stack exists.
+ * It will cause the PC to crash if called when there is not enough
+ * stack space (about 20 or 30 bytes).  In particular if it is called
+ * while the microsoft overlay manager is executing I have seen it cause
+ * a crash.  I recommend disabling the com port interrupts before loading
+ * an overlay.  Alternatively, you can rewrite it to use a local stack
+ * which requires assembler.
+ */
+
+
+void _interrupt _far comhandler(){
+	int intid,intr,lsr,msr,count = 0;;
+	_enable();   /* enable higher priority interrupts */
+	
+	while(TRUE){  /* process all pending interrupts */
+		intid = inp(portaddr+2);    /* get interrupt type */
+		lsr = inp(portaddr+3);  /* clear any overrun condition */
+		msr = inp(portaddr+6);  /* clear any modem signal condition */
+		
+		if((intid & 1) == 1){              /* no interrupts */
+			outp(0x20,0x20);       /* reenable interrupts */
+			return;
+			}
+
+		if(intid >= 4){  /* reenable interrupt if needed */
+			intr = inp(portaddr+1);
+			if((intr & 2) == 0)outp(portaddr+1,intr | 2);
+			}
+			
+
+		if(intid == 4){  /* receive data available */
+			icombuf[icbfront] = inp(portaddr);  /* stick char in front of queue */
+			icbfront++;
+			if(icbfront == COMBUFSIZE)
+				icbfront = 0;
+			if(icbfront == icbback){  /* overrun - throw away old char */
+				icbfront--;
+				if(icbfront == -1)icbfront = COMBUFSIZE-1;
+				}
+			}
+			
+		}
+	}
+
+/* initialize modem.  comport contains the com port number (1-2) */
+/* baudrate is 0-300, 1-1200, 2-2400, 3-4800, 4-9600 */
+/* return FALSE if no com port */
+
+initmodem(comport,baudrate,modemstring)
+int comport,baudrate; 
+char *modemstring; {
+	union REGS regs;
+	char buf[80],dummy,tmp;
+	unsigned int init = _COM_CHR8 | _COM_STOP1 | _COM_NOPARITY;  /* no parity, 1 stop bit, 8 bits */
+	switch(baudrate){
+		case 0:
+			init |= _COM_300;
+			break;
+		case 1:
+			init |= _COM_1200;
+			break;
+		case 2:
+			init |= _COM_2400;
+			break;
+		case 3:
+			init |= _COM_4800;
+			break;
+		case 4:
+			init |= _COM_9600;
+			break;
+		}
+	if(comport == 1){
+		portnum = 0;
+		portaddr = *((short far *)0x400000L);
+		vector = 0xc;
+		mask = 0x10;
+		}
+	else {
+		portnum = 1;
+		portaddr = *((short far *)0x400002L);
+		vector = 0xb;
+		mask = 0x8;
+		}
+	if(portaddr == 0){
+		outerr("Serial port not found");
+		return(FALSE);
+		}
+
+	old = _dos_getvect(vector);  /* save old vector */
+	_disable();
+	_dos_setvect(vector,comhandler); /* install my vector */
+	_enable();
+	_bios_serialcom(_COM_INIT,portnum,init);  /* initialize uart */
+
+	_disable();
+	outp(portaddr+4,11);    /* initialize modem control register */
+							/* bit 3 enables ints */
+							/* bit 0,1 DTR and RTS */
+	outp(portaddr+1,1);  	/* enable input interrupts */
+	tmp = inp(0x21); 		/* enable interrupt through 8259 */
+	tmp &= ~mask;  			/* clear interrupt mask bit */
+	outp(0x21,tmp);
+	_enable();
+	
+	modemconnected = TRUE;
+	while(*modemstring != 0)putmodem(*modemstring++);
+		/* put the call or answer string */
+	while(getmodem(&dummy));  /* eat the chars echoed from the modem */
+	}
+
+/* turn off the modem and remove the interrupt handler */
+	
+offmodem(){
+	unsigned char tmp;
+	if(vector != 0){
+		_disable();
+		outp(portaddr+1,0);  /* disable all serial interrupts */
+		outp(portaddr+4,0);  /* turn off modem controls */
+		tmp = inp(0x21);
+		tmp |= mask;          /* turn off com port interrupt mask */
+		outp(0x21,tmp);
+		_dos_setvect(vector,old);  /* restore interrupt vector */
+		vector = 0;
+		_enable();
+		outerr("Modem disabled");
+		}
+	if(modemconnected && hayesflag){
+		putmodem(modemclose);
+		putmodem('\r');
+		hayesflag = FALSE;
+		}
+	modemconnected = FALSE;
+	waitinghighack = FALSE;
+	}
+	
+
+/* get a charcter from the serial port input buffer.  Return FALSE if
+ * the buffer is empty
+ */
+	
+getmodem(c)
+char *c; {
+	if(icbback == icbfront)return(FALSE);  /* empty buffer */
+	*c = icombuf[icbback];
+	_disable();
+	icbback++;
+	if(icbback == COMBUFSIZE)icbback = 0;
+	_enable();
+	return(TRUE);
+	}
+
+/* send char c to output buffer */
+	
+putmodem(c)
+unsigned char c; {
+	int status;
+	do {
+		status = inp(portaddr+5);
+		} while(!(status & 0x20));  /* wait for transmit register empty */
+	outp(portaddr,c);
+	}	
+
+
+

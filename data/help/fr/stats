@@ -1,0 +1,47 @@
+
+Usage: stats [nom]
+
+Cette commande vous donne vos stat, ou celles de [nom] si précisé.
+
+Exemple:
+
+:-) stats tromp
+Player:      tromp
+Game:        go (1)
+Rating:      NR    0
+Rated Games:      0
+Rank:  3k   0
+Wins:         38
+Losses:       26
+Last Access(GMT):   (Not on)    Tue July  4 15:31:26 1995
+Last Access(local): (Not on)    Tue July  4 11:31:26 1995
+Address: tromp@imageek.york.cuny.edu
+Reg date: Sat June 24 1995, 13:47
+Ladder9 position: 1
+Ladder19 position: 2
+Rank Info: PlumBlossom 95
+Games as B:  6     Games as W : 80  
+
+Info: John Tromp, Waterloo, Ontario, Canada
+Voir Aussi: "variables tromp"
+
+La première ligne est le nom du joueur.
+Les deuxième, troisième et quatrième lignes ne sont là que pour
+compatibilité avec les client IGS.
+La ligne "Rank:" peut être fixée avec la command "Rank". (voir "help
+rank")
+Wins et Losses sont vos gains et pertes pour toutes les parties jouées
+ici.
+La ligne Last Access signale la dernière connexion du joueur.
+La ling Address est l'e-mail du joueur.
+La ligne Reg date: est la date à laquelle le joueur s'est inscrit.
+Les lignes Ladder9 et Ladder20 montre la position du joueur  dans
+   chacune des échelles précisées. (voir "help ladder")
+La ligne Rank Info: est là pour expliquer les différents niveaux que vous
+   pourriez avoir.
+La ligne "Games as B:" montre combien de parties vous avez jouées comme
+   B ou N.
+La ligne "Info" montre vos infos utilisateur. (voir "help info").
+
+Voir Aussi:  Info ladder ladder9 ladder19 rank
+

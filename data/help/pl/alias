@@ -1,0 +1,60 @@
+Sk³adnia: ALIAS [skrót [ci¹g]]
+
+  Tworzy alias komendy taki, Iz wpisanie s³owa 'skrót' zast¹pi 
+komendê 'ci¹g'. Jeœli pominiêty zostanie parametr ci¹g komenda ALIAS 
+poka¿e co oznacza dany skrót. Podanie samej komendy ALIAS wyœwietli
+wszystkie zdefiniowane skróty:
+
+  "alias"             -- pokazuje wszystkie zdefiniowane skróty
+  "alias skrót"       -- pokazuje jaka jest wartoœæ skrótu:
+
+komenda: 'alias ob' poka¿e nam, i¿ pod skrótem 'ob' ukrywa Ob
+	  komenda 'observe' 
+
+"alias skrót ci¹g" -- tworzy lub ziania alias tak, i¿ wpisanie 
+				skrótu równowa¿ne jest z wpisaniem s³owa 'ci¹g' 
+
+ 	komenda: 'alias help pomoc' umo¿liwia wpisywanie pomoc zamiast help
+
+Aliasy SA u¿yteczne jeœli chcesz spolszczyæ swoje komendy.
+	
+Uwaga 1: Aliasy nie s¹ przechodnie. Nastêpuj¹ca sekwencja komend:
+
+    alias foo bar
+    alias bar baz
+
+NIE uczyni "foo" równoznacznym "baz".
+
+Uwaga 2: Nie mo¿na utworzyæ aliasu dla komendy quit.
+
+Uwaga 3: Usun¹æ alias mo¿na komenda 'unalias _slow'
+
+Oto zestaw standardowych aliasów (ka¿dy ma je zdefiniowane domyœlnie):
+  ?             help 
+  ,             say
+  !             shout
+  *             sshout
+  .             tell [do gracza, z którym ostatnio rozmawia³eœ].
+  ^             tell [do gracza, który jako ostatni cos Tobie powiedzia³]
+  t             tell
+  ;             yell
+  "             kibitz
+  '             chatter
+  |             pipe
+  m             match
+  mm            mail me
+  h             handicap
+  a             accept
+  p             user
+  pl            user
+  ch            channel
+  sh            shout
+  $             tempo
+  exit          quit
+  logout        quit
+  players       user
+  w             who
+
+
+
+Zobacz tak¿e: UNALIAS  

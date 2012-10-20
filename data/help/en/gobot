@@ -1,0 +1,79 @@
+
+ "Collections of games, together with GoGoD viewing program and the
+ GoScorer program, can be obtained from Yutopian in the USA
+ (yutopian@netcom.com), Paard in Europe (paard@xs4all.nl) or Games of Go
+ on Disk in Britain (tmark@gogod.demon.co.uk). Further information can be
+ obtained at www.xs4all.nl/~paard together with a copy of a GoScorer
+ demo. The programs work on Dos or Windows, 286 upwards."
+
+There are a number of GoBots (currently three).  GoBot is the "master",
+the others will appear when needed. All commands below except "duplicate"
+can be given to any of the present GoBots. Enjoy!
+
+GoBot commands:
+
+(in a tell)
+
+- A game number:  Play that game number (see 'help index').
+- The word 'random': Pick a random game number.
+- A sgf file name: Play that sgf file (see 'help sgf').
+
+In all three cases, a number can be given as second argument, which causes
+GoBot to skip that many moves. (This can be overridden by a 'fast' or 'slow'
+kibitz.)
+
+To the master GoBot this command is also available:
+
+- The word 'duplicate': Creates a new GoBot if there are no free GoBots
+  available and there are still unused GoBots not logged in (otherwise
+  it's just ignored).
+
+The *requester* of a game can also have these commands available:
+
+- abort:  Aborts current game.
+- jump N: Skips faster over the N next moves. (This can be overridden by a
+          'fast' or 'slow' kibitz.)
+
+  Examples:
+
+    tell gobot 37
+
+      GoBot will replay game 37.
+
+    tell gobot 37 42
+ 
+      GoBot will replay game 37, moving quickly to move 42.
+  
+    tell gobot random
+
+      GoBot will replay a randomply chosen game.
+
+    tell gobot daveg-sss-9512251244
+
+      GoBot will replay this game, played between sss and daveg 25 Dec 1995.
+
+    tell gobot jump 10
+
+      GoBot will skip fast over the next 10 moves. (Assuming you're the
+      requester of the game.)
+
+    tell gobot duplicate
+
+      A new GoBot will appear, provided all logged in GoBots are busy and
+      there are still unused GoBots to log in.
+      (This command is normally not needed, since new GoBots appear
+       automatically when one is getting busy, but they also disappear
+       after some time when idle.)
+
+(in a kibitz)
+
+- fast: Switch to 10 seconds per move
+- slow: Switch to 20 seconds per move
+- pause: Pauses for 5 minutes
+- go: continues after a pause
+- what match: gives the title of the match
+- undo: undos a move
+- undo N: undos N moves.
+
+SEE ALSO: request index rindex sgf
+

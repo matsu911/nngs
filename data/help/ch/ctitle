@@ -1,0 +1,9 @@
+命令: ctitle
+
+用法: ctitle 頻道號碼 標題
+
+說明:
+
+這個命令讓你可以設定你所在的頻道的標題。
+
+相關指令: channel inchannel

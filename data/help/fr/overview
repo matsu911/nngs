@@ -1,0 +1,86 @@
+   
+                               OVERVIEW
+   
+                 La Liste Complète des Commandes Disponibles
+ 
+   
+NOTE: Pour presque toutes les commandes, "help command" vous renvoie les 
+      explications complètes.
+      Exemples: help who, help rank, help match, help adjourn.
+   
+accept       Accepte une requête (match, komi, done, etc).
+addtime      Rajoute du temps à votre adversaire.
+adjourn      Demande la sauvegarde d'une partie pour reprise
+             ultérieure.
+admins       Liste les "admins" disponibles.
+alias        Raccourcis personnels de commandes sur le serveur.
+all          Liste les observateurs d'une partie.
+automail     Fait le serveur vous mailer automatiquement vos parties
+             terminées.
+awho         liste les joueurs actuellement présents, avec info complète.
+ayt          Vérifie que votre connection est active.  ("are you there"
+             NDT:"Etes-vous là?")
+busy         "Set busy" pour signaler votre indisponibilité.
+censor       Met un utilisateur sur la liste de ceux que vous n'écoutez
+             pas.
+channel      Entre ou Sort d'un Canal.
+commands     Liste toutes les commandes auxquelles vous avez accès.
+credits      Donne du crédit là où il est du. (ndt: !??)
+date         Affiche date et heure courantes.
+decline      Ne pas accepter la requête.
+done         Commande finale d'un jeu après le retrait des pierres
+             mortes.
+erase        Efface tous les messages conservés pour vous.
+games        Liste des parties en cours.
+handles      Trouve les pseudos relatifs à un email (comme Find sur
+             IGS)
+help (or ?)  Liste toutes les commandes par colonne, ou renvoie de
+             l'aide sur un sujet donné.
+? aga        Information sur l'Association Américaine de Go.
+? login      Voir l'écran d'accueil.
+? motd       Voir le "Message du Jour".
+? newbie     Liste des commandes pour un débutant.
+? overview   Affiche la liste des commandes disponibles. Celle ci.
+? sourcecode Information sur la disponibilité du code source du serveur.
+? welcome    Offre une liste spéciale de commandes aux joueurs.
+inchannel    Liste les personnes dans les canaux.
+info         Positionne les informations personnelles dans vos stats.
+it           Comme shout, mais le message est précédé de votre nom.
+kibitz       Commentaire sur une partie sans que les joueurs vous écoutent.
+last         Liste les dernier connectés sur le serveur.
+load         Restaure une partie interrompue par ajournement ou déconnexion.
+logons       Logons <nom> montre quand le joueur 'nom' était là.
+mail me      Pour envoyer les enregistrements de parties à votre adresse mail.
+mhelp        Mail les fichiers d'aide à votre adresse.
+match        Propose une partie.
+messages     Enregistrer un commentaire pour voir le "log in".
+moves        Utilisé par certains clients pour savoir la taille de goban.
+observe      Voir une partie.
+open         Etre disponible, ou non, pour des offres de match.
+pair-go      Jeu en équipe avec deux joueurs de chaque côté (comme le "Rengo"). 
+password     Changer votre mot de passe.
+pause        Demande pour que vos partie et pendule attendent votre retour.
+pending      Liste des éléments en attente, comme match ou komi.
+quit         Quitter le serveur.
+rank         Enregistrer votre niveau déclaré.
+refresh      Utilisé par cetains clients pour connaitre le bon goban.
+register     Devenir un membre du Serveur de Go.
+resign       Abandonner une partie au lieu de terminer tous les coups finaux.
+results      Liste les dernière parties jouées sur le serveur ou par un joueur.
+say          Commentaire privé à votre adversaire.
+set          Manipuler les variables de votre compte.
+sgf          Liste les parties enregistrées qu'on peut mailer.
+shout        Dire quelque chose à tous les joueurs, à moins qu'ils utilisent 'censor'.
+stats        Information sur le joueur.
+stored       Liste de parties ajournées pour un joueur.
+tell         Dire quelque chose à un joueur présent sur le serveur.
+time         Afficher le temps restant d'une partie.
+unalias      Supprimer la définition d'un raccourci personnel (inverse de "alias")
+uncensor     Enlever quelqu'un de votre liste "censor".
+undo         Autoriser quelqu'un à rejouer son coup.
+unpause      Relancer la pendule dans une partie (voir "pause").
+uptime       Afficher les statistiques du serveur.
+variables    Montre les définitions des variables d'un joueur.
+who          Liste des connectés. (voir "awho")
+withdraw     Se rétracter sur une requête qu'on a faite (voir pending).
+

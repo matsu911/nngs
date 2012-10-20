@@ -1,0 +1,10 @@
+指令: gshout
+
+用法: gshout message
+
+說明:
+
+  用了這個指令之後, 所有可聽到 gshout 的人都會收到你的 message
+  gshout 的意思是, 與圍棋有關的 shout。
+
+相關指令: shout tell censor variables it alias

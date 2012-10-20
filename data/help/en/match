@@ -1,0 +1,41 @@
+
+USAGE: match opponent color size time byo-yomi
+
+Offers or accepts a game.
+
+QUICK-START EXAMPLE: "match jeff b 19 30 10".  By typing this command, you
+are asking for, or accepting, a game with "jeff."  You will be black, the
+board size will be 19, and each side will get 30 minutes and an additional
+10 minutes byo-yomi time to make 25 moves.  (Hint: use "tell" beforehand
+to negotiate the terms of your game.) If you don't like your opponent's
+suggested time, for example, type the match command using your own
+options.  If you want to refuse, type "decline jeff." 
+
+THE OPTIONS--opponent color size time byo-yomi: "opponent" is the other
+person's account name.  Your "color" can be either "b" or "w", "size" can
+be 9, 13, or 19, "time" is how many minutes each side can play, and "byo-
+yomi" is how many minutes each side can have to make 25 moves, after the
+initial time has been used up or you have successfully completed a byo-
+yomi period.  (If you can't make the full 25 moves within the ten minutes,
+you lose immediately.) Also, none of the numbers here can be fractions. 
+
+HANDICAPS: Black's first move can be "handicap #".  "Handicap 3" would
+mean a handicap of 3 stones.  For more than 9 stones handicap, White
+passes to allow black to place the stones. 
+
+KOMI #: Anytime during the game, komi 5, or komi 5.5, for example, will
+set the komi for 5.5, if both players agree.  Also, see "help komi". 
+
+FINISHING A GAME: It is not necessary to fill in the dame, with one
+exception--you may need to fill in some dame to force the opponent to fill
+points.  When you have no more moves to make, type "pass" and, when two
+passes are made in a row, the scoring begins.  Next, you will see the
+message, "Enter Dead Groups." Either click with your mouse on a dead
+stone, or type the coordinates, and the stone (or group) will disappear. 
+If you make a mistake while scoring, type "undo" to restore the board. 
+(Your client may require you to type "refresh" or "moves" to get the board
+back correctly).  When you are sure that everything is completed, type
+"done" to score. 
+
+SEE ALSO: decline games moves open komi refresh say score tmatch
+

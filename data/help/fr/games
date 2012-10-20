@@ -1,0 +1,17 @@
+Usage: games [mot]
+
+  Liste toutes les parties en cours de jeu sur le serveur PLGS. Voici
+un exemple:
+
+[##]  white name [ rk ]      black name [ rk ] (Move size H Komi BY FR) (###)
+[ 1]      totoro [ 8k ] vs.   ManyFaces [ 9k*] (104   19  3  0.5 10 FI) (  0)
+[ 2]       GoBot [ NR ] vs.       GoBot [ NR ] (129   19  0  0.0  1 TI) (  1)
+[ 3]       yahoo [ 1k ] vs.         orb [ 5k*] ( 54    9  0  0.5 10  I) (  0)
+[ 4]          wu [ 4d*] vs.  dotingring [ 1d*] ( 11   19  0  0.5 10  I) (  0)
+
+Ou bien la commande "games wu" vous donne:
+
+[##]  white name [ rk ]      black name [ rk ] (Move size H Komi BY FR) (###)
+[ 4]          wu [ 4d*] vs.  dotingring [ 1d*] ( 16   19  0  0.5 10  I) (  0)
+
+Voir Aussi:  match

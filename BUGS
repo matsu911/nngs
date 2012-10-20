@@ -1,0 +1,78 @@
+
+---------------------------------------------------------------------
+make failed command responses work correctly:
+#> test
+: Command failed.
+#> ahelp
+: Inaccessible command.
+#> blah
+: Command failed.
+Solved, 20020410, AvK
+---------------------------------------------------------------------
+#> toggle quiet
+Set quiet to be False.
+#> toggle quiet
+Set quiet to be False.
+Solved, 20020410, AvK
+---------------------------------------------------------------------
+stats and rating often give figures which differ on the last digit.
+Right now (Mar 18 11:09:41 2001 GMT) this bug is visible
+for user "owl".
+
+You have 1 messages.  Type "messages" to display them
+NNGS #1623 Tue Dec 26 08:59:39 CST 2000 (entry on [Ignore this])
+#> stats owl
+Player:      owl
+Game:        go (1)
+Rating:      4k*   2603
+Rated Games:      41
+Rank:  6k   2603
+Wins:         251
+Losses:       247
+Last Access(GMT):   (Not on)    Sun Mar 18 12:47:29 2001
+Last Access(local): (Not on)    Sun Mar 18 06:47:29 2001
+Address: martens@manhattan.lt 
+Reg date: Thu Sep 19 22:39:10 1996
+Rank Info: Like HedgePig, only fewer spikes and more brain ;)
+Games as B:  227   Games as W : 271 
+Full Name:   rimas
+Info: Without the heart
+Info: there would be no understanding
+Info: between hand and mind.
+#> ratings owl
+ratings: Unknown command.
+#> rating owl
+owl: 4k* (26.04)
+Range: 0.58 stones (-0.27 +0.31), High confidence
+Rated games: 41 (24 wins, 17 losses)
+
+#> messages
+Messages:
+eek at Wed Mar 14 17:13:59 2001 GMT: Round off error: stats owl shows 
+Rating 2599, rating owl shows (26.00).
+Please type "erase" to erase your messages after reading
+#>
+---------------------------------------------------------------------
+<ooops> I have a question is.. in network.c
+<ooops> if WRITE_AT_ONCE turns on
+<ooops> many client can't process server messages correctly
+<AvK> fix the client ...
+	This probably has to do with line buffering, and the
+	(lack of) message bounderies in TCP. In that case, there is 
+	no way to solve this by changing the server.
+	I looked it up, IMO there is no need to activate WRITE_AT_ONCE.
+	Setting it results in write()s to the socket for every
+	call to one of the pprintf() functions.
+	Not setting it will buffer the output until the select-loop
+	calls serviceWrite for this fd.
+	Since there is only one for(fd=0; fd <= max_fd; fd++){} loop 
+	inside the select() loop, the serviceWrite() may be delayed
+	until after the next select() call, depending on the order of
+	fd's.
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+

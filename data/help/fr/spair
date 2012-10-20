@@ -1,0 +1,18 @@
+
+Usage: spair blanc blanc noir noir
+
+Cette commande est pour 4 joueurs voulant commancer une partie de
+pair-go.
+
+Exemple:  spair tromp gege geek talby
+
+Cela donnera les instructions à tromp, gege, geek, et talby sur comment
+commencer une partie de pair-go. tromp et get seront l'équipe Blanc, et
+geek et talby seront l'équipe Noir.
+
+Notes: Vous devez être l'un des 4 joueurs listés dans la commandes
+       spair.
+       Cette command ne commence *pas* la partie, elle fournit seulement
+       les instructions.
+
+Voir Aussi: pair, match

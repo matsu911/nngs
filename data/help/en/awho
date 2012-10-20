@@ -1,0 +1,85 @@
+
+USAGE: awho
+ALIAS: user users
+
+Supplements the old "who" command which, on NNGS, doesn't give enough
+information for choosing an opponent.  One of the most frequently used
+commands, "awho" gives a list of players currently on the server in order
+of ladder position. 
+
+QUICK-START EXAMPLES:
+
+  awho        gives a list of everyone on the server, in Ladder19 position
+              order, with special information added.
+  awho 9      gives the same list in Ladder9 position order
+  awho f      lists those not playing, in Ladder19 position order
+  awho *      lists ladder games now happening
+  awho r      (same as above) lists ladder games now happening
+
+THE OPTIONS (which can be changed with the "toggle" command):
+  awho        gives a complete list of all players and games in Ladder19
+              position order
+  9           gives a complete list of all players and games in Ladder9
+              position order
+  f           shows only free players (not playing)
+  r           show only registered players
+  u           show only unregistered players
+
+UNDERSTANDING THE "AWHO" LISTING:
+
+ 1  2  3  4         5    6   7   8
+ =  =  =  =         =    =   =   =
+
+ Info     Name      Rank 19  9   Rank Info
+ -------- --------- ---- --- --- ----------------------------
+  * --  1 daveg      1d  2   0   IGS 1d*, AGA 4d, Korea 3gup
+     1 -- geek       4k  5   3   2k AGA
+  ! -- -- ManyFaces  13k 6   0   13k
+  * --  1 john       3k  17  1   6d
+    -- -- todd       7k  0   0   Amanda
+
+EXPLANATION OF "AWHO" EXAMPLES ABOVE:
+
+Daveg, the first entry, is playing in game 1, which is a ladder game as
+evidenced by the "*".  He claims 1 dan, is No. 2 on the Ladder19 and has
+not entered the Ladder9, and explains that he is 1 dan* on IGS, an AGA 4
+dan, and a 3 "gup" in Korea. 
+
+The second player, geek, is observing game 1, reports himself as 4 kyu, is
+No. 5 on the Ladder19 and No. 3 on the Ladder9, and explains that he has a
+3 kyu rating from the AGA (American Go Association). 
+
+ManyFaces is open to playing, according to the "!", is reported by his
+programmer as 13 kyu, is No. 6 on the Ladder19 and has not yet entered the
+Ladder9, and repeats his 13k claim without further explanation. 
+
+John is playing daveg in game 1 which, as mentioned earlier, is a ladder
+game, reports himself as 3k, is No. 17 on the 19 ladder and No. 1 on the 9
+ladder, doesn't want a game, and explains himself as really being 6 dan
+(huh?). 
+
+Todd reports himself as 7 kyu, and explains his rating with the word
+"Amanda" (huh?). 
+
+  1. Under the first heading, "Info," you find out about the player's
+     present situation:
+
+     S   Shouts off      Can't hear any shouts
+     Q   Quiet           Not listening to messages about who is logging on or
+                         off, or games starting and ending
+     X   Not interested  The person is not accepting matches
+     !   Open            Available to play a game
+     *   Ladder game     Person is playing in a ladder game
+
+  2. Under the second heading, the number of the first game being observed.
+  3. The number of the game the person is playing, if any.
+  4. "Name" refers to the person's handle.
+  5. Gives the rank as recorded by the person in the stats (currently
+     based on their own opinion).
+  6. Position in the 19 X 19 ladder. ("0" means that they have not entered the
+     ladder.)
+  7. Position in the 9 X 9 ladder. ("0" means that they have not entered the
+     ladder.)
+
+SEE ALSO: who best stats toggle games rank ladder ladder19 ladder9
+

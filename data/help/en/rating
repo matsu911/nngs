@@ -1,0 +1,14 @@
+
+USAGE: rating [player]
+
+This command prints information about a player's rating.
+
+Example:
+
+  #> rating pem
+  pem: 3k* (27.66)
+  Range: 0.28 stones (-0.14 +0.14), Very high confidence
+  Rated games: 83 (39 wins, 44 losses)
+
+SEE ALSO: suggest orating
+

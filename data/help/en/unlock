@@ -1,0 +1,8 @@
+
+USAGE: unlock n
+
+This command unlocks a channel so others can enter. You must be in
+the channel you are locking or unlocking.
+
+SEE ALSO: ctitle inchannel channel lock dnd
+

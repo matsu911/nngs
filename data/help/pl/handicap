@@ -1,0 +1,16 @@
+Sk³adnia:  HANDICAP [ilosc_kamieni]
+-
+  Umieszcza kamienie handicapowe na planszy. Tak komenda jest dostêpna tylko
+przed wykonaniem pierwszego ruchu. Komenda ta dostêpna jest tylko dla gracza
+graj¹cego Czarnymi.
+
+   Przyjête jest, i¿ mocniejszy gracz decyduje o wysokoœci handicapu.  
+Na serwerze WING komenda EMATCH pozwala na automatyczne ustawienie handicapu
+i komi tak aby gra by³a równa.  
+-
+ Dla prawid³owego ustawienia komi u¿ywa siê komendy 'komi [wartosc_komi]'  
+-
+Przyk³ady:   HANDICAP 4
+             KOMI 5.5
+-
+Zobacz tak¿e:  MATCH, KOMI, ADJOURN

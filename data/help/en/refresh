@@ -1,0 +1,8 @@
+
+USAGE: refresh [game]
+
+Redisplays the given game and position. If 'game' is omitted, then the
+current game you are playing or observing will be redisplayed.
+  
+SEE ALSO: games observe
+

@@ -1,0 +1,27 @@
+指令: suggest
+
+用法: suggest [user]
+
+說明:
+
+  suggest 指令可以使系統根據 user 與自己 rating (認定棋力) 的差值, 提供建議
+的局差。用 stats 指令可以查個人的 rating 值。
+
+  注意: 這個指令必須自己及欲查詢之對象皆為 rated player。
+
+  實例: 首先, 我是 Syncanph, 認定棋力 2d* (3150)
+        現在想跟 Cut 5k* (2539) 下, 可是不知道局差應該如何,
+        輸入: suggest Cut
+
+  結果:
+   I suggest that you play White against Cut:
+   For 19x19:  Give 7 handicap stones and set komi to 4.5.
+   For 13x13:  Give 3 handicap stones and set komi to 7.5.
+   For   9x9:  Give 2 handicap stones and set komi to 5.5. 
+ 
+   系統建議對 Cut 時我持白, 19 路棋局應讓七子, 黑棋貼 4 目半。其餘類推。
+
+   按照 suggest 提供的局差來對局, 對認定棋力的計算影響最大, 也就是說, suggest
+提供最合理的局差 (或是說按 suggest 對局將調整雙方 rating 到合理距離)。
+
+參照: ratings

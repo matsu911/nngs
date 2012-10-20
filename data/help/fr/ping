@@ -1,0 +1,5 @@
+Usage: ping
+
+  Renvoie simplement la  chaine PONG. Vous pouvez tester votre
+connection au serveur avec cette commande.
+

@@ -1,0 +1,9 @@
+
+USAGE: title text
+
+This sets the title of the game you are playing. This is often used for
+teach games (like when GoBot replays games), but can be set for any game.
+The title is printed, together with the event, by the command "ginfo".
+
+SEE ALSO: ginfo event
+

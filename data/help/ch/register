@@ -1,0 +1,31 @@
+指令: register
+
+用法: register handle email_address your_real_name
+
+說明:
+
+建立一個新帳號:
+ 
+   handle           你所要註冊的帳號
+   email_address    你的電子郵件信箱
+   your_real_name   你的本名           (剩餘字串)
+
+我們將會馬上寄一封電子郵件到你的電子郵件信箱, 當你收到後請用這個帳號和收
+到的密碼登錄, 並請在登錄後利用 password 來更改你的密碼.
+
+例子:
+
+  "Register jmkuo ravel@micro.ee.nthu.edu.tw Jim-ming Kuo (郭俊明)"
+
+  將會以 jmkuo 註冊一個新帳號, 並把登錄資料寄給 ravel@micro.ee.nthu.edu.tw,
+  而你的真實姓名將為 Jim-ming Kuo (郭俊明)
+
+注意:  
+
+  真實姓名是使我們之間的稱呼更為友善, 例如你可以叫 jmkuo 為郭先生, 郭同學,
+  俊明, 小明等. :)
+
+  請注意你的電子郵件信箱是否正確.
+
+  以上個人資料將可以用命令更改, 如果我們還沒寫完, 請寄一封電子郵件給 
+  u830242@oz.nthu.edu.tw, 我們將會替你更改.

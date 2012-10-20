@@ -1,0 +1,18 @@
+   
+   TOGGLE AUTOMAIL
+   
+    Cette commande a pour effet que PLGS vous envoie
+automatiquement vos parties par mail une fois que vous les avez
+achevées. Si vous recevez déjà ces e-mails, la même
+commande annullera l'envoi automatique par le serveur.
+   
+   Pour visualiser l'état courant de votre AUTOMAIL, et d'autres
+commandes similaires qui déterminent le comportement de votre
+compte sur PLGS, tapez:
+
+   VARIABLES
+   
+   
+Voir Aussi: mail variables
+   
+

@@ -1,0 +1,7 @@
+Usage: say message
+
+  Transmet votre message à votre adversaire courant si vous jouez une
+partie. Si vous n'êtes pas en train de jouer, le message est envoyé à
+votre précédent adversaire de la session PLGS courante.
+
+Voir Aussi: tell censor kibitz shout

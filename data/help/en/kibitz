@@ -1,0 +1,17 @@
+
+USAGE: kibitz message
+
+Sends your message to all the observers of a game.
+
+' is an alias for kibitz (and so is "). Both end up in the game record.
+
+If observing multiple games, you can specify the game number to direct
+your kibitz to the correct game.  To kibitz to game 4, you would type:
+
+     kibitz 4 c3 is a good move
+or
+
+     ' 4 c3 is a good move
+
+SEE ALSO: censor observe
+

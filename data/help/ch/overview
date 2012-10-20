@@ -1,0 +1,79 @@
+
+
+                               指令總覽
+                        所有可用之指令簡要解說
+                            For LGS Users
+
+注意: 對下列大部份的指令來說, "help command" 將給你完整的解說, 例如:
+      help who, help rank, help match, help adjourn。
+
+accept       接受一項要求 (match, komi, done, 等等)
+addtime      下棋時增加對手的時間。
+adjourn      要求打掛, 以後再下。
+admins       列出線上可提供幫助的系統管理者。
+ayt          ("Are you there?")  檢查系統連線是否正常。
+alias        個人的指令縮寫。
+all          列出所有觀看同一棋局者。
+awho         列出所有在線上的使用者, 資訊較 "who" 更為詳細。
+best         列出站上某些棋力的棋友名單。
+busy         當你不在時, 給別人看看你正在忙什麼。
+censor       如何建立拒絕來往戶。
+channel      進入或離開一個頻道。
+commands     列出所有可用的指令。
+credits      關於這個站的功臣。
+date         顯示現在的時間日期。
+decline      不接受別人的請求。
+drop         離開排名賽。
+erase        清除你所有的訊息 (messages)。
+games        列出正在進行的棋局。
+handles      根據電子郵件信箱的關鍵字來找人 (類似 IGS 的 "find")
+help (or ?)  列出所有求助檔, 或閱讀一求助檔。
+extra        更進一步了解這裡。
+motd         觀看 "Message of the Day"
+newbie       新手上路。
+overview     就是列出這個表啊!
+welcome      歡迎新的使用者, 請先大略看看這裡!
+inchannel    列出頻道裡的人們。
+info         設定個人的資訊。
+it           一種特別形式的吼叫。
+join         加入持續進行中的排名賽。
+kibitz       在觀棋時發表高見, 下棋的人聽不見你。
+ladder       排名賽專用指令。
+lanugage     設定您的語言環境。
+last         列出最後幾次上下線的紀錄。
+lbest        列出排名賽部分排名名單。
+load         重新開始未完成而打掛的棋局。
+logons       列出一位使用者上站的紀錄。
+mhelp        將指令的求助檔寄回自己的信箱。
+match        邀請別人下棋。
+messages     留言給別人。
+moves        列出某局目前進行的手數。 
+note         留話在留言板上。
+observe      觀看一局棋。
+open         接受或不接受人家邀請下棋。
+pair-go      一隊兩人的棋賽 (同 "Rengo")。 
+password     改變您的密碼。
+pause        下棋中要求時間暫停。
+pending      列出別人對你的請求, 或是你對別人的。
+quit         離開這裡。
+rank         自己設定棋力。
+refresh      將一局棋重新顯示在你的螢幕上。
+register     成為本站的一員, 擁有自己的紀錄。
+resign       在下完一盤棋之前, 便投子了。
+results      列出所有棋賽結果。
+rule         切換算地規則方法。
+say          在下棋時直接對對手說話。
+set          設定一些變數, 字串, 作為個人的資料。
+sgf          列出完成的棋局, 好讓人可以寄回打譜。
+shout        叫給大家聽, 除非他並不想聽。
+stats        列出一位使用者詳細的資料。
+stored       列出一位使用者打掛的棋局。
+tell         對線上其他使用者說話。
+time         下棋時, 顯示你所剩的時間。
+unalias      取消一項指令的縮寫設定。
+uncensor     在你的拒絕來往名單中移除一位使用者。
+undo         幫對手悔棋。
+unpause      在下棋時繼續計時。
+uptime       顯示系統狀態。
+who          列出站上的使用者。
+withdraw     取消你自己所提出的要求。

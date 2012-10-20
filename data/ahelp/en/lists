@@ -1,0 +1,15 @@
+
+You can use +/-/= to change and view the lists.
+
+Examples:
+
+  +listname member    (Add member to listname)
+
+  -listname member    (Remove member from listname)
+
+  =listname           (View the members of listname)
+
+  =                   (View the names of all the lists and see level)
+
+NOTE: The lists are not actually used (except the list "admin").
+

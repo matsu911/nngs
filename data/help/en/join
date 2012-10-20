@@ -1,0 +1,10 @@
+
+USAGE: join [ladder]
+
+The join command allows you to join the specified ladder, or, with no
+parameters, lists the available ladders to join.
+
+Example: join ladder9 
+
+SEE ALSO: drop match ladder9 ladder19
+

@@ -1,0 +1,22 @@
+
+Usage: sresign nom_du_blanc-nom_du_noir
+
+Cette commande permet d'abandonner une partie sauvegardée.
+
+Exemple:  D'abord, trouvez la partie que vous voulez abandonner en
+tapant "stored". Si vous êtes "axe" et que vous avez une partie contre
+ManyFaces sauvegardée, vous verriez
+
+Stored games for axe:
+             axe-manyfaces
+Found 1 stored games.
+
+Si vous vouliez abandonner cette partie, (c'était une partie à 15
+pierres de handicap), votre adversaire n'est pas tenu d'être là. Vous
+pouvez simplement taper:
+
+sresign axe-manyfaces
+
+et tout est réglé pour vous.
+
+Voir Aussi: resign, match, stored

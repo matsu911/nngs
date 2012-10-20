@@ -1,0 +1,9 @@
+
+USAGE: unhide channel
+
+RESTRICTED TO ADMINISTRATORS.
+
+Unhides the channel.
+
+SEE ALSO: channels hide
+

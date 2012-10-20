@@ -1,0 +1,4 @@
+Usage: email [adr_mail]
+
+  Remplit l'adresse email du joueur à "adr_mail". Si on omet adr_mail
+alors l'adresse du joueur est effacée.

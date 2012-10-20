@@ -1,0 +1,78 @@
+ZESTAWIENIE KOMEND
+   
+
+UWAGA: Dla wiêkszoœci z poni¿szych komend 'help nazwa_komendy' pozwoli Wam zapoznaæ siê z dok³adniejszym opisem danej komendy.  
+   
+help welcome Strona dla osób nowych na serwerze
+accept       Akceptuje ofertê gry.
+addtime      Dodaje przeciwnikowi czas.
+adjourn      Proœba o odroczenie gry. 
+admins       Lista obecnoœci administratorów.
+alias        Alias (skrót) komendy.  
+all          Lista osób obserwuj¹cych dan¹ grê. 
+automail     Powoduje, i¿ twoje gry s¹ automatycznie wysylane na Twoje konto awho         Lista osób obecnych na serwerze  
+ayt          Kontrola aktywnoœci po³aczenia.  
+busy         Ustawienie informacji o chwilowej nieobecnoœci
+censor       Blokowanie osób niepo¿¹danych 
+channel      Wejœcie lub wyjœcie na kana³ (chat-room) 
+commands     Lista dostêpnych komend 
+credits      Autorzy programu 
+date         Wyœwietla datê i godzinê GMT 
+decline      Odmowa akceptacji gry
+done         Komenda zakonczenia gry (po usuniêciu martwych kamieni) 
+erase        Usuwa wiadomoœci z Twojej skrytki pocztowej. 
+etiquette    Informacja o sposobie zachowania siê na serwerze 
+games        Lista gier. 
+handles      Wyszukiwanie graczy wg. Adresu e-mail.  
+help (lub ?) Pomoc. 
+? psg        Informacja o Polskim Stowarzyszeniu Go 
+? changes    Ostatnie zmiany na serwerze 
+? extra      Nietypowe cechy serwera  
+? login      Winieta  
+? motd       Pokazuje "Informacje Dnia" 
+? newbie     List of commands for a person new to the Internet
+? opening    Informacja o otwarciu serwera 
+? overview   Lista komend 
+? sourcecode Kod Ÿród³owy serwera.  
+? welcome    Strona dla osób nowych na serwerze
+inchannel    Lista osób na kanale (w chat-roomie) 
+info         Ustawia informacjê o graczu 
+it           Dzia³a jak shout lecz poprzedzone jest Twoim imieniem. 
+kibitz       Komentarz obserwowanej gry (gracze go nie widz¹)
+last         Lista osób ostatnio zalogowanych na serwerzez 
+load         Wznowienie przerwanej gry 
+logons       Przegl¹d aktywnoœci danego gracza  
+mail me      Przesy³anie zapisów gier  
+mhelp        Wysy³a plik pomocy pod Twój adres  
+match        Oferta gry
+messages     Wewnêtrzna poczta na serwerze 
+observe      Obserwacja gry 
+open         Ustawia czy mo¿na oferowaæ Ci gry czy nie 
+pair-go      Gra parami 
+password     Zmiana has³a 
+pause        Proœba o zatrzymanie zegara 
+pending      Lista elementów oczekuj¹cych
+percent      Okreœla Twoj¹ pozycje rankingow¹ wœród graczy
+pzz          Przesy³a informacje w formie reakcji gracza
+quit         Koniec sesji na serwerze
+rank         Ustal swoj¹ si³ê gry
+register     Rejestracja konta  
+resign       Poddanie partii 
+results      Wyniki gier  
+say          Rozmowa podczas gry z przeciwnikiem  
+set          Ustawia zmienne 
+sgf          Lista gier dostêpnych do wysy³ki  
+shout        Wiadomoœæ do wszystkich graczy 
+stats        Informacja o graczu 
+stored       Lista gier, których dany gracz nie zakoñczy³  
+tell         Rozmowa z wybranym graczem 
+time         Wyœwietla pozosta³y czas gry 
+unalias      Cofniêcie ustawienia skrótu  
+uncensor     Cofniêcie blokowania osoby 
+undo         Cofniêcie ruchu 
+unpause      uruchomienie zegara po zatrzymaniu go komend¹ pause 
+uptime       Statystyka serwera 
+variables    Informacja o zmiennych  
+who          Lista graczy obecnych na serwerze
+withdraw     Wycofanie oferty gry 
+

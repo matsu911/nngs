@@ -1,0 +1,36 @@
+指令: stats
+
+用法: stats [name]
+
+說明:
+
+這個指令讓你閱讀自己的資料, 如果加上 name, 則給你 name 這個人的資料。
+
+範例:
+
+:-) stats Syncanph
+使用者:       Syncanph
+選擇類型:     圍棋 (1)
+認定棋力:      2d*   3150
+有效局數:      7
+自定棋力:  1d   3150
+勝:       21
+敗:       8
+發呆時間:  (在線上) 0:00
+電子郵件信箱: u830242@oz.nthu.edu.tw [140.114.221.23]
+註冊日期:     Fri Feb  9 11:59:10 1996
+九路棋局排名順位:   Number One
+十九路棋局排名順位: Number One
+關於我的棋力: Some moves I can attend 9p level :)
+持黑局數:  11      持白局數: 18
+等級: 系統管理員.
+語言: 中文
+全名:   Syncanph Xie
+資訊: if u see my idling for more than 10mins, I must be sleeping :)
+資訊: I'm 80% absent whenever Syncanph is on.
+資訊: 我不在站上時若有事可留 message 給我或 note 在留言板上
+
+應該一目瞭然吧!
+
+相關指令:  Info ladder rank
+

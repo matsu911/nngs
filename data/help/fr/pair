@@ -1,0 +1,52 @@
+
+   PAIR numéro_de_partie
+
+Entame une partie d'équipe avec deux joueurs de chaque côté. Les membres
+d'une équipe jouent noir chacun leur tour, les membres de l'autre équipe
+faisant de même avec blanc. Cette variation du go est aussi connue sous
+le nom de "Rengo".
+
+ETAPES POUR COMMENCER UNE PARTIE DE RENGO:
+
+   1) Quatre personnes décident de jouer. Par exemple: talby et axe
+   forment la première équipe, avec gege et rascal dans la seconde.
+   TRUC: Le canal 69 est réservé aux parties de rengo.
+
+   2) Etiquettons les paires. Par exemple: talby et axe sont dans
+   l'Equipe_1, jouant noir, et s'appellent N1 et N2. Gege et rascal sont
+   dans l'Equipe_2, jouent Blanc et s'appellent B1 et B2.
+
+   3) Maintenant vous pouvez exécuter les commandes de match normales.
+   N1 et B1 commencent un match l'un contre l'autre, et N2 et B2 en
+   commencent un l'un contre l'autre. Dans notre exemple, talby et
+   gege commencent une partie, et axe et rascal en commencent une autre.
+
+   4) B1 (gege) tape "pair numero_de_la_DEUXIEME_partie". Par exemple en
+   tapant la commande "who", il découvre que la partie entre talby et
+   gete est #17, alors la commande (sans les guillemets) est "pair 17".
+
+   5) B2 (rascal) reçoit un message que gege voudrait une partie de
+   pair-go, et l'on attend donc que B2 tape "pair
+   numéro_de_la_PREMIERE_partie". (Le serveur fourni aussi le numéro de
+   partie entre axe et rascal: "19" par exemple). La commande (sans les
+   guillemets) serait "pair 19".
+
+   6) La partie commence maintenant! Le serveur signalera à chaque
+   joueur son tour de jouer dans l'ordre suivant: N1, B1, N2, et B2.
+   Aussi, le serveur vous dira si vous vous trompez de tour.
+
+COMMENTAIRES POUR LES KIBITZEURS: officiellement, deux parties sont
+crées avec des enregistrements de coups identiques, et les remarques de
+kibitz pour chaque partie seront stockées séparément. De toutes façons,
+pendant la partie, le jeu que vous avez choisi d'observé importe peu,
+parce que tous les kibitzes seront visibles.
+
+AJOURNEMENT D'UNE PARTIE DE RENGO: en ajournant l'une des deux parties,
+l'autre est ajournée automatiquement. N'importe lequel des joueurs peut
+ajourner la partie.
+
+CHARGEMENT D'UNE PARTIE DE RENGO AJOURNEE: après le chargement des deux
+parties, revenez à l'instruction numéro 4. (Bien sur, l'ordinateur vous
+signalera à qui c'est le tour de re-jouer).
+
+Voir Aussi: match, load, tell, awho, spair

@@ -1,0 +1,9 @@
+
+USAGE: censor [user]
+
+Places 'user' on your Censor List. The Censor List consists of players
+from whom you will hear - and want to hear - NOTHING. If 'user' is omitted,
+your Censor List is displayed on the screen.
+
+SEE ALSO: uncensor tell shout say
+

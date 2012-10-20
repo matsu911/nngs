@@ -1,0 +1,8 @@
+
+USAGE: all [game]
+
+If a 'game' is specified, all users observing that game are
+displayed. If only one game is observer, 'game' can be omitted.
+
+SEE ALSO: observe
+

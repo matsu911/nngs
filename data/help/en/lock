@@ -1,0 +1,9 @@
+
+USAGE:  lock n
+
+This command locks channel 'n' from further people entering.  Please do
+not join a bunch of channels and lock them all, as admins can override 
+it at anytime.  You must be in the channel you are locking or unlocking.
+
+SEE ALSO: ctitle inchannel channel unlock dnd
+

@@ -1,0 +1,23 @@
+----------------------------------------------------------
+admins.howto
+How to set up administrator accounts on the server
+----------------------------------------------------------
+
+- log in to server (as 'billy' for example)
+- register the user
+#> register billy user@domain.org Billy the Kid
+
+- logfile says:
+Mail command: /bin/mail -s "NNGS Worldwide Account Created (billy)"
+user@domain.org Mon Jul  2 14:20:39 2001
+NewPlayer: billy [user@domain.org] Admin User (arelf) by user testuser
+Mon Jul  2 14:20:39 2001
+
+- edit the player date file ($prefix/share/nngssrv/players/b/billy)
+- add 'admin_level: 100' to the end of the file
+Note: "nrat/command.h" defines the admin levels
+
+- edit $prefix/share/nngssrv/lists/admin and add the name of the user
+  to the list
+
+

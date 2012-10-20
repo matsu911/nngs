@@ -1,0 +1,20 @@
+
+ usage:  rating [nom]
+
+  Cette commande vous donne une info complète sur les classements des
+joueurs. Si aucun nom n'est précisé, vous obtiendrez votre propre
+classement.
+
+ Exemple:  rating niceguy
+niceguy: 4d* (3312) Rated Games: 61
+Confidence = 98.89 percent
+All rated wins: 46
+All rated losses: 26
+Rated wins versus rated players: 41
+Rated losses versus rated players: 20
+High confidence wins: 11
+High confidence losses: 7
+
+
+Voir Aussi "help ratings" pour plus d'informations.
+

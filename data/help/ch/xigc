@@ -1,0 +1,17 @@
+讓 xigc 可以使用中文:
+
+xigc 中所輸入的中文第八個 bit 會被濾掉,
+有時要解釋個術語或人名用英文還真彆扭,
+改法很簡單,
+xigc.c 中的 read_filter 函數,
+有一行 for( i=0; i<ret; ++i ) str[i] &= 0x7f;
+把它 remark 掉就可以用中文來 tell 了.   
+
+  或者:
+
+在 Makefile 裡的
+STD_DEFINES
+加入 -DCHARS_8_BIT 即可.  
+
+當然, 你必須在中文的 terminal 下 (如 crxvt or cxterm) 跑 xigc,
+中文才能正確地顯示..。

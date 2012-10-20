@@ -1,0 +1,63 @@
+
+USAGE: who [options]
+ALIAS: players
+
+Lists the players currently on the server.  This is one of the most
+frequently used commands. 
+
+QUICK-START EXAMPLE: 
+  who         gives you a list of everyone on the server in order or arrival
+  who o       list of those interested in a game
+  who all o   list all of those interested in a game
+
+THE OPTIONS (which can be changed with the "toggle" command, or combined): 
+  who         gives a complete list and a total of all players and games in
+              alphabetic order
+  A|a         ("A" or "a" or "all") all
+  f           shows only free players (not playing)
+  l           looking for games (more eager than "open")
+  o           open to playing
+  r           show only rated players (with a *)
+  R           show only registered players
+  U           show only unregistered players
+
+
+
+
+UNDERSTANDING THE WHO LISTING:    1   2  3  4          5     6
+                                  -   -  -  -          -     -
+                                 Info      Name       Idle  Rank
+                                  Q   3 -- tromp       1m    1d
+                                  !  -- -- todd        0s    7k
+                                     -- 10 geek       17s    4k
+                                  QX -- -- daveg       3h    1d
+
+  QUICK EXAMPLES: The first player, tromp, is not listening to messages
+  about other players, can not see logins and logouts, is watching game 3,
+  has been idle for one minute and says that he is 1 dan.  Todd is looking
+  for a game, has not been idle, and claims 7 kyu.  Geek is watching game
+  10, made his last keystroke 17 seconds ago, and claims 4 kyu.  Daveg
+  doesn't want to know who is logging in or out, or who is starting or
+  ending a game, doesn't want a game, hasn't been active for three hours,
+  and claims 1d.
+
+  1. Under the first heading, "Info," you find out about the player's 
+     present situation:
+
+     S   Shouts off      Can't hear any shouts  
+     Q   Quiet           Not listening to messages about who is logging on or 
+                         off, or games starting and ending
+     X   Not interested  The person is not accepting matches
+     !   Open            Available to play a game
+
+  2. Under the second heading, the number of the first game being observed.
+  3. The number of the game the person is playing, if any.
+  4. "Name" refers to the person's handle.
+  5. "Idle" refers to how many seconds, minutes, hours, or days the person
+     has not entered any keystrokes or commands. (Useful for knowing who
+     might be active or available.)
+  6. Gives the rank as recorded by the person in the stats (currently
+     based on their own opinion).
+
+SEE ALSO: awho stats toggle games rank ladder ladder19 ladder9
+

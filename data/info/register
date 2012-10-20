@@ -1,0 +1,23 @@
+
+   REGISTER handle email_address real_first_name real_last_name
+
+Create an account with the handle you wish to be called by while you are
+on the server.  After typing this command, you will receive a password at
+the email address you have given.  As soon as you get the message, usually
+within a few minutes, you can log on at FIGS using the handle that you
+have asked to use and the password you have received, both of which will
+be in the letter.  (Please record them immediately.)
+
+QUICK-START EXAMPLES: 
+
+  "Register geek geek@imageek.york.cuny.edu Erik Van Riper": will register
+  the handle "geek" and send the password to "geek@imageek.york.cuny.edu"
+  with the real full name of "Erik Van Riper". 
+
+  "Register xzhou xunzhou@CS.SunySB.edu Zhou Xun": will register the handle
+  "xzhou" and send the password to "xunzhou@CS.SunySB.edu Zhou Xun" with
+  the real full name of "Zhou Xun". 
+
+NOTE:  We ask for your name so we can say "Hi Erik!" and be more friendly.  :)
+
+PLEASE BE CAREFUL to spell your email address correctly.

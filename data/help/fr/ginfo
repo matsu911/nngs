@@ -1,0 +1,9 @@
+
+usage:  ginfo [#]
+
+ginfo imprime le titre de la partie que vous observez (si elle en a un).
+
+Autrement, vous pouvez préciser un numéro de partie en cours pour
+obtenir son titre (si elle en a un).
+
+Voir Aussi:  teach title

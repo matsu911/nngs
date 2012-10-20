@@ -1,0 +1,46 @@
+
+   MATCH adversaire couleur taille temps byo-yomi
+
+Vous offrez ou acceptez une partie.
+
+EXEMPLE RAPIDE:
+    "match jeff b 19 30 10"
+    En tapant cette commande, vous demandez, ou acceptez une partie avec
+"jeff". Vous serez noir, la taille du plateau sera 19, et chaque côté
+aura 30 minutes et un byo-yomi supplémentaire de 25 minutes pour 10
+coups. (Truc: utilisez "tell" avant cela pour négocier les termes de
+votre partie).  Si vous ne voulez pas du temps proposé par votre
+adversaire, par exemple, tapez la commande "match" avec vos propres
+options. Si vous voulez refuser, tapez "decline jeff".
+
+LES OPTIONS --adversaire couleur taille temps byo-yomi:
+"adversaire" est le nom de compte de l'autre personne. Votre couleur
+peut être soit "b" soit "w", "taille" peut être 9, 13, ou 19, "temps"
+est le nombre de minutes pendant lesquelles chacun peut jouer, et
+byo-yomi est le temps pendant lequel chacun peut avoir à jouer 25 coups,
+après que le temps initial se soit écoulé ou que vous ayé terminé un
+byo-yomi. (Si vous ne pouvez pas jouer vos 25 coups avant la fin du
+byo-yomi, vous perdez immédiatement). Aussi, aucun des nombres ici ne
+peut être une fraction.
+
+HANDICAPS: Le premier coup de noir peut être "handicap #". "Handicap 3"
+signifierait un handicap de 3 pierres. Au delà de 9 pierres de handicap,
+blanc passe pour autoriser noir à placer les pierres.
+
+KOMI #: A tout moment pendant la partie, komi 5, ou komi 5.5, par
+exemple, placera le komi à 5.5, si les deux joueurs sont d'accord.
+Voir aussi,"help komi". 
+
+TERMINER UNE PARTIE: Il n'est pas nécessaire de remplir les dame, à une
+exception près--vous pourriez vouloir remplir des dame pour forcer votre
+adversaire à couvrir des points. Lorsque que vous n'avez plus de coup à
+jouer, tapez "pass" et, lorsque deux "pass" sont fait à la suite, le
+décompte commence. Ensuite, vous verrez le message, "Enter Dead Groups".
+Soit vous cliquez avec votre souris sur une pierre morte, ou bien vous
+tapez les coordonnées, et les pierres (ou le groupe) disparaitront. Si
+vous faites une erreur pendant le comptage, tapez 'undo' pour rafraichir
+le plateau. (Votre client peut vous demander de taper "refresh" ou
+"moves" pour retrouver le plateau correctement).  Quand vous êtes sûr
+que tout est terminé, tapez "done" pour le score. 
+
+Voir Aussi: decline games moves open komi quiet refresh say score verbose

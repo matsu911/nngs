@@ -1,0 +1,48 @@
+-------------------------------------------------------------------
+-- THANKS
+-------------------------------------------------------------------
+
+Thanks to the people listed here, we currently enjoy playing go
+online.  If you ever run into them, please by them a beer (or two).
+And don't forget the people listed in 'AUTHORS' ...
+
+
+The original NNGS programming team:
+-----------------------------------
+Todd Cooper, Bill Shubert, Fred R. Stearns, John Tromp, Erik Van Riper
+
+[for copyright information and the current programming team,
+ please see the file 'AUTHORS']
+
+
+Help Files:
+-----------
+David Godinger
+
+
+Support and information:
+------------------------
+John Bate        John Bolton     Marc Gonzalez Bulma Joseph W. Carl Jr.
+J.H.N Chin       Stephen Coffin  Daryl Essam         David Fotland
+Christian Haider Eric Hoffman    Ton Hospel          Man Li
+Per-Erik Martin  David Mechner   John Neil           Maury Ostroff
+Dan Putnam       Stephen Richard Norman Richards     Bill Taylor
+Ken Warkentyne
+
+
+We at NNGS wish to credit the Free Internet Chess Server folks for
+giving us their source code to start from.  Thank you!
+
+
+Other Credit:
+-------------
+
+  Michael Moore  -   Progenitor of the chess server idea and author of
+                     the original server. Without him, the chess server
+		     might not exist.
+
+  Richard Nash   -   Original author of FICS.
+
+  Daniel Sleator -   Author of AICS and responsible for many of the ideas
+                     that makes the chess server as popular as it is.
+

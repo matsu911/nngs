@@ -1,0 +1,17 @@
+
+invite utilisateur canal
+
+Si vous êtes sur le canal 99, et que vous êtes "vida", et que sunny
+rejoint le serveur ... vous pourriez vouloir inviter sunny sur le canal
+99. Alors vida peut taper:
+
+invite sunny 99
+
+et sunny recevra:
+
+vida invites you to channel 99
+
+le numéro de canal est optionnel, la valeur par défaut est mise à celle
+de votre ';'.
+
+Voir Aussi:  channel inchannel zz dnd lock unlock 

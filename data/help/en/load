@@ -1,0 +1,13 @@
+
+USAGE: load user1-user2
+
+This command continues a stored game between user1 and user2 and loads
+the game's last saved position; the game can then be continued. You must
+be either user1 or user2 to load and continue a stored game.
+
+NOTE: If any of the players have less than 30 seconds left on the clock,
+      then the clock is automatically paused. To resume the game, type
+      'unpause'.
+
+SEE ALSO: stored look save sresign unpause
+

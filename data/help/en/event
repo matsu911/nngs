@@ -1,0 +1,9 @@
+
+USAGE: event text
+
+This sets the event of the game you are playing. This is often used for
+teach games (like when GoBot replays games), but can be set for any game.
+The event is printed, together with the title, by the command "ginfo".
+
+SEE ALSO: ginfo title
+

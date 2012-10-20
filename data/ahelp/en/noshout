@@ -1,0 +1,9 @@
+
+USAGE: noshout
+
+RESTRICTED TO ADMINISTRATORS.
+
+Toggles shouting on/off. When off, only administrators can use shout.
+
+SEE ALSO: shout
+

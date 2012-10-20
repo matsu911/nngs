@@ -1,0 +1,20 @@
+
+Sk³adnia: pzz gracz tekst
+
+Komenda przydatna do opisywania swoich stanów emocjonalnych :)
+Jeœli gracz Jasio wprowadzi komendê: 
+
+pzz Krzysiek widz¹c ruch bia³ych lekko blednie i omdlony osuwa siê pod stó³ 
+
+wtedy gracz Krzysiek zobaczy:
+
+^ Jasio widz¹c ruch bia³ych lekko blednie i omdlony osuwa siê pod stó³ ^
+
+Jest to cos w rodzaju indywidualnej komendy 'zz'
+
+Znak * jest podobny do znaku . w komendzie tell.  Zamiast wpisywaæ pzz Krzysiek mo¿na po prostu u¿yæ *
+
+
+Zobacz tak¿e: zz 
+
+

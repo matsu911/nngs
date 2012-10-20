@@ -1,0 +1,32 @@
+
+   CHANNEL numero_canal
+
+
+Entrer dans (ou plus tard sortir de ) un canal, qui est comme une pièce
+privée où quelques personnes peuvent parler en privé. Les autres
+connectés sur le serveur qui ne sont pas membre de canaux ne sauront pas
+ce qu'il s'y passe. L'usage d'un canal est préférable, et souvent plus
+amusant, que de crier fort lorsque des personnes se concentrent sur leur
+partie.
+
+EXEMPLES D'ETAPES SUGGEREES:
+
+   1) Taper "inchannel:" pour voir les gens triés par canal.
+   2) Ensuite, par exemple, si le canal 33 ressemble à là où vous
+      voudriez vous rendre, taper "channel 33".
+   3) Utiliser "tell numero_canal"  pour commencer à parler avec du
+      monde sur un canal. Par exemple, vous pouvez taper "tell 33 he! ça va
+      ici?", et les autres personnes du canal recevront votre message.
+   4) Maintenant votre abréviation ";" est synonyme de "tell 33". Vous
+      pouvez donc taper "; Ca va bien, merci" et le canal 33 recevra le
+      message.
+   5) Pour sotir du canal 33, taper "channel 33" à nouveau s'il vous
+      plait.
+
+NOTES TECHNIQUES:
+
+   1) Vos canaux actifs sont sauvegardés entre les logins.
+   2) Taper "channel" tout seul renvoie la liste de tous les canaux.
+
+Voir Aussi: ctitle inchannel lock unlock zz dnd invite
+

@@ -1,0 +1,26 @@
+LGS 新的 match 制度提案
+
+為了改善同等級之間，無法分先對局 (一方始終持白) 的問題，
+並且保持上手讓子數適當之優點，決定將現行的 rmatch 制度稍作修改，
+希望貼目與讓子不再如此嚴格，卻又不失原 rmatch 制度之好處。
+
+1. 現行 rmatch 將改名為 ematch (equal match)，功能不變。
+
+2. rated player (有 * 的) 之間的對局，將採用新的 rmatch 制度：
+   - 同等級間 (如 1k* 對 1k*)，採分先隨機決定黑白，黑貼五目半。
+   - 不同等級間 (如 2d* 對 1k*)，採一級差一子制，黑貼半目。
+
+     例：amn 2k* 向 changedw 2k* 邀局
+         對局指令為 match changedw 1 10 (同為 rmatch changedw 1 10)
+         由於 amn 與 changedw 同為 2k*，誰執黑子將由亂數決定。
+
+     例：olive 3d* 向 renn 4k* 邀局
+         對局指令為 match renn 10 12 (同為 rmatch renn 10 12)
+         則由 olive 執白，renn 擺六子 (handicap 6)，黑貼半目。
+
+     讓子數算法例子：2d* 讓 1d* 先 (黑先貼半目)，讓 1k* 兩子，以此類推。
+
+3. 基本之 match 指令，在對局者其中之一為非 rated player 時使用。
+
+有任何建議或問題請 message ooops，謝謝！
+

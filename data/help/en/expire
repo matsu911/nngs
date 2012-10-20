@@ -1,0 +1,7 @@
+
+Players are expired (removed) from the player database when they have been
+inactive for a long time, currently a year. ("Inactive" meaning not having
+logged in.)
+
+SEE ALSO: register
+

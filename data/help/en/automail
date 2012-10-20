@@ -1,0 +1,13 @@
+   
+USAGE: toggle automail
+   
+This command arranges for NNGS to automatically send you all your
+games by email, as soon as the games are completed. If you are already
+receiving the games automatically, using this same command will make
+the server stop the automatic mailings.
+   
+To see the current state of your automail and other such flags
+that determine how your account acts on NNGS, type: variables
+   
+SEE ALSO: mail variables
+   

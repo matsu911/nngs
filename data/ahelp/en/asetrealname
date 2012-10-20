@@ -1,0 +1,9 @@
+
+USAGE: asetrealname player name
+
+RESTRICTED TO ADMINISTRATORS.
+
+Sets the real name of a player.
+
+SEE ALSO: set
+

@@ -1,0 +1,21 @@
+
+USAGE: komi k
+
+This is used to change the komi of a game. The first time one of the players
+issure this command, the new komi is offered to the other player. The other
+player must then type the same command to set the komi.
+
+Example: komi -5.5
+
+This offers/sets the komi of 5.5 points to black.
+
+NOTES:
+
+  The server does not support 0.0 komi games very well.  Results are
+  undefined.
+
+  When a game is started, komi defaults to 5.5 when both players have the
+  same rank or rating, and 0.5 if they differ.
+
+SEE ALSO: match handicap
+

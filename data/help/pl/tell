@@ -1,0 +1,27 @@
+
+Sk³adnia:   TELL identyfikator wiadomoœæ
+-
+Wysy³a wiadomoœæ do innego gracza. Gracz otrzymuj¹cy ta wiadomoœæ widzia³ 
+bêdzie: Twój identyfikator pomiêdzy gwiazdkami a nastêpnie tekst wiadomoœci:
+'*Jasiu* czeœæ! zagramy?'
+W zale¿noœci od klienta z którego siê korzysta nadejœcie wiadomoœci podkreœlone
+byæ mo¿e sygna³em dŸwiêkowym lub migotaniem. 
+-
+Przyk³ad( "Jasiu" to Twój identyfikator): 
+-
+  Komenda: 'tell Czesiu Czeœæ! Co s³ychaæ?'
+  Czesiu zobaczy w oknie terminala: '*Jasiu* Czeœæ! Co s³ychaæ?'
+-
+UWAGA: Aby oswoiæ siê z ta komenda mo¿esz trenowaæ wysy³aj¹c wiadomoœci do siebie.
+      Np: 'tell twoj_identyfikator test komendy tell'  
+-
+ZAAWANSOWANE SKROTY:
+
+'. wiadomoœæ' wysy³a _wiadomoœæ do ostatniej osoby do której coœ wys³a³eœ komenda
+    tell  w ci¹gu bie¿¹cej sesji.
+
+'^ wiadomoœæ' wysy³a _wiadomoœæ do ostatniej osoby, która co s wys³a³a 
+   do Ciebie komenda 'tell' 
+-
+ 
+Zobacz tak¿e:  pzz, shout, say, terminal, channel

@@ -1,0 +1,16 @@
+Usage: withdraw [1-n, match, adjourn, all, player]
+
+  Retire une offre que vous avez faite. Si l'on n'a donné aucun
+paramètre et qu'il n'y a qu'une offre, la commande withdraw va annuler
+cette offre. Si vous avez plus d'une offre en attente (par exemple
+plusieurs propositions de parties) vous devez alors spécifier quelle
+offre vous souhaitez retirer. Vous pouvez choisir selon le numéro, le
+type, toutes les offres, ou selon le nom du joueur à qui vous avez fait
+la proposition.
+
+  Note: de nombreux types de demande sont retirées automatiquement par
+PLGS dans certains cas. Par exemple, si vous avez fait une offre de
+partie à l'utilisateur user2 mais que vous acceptez une demande de user1,
+PLGS démarre votre match avec user1 et retire votre offre à user2.
+
+Voir Aussi: accept pending match draw adjourn abort takeback switch simul

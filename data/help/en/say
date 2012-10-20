@@ -1,0 +1,12 @@
+
+USAGE: say message
+
+Transmits your message to your current opponent if you are playing a
+game. If you are not playing a game, the message is sent to the last
+opponent in your current NNGS session. The short command is ",".
+
+Unlike a "tell", a "say" is saved in the game record (sgf-file), just
+like a kibitz.
+
+SEE ALSO: tell censor kibitz shout
+

@@ -1,0 +1,8 @@
+Usage: messages [joueur message]
+
+  La commande message utilisée seule sans arguments va afficher tout
+message que vous puissiez avoir. Si vous passer un "joueur" et un
+"message", ce message sera envoyé à ce joueur. Les messages que vous
+recevrez seront conservés jusqu'à ce qu'ils soient effacés.
+
+Voir Aussi: erase tell

@@ -1,0 +1,55 @@
+
+Introduction to the Go Teaching Ladder
+======================================
+
+Several high dan players have recommended getting your own games
+reviewed by stronger players as a good way to make progress.
+However it is not always easy to find stronger players willing to
+comment your games.
+
+The Go Teaching Ladder (GTL) has been set up for this purpose.
+Volunteers in the ladder comment games made by weaker players.
+Anyone may submit a game for commenting by a stronger player.
+
+Getting your own game reviewed
+------------------------------
+
+In order to have one of your games commented on, just follow
+these three steps:
+
+ 1. Get the SGF file of the game you've played.
+    See 'help mail' and 'help sgf' on the go servers.
+    Don't send easy wins or fast games (at least 20 minutes total
+    playing time per person)!! Have a look at
+    "Which games should be submitted for review?" in the FAQ.
+
+ 2. Go over the game yourself and add questions or comments.
+    These comments can serve as a guideline for the reviewer.
+    Furthermore the reviewer can concentrate on those aspects
+    or moves that are of most interest to you.
+        
+ 3. Send this SGF file to <gtl@jeudego.org> - we'll forward your
+    game to a proper reviewer. Please don't forget to tell us if
+    you played black or white.
+    Alternativly you can select a reviewer on your own.
+    Please consult the FAQ on how to do it.
+
+That's it. You should receive your review within two weeks.
+Don't forget to thank the reviewer for the review. Not doing so is
+extremly impolite.
+
+
+The ladder will work best if those who get their games commented also
+volunteer in turn to comment on the games of weaker players. In order
+to volunteer as a reviewer visit our web site and click on "Join".
+
+Please read the FAQ before using the ladder or sending email to the 
+administrator.
+
+The GTL can be reached at:
+
+      WWW:   http://gtl.jeudego.org/
+      EMail: gtl@jeudego.org
+      FTP:   www.joy.ne.jp/welcome/igs/Go/GTL/
+          or ftp.nuri.net/Go/GTL/
+

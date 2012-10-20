@@ -1,0 +1,13 @@
+
+USAGE: beep user
+
+Beep can be used to get the attention of "user", for instance when you
+suspect he/she is not looking at the server window.
+It sends a ^G (ctrl-G), and the message "... is beeping you", to "user".
+If "user" has been idle for some time, beep prints the idle time.
+
+NOTE:  This may or may not produce an actual sound, or blink, at the "user"'s
+       end, it is up to "user"'s client.
+
+SEE ALSO: tell stats
+

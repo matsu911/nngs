@@ -1,0 +1,50 @@
+
+USAGE: tell handle [comment]
+
+Send your remark to another person.  The person receiving your remark will
+see your handle (which is your name on the server) surrounded by asterisks
+and followed by the remark.  Depending on the client, the receiver will
+also hear a beep or see a flash on the screen.  Caution: a command does
+not include the quotes (") surrounding it. 
+
+If no comment is given, it simply sets your "." to handle.
+
+QUICK-START EXAMPLE ("donw" is your handle or name on this server):
+
+  Command:  "tell KenW Hello, how are you?" (This command, without the
+            quotes, is: tell KenW Hello, how are you?) 
+   Result:  KenW will see, "*donw*: Hello, how are you?" (and no quotes)
+
+HINT: To see if you are doing it correctly, you can practice some of these
+      commands on yourself.  Try "tell your_own_handle Hiya! :)"  For 
+      example, "tell donw Hiya! :)".  (Remember to use your own handle
+      though.)
+
+
+ADVANCED TIME-SAVING SHORTHANDS:
+
+. [comment] Send your remark to the last person YOU USED "tell" WITH 
+            during this connection to the server. A single "." with no
+            comment will print the current setting of ".".
+
+^ comment   Send your remark to last person WHO USED "tell" WITH YOU during
+            this connection to the server.  By using "^" you have no need
+            to spell out the person's name.  You can continue after using 
+            "^" by reusing it, or with "." 
+
+EXAMPLES OF THE ADVANCED TIME-SAVING TECHNIQUES (again, as in the first
+example, you are "donw" and the other person is "Kenw"): 
+
+  Command:  ".you didn't answer me before, hi"    
+   Result:  KenW will now see, "*donw*: you didn't answer me before, hi"
+
+    First:  KenW types "tell donw How are you today?"
+   Result:  You will see "*KenW*: How are you today?"
+   Second:  Now you type only: "^ fine"
+   Result:  KenW sees "*donw*: fine"
+	    (He has gotten your message without your spelling out his name!)
+
+     Also:  Later in the conversation, you can use either "." or "^"
+
+SEE ALSO: shout say who awho set channel lchan
+

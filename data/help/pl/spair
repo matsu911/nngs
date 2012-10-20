@@ -1,0 +1,16 @@
+
+Usage: spair white white black black
+
+This command helps 4 players to set up a pair-go game.
+
+Example:  spair tromp gege geek talby
+
+This would give instructions to tromp, gege, geek, and talby on how to set up
+a pair-go game.  tromp and gege are the White team, while geek and talby are
+the black team.
+
+Notes: You must be one of the 4 players listed in the spair command.
+       This command does *not* set up the matches, only provides instructions.
+
+See also: pair, match
+

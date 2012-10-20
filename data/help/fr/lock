@@ -1,0 +1,10 @@
+
+Usage:  lock #
+
+  Cette commande ferme l'accès d'un canal aux personnes suivantes. S'il
+vous plait, ne rejoignez pas un ensemble de canaux pour tous les fermer, les
+administrateurs pouvant annuler cela. Vous devez vous trouver dans le
+canal pour pouvoir le fermer ou l'ouvrir.
+
+Voir Aussi:  ctitle inchannel channel unlock dnd
+

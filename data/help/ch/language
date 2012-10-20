@@ -1,0 +1,13 @@
+指令: language
+
+用法: language language-number
+
+說明:
+
+這個指令設定你的語言環境。
+現在有兩種語言可用, 中文和英文, 中文是 BIG-5 碼, 
+先對大陸的 user 說聲抱歉囉! :P
+
+範例: language 0  設為英文
+      language 1  設為中文
+

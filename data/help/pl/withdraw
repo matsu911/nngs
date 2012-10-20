@@ -1,0 +1,6 @@
+Sk³adnia:  withdraw [1-n, match, adjourn, all, player]
+
+Wycofuje uczynion¹ ofertê. Jeœli nie podana parametru i istnieje tylko jedna oferta to ona zostanie wycofana.   
+ 
+Zobacz tak¿e: accept pending match draw adjourn abort takeback switch simul
+

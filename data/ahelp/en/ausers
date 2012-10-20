@@ -1,0 +1,10 @@
+
+USAGE: ausers
+
+RESTRICTED TO ADMINISTRATORS.
+
+Yet another "who" command. Prints the IP number, last tell and channel
+for each player logged in.
+
+SEE ALSO: who awho
+

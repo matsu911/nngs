@@ -1,0 +1,32 @@
+你可以利用 LoBot 觀看 LGS 上完成的棋局,
+例如輸入: sgf jeep
+
+傳回訊息:
+
+Completed games for jeep:
+        jeep-byakko-9608192203          jeep-shen-9608192305
+          shen-jeep-9608200004
+Found 3 completed games.
+
+再輸入 tell LoBot jeep-shen-9608192305
+即可觀看該局。
+
+在棋局進行中時, kibitz 下列東西各有不同的效果:
+
+what game   介紹此局 (如果檔案中有資料的話)
+players     介紹此局的對局者
+fastest     以最快速進行
+faster      以次快速進行
+fast        快速進行
+medium      中速進行
+slow        慢速進行
+slowest	    最慢速進行
+
+pause       暫停, 之後有幾種不同的功能:
+undo        回一手
+forward     下一手
+continue    繼續打譜
+
+
+新程式乍成, 很多該有的功能都尚未加入, 請見諒。
+

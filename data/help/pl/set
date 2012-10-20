@@ -1,0 +1,47 @@
+
+Usage: set variable [value]
+
+  You have a number of predifined variable which control the behaviour
+of your account. This command allows you to control those variables and
+modify their settings. Generally, if "value" is omitted, the variable is
+toggled.
+
+Name        Function
+----        --------
+automail    If Yes your games will be mailed to you upon completion.
+bell        If Yes a ^G or bell will be sent under certain conditions.
+busy        This sets your busy string.
+byo_stones  This sets your default byo yomi stones
+byo_time    This sets your default byo yomi time
+extprompt   (non-client mode only) Gives an extended prompt
+ginform     If Yes you will be informed when games begin or end.
+kibitz      If Yes you will hear kibitzes.
+open        If Yes you are willing to accept match requests.
+pinform     If Yes, you will be informed when users connect or
+            disconnect to the server.
+private     If Yes then all games you play will be private
+            regardless of your opponents "private" variable.
+prompt      This string will be your prompt. Use "set prompt" to
+            restore the system default.
+rank        The sets your "Rank Info:" field to whatever you type.
+realname    "set realname george" sets your real name to "george"
+shout       If Yes you will hear shouts.
+gshout      If Yes you will here Go-related shouts.
+size        This is the default size of your board.
+tell        You will hear unregistered tell's and say's.
+time        This is the default value of the "time" parameter for the match
+            command.
+0-9         This sets your plan information that is displayed when someone 
+            stats you.  You can set these to arbitrary strings.
+width       This sets your terminal width.
+height      This sets your terminal height.
+client      If Yes, the server will send you IGS-style client codes.
+verbose     If Yes, the server will send you IGS-style boards.
+notifiedby  If Yes, you will be notified about others being notified
+            by you logging on / off the server.
+looking     If Yes, puts a ! by your name in the "who" output, telling
+            everyone you are looking for a game.
+
+
+See also: variables 
+

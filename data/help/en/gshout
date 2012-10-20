@@ -1,0 +1,8 @@
+
+USAGE: gshout message
+
+Displays your message to all users who are open to hear gshouts.
+A gshout is a go-related shout.
+
+SEE ALSO: gshout tell censor variables it alias
+

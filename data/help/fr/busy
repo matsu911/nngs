@@ -1,0 +1,14 @@
+Usage: set busy chaine
+
+  Positionne votre chaine "busy". Quand elle est positionnée, les gens la
+verront lorsqu'ils vous 'stats' ou 'talk' et que vous êtes occupé.
+
+Exemples d'utilisation:
+  set busy je suis très occupé là
+  set busy je suis de retour dans 5 minutes ...
+  set busy je serai sans réponse pendant un moment ...
+
+Taper "set busy" tout seul efface votre chaine busy
+
+Voir Aussi: set tell stats
+

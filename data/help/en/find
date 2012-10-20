@@ -1,0 +1,28 @@
+
+USAGE: find [-]name
+
+Used to find users by user name or email address.
+
+Example:  find sss
+
+returns
+
+    Matched player: sss         at address sss@iohk.com
+    Matched player: sssg        at address sss@iohk.com
+
+and       find -iohk
+
+returns
+
+    Matched player: chl         at address chl@iohk.com
+    Matched player: spirt       at address maxng@iohk.com
+    Matched player: sss         at address sss@iohk.com
+    Matched player: sssg        at address sss@iohk.com
+
+In other words, if there is no -, then you search the username part of the
+email address.  If you add a - in front, it returns any part of the email
+address that matches what you place after the -.
+
+The find database is updated once every 24 hours, so new registrations
+are not found until after the next update.
+

@@ -1,0 +1,8 @@
+
+USAGE: asetsilent player
+
+RESTRICTED TO ADMINISTRATORS.
+
+Sets player to "silent login" mode, that is, his/hers logins will not
+be announced.
+

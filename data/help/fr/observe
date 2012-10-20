@@ -1,0 +1,11 @@
+Usage: observe #
+
+  Ajoute ou enlève une partie de votre liste d'observation (bascule
+pour un jeu donné). "Observe" seul enlève toutes les parties de votre
+liste d'observation.
+
+Vous passez le numéro de la partie que vous souhaitez observer.
+
+exemple:  observe 4
+
+Voir Aussi: all games

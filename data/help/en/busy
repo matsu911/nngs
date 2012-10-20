@@ -1,0 +1,15 @@
+
+USAGE: set busy string
+
+Sets your "busy" string. When it is set, people will see when they
+stats you or talk to you that you are busy.
+
+Examples you might use are:
+  set busy is really busy right now
+  set busy will be back in 5 minutes
+  set busy will be idle for a while...
+
+Entering "set busy" by itself, clears your busy string
+
+SEE ALSO: set tell stats
+

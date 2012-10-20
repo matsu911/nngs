@@ -1,0 +1,35 @@
+
+Wpisz 'help welcome' aby uzyskac liste pomocy.
+
+Dla poczatkujacych:
+-
+Jesli w chwili obecnej polaczyles sie za pomoca uslugi telnet i 
+nie masz programu  do gry w Go na naszym serwerze  (tzw. klienta)
+sugerujemy abys polaczyl sie ze strona www.internetgo.hg.pl 
+i sciagnal taki program. Znacznie ulatwi Ci to obsluge komend i gre.
+-
+http://www.internetgo.hg.pl/wing
+-
+Jesli posiadasz juz program i polaczyles sie za jego pomoca, wpisz:
+'set client on' 
+-
+Jesli powyzej lub obok informacji nadchodzacych z serwera pojawiaja sie
+cyfry sprawdz ustawienia swojego klienta.  
+W polecanym przez nas programie WINIGC zaznacz opcje 'detect IGS'
+w menu Options/Setup/Misc.Options.
+-
+Jesli to nie pomoze: oposc WING, zamknij WINIGC, wlacz WINIGC, wejdz 
+na WING Powinno pomoc.  
+-
+Wpisz 'help register' aby dowiedzeic sie w jaki sposob mozesz wykozystac 
+nasz w pelni jako zarejestrowany uzytkownik WING.
+-
+Serwery telnetowe roznia sie od przegladarek WWW tym, iz ich obsluga
+polega na wpisywaniu komend. Aby uniknac frustracji, popros o pomoc i
+wprowadzenie kogos kto nie bedzie zajety gra (dowiesz sie tego wpisujac
+komende :
+'stats identyfikator_gracza' co wyswietli Ci podstawowe informacje
+o graczu). 
+-
+Komenda 'help commands' pokaze informacje o podstawowych komendach WING. 
+-

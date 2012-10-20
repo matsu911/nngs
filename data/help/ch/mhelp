@@ -1,0 +1,17 @@
+指令: mhelp
+
+用法: mhelp filename
+
+說明:
+
+寄一份求助檔的拷貝到你的電子郵件信箱。
+
+速成範例:
+
+   mhelp overview  
+   mhelp tell      
+   mhelp channel  
+   mhelp           列出所有求助檔在螢幕上
+
+參照: help, ?, help overview  
+

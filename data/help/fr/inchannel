@@ -1,0 +1,31 @@
+
+Usage: inchannel [0-99]
+
+  Afficher une liste de tous les utilisateurs actuellement connectés sur
+le canal spécifié. Si on omet le numéro de canal, cela affichera la
+liste de tous les utilisateurs connectés sur tous les canaux.
+
+  Par exemple, vous pouvez voir un canal qui ressemble à:
+
+Channel 33: (-) Geeks place
+ geek
+
+Cela montre que "geek" est sur le canal 33, et que le canal n'a pas
+d'état (-). Si vous aviez vu:
+
+Channel 33: (L) Geeks place
+ geek
+
+Cela signifie que le canal est fermé aux prochaines tentatives d'entrée
+dans le canal (peut-être une discussion privée)>
+
+Si vous aviez vu:
+
+Channel 33: (D) Geeks place
+ geek
+
+Cela signifie que le canal a le drapeau "Ne Pas Déranger". Cela signifie
+que vous devez vous placer dans le canal pour y intervenir.
+
+Voir Aussi: ctitle channel tell lock unlock zz dnd invite
+

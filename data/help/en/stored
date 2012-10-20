@@ -1,0 +1,12 @@
+
+USAGE: stored [user]
+
+Displays all of the stored games of 'user' or of yourself
+if 'user' is omitted.
+
+Stored games are automatically removed after a few days (10) unless
+they are loaded and finished, resigned with 'sresign', or kept alive
+with 'touch'.
+
+SEE ALSO: touch load save look sresign
+

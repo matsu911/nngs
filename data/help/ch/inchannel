@@ -1,0 +1,24 @@
+指令: inchannel
+
+用法: inchannel [0-99]
+
+說明:
+
+  這個指令會列出所有正在某些已開啟頻道的使用者。如果沒有指定頻道的號碼,
+那麼就列出所有頻道中所有的使用者。
+
+  例如: 當你下了 inchannel 指令之後, 得到以下訊息:
+
+Channel 33: (-) Geeks place
+ geek
+
+這表示 geek 正在頻道 33, 而且剛頻道沒有任何額外的設定 (-)。
+你若看到:
+
+Channel 33: (L) Geeks place
+ geek
+
+意思是說頻道 33 已經限制不允許更多的使用者進入, 可能裡面的人正進行私人話題。
+
+相關指令: ctitle channel tell lock unlock
+

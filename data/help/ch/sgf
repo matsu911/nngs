@@ -1,0 +1,30 @@
+指令: sgf
+
+用法: sgf [username]
+
+說明:
+
+此指令是一個獲知一個人最近完成那些棋局的方法。你也可以依此將棋譜寄回自己
+的信箱。
+
+範例:
+
+輸入:
+sgf MikeChu
+
+顯示出:
+Completed games for MikeChu:
+    mikechu-woodman-9608091507  manyfaces-mikechu-9608101711
+  mikechu-manyfaces-9608101734  mikechu-manyfaces-9608120028
+  mikechu-manyfaces-9608121322   mikechu-syncanph-9608121906
+      hjhgo-mikechu-9608131321
+Found 7 completed games.
+
+如果你想要得到 MikeChu 與 Syncanph 對局的棋譜, 只要輸入
+
+mail me mikechu-syncanph-9608121906
+
+這局是在 1996 年 8 月 12 日 19:06 分開始的。
+
+相關指令: mail
+

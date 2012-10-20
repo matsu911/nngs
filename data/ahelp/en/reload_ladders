@@ -1,0 +1,9 @@
+
+USAGE: reload_ladders
+
+RESTRICTED TO ADMINISTRATORS.
+
+Reloads the ladders from the files.
+
+SEE ALSO: ladder9 ladder19 forcerecalc
+

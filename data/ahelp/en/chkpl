@@ -1,0 +1,9 @@
+
+USAGE: chkpl player
+
+RESTRICTED TO ADMINISTRATORS.
+
+An "admin's stats". Prints various internal information about player.
+
+SEE ALSO: chkip chksc aban
+

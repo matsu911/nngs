@@ -1,0 +1,10 @@
+
+USAGE: drop [ladder]
+
+The drop command allows you to drop out of  the specified ladder, or, with
+no parameters, lists the ladders that you can drop.
+
+Example: drop ladder9 
+
+SEE ALSO: join match ladder9 ladder19
+

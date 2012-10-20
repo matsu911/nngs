@@ -1,0 +1,8 @@
+
+USAGE: uncensor [user]
+
+Removes 'user' from your censor list. If 'user' is omitted then the
+entire list is cleared.
+
+SEE ALSO: censor
+

@@ -1,0 +1,40 @@
+
+Here's how to do the port forwarding on Linux.
+
+You need IP firewalling and transparent proxying compiled in
+and then to test it do:
+ipchains -I input -p tcp -d <yourip> 26 -j REDIRECT 23
+
+Replace your IP and you should be able to telnet to port 26.
+Now make it point from the telnet port 23 to 9696 and voila!
+ipchains -I input -p tcp -d <yourip> 23 -j REDIRECT 9696
+
+Kernel Options:
+# 
+# Networking options
+#
+CONFIG_PACKET=y
+CONFIG_NETLINK=y
+CONFIG_RTNETLINK=y
+# CONFIG_NETLINK_DEV is not set
+CONFIG_FIREWALL=y
+CONFIG_FILTER=y
+CONFIG_UNIX=y
+CONFIG_INET=y
+# CONFIG_IP_MULTICAST is not set
+# CONFIG_IP_ADVANCED_ROUTER is not set
+# CONFIG_IP_PNP is not set
+CONFIG_IP_FIREWALL=y
+# CONFIG_IP_FIREWALL_NETLINK is not set
+CONFIG_IP_TRANSPARENT_PROXY=y  
+# CONFIG_IP_MASQUERADE is not set
+# CONFIG_IP_ROUTER is not set
+# CONFIG_NET_IPIP is not set
+# CONFIG_NET_IPGRE is not set
+# CONFIG_IP_ALIAS is not set
+# CONFIG_SYN_COOKIES is not set
+# CONFIG_INET_RARP is not set
+CONFIG_SKB_LARGE=y
+# CONFIG_IPX is not set
+# CONFIG_ATALK is not set
+

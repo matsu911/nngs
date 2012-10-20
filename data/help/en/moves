@@ -1,0 +1,6 @@
+
+USAGE: moves [game]
+
+Displays the moves to the specified game.  If a game is not specified,
+moves to the game you are playing will be displayed.
+

@@ -1,0 +1,65 @@
+-------------------------------------------------------------------
+-- NEWS
+-------------------------------------------------------------------
+
+For changes in the code, see Changelog
+
+Version 1.1.?
+- development based on 1.0.0
+
+Version 1.0.0
+- running until jan 2001
+- initial NNGS Server code from http://nngs.cosmic.org/src
+  Version: NNGS #1623 Tue Dec 26 08:59:39 CST 2000
+
+Version 1.1.14 (2002 May)
+- should be considered the first stable beta :-)
+- basic functionality (playing games) tested by automated testclient.
+- very stable, no leaks !-)
+
+Version 1.1.15 (2004 Sep/Oct/Nov)
+- major bugfixes for filename/directory handling.
+- fixed EPIPE-handling
+- fixed "courtesy" - timing error.
+- added aban command
+
+Version 1.1.16 (2004 Nov 21)
+- (configuration/installation) fixes.
+  Tested on GNU/linux(i386) and OSF1(alpha).
+
+Version 1.1.17 (2005 Feb 20)
+- byo-yomi fixes. (you have xx minutes) -->> (he has xx minutes)
+  this bug seems very old! I could not find a correct version, even
+  in a cosmic.org (17 aug 2002) version.
+- changed some ints to time_t
+
+Version 1.1.18 (2005 Jul 13)
+- fixed bug in player_find()
+- cleanup
+- network fixes.
+
+Version 1.1.19 (2005 Oct xx)
+- put configuration items into file, which is read at startup.
+- chroot() support
+- added smtp mailer, which is needed in a chrooted environment.
+- added experimental udp-port, intended to be used by a web/PHP client.
+- more cleanup
+
+Version 1.1.20 (2005 Oct xx)
+- vsnprintf() <--> Logit mutual recursion avoided
+- fixed missing sentinel in command_list[]
+- moved more stuff to conffile
+
+Version 1.1.21 (2007 Feb 22)
+- fixed calloc() damage
+- fixed tell/say/talk formats
+- added default_komi/default_komi9 to conffile.
+
+Version 1.1.22 (2007 Feb 24) (2009 May 09)
+- more configurable items
+- fixed snprintf() usage
+- allow logfile to have the date-field at the beginning of the line.
+- automatic creation of admin-account at first start (if not present)
+- replaced functions returning pointers to static buffers to 
+  instead use a common pool.
+- more cleanup

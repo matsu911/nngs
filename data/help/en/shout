@@ -1,0 +1,34 @@
+
+USAGE: shout message
+
+Displays your one-line message to other users.  Except for the shouter and
+those who have disabled this command, the others will see your handle
+surrounded with exclamation marks and followed by the message.  You can
+also use the shortcut, or alias, of "!" instead of "shout". 
+
+QUICK-START EXAMPLES (where "player" is your handle or name on this server):
+
+   Command:  shout Please help a newbie.
+    Result:  !player!: Please help a newbie.
+
+   Command:  !Please help a newbie.
+    Result:  !player!: Please help a newbie.
+
+DISABLING YOUR SHOUTS--if they wish, others can do the following:
+
+   Use "toggle s" to stop all incoming shouts.
+
+   Use "censor player" to stop all tells and shouts *from you* from now on.
+
+IMPORTANT HINT: please use shout only if it is necessary for everyone to
+hear your comment.  Otherwise, it is wise, and considerate, to use tell to
+speak with specific individuals, or to enter a channel to have fun with a
+few people.
+
+TECHNICAL NOTE: A shout surrounded by double exclamations marks is coming
+from the server management.  For example, "!!Pro game in five minutes!!"
+is an announcement from the administration of NNGS. 
+
+SEE ALSO: it gshout tell say yell who awho toggle set variables censor 
+          channel alias
+

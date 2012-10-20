@@ -1,0 +1,18 @@
+Sk³adnia: automail   
+ 
+   
+Ustawienie tego parametru na wartoœæ PRAWDA ('Yes') powoduje, i¿ wszystkie rozegrane przez Ciebie gry bêd¹ automatycznie przysy³ane pod Twój adres e-mail. 
+
+Zmiana wartoœci tego parametru odbywa siê przez wpisanie:
+
+automail
+
+Aby sprawdziæ jaka jest wartoœæ bie¿¹ca automail wpisz:
+
+variables  
+   
+   
+Zobacz tak¿e: mail variables
+   
+
+

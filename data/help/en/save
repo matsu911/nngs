@@ -1,0 +1,9 @@
+
+USAGE: save
+
+This saves the game you are currently playing. It is NOT NECESSARY to save
+a game explicitely, it is automatically saved every 5th move, or when the
+game is adjourned, but here it is anyway.
+
+SEE ALSO: load stored
+

@@ -1,0 +1,17 @@
+指令: set busy
+
+用法: set busy 字串
+
+說明:
+
+  設定您的 "busy" 字串。設定後, 當人們 stats 您或與您談話時會看到您正在忙
+些什麼。
+
+例如您可設定如下:
+  set busy is really busy right now
+  set busy will be back in 5 minutes
+  set busy will be idle for a while...
+
+鍵入任何指令將清除您所設定的 "busy" 字串,您不必自己清除之.
+
+相關指令: set tell stats

@@ -1,0 +1,51 @@
+
+USAGE: pair-go number_of_game
+
+Start a team game with two players on each side.  The members of one team
+take turns playing as black, and the members of the other team take turns
+as white.  This variation of Go is also known as "Rengo".
+
+STEPS FOR STARTING A RENGO GAME:
+
+   1) Four people decide to play.  For example: talby and axe are on the
+   first team, with gege and rascal on the second team.  HINT: Channel 69 
+   is reserved for Rengo pairings.
+
+   2) Let's label the pairs.  For example: talby and axe are on Team 1,
+   taking black, and are called B1 and B2.  Gege and rascal are on Team 2,
+   taking white, and are called W1 and W2.
+
+   3) Now you are ready to issue the normal match commands.  B1 and W1 start
+   a match with each other, and B2 and W2 start a match with each other.  In
+   our example, talby and gege start a game, and axe and rascal start another
+   one.
+
+   4) W1 (gege) types "pair-go number_of_SECOND_game".  For example, by 
+   typing the command "who", he finds out that the game between talby and 
+   gege is #17, then the command (not including the quote marks) is 
+   "pair-go 17".
+
+   5) W2 (rascal) gets a message that gege would like a pair-go game, and 
+   W2 is then asked to type "pair-go number_of_FIRST_game".  (The server also
+   provides the game number between axe and rascal: "19" for example.)  
+   The command (not including the quote marks) would now be "pair-go 19".
+
+   6) The game now begins!  The server will tell each person when it is
+   their turn in the following order: B1, W1, B2, and W2.  Also, the server
+   will tell you if you are out of turn.
+
+COMMENTS FOR KIBITZERS: officially, two games are created with identical
+records of the moves, and the kibitz remarks of each game will be saved
+separately.  However, during the game it will not matter which game you
+have chosen to observe, because all of the kibitzes will be visible. 
+
+ADJOURNMENT OF A RENGO GAME: by adjourning one of the two games, the other
+one is adjourned automatically.  Either W1 and B1 can adjourn, or W2 and
+B2. 
+
+LOADING OF AN ADJOURNED RENGO GAME: After loading both games, return to
+the above instruction number 4.  (Of course, the computer will tell you
+whose turn it is to restart.)
+
+SEE ALSO: match load tell awho spair
+

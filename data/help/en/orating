@@ -1,0 +1,19 @@
+
+USAGE: orating [name]
+
+This command will give you extended information about a players old
+rating. If no name is specified, you will get extended information
+about your own rating.
+
+Example:  orating niceguy
+niceguy: 4d* (3312) Rated Games: 61
+Confidence = 98.89 percent
+All rated wins: 46
+All rated losses: 26
+Rated wins versus rated players: 41
+Rated losses versus rated players: 20
+High confidence wins: 11
+High confidence losses: 7
+
+See "help oratings" for even more information.
+

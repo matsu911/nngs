@@ -1,0 +1,8 @@
+
+USAGE: set realname [name]
+
+Sets the "Full Name" field in your stats. Omitting the name argument
+will reset the field to "Not Provided".
+
+SEE ALSO: set stats
+

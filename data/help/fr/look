@@ -1,0 +1,19 @@
+
+look  visualise une partie enregistrée
+
+usage:  look nom_du_blanc-nom_du_noir
+
+Exemple:  Commencer par regarder quelles parties sont enregistrées pour
+le joueur qui vous intéresse:
+
+stored tromp
+Stored games for tromp:
+             tromp-horangi                tromp-geek
+Found 2 stored games.
+
+Pour visualiser tromp-horangi vous taperiez
+
+look tromp-horangi
+
+Voir Aussi: stored sgf
+

@@ -1,0 +1,50 @@
+請直接用 tell 告訴 GoBot 棋局號碼, 即可觀看棋局。
+例如: tell GoBot nr-001    
+GoBot 便會開始自動打譜, 使用 observe [game number] 便可觀看。
+目前 LGS 所提供的棋局, 請參照下列說明檔:
+
+ help nr          NR 7d* on igs
+ help lin         林海峰九段
+ help index       其他棋局整理的簡介
+ help igsindex    IGS 高手棋譜
+ help wu          吳清源全集
+ help korea       韓國四大天王
+ help world       世界名局
+ help cao         曹薰鉉
+ help otake       大竹英雄
+ help lee         李昌鎬
+ help yoo         劉昌赫
+ help kato        加藤正夫
+ help liux        劉小光
+ help ma          馬曉春
+ help nie         聶衛平
+ help wuc         吳清源其他的選譜
+ help takemiya    武宮正樹
+ help kobayashi   小林光一
+ help yoda        依田紀基
+ help cho         趙治勳
+
+若要將這些目錄寄回自己的 Email 信箱, 使用  "mhelp 檔名", 請看 "help mhelp".
+
+若 GoBot 沒有反應, 應是 GoBot 發生錯誤, 或者它已經在打譜了,
+此時可以尋找站上是否有 GoBotII 或 GoBotIII, 他們功能均相同。
+
+在棋局進行中時, kibitz 下列東西各有不同的效果:
+
+what game   介紹此局 (如果檔案中有資料的話)
+players     介紹此局的對局者
+fastest     以最快速進行
+faster      以次快速進行
+fast        快速進行
+medium      中速進行
+slow        慢速進行
+slowest	    最慢速進行
+
+pause       暫停, 之後有幾種不同的功能:
+undo        回一手
+forward     下一手
+continue    繼續打譜
+
+
+新程式乍成, 很多該有的功能都尚未加入, 請見諒。
+

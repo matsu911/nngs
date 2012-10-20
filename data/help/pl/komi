@@ -1,0 +1,14 @@
+Sk³adnia: komi [wartoœæ_komi]
+ 
+Ustawia wartoœæ komi:
+
+Komi 5.5
+
+Powy¿sze ustawia wartoœæ komi na 5.5 dla bia³ych  
+
+komi -5.5
+
+Powy¿sze ustawia wartoœæ komi na 5.5 dla czarnych
+
+Prosimy nie ustawiaæ komi na 0.0  
+

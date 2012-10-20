@@ -1,0 +1,13 @@
+
+USAGE: pause
+
+Requests from your opponent that the game your are playing be paused.
+If your opponent has given you a pause request, using the pause command (or
+accept) will accept the pause request.  You may decline a pause request
+by using the decline command.
+  
+This rolls back the clocks to the time of the last move. To unpause a
+game use "unpause".
+  
+SEE ALSO: accept unpause time
+

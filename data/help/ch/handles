@@ -1,0 +1,19 @@
+指令: handles
+
+用法: handles [name / pattern]
+
+說明:
+
+  此指令會列出一個表, 表上是已註冊的使用者, 而且名字開頭跟 "pattern" 相同。
+
+範例:
+
+  handle e
+
+結果:
+
+Found 9 names.
+edging  edmund  edo     eek     elan    elbert  emshop  erik    ernest    
+
+  這個指令還可以用來讓人確定, 是否某個名字已經有人用來註冊。
+

@@ -1,0 +1,24 @@
+
+Skladnia: ADDTIME [iosc_minut]
+-
+  Dodaje do zegara przeciwnika czas (ilosc_minut) w trakcie
+rozgrywania gry.
+-
+  Uzywanie 'addtime' oznacza, iz nie chcesz aby przeciwnik przegral przez czas. 
+Stosowanie tej komendy jest bardzo uzyteczne gdy Twoj przeciwnik zglasza  
+problemy zwiazane z opoznieniami przesylania informacji (tzw. net-lag). 
+Sugerujemy korzystanie z klientow posiadajacych kontrole czasu rzeczywistego.  
+-
+  Oczywiscie uzywanie komendy 'addtime' jest nieobowiazkowe.  
+Jesli czesto zdarza ci sie prosic o przyznanie dodatkowego czasu rozwaz
+granie gier z wiekszym limitem czasu.  
+-
+  Jesli przeciwnik znajduje sie w byo-yomi czas dodany za pomoca 'addtime' wazny  
+jest tylko dla tego konkretnego okresu byo-yomi.  
+-
+Wyjatek:
+  Jesli Extra Time (czas dodatkowy) zostal ustawiony w tej grze, komenda 'addtime'
+zwiekszy EXTRA TIME przeciwnika. W tym przypadku przeciwnik bedzie z niego 
+korzystac w kazdym okresie byo-yomi.  
+-
+Zobacz takze: EXTRATIME, TIME, MATCH, EMATCH

@@ -1,0 +1,30 @@
+
+USAGE: register handle email_address real_first_name real_last_name
+
+Create an account with the handle you wish to be called by while you are
+on the server.  After typing this command, you will receive a password at
+the email address you have given.  As soon as you get the message, usually
+within a few minutes, you can log on at NNGS using the handle that you
+have asked to use and the password you have received, both of which will
+be in the letter.  (Please record them immediately.)
+
+
+QUICK-START EXAMPLES:
+
+  "register alice alice@wonderland.org Alice in Wonderland": will register
+  the handle "alice" and send the password to "alice@wonderland.org"
+  with the real full name of "Alice in Wonderland".
+
+
+NOTE:  We ask for your name so we can say "Hi Alice!" and be more friendly.  :)
+
+PLEASE BE CAREFUL to spell your email address correctly.
+
+Q: WHY DON'T I GET THE EMAIL WITH THE PASSWORD?
+A: In 99 case of 100 you spelled your email address incorrectly.
+   (Once in 100, the email can't reach its destination for some other
+    reason, like a network problem; it may then appear hours or days
+    later.)
+
+SEE ALSO: expire
+

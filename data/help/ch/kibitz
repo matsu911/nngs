@@ -1,0 +1,20 @@
+指令: kibitz
+
+用法: kibitz message
+
+說明:
+
+將你的 message 顯示給所有與你正在觀看同一棋局的人看。
+
+' 也是 kibitz。 
+
+如果你正在觀看的不只一局, 只要加上棋局的號碼便可同樣進行 kibitz。
+例如你想在 game 4 中發表高見, 只要輸入:
+ 
+       kibitz 4 c3 是大妙手
+  或
+
+       ' 4 c3 是大妙手
+
+相關指令: censor observe
+

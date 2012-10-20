@@ -1,0 +1,28 @@
+
+translate word
+
+This command (with very special thanks and kudos to Jan van der Steen) 
+takes the specified word and gives the user all available translations
+in the dictionary.  
+
+For example:
+
+translate amashi
+
+Type    : Technical term
+Japanese: amashi
+English : a strategy for white in no-komi games
+English : in which he lets the opponent take good points
+English : but as compensation takes territory, aiming to 'outlast' the opponent
+Dutch   : een strategie voor wit in partijen zonder komi.
+Dutch   : wit laat zwart de goede punten bezetten en pakt zelf ondertussen gebied
+German  : eine strategie des weiszen spielers in spielen ohne komi.
+German  : man laeszt den gegner grosze punkte besetzen und
+German  : nimmt als ausgleich gebiet.
+Swedish : en strategi i partier utan utj{mningspo{ng, d{r vit l}ter svart f} bra
+Swedish : positioner samtidigt som vit tar omr}den och inriktar sej p} att
+Swedish : f|rst|ra svarts blivande omr}den.
+Italian : strategia per il bianco, in partite senza komi, nella quale
+Italian : egli sacrifica punti ma guadagna territorio per ottenere una
+Italian : posizione piu' forte nel finale
+

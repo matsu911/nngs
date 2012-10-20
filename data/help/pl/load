@@ -1,0 +1,14 @@
+Sk³adnia: load [bia³e-czarne] 
+
+Komenda ta przywraca przerwan¹ grê. 
+Przyk³ad.
+Gracze Ewa i Justyna przerwa³y grê. Ewa gra³a bia³ymi. 
+
+Obie musz¹ byæ obecne na serwerze. Tylko jedna z nich (nikt inny) mo¿e 
+Przywróciæ grê komend¹:
+
+Load Ewa-Justyna
+
+
+Zobacz tak¿e: stored
+

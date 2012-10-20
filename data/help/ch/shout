@@ -1,0 +1,34 @@
+指令: shout
+
+用法: shout message
+
+說明:
+
+顯示你一行的訊息給其他的使用者看到, 除了你自己跟其他不願聽到的人之外。 
+他們將會看到以你的名字加上 "!" 為開頭, 後面接上你所欲表達的訊息。
+這個指令的縮寫為 "sh" 和 "!"。
+
+速成範例 ("player" 假設為你的名字):
+
+      指令:  shout Please help a newbie.
+      結果:  !player!: Please help a newbie.
+
+      指令:  !Please help a newbie.
+      結果:  !player!: Please help a newbie.
+
+
+取消你的 shouts -- 如果別人不想聽到你的 shouts, 可以用下列方法:
+
+   使用 "toggle s" 不接受任何人的 shouts。
+
+   使用 "censor player" 將拒絕你所有的 shout, tell 之類的訊息。
+
+重點提示: 除非有需要每個人都聽到你所說的話時, 才使用 "shout" 這個指令。相反的,
+使用 "tell" 來進行個別談天, 或者進入或開啟某個頻道, 和幾個朋友進行閒聊, 這樣
+做才尊重到其他使用者。    
+
+關於公告: 如果有 "!!" 雙重驚嘆號的 shout, 是由系統管理員所發出, 重要事情的公
+          告, 任何人都將看見。
+
+相關指令: it gshout tell say yell who awho toggle set variables censor 
+channel alias

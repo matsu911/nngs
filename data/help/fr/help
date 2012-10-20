@@ -1,0 +1,9 @@
+Usage: help [sujet]
+
+  Imprime l'aide sur le [sujet].
+  Si on omet le [sujet], imprime une liste de tous les [sujet].
+
+  La commande info liste les fichiers d'aide qui fournissent des
+renseignements généraux sur PLGS.
+
+Voir Aussi: info

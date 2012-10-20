@@ -1,0 +1,18 @@
+Sk³adnia: info [opis]
+
+Koenda ta ustawia informacje o Tobie tak aby by³a ona widoczna dla innych.  
+Dostêpnych jest do 10 linii informacji
+
+Komenda info ustawia pierwsz¹ z nich.
+
+Aby ustawiæ nastêpne u¿yj:
+
+set 1 [opis]
+set 2 [opis]
+.
+.
+.
+set 9 [opis]
+
+Sk³adnia:  set variables stats
+

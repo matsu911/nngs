@@ -1,0 +1,19 @@
+
+Usage: info [chaine]
+
+Cela positionne votre ligne 'Info:' sur vos 'stats' à [chaine].
+
+Vous pouvez avoir jusqu'à 10 lignes 'info' dans vos 'stats'.
+
+"Info" ne positionne que la première ligne.
+
+Pour positionner les autres lignes, utilisez:
+
+set 1 [chaine1]
+set 2 [chaine2]
+.
+.
+.
+set 9 [chaine9]
+
+Voir Aussi:  set variables stats

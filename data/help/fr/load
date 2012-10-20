@@ -1,0 +1,7 @@
+Usage: load nom1-nom2
+
+  Cette commande continue une partie entre nom1 et nom2 et charge la
+dernière position sauvegardée; la partie peut être continuée. Vous devez
+être nom1 ou nom2  pour charger et poursuivre une partie sauvegardée.
+
+Voir Aussi: stored

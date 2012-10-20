@@ -1,0 +1,10 @@
+指令: open
+
+用法: open
+
+說明:
+
+切換你的 'open' 狀態。與 "set open" 和 "toggle open" 同義。
+當 'open' 設為 'True' 時, 別人便可對你提出對局邀請, 'False' 則反之。
+
+相關指令: variables

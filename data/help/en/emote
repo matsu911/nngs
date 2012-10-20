@@ -1,0 +1,46 @@
+
+USAGE: emote type player [args...]
+
+Emote is an interesting command.  (The shorthand for this is /).
+
+emote \i-'mo-t\ v : to give expression to emotion esp. in or as if 
+                    in a play or movie
+
+An example of the usage is:
+
+/five tromp
+
+That will send tromp (if your handle is OneEye)
+
+^ OneEye's hand floats through the air and slaps you a high five! ^
+
+There is a special emote, "/balloon".  You have a certain number of
+these in your "variables".  You get more by winning games.  The way
+these work are:
+
+/balloon tromp red
+
+and tromp will see:
+
+^ You see a red blob at the horizon getting closer ....
+And suddenly OneEye's water balloon hovers above your head!
+Splosh!! The balloon explodes all over the Go Board and everything is wet!
+You look across the room and OneEye grins guiltily... ^
+
+Most emotes do not need a third parameter, we will detail them here when 
+there is new ones added.
+
+As for the current emotes:
+
+wave     scratch    kiss    scalpel  five    lag  
+balloon  hug        bow     pat      peck    smack
+tap      lazy       smile   pie      pout    vday (Valentines day)  
+miss     warm       bonk    cny (Chinese new year)
+
+New emotes can be added at any time, simply "tell geek" the new emote,
+or better, send email with it, and he will add it in.
+
+Have fun!
+
+SEE ALSO: it zz
+

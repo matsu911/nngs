@@ -1,0 +1,12 @@
+
+usage komi 5.5
+
+Cela met le komi à 5.5 points pour blanc.
+
+komi -5.5
+
+Cela met le komi à 5.5 points pour noir.
+
+Le serveur n'accepte pas très bien de partie au komi de 0.0. Les
+résultats ne sont pas garantis.
+

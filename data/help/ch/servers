@@ -1,0 +1,60 @@
+
+參考資料: 遊戲類的伺服器 (Game Servers)
+
+網際網路上的伺服器讓你可以和無數的對手進行比賽, 只要使用 telnet 如下:
+
+                  telnet host machine's address port number
+
+以下是我們所蒐集的伺服器:
+
+西洋雙陸棋伺服器
+           瑞典:  fraggel65.mdstud.chalmers.se 4321  (129.16.235.153)
+
+橋牌伺服器
+           美國:  vanderbilt.okbridge.com 1729
+
+中國象棋伺服器
+           美國:  coolidge.harvard.edu 5555          (128.103.28.15 5555)
+
+圍棋伺服器
+           南韓:  igs.nuri.net 6969                  (203.255.112.3 6969)
+           美國:  nngs.cosmic.org 9696               (192.133.244.60 9696)
+           台灣:  lgs.hinet.net 9696         (210.65.1.245 9696)
+
+
+MULTI USER DUNGEON WITH A GO PLAYER
+           美國:  rag.com 2222
+
+OTHELLO SERVER
+           德國:  faust.uni-paderborn.de 5000        (131.234.28.29 5000)
+
+拱豬伺服器
+         加拿大:  kiwi.resnet.ubc.ca 7699            (142.103.36.17)
+
+西洋棋伺服器
+       澳大利亞:  lux.latrobe.edu.au 5000            (131.172.4.3 5000)
+           丹麥:  anemone.daimi.aau.dk 5000          (130.225.18.58 5000)
+           荷蘭:  dds.hacktic.nl 5000                (193.78.33.69 5000)
+           美國:  ics.onenet.net 5000                (164.58.253.10 5000)
+                  chess.pitt.edu 5000                (136.142.81.40 5000)
+                  ics.onenet.net 5000
+                  chess.lm.com 5000
+
+西洋棋伺服器 (備用站)
+           美國:  iris4.metiu.ucsb.edu (128.111.246.4) 5000
+                  coot.lcs.mit.edu (18.52.0.70) 5000
+                  news.panix.com (198.7.0.1) 5000
+
+西洋棋伺服器 (欲得較新資訊)
+           丹麥:  finger tange@daimi.aau.dk
+           法國:  finger wallez@lune.enst-bretagne.fr
+           美國:  finger chess@ics.onenet.net
+           美國:  finger chess@chess.uoknor.edu
+
+文字遊戲伺服器
+           美國:  eel.st.usm.edu 7777
+
+請將任何勘誤或是最新資訊送給:
+kenming@gcn.email.net.tw
+
+謝謝!

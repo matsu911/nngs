@@ -1,0 +1,9 @@
+
+USAGE: adrop name ladder
+
+RESTRICTED TO ADMINISTRATORS.
+
+Drops player "name" from the ladder (9 or 19).
+
+SEE ALSO: ladder9 ladder19
+

@@ -1,0 +1,13 @@
+指令: toggle
+
+用法: toggle variable [on/off]
+
+說明:
+
+  這個指令用來設定個人的一些狀態參數。
+  與 "set variable [on/off]" 相同, 若 [on/off] 這項省略的話, 將只會切換
+設定值 (變為與原設定相反之值)。
+
+  關於參數的說明, 請參照 "help variables"。
+
+相關指令: variables 

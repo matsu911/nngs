@@ -1,0 +1,14 @@
+
+USAGE: zz text
+
+zz does an "it", but only in your current channel (what you have
+your ; set to). ("yy" is an alias for zz).
+
+Entering:  zz wants to play bumper cars
+
+and your handle is johns, all users in the channel will see:
+
+-- johns wants to play bumper cars --
+
+SEE ALSO: channel lock unlock inchannel it pzz
+

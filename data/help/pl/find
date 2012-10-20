@@ -1,0 +1,23 @@
+Skladnia: find [-]ci¹g
+ 
+
+Komenda ta s³u¿y do odnajdywania osób wed³ug ich adresu e-mail lub identyfikatora.  
+
+Przyk³ad 1:  find sss
+
+Wyœwietla:
+
+    Matched player: sss         at address sss@iohk.com
+    Matched player: sssg        at address sss@iohk.com
+
+Przyk³ad 2: find -iohk
+
+Wyœwietla:
+
+    Matched player: chl         at address chl@iohk.com
+    Matched player: spirt       at address maxng@iohk.com
+    Matched player: sss         at address sss@iohk.com
+    Matched player: sssg        at address sss@iohk.com
+
+Innymi s³owy umieszczenie '-' przed ci¹giem powoduje wyszukiwanie wed³ug adresu e-mail. W innych przypadkach wyszukiwanie oparte bêdzie o identyfikator gracza.  
+

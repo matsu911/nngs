@@ -1,0 +1,17 @@
+指令: spair
+
+用法: spair white1 white2 black1 black2
+
+說明:
+
+這個指令可用來提供建立一個 Rengo 棋賽的步驟 (請看 help rango)。
+
+例子:  spair tromp gege geek talby
+
+tromp, gege, geek, talby 將會收到指示, 獲知進行一個 pair-go 棋局的步驟,
+而 tromp 跟 gege 是白隊, geek 跟 taiby 是黑隊。
+
+注意: 你必須是這四人之中的一員才能使用這個命令。
+      此命令只提供引導, 不建立棋局。
+
+相關指令: pair-go match

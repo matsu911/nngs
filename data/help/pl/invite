@@ -1,0 +1,18 @@
+Sk³adnia: invite [identyfikator numer_kana³u] 
+
+Jeœli jesteœ na kanale 99 a Twój identyfikator to Gaius a gracz Brutus w³aœnie wszed³ na serwer mo¿esz zaprosiæ go na kana³ 99 ...
+
+Aby to uczyniæ Gaius wpisuje:
+ 
+invite Brutus 99
+
+Na ekranie gracza Brutus wyœwietli siê:  
+
+Gaius invites you to channel 99
+
+(Gaius zaprasz ciê na kana³ 99)
+
+Wartoœæ domyœlna numer_kana³u to kana³, na którym ty siê znajdujesz.
+
+Zobacz tak¿e:  channel inchannel zz dnd lock unlock 
+

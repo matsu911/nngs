@@ -1,0 +1,19 @@
+
+To get older versions of winigc (before 0.63) to work correctly here:
+
+1)  register an account
+2)  log out, get password in email
+3)  log in 
+4)  toggle client on
+5)  log out
+
+You can also put int your WINIGC.INI file:
+
+[Parser]
+DetectIGS=0
+
+And WinIGC will assume it is on IGS.
+
+The next time you log in, everything will work OK.  "user" is different here,
+so you will get that output in your terminal window.
+

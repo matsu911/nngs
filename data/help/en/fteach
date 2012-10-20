@@ -1,0 +1,18 @@
+
+USAGE: fteach
+
+This command allows two players to turn a new game, or an in progress
+game into an unrated teaching game.  This turns on kibitzes for the
+players (to hear the questions or comments being kibitzed), and turns on
+multi-undo as well (see help undo).
+
+This command was created to replace doing teaching in channels, where
+comments are not saved.
+
+Please note that variations are not save, so some (most?) comments may
+not make sense.  Perhaps some day this will not be the case.  :)
+
+To use this, each player must type "fteach" sometime during the game.
+
+SEE ALSO: teach undo
+

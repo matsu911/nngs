@@ -1,0 +1,12 @@
+
+USAGE: adjourn
+
+Requests that a game be saved for later play. If a proposal to adjourn
+is pending for you, then typing adjourn (or accept) will accept the offer.
+Games that are adjourned can be resumed later by using the load command
+when your opponent is logged on.
+
+The adjourn command will immediately adjourn teaching games.
+
+SEE ALSO: accept decline load pause
+

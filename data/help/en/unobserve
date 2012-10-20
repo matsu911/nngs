@@ -1,0 +1,8 @@
+
+USAGE: unobserve [n]
+
+This is for backward compatibility only, and is actually equivalent to
+the "observe" command.
+
+SEE ALSO: observe
+

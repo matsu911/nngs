@@ -1,0 +1,13 @@
+
+/* NOTE: lists don't seem fully implemented */
+
+The lists themselsves are just filenames with the names of the accounts
+in them.  They are indexed in the file 'index' with the name of the list
+and the priveleges as follows:
+
+/* -1 means no players but admin gods can edit, all may view it. */
+-1 means that the list is invisible.  Useful for admin list.
+0 means no players but admins can access it
+1 means only read by non-admins
+2 means that everyone can see/write to the list
+ 

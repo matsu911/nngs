@@ -1,0 +1,21 @@
+
+USAGE: addtime [minutes]
+ALIAS: moretime
+
+Adds extra time (in minutes) to your opponent's clock when you are
+playing a game.  
+
+In essence, using the addtime command means that you don't want your
+opponent to worry so much about the time remaining on his/her clock, about
+being flagged, and so on.  It is a useful command to use when your opponent
+mentions a problem with his/her connection (netlag).
+
+You are under no obligation to give your opponent more time, of course.  If
+you find that you frequently need more time when you play, consider playing
+with longer time controls.
+
+Note that you can play an untimed game by specifying 0 minutes initial time
+and 0 minutes byo-yomi in the "match" command.
+
+SEE ALSO: match time pause
+

@@ -1,0 +1,89 @@
+
+   AWHO
+
+Se rajoute à l'ancienne commande "WHO" qui, sur PLGS, ne donne
+pas suffisamment de renseignements pour choisir son adversaire.
+"AWHO", une des commandes les plus fréquemment utilisées, renvoie
+une liste des joueurs connectés sur le serveur dans l'ordre de
+l'échelle de niveau.
+
+EXEMPLES RAPIDES: 
+
+  awho        renvoie la liste de tous les joueurs connectés, dans
+              l'ordre de l'échelle19, avec quelques renseignements
+              supplémentaires.
+  awho 9      renvoie la même liste, dans l'ordre de l'échelle9.
+  awho f      liste ceux qui ne jouent pas, dans l'ordre de l'échelle9.
+  awho *      liste les parties de l'échelle en cours.
+  awho r      (comme ci-dessus) liste les parties de l'échelle en cours.
+
+LES OPTIONS (qui peuvent être changées avec la commande "toggle"):
+
+  awho        renvoie une liste complète de tous les joueurs et
+              toutes les parties dans l'ordre de l'échelle19.
+  9           renvoie une liste complète de tous les joueurs et
+              toutes les parties dans l'ordre de l'échelle9.
+  f           ne montre que les joueurs libres (ne jouant pas).
+  r           ne montre que les joueurs inscrits.
+  u           ne montre que les joueurs non inscrits.
+
+COMPRENDRE LE FORMAT "AWHO":
+
+ 1  2  3  4         5    6   7   8
+ =  =  =  =         =    =   =   =
+
+ Info     Name      Rank 19  9   Rank Info
+ -------- --------- ---- --- --- ----------------------------
+  * --  1 daveg      1d  2   0   IGS 1d*, AGA 4d, Korea 3gup
+     1 -- geek       4k  5   3   2k AGA
+  ! -- -- ManyFaces  13k 6   0   13k
+  * --  1 john       3k  17  1   6d
+    -- -- todd       7k  0   0   Amanda
+
+EXPLICATION DES EXEMPLES AWHO CI-DESSUS:
+
+Daveg, la première ligne, joue dans la partie 1, qui est une partie de
+l'échelle comme indiqué par le "*". Il annonce 1 dan, est numéro 2 sur
+l'échelle19 et n'est pas entré dans l'échelle, et explique qu'il est 1er
+dan* sur IGS, un 4e dan AGA, et un 3e "gup" en Corée.
+
+Le deuxième joueur, geek, observe la partie 1, se déclare lui même 4e
+kyu, est numéro 5 sur l'échelle19 et numéro 3 sur l'échelle9, et
+explique qu'il a le niveau 3e kyu de l'AGA (Association Américaine de
+Go).
+
+ManyFaces est prêt à jouer, selon le "!", est annoncé 13e kyu par son
+programmeur, est numéro 6 sur l'échelle19 et n'est pas encore entré dans
+l'échelle9, et reprend son annonce de 13k sans plus d'explications.
+
+John joue contre daveg dans la partie 1 qui est, comme indiqué
+ci-dessus, une partie de l'échelle, se déclare lui même comme 3k, est
+numéro 17 a l'échelle19 et numéro 1 à l'échelle9, ne veut pas de partie, et se
+déclare lui même comme étant vraiment un 6e dan (quoi?).
+
+Todd se déclare lui même comme 7e kyu, et explique son niveau par le mot
+"Amanda" (quoi?).
+
+  1. Sous le premier titre, "Info," vous trouvez la situation actuelle
+     du joueur.
+
+     S   Shouts off      Ne peut entendre aucun cri.
+     Q   Quiet           N'écoute pas les messages des connexions 'on' ou
+                         'off', ou des parties commençant ou se
+                         finissant.
+     X   Not interested  La personne n'accepte aucun match.
+     !   Open            Prêt à jouer une partie.
+     *   Ladder game     Le joueur joue une partie de l'échelle.
+
+  2. Sous le second titre, le numéro de la première partie observée.
+  3. Le nombre de parties jouées par la personne, éventuellement.
+  4. "Name" renvoie à l'identifiant de la personne.
+  5. Renvoie le niveau enregistré par la personne dans les stats ( basé
+     sur son avis personnel)
+  6. Position dans l'échelle 19 X 19 . ("0" signifie qu'ils ne sont pas
+     entrés dans l'échelle).
+  7. Position dans l'échelle 9 X 9 . ("0" signifie qu'ils ne sont pas
+     entrés dans l'échelle).
+
+Voir Aussi: who best stats toggle games rank ladder ladder19 ladder9
+

@@ -1,0 +1,58 @@
+
+USAGE: variables [user]
+ALIAS: vars [user]
+
+Displays the variables of the given user. If no user is given then your
+variables are displayed.
+
+Variable Information
+
+Name        Function
+----        --------
+automail    If Yes the score of your games will be mailed to you
+            upon completion.
+bell        If Yes a ^G or bell will be sent when a board update
+            is done.
+busy        This sets your busy string.
+byo_stones  This sets your default byo yomi stones
+byo_time    This sets your default byo yomi time
+client      Set this to Yes if using a client.
+extprompt   If set, and not using a client, this gives you extended
+            information in your prompt (last tell, current channel)
+ginform     If Yes you will be informed when games begin or end.
+gshout      If Yes you will hear gshouts (Go related shouts)
+height      This is your terminal height
+kibitz      If Yes you will hear kibitzes.
+looking     If Yes, you are looking for a game.
+lshout      If Yes you will hear ladder game announcments
+notifiedby  Reserved for future use.
+open        If Yes you are willing to accept match requests.
+pinform     If Yes, you will be informed when users connect or
+            disconnect to the server.
+private     If Yes then all games you play will be private
+            regardless of your opponents "private" variable.
+prompt      This string will be your prompt. Use "set prompt" to
+            restore the system default.
+problem     This is the last problem number you viewed.
+rank        The sets your "Rank:" field to whatever you type.
+rated       This is the default value of the "rated" parameter for the
+            match command.
+realname    Your real name. Please only change it if it is incorrect.
+robot       If you are a computer program.  (no tells from other robots)
+ropen       If No, you are only open to challenges that match your "rated"
+            variable.
+shout       If Yes you will hear shouts.
+size        This is the default size of your board.
+
+tell        You will hear unregistered tell's and say's.
+time        This is the default value of the "time" parameter for the match
+            command.
+verbose     sends you ascii boards
+Water Balloons See: help emote
+width       This is your terminal width (not used)
+1-10        This sets your plan information that is displayed when
+            someone stats you. You can set these to an arbitrary
+	    string.
+
+SEE ALSO: set
+

@@ -1,0 +1,8 @@
+
+USAGE: erase
+
+Clears any message you may have waiting for you.
+There is a limit of 40 lines of messages, so be sure to erase old messages!
+
+SEE ALSO: messages
+

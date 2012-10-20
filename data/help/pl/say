@@ -1,0 +1,8 @@
+Usage: say message
+
+  Transmits your message to your current opponent if you are playing a
+game.  If you are not playing a game, the message is sent to the last
+opponent in your current NNGS session.
+
+See also: tell censor kibitz shout
+

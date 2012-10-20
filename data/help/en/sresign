@@ -1,0 +1,22 @@
+
+USAGE: sresign whitename-blackname
+
+This command is used to resign a stored game.
+
+Example:  First, find the game that you want to resign by typing "stored". 
+If you are "axe" and you have a stored game against ManyFaces, you would
+see:
+
+Stored games for axe:
+             axe-manyfaces
+Found 1 stored games.
+
+If you wanted to resign this match, your opponent does not have to be on.
+You could simply type:
+
+  sresign axe-manyfaces
+
+and it would be taken care of for you.
+
+SEE ALSO: resign match stored
+

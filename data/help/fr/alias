@@ -1,0 +1,68 @@
+Commande: 
+Usage: alias [mot [chaine]]
+
+  Initialise un alias de commande de telle sorte que taper "mot" soit
+équivalent à taper "chaine". Si on omet "chaine" alors la valeur
+courante de "mot" est affichée. Si on oubliés les deux paramètres, alors
+tous vos alias seront affichés.
+
+             "alias" -- liste tous les alias que vous avez créés;
+        "alias mot"  -- renvoie l'alias de "mot";
+  "alias mot chaine" -- création/mise à jour d'un alias, de telle sorte que
+                        taper "mot" soit équivalent à taper "chaine".
+
+Note 1: Les alias ne sont pas transitifs. La suite de commandes --
+
+    alias foo bar
+    alias bar baz
+
+n'induit *PAS* "foo est équivalent à baz"
+
+Note 2: Vous ne devriez pas créer d'alias pour la commande quit.
+
+Voici des alias standards (tout le monde les a par défaut):
+  a             accept
+  bye           quit
+  channels      inchannel
+  exit          quit
+  h             help
+  hi            history
+  i,I           tell .
+  in            inchannel
+  ladder19      best 19
+  ladder9       best 9
+  logout        quit
+  m             match
+  ma            match
+  o             observe
+  p             who a
+  pair-go       pair
+  pl            who a
+  players       who a
+  r             refresh
+  sh            shout  [note: cet alias peut être désactivé]
+  t             tell
+  user          awho
+  users         awho
+  vars          variables
+  w             who
+  yell          tell ,
+  yy            zz
+  .             tell .
+  ;             tell ,
+  ,             say
+  *             pzz *
+  ^             tell ^
+  !             shout
+  ?             help 
+  /             emote
+  `             next
+  '             kibitz
+  \             kibitz
+  %             clntvrfy
+  +             addlist
+  -             sublist
+  =             showlist
+  #             ashout
+  
+Voir Aussi: unalias [et les commandes elles même bien sûr]

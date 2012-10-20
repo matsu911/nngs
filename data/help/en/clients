@@ -1,0 +1,13 @@
+
+You can copy the latest clients from the following locations.
+The easiest way is probably to use your web browser.  If you 
+use plain FTP, be sure to use "binary" mode when transferring
+files!
+
+    ftp://www.joy.ne.jp/welcome/igs/Go/ (most up to date)
+    ftp://rzis1.rz.tu-bs.de/pub/go      (may be out of date)
+    ftp://ftp.fh-wuerzburg.de/pub/go/   (may be out of date)
+
+There are many clients, ones for DOS, Windows, X11, Macintosh, Java,
+OS/2, etc.
+

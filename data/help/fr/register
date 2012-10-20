@@ -1,0 +1,30 @@
+   
+   REGISTER pseudo adresse_mail vrai_nom vrai_prénom 
+   
+Crée un compte avec le pseudo par lequel vous souhaitez être identifié
+lorsque vous êtes sur le serveur. Après avoir tapé cette commande vous
+recevrez un mot de passe à l'adresse mail que vous avez donnée. Dès que
+vous avez reçu le message (après quelques minutes) vous pouvez vous
+connecter sur le serveur en utilisant le pseudo que vous avez demandé et
+le mot de passe que vous avez reçu, les deux figurant dans le mail.
+(S'il vous plait, enregistrez les tout de suite).
+
+   
+
+EXAMPLES RAPIDES:
+   
+  "Register geek geek@imageek.york.cuny.edu Erik Van Riper":
+  enregistrera le pseudo "geek" et enverra le mot de passe à
+  "geek@imageek.york.cuny.edu" avec le véritable nom complet "Erik Van
+  Riper". 
+   
+  "Register xzhou xunzhou@CS.SunySB.edu Zhou Xun":
+  enregistrera le pseudo "xzhou" et enverra le mot de passe à
+  "xunzhou@CS.SunySB.edu"
+  avec le véritable nom complet "Zhou Xun".
+   
+NOTE: Nous demandons votre nom pour pouvoir dire "Salut Erik" et être
+plus amical.    ;)
+   
+S'IL VOUS PLAIT, ATTENTION à taper correctement votre adresse mail.
+   

@@ -1,0 +1,34 @@
+指令: tell
+
+用法: tell handle comment
+
+說明:
+
+對別人說話。你說話的對象將會看到你的名字和你所說的話。
+
+速成範例 (現在假設你自己叫做 donw):
+
+     指令:  tell KenW Hello, how are you? 
+     結果:  KenW 將看到: *donw*: Hello, how are you?
+
+提示: 如果想知道自己是否正確使用這個指令, 你可以練習跟自己說話。
+
+省時進階使用指令:
+
+. comment   將你的話 (comment) 送給上一個你使用 "tell" 跟他說話的人。 
+
+^ comment   將你的話 (comment) 送給上一個對你使用 "tell" 說話的人。
+
+階使用法的範例:
+
+     指令:  tell KenW you didn't answer me before, hi
+     結果:  KenW 將看到: *donw*: you didn't answer me before, hi
+
+     首先:  KenW 輸入: ^ How are you today?
+     結果:  你將看到: *KenW*: How are you today?
+
+     他不需要打你的名字就可以跟你說話了!
+     皆下來, 你們使用 "." 或 "^" 均可互相說話。
+
+相關指令:  shout say who awho set channel
+

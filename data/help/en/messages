@@ -1,0 +1,10 @@
+
+USAGE: messages [user message]
+
+The message command used alone with no arguments will display any 
+messages you may have. If you supply a user and message, then that 
+message will be sent to that user.  Messages you (they) receive will 
+be stored until you (they) clear them.
+
+SEE ALSO: erase tell mmess
+

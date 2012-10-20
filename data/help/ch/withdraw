@@ -1,0 +1,17 @@
+指令: withdraw
+
+用法: withdraw [1-n, match, adjourn, all, player]
+
+說明:
+
+  取消你所對別人提出的邀請。如果你只提出一個邀請, 那麼不下任何參數便可取消之。
+如果你不只提出一份的邀請 (或要求) , 例如: 對很多人提出 match  邀請, 那麼, 你必
+須確定要取消的是那一項。可以用數目, 形式, 全部取消, 或是用你原本已提出邀請的使
+用者的名字, 詳情請參考 help decline。
+
+  另: 有些形式的要求在某些情況下, LGS 會自動將之取消。例如, 你已對 user2 提出
+match 邀請, 但又接受了 user1 的 match 邀請。LGS 此時會開始你與 user1 的棋局並
+取消你原本對 user2 的邀請。
+
+相關指令: decline accept pending match draw adjourn abort 
+相關指令: takeback switch simul  

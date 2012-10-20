@@ -1,0 +1,201 @@
+國際網路圍棋循環賽計劃
+
+在下提出一個舉辦循環賽的計劃, 純休閒網路比賽, 細節容後詳談。
+我並非任何圍棋站的管理員, 而且打算讓比賽可以在任何網路圍棋站上進行,
+甚至私下較量。比賽的結果由對局者自行報告。比賽形式的重點在於簡單, 而
+我建議, 將來類似的比賽可以規範得更清楚。
+
+Basically it is a 4-round (5 player) round-robin handicap tournament made
+up of sections arranged primarily by time-zone, and secondarily by rank.
+This will give everyone nearly a month to play, making making
+game-scheduling easier than 1-week rounds.  Note that popular time zones
+will have multiple sections, with more closely matched ranks.
+
+Details:
+
+-Objective-
+To offer a tournament environment for players to play their best while
+minimizing schedule difficulties of world wide play.
+
+-Schedule-
+Registration: 1 Jan 13 Jan 97
+Sections posted:  18 Jan 97
+Game begin: 18 Jan 97
+Goal dates for each person 
+to complete 1,2,3,4 games: 25 Jan, 1, 15, 22 Feb 97
+All games complete: 28 Feb 97
+Results posted to r.g.g. as I can. Each weekend for sure. Final results
+posted by 5 Mar 97
+
+note that the goal is for each player to at least be done with a game a
+week, but the only hard date is completing all games by 28 Feb.  Notice this
+gives a 'bonus' week for difficulties. Ideally, all results would be in
+sooner, which will yield an earlier completion date.
+
+-Registration-
+Send a message with 'registration' in the subject line to 
+<malasley@mail.uccs.edu>
+and include the following information:
+
+Name
+e-mail address
+rank 
+time zone (with reference to GMT, eg MST=GMT-7)
+
+Rank is based on AGA rank.  I will convert ranks that have been submitted
+using the conversions below.  If more than one rank is submitted, I'll use
+the one that changes the least.  For example, my ranks are IGS 5k*, NNGS
+4k*. So, AGA equivalents are 1k & 3k a difference of 4 stones and 1 stone
+respectively. So, the NNGS conversion is used, for a rank of 3kyu.  
+
+To get AGA from these ranks, perform the adjustment listed
+
+Europe +2
+China  +3
+NNGS   -1
+Japan  -1 up to 4d  +0 for stronger than 4d
+IGS    +3 for dan ranks.  For kyu ranks,+(kyu/5 + 3). 
+For example, IGS 10k*-> 10/5 +3 = 5 stones. so IGS 10k* = 5k AGA
+Korea 1gup = 6d AGA, and it is stone for stone after that. 7gup = 1kyu AGA
+
+Don't sweat this too much. I'll make the adjustmensts if you simply send in
+the ranks you have. I'll allow stronger claims, if you choose, but I'll not
+allow sandbagging against the above adjustments.
+
+Any missing information can prevent registration.  I think this is the bare
+minimum to get by on. I'll post tertiary information with the section
+listing, so if you want to add information, feel free to include it with
+your desires to have it posted. One suggested addition is all of your
+account names on the various servers.
+
+Your time zone is flexible. If you consider 6-12pm as prime-time for
+playing, and you work odd hours, so this isn't true, then choose a different
+time zone that will put you in the prime playing zone. For example, if I
+worked 12am-8am, and my personal 'prime time' is 10am-4pm, then I might list
+my time zone as GMT+1, instead of GMT-7 (MST)
+
+
+-Game Setup-
+After registration, sections will be divided up by time zone.  If there
+aren't enough players in certain time zones, they will be combined with
+neighbor time-zones. If there are no 'clean' way to combine time-zones, then
+ranks will be used to construct sections within time-zone groups. I will
+gladly make sections spanning 2 time zones to match ranks, but will be very
+hesitant to have any section span more than 2. This all depends upon how
+many register, of course. 
+
+Once sections are constructed, players may arrange games with any of the
+other players at any time.  I recommend arranging your appointments as
+quickly as possible.  Any server, any means may be used to match the games.
+All that I offer is a default option, if other arrangements cannot be agreed
+to.  Some servers do not offer timers. If a timed game is required by a
+player, then one of the timed servers must be used.
+
+Default: 20 minutes free time. 20 minutes for 25 stones byo-yomi. handicap
+equal to the difference in ranks. Difference of one stone means no komi.
+Even game color will be determined by TD when section is formed, and 5.5
+points komit will be given white.
+(remember, these are only the defaults. If you want to determine winner by
+who can hold their breathe the longest, that's fine by me. As long as both
+players agree. The default is for when you cannot agree. I'm only recording
+reults as reported by the players.)
+
+Players may submit their game times to the TD in advance. This is not
+required, but if you get a no-show, it becomes a point of data in the
+dispute process.  Players should try to meet their appointments, respecting
+their opponants' time.  Any such notifications should have 'game time' in
+the subject line of those e-mails, so I can file without opening unless
+their is a dispute. 
+
+-Results-
+Results should be reported by both players as soon as possible after the
+game. Please include 'result' in the subject line of these reports.  Results
+will be reported as 'tenative' if received from only one player, until the
+second player confirms. However, at the end of the tournament, if there is
+only one game result submitted, it will become final.
+
+Sample section 
+
+Section aa (GMT-3, -2)
+   Player        Rank    1 2 3 4 5 W/G 
+:1 Tom Jones     3k      x - . - . 0/2 tenative wins:3
+:2 Barry Manilow 1d      + x . + - 2/3
+:3 Sting         5k      . . x - . 0/1
+:4 John Lennon   2d      + - + x - 2/4
+:5 Stevie Wonder 2d      . + . + x 2/2
+
+'x':no game,'.':yet to play, '-':loss, '+':win
+
+So, 
+John is the only one who has finished all his games.  The others still have
+games to play. Tom has reported a win against Sting, but Sting has not yet
+confirmed this.  
+
+The winner of a section is whoever has the most wins. If a tie, the result
+of the tied players' game will decide the section.
+
+Please play all of your games. This is a courtesy to the other players.
+However, is someone does 'dissappear' when they have no chance of winning,
+they will forfeit the unplayed games.
+
+-Disputes-
+If anyone wants to help me with this tournament, please let me know.
+Include 'volunteer' in the subject line.  I will not play unless I get 2
+helpers, and then only if I'm not in their section.  More volunteers and I
+may play.  The more volunteers I get, the more I can seek a 'panel' decision
+on disputes. I will NOT determine any dispute regarding my own games. 
+
+Disputes may entail game times, missed game appointments, escape
+accusations and so on.  The appeal should be made to a referee if one
+happens to be handy on your server.  If not, they should be e-mailed to the
+TD (me).  Any complaint should include the background messages showing your
+own effort to resolve the situation.  The TD will contact the other party in
+the dispute and seek a solution.  If it cannot be settled, then the TD will
+confer with un-involved referees for a 'ruling' which will be final. If the
+refs cannot agree, I'll make the decision, or (if it involved me) flip a
+coin for which ref gets to rule. If one person in the dispute is
+'non-responsive' meaning they do not reply to any referee e-mails in attempt
+to resolve the situation, will lose the dispute.  
+
+If a game-time was submitted in advance as described in the 'Game Setup'
+section, this will become background evidence in a dispute regarding a
+missed appointment.  If the game can be made up, there will be no penalty.
+However, please keep your appointments or send notice if you are unable.
+
+(please folks, let's not test this sytem. I'd just assume not have any
+disputes).
+
+>
+-Future-
+This tournament is designed to be a first of a series. Some possible
+alternate rules have been discussed, and I would like your input, even (and
+perhaps especially) if you don't enter this one.
+
+- all even games
+- even games with handicapping by points instead of stones (pls suggest
+methods)
+- stricter appointment enforcement
+- different section sizes
+- play-off ideas (presently, single ellimination is the idea I have, but
+this is not part of the initial tournament)
+- sponsorship and with it prizes or recognition (info lines on server for
+example)
+
+My personal emphasis is to make tournaments that are not such a pain as
+they have been in the past by minimizing scheduling difficulity.
+
+>
+-Disclaimer-
+I will do my best to make this a fun tournament. However, I reserve the
+right to be arbitrary. This tournament has no sponsor. I'm just doing this
+myself. I appeal to all to submit suggestions for the future, but to limit
+complaints.  Section construction is final.  Disputes falling outside the
+parameters in the Disputes section will be determined arbitratily.  There
+are no prizes, no fees, no promises, no nothing.  Only HOPE for a tournament
+format that can be repeated in only a month for go players of the world.
+
+
+Matt Lasley
+W>lasleyma@afmcfafb.fafb.af.mil
+H>malasley@mail.uccs.edu
+GO: AGA 3k (-3.5) cricket- IGS 5k*  NNGS 4k*  GameZone:alexeth

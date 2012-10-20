@@ -1,0 +1,42 @@
+Sk³adnia: variables [identyfikator]
+
+Podaje zestaw ustawieñ danego gracza. Jeœli nie podasz ¿adnego identyfikatora Twoje zmienne zostan¹ wyœwietlone.  
+
+Opis zmiennych:
+
+Nazwa       Dzia³anie
+----        --------
+automail    Jeœli ustawione na 'Yes' Twoje gry bêd¹ automatycznie
+            wysy³ane do Ciebie po ich zakoñczeniu. 
+busy        Treœæ komunikaty 'busy'
+byo_stones  Domyœlne ustawienia kamieni w byo-yomi. 
+byo_time    Domyœlne ustawienia czasu byo-yomi.  
+client      Ustaw na 'yes' jeœli u¿ywasz klienta.  
+extprompt   Jeœli ustawione a nie u¿ywasz klienta podaje ci rozszerzon¹  
+            informacje w ponagleniu. 
+ginform     Informowanie o rozpoczynaj¹cych i koñcz¹cych siê grach.  
+gshout      Status gshout 
+height      Wysokoœæ terminala 
+kibitz      Jeœli ustawione na 'Yes' bêdziesz slyszal komentarze typu kibitz looking     Jeœli 'Yes' inni bêd¹ wiedzieæ, i¿ szukasz okazji do gry. 
+notifiedby  Zarezerwowane.
+open        'Yes' oznacza, i¿ jesteœ sk³onna akceptowaæ zaproszenia do gry. pinform     Informacja o przybywaj¹cych i odchodz¹cych graczach. 
+private     'Yes' ustawia wszystkie Twoje gry jako prywatne.   
+prompt      Ci¹g twojego ponaglenia.  
+problem     Numer ostatniego problemu, jaki ogl¹da³eœ 
+rank        Ustawienia Twojego pola rank
+rated       Domyslna wartoœæ parametru rated dla komendy match.  
+realname    Twoje prawdziwe imiê. 
+robot       Oznaczenie programu graj¹cego w Go. 
+ropen       Jeœli ustawione na 'No' jesteœ otwarty na zaproszenia do gry od osób 
+            z identycznym jak Twój parametrem rated. 
+shout       Jeœli 'Yes' bêdziesz s³ysza³ wiadomoœci typu shout
+size        Domyœlny rozmiar planszy. 
+tell        Opcja wskazuj¹ca czy bêdziesz s³ysza³ tell i say od graczy  
+            niezarejestrowanych.
+time        Domyœlna wartoœæ czasu gry. 
+verbose     Nadsy³anie plansz w kodzie ascii 
+width       Szerokoœæ terminala (nie u¿ywane)  
+1-10        Ci¹gi (1 -10) w Twoim opisie widocznym po komendzie stats. 
+
+Zobacz tak¿e: set
+

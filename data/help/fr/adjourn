@@ -1,0 +1,9 @@
+Usage: adjourn
+
+  Demande qu'une partie soit sauvegardée pour la reprendre plus tard. Si une offre
+d'ajournement vous est faite, vous pouvez taper adjourn (ou accept) pour
+accepter la proposition.
+Les parties ajournées peuvent être récupérées plus tard en utilisant la
+commande load lorsque que votre adversaire est connecté.
+
+Voir Aussi: accept decline load

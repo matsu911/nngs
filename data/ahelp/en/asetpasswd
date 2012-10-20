@@ -1,0 +1,10 @@
+
+USAGE: asetpasswd player {*,password}
+
+RESTRICTED TO ADMINISTRATORS.
+
+Sets the password of the player to the password given. If '*' is specified
+then the player's account is locked, and no password will work.
+
+SEE ALSO: password
+

@@ -1,0 +1,18 @@
+
+USAGE: pzz user text
+
+If the user OneEye enters the command:
+
+  pzz tromp grabs her sword and charges at you screaming!
+
+then tromp will see:
+
+  ^ OneEye grabs her sword and charges at you screaming! ^
+
+This is like a "personal zz" or a "personal it".  
+
+The * key will contain "pzz tromp" if OneEye wanted to send another pzz,
+just like a . in tell.
+
+SEE ALSO: zz it
+

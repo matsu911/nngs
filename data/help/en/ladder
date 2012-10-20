@@ -1,0 +1,38 @@
+
+USAGE: ladder
+
+At the beginning of a game, if the server determines that the
+conditions are right it will tell you that this game can be a ladder
+game.  At that point, if both players type "ladder" then the game
+will be a ladder game.
+
+How the ladders work:
+
+A ladder is a continuous tournament with no handicaps in which
+players must regularly compete for their positions.  The strongest
+player holds the #1 position, the next-strongest player holds #2,
+and so forth.
+
+There are two separate ladders: 9x9 and 19x19.  If a ladder game is
+not played for one week after your last COMPLETED one, you are
+dropped 1 position in the ladder.
+
+PROCEDURE: begin with the normal match command, the player with the
+higher position (closest to 1) takes white.  If the server detects
+that conditions are correct for a ladder game, then the players are
+invited to type "ladder".  If both so respond, the server then
+announces the commencement of a ladder tournament game!  All ladder
+games are even, with a 5.5 komi (server sets the komi).
+
+At the end of the game, the server immediately calculates the shift
+in ladder positions.  If black (always the challenger) wins they
+replace the position of white, who then drops only one position.  If
+the challenger loses, nothing changes.
+
+EXAMPLE: Todd, who is in position #7, challenges tromp, who holds
+position #1 and will take white with a 5.5 komi.  If he wins, todd
+becomes #1 and tromp becomes #2.  If todd loses, the positions
+remain unchanged.  Todd would then remain at #7, and tromp at #1.
+
+SEE ALSO: join drop ladder9 ladder19 awho best
+

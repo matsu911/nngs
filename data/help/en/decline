@@ -1,0 +1,13 @@
+
+USAGE: decline [match, adjourn, all, player]
+
+Declines an offer made to you. If no parameter is given, and there is 
+only one offer, you thereby decline it. If there's more than one offer to
+you  outstanding -- for example, multiple match offers -- then you must
+specify which offer you wish to "decline." You can specify the offer you
+wish to decline: (1) By number; (2) By type, e.g., "decline abort"; (3) All 
+offers ("decline all"); or (4) By the player's name making the offer 
+("decline MacReady").
+
+SEE ALSO: accept pending match adjourn 
+

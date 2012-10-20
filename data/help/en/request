@@ -1,0 +1,66 @@
+
+A GoBot can show professional games from a collection listed in an index,
+and games played by players on NNGS (as long as they are kept).
+
+Take a look at the index:
+
+ help index
+
+or, for a the reverse order,
+
+ help rindex
+
+or to email it to yourself: (1447 lines, about 80KB)
+
+ mhelp index
+
+on WWW: http://localhost
+
+Then, when GoBot is not playing a game, type:
+
+ tell gobot #
+
+where # is the number you want.  (Do not use the # sign itself  :)
+
+You can also leave the choice to GoBot by typing:
+
+ tell gobot random
+
+To get GoBot to show a game played by players on NNGS, chose a game for
+a given player (with the sgf command) and tell GoBot its name:
+
+ tell gobot player1-player2-yymmddhhmm
+
+You can also tell GoBot to start at a move by giving the move number
+as a second argument.
+
+ tell gobot # #
+ tell gobot random #
+ tell gobot player1-player2-yymmddhhmm #
+
+To get it to skip faster a number (#) of moves of a game you requested, do
+
+ tell gobot jump #
+
+To get it to abort a game you requested, simply:
+
+ tell gobot abort
+
+When all GoBots are busy a new GoBot is automatically logged in (but the
+number is limited and small). Should all present GoBots be busy a new may
+appear if the main GoBot (named "gobot") is told "duplicate".
+
+
+Thanks to:
+
+- Boar and orb for writing the first GoBot.
+- pem for providing his (beta) SGF library, and taking over development of
+  GoBot
+- scoffin for his Go Proverbs collection
+- Jan van der Steen for making Pro games available on his WWW site.
+- rascal for the idea to make GoBot take requests
+- T Mark Hall for giving away his huge collection of games for the
+  GoScorer program.
+
+SEE ALSO: gobot sgf index rindex
+

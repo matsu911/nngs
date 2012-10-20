@@ -1,0 +1,47 @@
+
+USAGE: stats [name]
+
+This command gives you your stats, or, "name"'s stats, if specified.  
+
+Example:
+
+#> stats tromp
+Player:      tromp
+Game:        go (1)
+Rating:      NR    0
+Rated Games:      0
+Rank:  3k   0
+Wins:         38
+Losses:       26
+Last Access(GMT):   (Not on)    Tue July  4 15:31:26 1995
+Last Access(local): (Not on)    Tue July  4 11:31:26 1995
+Address: tromp@imageek.york.cuny.edu
+Reg date: Sat June 24 1995, 13:47
+Ladder9 position: 1
+Ladder19 position: 2
+Rank Info: PlumBlossom 95
+Games as B:  6     Games as W : 80  
+
+Info: John Tromp, Waterloo, Ontario, Canada
+See also: "variables tromp"
+
+This first line is the players name.
+The second, third and forth lines are for IGS client compatibility only.
+The "Rank:" line can be set with the "Rank" command.  (see "help rank")
+Wins and Losses are your wins and losses in all games played here.
+The Last Access lines tell when the player last logged in.
+The Address line is the players email address.
+The Reg date: is the date that the player registered their account.
+The Ladder9 and Ladder19 lines show what position the player is in each
+    ladder specified.  (see "help ladder")
+The Rank Info: line is used to explain different ranks you may hold.
+The "Games as B:" line shows you how many games you played as B or W.
+The "Info" line shows you user information.  (see "help info").
+
+NOTE: The "Rated Games:" is for IGS compatibility mostly. It *is* updated,
+      but not in the same manner as on IGS. On NNGS it is updated when
+      a rating is successfully calculated and set. Until then, it will
+      remain zero, even if you have played (potentially) rated games.
+
+SEE ALSO: info ladder ladder9 ladder19 rank
+

@@ -1,0 +1,25 @@
+指令: look
+
+用法: look whitename-blackname
+
+說明:
+
+觀看一局已打掛的棋局。
+
+操作實例: 先從你想知道有那些打掛之局開始... 以 tromp 為例:
+
+輸入:
+stored tromp
+
+假設結果:
+Stored games for tromp:
+             tromp-horangi                tromp-geek
+Found 2 stored games.
+
+再輸入:
+look tromp-horangi
+
+你便可以看到 tromp 跟 horangi 之局的情形。
+
+相關指令: stored sgf
+

@@ -1,0 +1,9 @@
+Sk³adnia: GAMES [Numer/identyfikator]
+-
+  Jeœli nie zostanie podany parametr komenda ta poka¿e wszystkie rozgrywane
+w danej chwili na WING 
+Jeœli podany zostanie numer gry wyœwietlone zostan¹ informacje o tej grze.
+Jeœli podany zostanie identyfikator wyœwietlone zostan¹ informacje o grze
+w której uczestniczy gracz o danym identyfikatorze. 
+-
+Zobacz tak¿e:  MATCH

@@ -1,0 +1,9 @@
+
+USAGE: arank player rank
+
+RESTRICTED TO ADMINISTRATORS.
+
+Sets rank to "rank" for the given player.
+
+SEE ALSO: rank
+

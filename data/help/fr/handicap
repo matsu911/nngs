@@ -1,0 +1,8 @@
+
+Usage:  handicap x
+
+Où x est compris entre 2 et 9, pour le nombre de pierres que Noir doit avoir
+comme handicap. Blanc ainsi que Noir peut taper cette commande comme
+premier coup de la partie.
+
+

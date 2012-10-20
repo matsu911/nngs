@@ -1,0 +1,35 @@
+Sk³adnia: suggest [oponent1 [oponent2]]
+   
+Komenda sugest podaje warunki gry (handicap i komi) pomiêdzy dwoma graczami tak abygra by³a równa. Komendê tê mo¿na stosowaæ dla potencjalnego przeciwnika (podajemy wtedy tylko jedno imiê) lub dwu dowolnych graczy (podajemy wtedy oba imiona graczy, których chcemy porównaæ)
+    
+Przyk³ad 1    
+   (Twój identyfikator to Jasiu, posiadasz rating  2653, a Krzysio ma rating  2921.)
+   
+   Wpisujesz:      suggest Krzysio
+   
+   Otrzymujesz:   I suggest that Jasiu play Black against eek:
+                  For 19x19:  Take 3 handicap stones and set komi to -2.5.
+                  For 13x13:  Take 1 handicap stones and set komi to -6.5.
+                  For   9x9:  Take 1 handicap stones and set komi to 0.5.   
+   
+   
+Przyk³ad 2: 
+   
+ 
+   Wpisujesz:  suggest Marysia Ilona 
+   
+   Otrzymujesz:  I suggest that Marysia play Black against shong:
+                  For 19x19:  Take 9 handicap stones and set komi to 5.5.
+                  For 13x13:  Take 3 handicap stones and set komi to -2.5.
+                  For   9x9:  Take 2 handicap stones and set komi to 1.5.   
+   
+Uwagi:    
+
+Jeœli nie posiadasz rankingu (oznaczony jesteœ NR) lub w takiej samej sytuacji jest Twój przeciwnik komenda suggest nie dziala.     
+   
+Podziêkowania:
+   
+Pomys³ i wykonanie: Erik Ekholm (d89-eek@nada.kth.se)  
+   
+Zobacz tak¿e:  match komi handicap
+

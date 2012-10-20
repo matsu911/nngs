@@ -1,0 +1,16 @@
+
+Cgoban, short for "Complete Goban", is a general Go tool for all Unix/X11
+platforms.  It can act as a client to any of the go servers, it can view
+and edit SGF files, it can be used as a go board to play on locally, and it
+can communicate via the Go Modem Protocol.
+
+The latest version of Cgoban is always available on the web at
+"http://www.hevanet.com/wms/comp/cgoban/".  This web server has a poor
+connection, so you may not be able to get ther.  If you can't, you can also
+get the source code from the bsdserver FTP site and it's mirrors (these are
+"igs.joyjoy.net", "ftp://rzis1.rz.tu-bs.de/pub/go", and others).
+
+You can give any comments you have about cgoban to the author, Bill
+Shubert, by email to "wms@hevanet.com" or by leaving a message for "wms" on
+either NNGS or IGS.
+

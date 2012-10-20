@@ -1,0 +1,32 @@
+
+USAGE: channel [channel_number]
+
+Enter or later exit from a channel, which is like a private room
+where a few people can talk.  Others on the server who are not in
+the channel will not hear what is said in it.  Using channels is
+preferable to, and often more fun than, shouting a lot since it
+doesn't disturb as many people who may be concentrating on their
+games.
+
+If no channel_number is given "channel" lists all the existing
+channels.
+
+SUGGESTED EXAMPLE STEPS:
+
+   1) Type "inchannel" to see the people listed by channel.
+   2) Next, for example, if channel 33 looks like the place you would 
+      like to join, type "channel 33".
+   3) Use "tell channel_number" to start talking with the people in a
+      channel.  For example, you might type "tell 33 hiya how are ya", and
+      the other people on the channel will get your comment.
+   4) Now your abbreviation ";" means the same as "tell 33".  Thus, if you
+      type  "; I am fine thanks", channel 33 will get your comment.
+   5) To exit channel 33, please type "channel 33" again.
+
+TECHNICAL COMMENTS:
+
+   1) Your active channels are saved between logins.
+   2) Typing "channel" by itself will list all channels.
+
+SEE ALSO: ctitle inchannel lock unlock zz dnd invite lchan
+

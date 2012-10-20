@@ -1,0 +1,62 @@
+   
+USAGE: mail me name_of_game
+   
+With this command, you can mail any recently completed game on
+the SGF list to the email address that is in your stats. The game
+information will include the record of the moves, the names of the 
+players, their ranks and colors, the komi (compensation points for 
+white), the date, the name of the winner, the score, and even the 
+kibitz remarks of observers. 
+   
+EXAMPLE: 
+   
+#> mail me shong-ph-9707232315
+
+(In this number, "97" is the year, "07" is the month, "23" is 
+the day, and "2315" is the time.)
+   
+   
+WHEN "mail me" DOESN'T WORK:
+   
+If the game hasn't been completed, it will be on the "stored" 
+list. However, it will not be on the SGF list and you won't be 
+able to mail it.
+
+If the game is an old one, it will no longer be on the SGF 
+list and you won't be able to mail it.
+   
+      
+NOTES ABOUT "mail me":
+   
+Be careful to type the name of the game exactly, and don't forget
+the dashes.
+
+If your Go client program can read a game record, you can use 
+the one you mailed yourself to replay the game on your computer.
+Otherwise, there are special  programs that will be able to read 
+them using the SGF standard.
+   
+      
+OTHER HELPFUL COMMANDS:
+      
+To get a list of games that are available for mailing, do not use 
+the "results" command, but use the command:
+
+#> sgf username
+
+EXAMPLE: 
+
+#> sgf shong   
+
+
+You can arrange for the server to automatically send you all your 
+games by email, as soon as they are completed, with the command:
+
+#> toggle automail
+
+Or you can use the same command to make the server stop mailing 
+your games automatically.
+   
+   
+SEE ALSO: sgf mhelp stored
+   

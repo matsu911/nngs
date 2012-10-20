@@ -1,0 +1,8 @@
+Usage: accept [nombre]
+
+Accepte l'offre de la partie désignée par le nombre. Si on omet le nombre et
+que l'on ne vous a fait qu'une seule offre, c'est accepté. Autrement, utilisez
+'pending' pour voir toutes les offres de parties qu'on vous a faîtes et utilisez
+'accept nombre'.
+
+Voir Aussi: match, pending, decline

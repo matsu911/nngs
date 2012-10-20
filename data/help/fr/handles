@@ -1,0 +1,8 @@
+Usage: Handles [nom / motif]
+
+  Affiche une liste de joueurs inscrits dont le pseudo correspond
+au "motif". Par exemple, la commande "handles e" afficherait tous
+les pseudos commençant par e.
+  Peut aussi être utilisé pour savoir si le joueur [nom] a un compte
+ici.
+

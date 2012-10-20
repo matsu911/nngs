@@ -1,0 +1,10 @@
+
+USAGE:  ginfo [n]
+
+ginfo prints the title and event of the game you are observing (if set).
+
+Alternativly, you can specify a game number in progress to get the title
+of that game.
+
+SEE ALSO: teach title event
+

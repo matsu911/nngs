@@ -1,0 +1,10 @@
+
+Usage:  dnd #
+
+Cette commande place le drapeau "ne pas déranger" sur un canal. Cela
+signifie que personne ne peut crier dans un canal s'il n'y est pas
+présent lorsque que ce drapeau est mis. Si le drapeau est mis, alors la
+commande l'enlève.
+
+Voir Aussi:  ctitle inchannel channel unlock lock zz
+

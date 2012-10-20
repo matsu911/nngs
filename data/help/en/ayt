@@ -1,0 +1,8 @@
+
+USGE: ayt
+
+Simply prints "yes". Minimal command useful for checking
+that the server is responding. ("ayt" is short for "Are You There?").
+
+SEE ALSO: ping
+

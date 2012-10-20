@@ -1,0 +1,7 @@
+Usage: open
+
+  Bascule votre variable 'open'. Equivalent de "set open". Lorsque open
+est à 1, vous êtes prêt à recevoir des requêtes de match des autres
+joueurs.
+
+Voir Aussi: variables

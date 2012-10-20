@@ -1,0 +1,16 @@
+
+Usage:  teach #
+
+Teach est utilisé pour offrir des facilités d'enseignement sur PLGS.
+Vous pourriez taper:
+
+teach 19
+
+pour entamer une partie 19x19 contre vous même, vous autorisant à placer
+des pierres à la fois pour Blanc et Noir.
+
+Cette commande est le plus souvent utilisée pour rejouer une partie de
+professionnels, ou pour poursuivre une position que vous avez jouée dans
+une partie.
+
+Voir Aussi:  match ginfo

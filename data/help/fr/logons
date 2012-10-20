@@ -1,0 +1,6 @@
+Usage: logons [nom]
+
+  Montre les 10 dernières connexion pour le nom donné. Si on omet "nom",
+alors vos dernières connexions sont affichées.
+
+Voir Aussi: last

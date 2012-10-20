@@ -1,0 +1,23 @@
+
+USAGE: touch white-black
+
+This can be used to keep a stored (adjourned) game "alive", preventing its
+removal.
+
+First, type "stored" to see your stored games.
+
+For example...  if you are "Rott" and you type "stored", you get:
+
+Stored games for Rott:
+               rott-byakko                  ydk-rott
+Found 2 stored games.
+
+
+To touch the game ydk-rott you type
+
+touch ydk-rott
+
+This resets the "age" on the game.
+
+SEE ALSO: stored load sresign sgf
+

@@ -1,0 +1,181 @@
+                        **** CHANGES TO NNGS ****
+
+
+04/05/98   Changes to the altnernative rating system (by pem)
+           --------------------------------------------------
+
+  New command: nsuggest
+  Introduced anchoring, a new ageing system, and various other adjustments.
+
+
+Dec 97:	   New alternative rating system (by pem)
+           --------------------------------------
+
+  New command: nrating
+  New help files: nratings npercent
+
+
+10/04/97:  BUG FIXES (by geek)
+           -------------------
+
+  Undo x is fixed.
+
+  Rresults now has correct data in it.
+
+
+09/25/97:  BUG FIXES AND NEW FEATURES (made by geek)
+           -----------------------------------------
+
+  New command: rresults [user].  This command reports your RATED games
+  results, or the RATED games results of the specified user.
+
+  Never Connected bug.  Fixed.
+
+  Added a kibitz about the komi changing so that observers can see it.
+
+  Added a game record comment about a user beginning to observe.
+
+  Added check for 0 length game files.  If it is 0 length, instead
+  of crashing the server it reports error, makes an apology,
+  and continues normally.
+
+  Attempted to fix on the who bug (who 2k-5k reported 3k-6k).
+
+  Fixed inconsistant "player left channel xx" notification.
+
+  Pair-go games are now unrated by default.
+
+  The touch command now gives feedback.
+
+  Fixed incorrect handicap in games output when an undo back to the
+  beginning of a handicap game occurs.
+
+  Fixed censored player kibitz leak.
+
+  Fixed censor command anomolies (probably).
+
+2001-01-03 nl
+
+  Released nngs-1.1.0, based on NNGS #1623 Tue Dec 26 08:59:39 CST 2000
+  Put NNGS into automake/autoconf
+
+
+2001-05-18 nngs-1.1.7
+
+  Added some support for multiple languages.
+  translation hacked in in part courtesy of LGS server code
+  (which was a forked version of some legacy NNGS)
+  enumerated all formats and most of the file/dir-names.
+
+2001-06-11 nngs-1.1.8
+
+  Messages can be translated now, too.
+
+2001-06-26 nngs1.1.9
+
+  Messages fall back to english if other language not found.
+
+2001-07-18 nngs-1.1.10
+
+  ahelp is language sensitive too, now.
+  help and ahelp fallback is listed in .index
+
+2001-10-08 nngs-1.1.11
+
+  bugfix for load saved game.
+  dirclose bug fixed 
+  Added  NOGUEST and RESTRICTED_REGISTRATION defines in nngsconfig.h
+
+2001-12-03 nngs-1.1.13
+
+  fixed 'coredump in moves command when in client mode' bug
+
+2002-07-24 nngs-1.1.14
+
+  Updated for mlrate-1.1.0
+
+  Changed datetime in filenames for games (ccyymmddhhmm) to be UTC.
+
+  Parray is now basically a cache for playerfiles on disk.
+
+  Fixed "toggle quiet" BUG
+  Fixed ": unknown command" BUG
+  Fixed fd-leaks in game_read() and game_save()
+  Removed sentinel from command_list and friends. fixed off-by-one error.
+  Changed sgf to write CP[CoPyright...] instead of CoPyright[...]
+  Added FF[4], AP[name: version] properties.
+  Introduced MIMIC_NNGS_1205 for cosmetic regression testing
+  modified and reinstalled SIGPIPE-handler.
+
+2004-11-03 nngs-1.1.15
+
+  Added aban command for banning ipranges: connections from
+  banned ip-addresses are closed immedately after accept().
+  See ahelp aban.
+  - .../lists/ban[.default] : persistent storage for the ban list.
+
+  Corrected clock-keeping (black's 1st move used white's clock ...)
+    (this was caused by 'courtesy' for handicap, which is negotiated before
+    black's first move)
+
+  Uncommented a call to game_update_times(): observers now get the
+  correct time
+
+  Fixed filename-generation, including links.
+  The current implementation stores two links to the sgffile:
+  (for players "Jimmy White" && "Karen Black")
+  .../b/jimmy-karen-20040919
+  .../k/jimmy-karen-20040919
+  The same for the stored/unfinished jimmy-karen versions
+  'stored' 'load' 'sgf' 'results' work again now (for both players)
+
+  Changed some 'history' file modes to append (instead of overwrite)
+
+2004-11-21 nngs-1.1.16
+
+  Added a clumsy-but-fully-functional implementation for [v]snprintf()
+
+  Removed [0-9] from one-letter-subdirectories in {player,games,
+  cgames,player_data}. Names are not allowed to start with a digit.
+
+  Changed default setting for want_adminlevels to yes.
+
+2005-05-25 nngs-1.1.17
+
+  Lots of timing/byo-yomi. Changed all of the timekeeping to
+  0.1 second ticks. Only filedates/logons/gamestarts use time_t.
+
+  Changed one of the two info-strings to:
+  "You have 5:00 minutes and 25 stones", which seems more appropriate.
+  Hope that won't break clients...
+
+2005-07-13 nngs-1.1.18 (silent release)
+
+  Removed ADMIN_LEVELS. They are always enabled, now.
+  If you dont want them: dont use them. They wont harm you.
+
+  Bugfix: find_part_login() when there was an exact + one or more partial
+  matches, it returned -2. It now returns the exact match, once there is one.
+
+  Combined game.{Teach/Teach2} variables into .teach.
+  still allowing teach2 variable when reading game from file.
+  [this will disappear, eventually]
+
+  Cleaned up network.c . Use (fd_top+1) as first arg for select()
+
+  Removed excessive debugging in the log file
+
+2005-10-xx nngs-1.1.19
+
+  Added chroot() support, and some daemon-code.
+
+  Added conffile. Pathnames and other configuration items should
+  now be specified in a textfile.
+
+  Added SMTP mailer (which is needed while in chroot).
+
+  Replaced most of the popen/system by directory scans or smtp.
+
+  Added UDP-port.
+
+

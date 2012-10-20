@@ -1,0 +1,16 @@
+指令: messages
+
+用法: messages [user message]
+
+說明:
+
+  下了不加任何參數的 message 指令, 將顯示你現有所有別人給你的訊息。
+如果要傳遞訊息給別人, 例如我想跟 kenming 打聲招呼, 可是他不在站上,
+那只好留訊息給他:
+
+   messages kenming 嗨, 好久不見!
+  
+  如此下次 kenming 上站用 messages 指令便可看到我所留的訊息。所有的
+messages 都保留到使用者清除 (erase) 它們為止。
+
+相關指令: erase tell

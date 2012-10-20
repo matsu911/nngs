@@ -1,0 +1,8 @@
+
+Usage:  unlock #
+
+  Cette commande débloque un canal, autorisant d'autres à y entrer. Vous
+devez être dans ce canal pour le bloquer ou le débloquer.  
+
+Voir Aussi:  ctitle inchannel channel lock dnd
+

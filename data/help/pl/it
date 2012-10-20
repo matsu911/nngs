@@ -1,0 +1,17 @@
+Sk³adnia it [wiadomoœæ]
+
+To zabawna komenda dzia³aj¹ca nieco jak komenda shout (wiadomoœæ ogólnie dostepna).
+
+Wyœwietla ona jednoliniowe wiadomoœci poprzedzone strza³k¹ i Twoim identyfikatorem: 
+ 
+Przyk³ady: ( 'Roland' to Twój identyfikator) 
+
+    Komenda:  it mówi proszê pomó¿cie nowemu koledze !  
+     Wynik:   --> Roland mówi proszê pomó¿cie nowemu koledze 
+ 
+   
+ 
+Zobacz tak¿e: shout tell say yell who awho toggle set variables censor
+channel alias git
+
+

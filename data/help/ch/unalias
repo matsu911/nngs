@@ -1,0 +1,9 @@
+指令: unalias
+
+用法: unalias word
+
+說明:
+
+  取消 "word" 所代表的縮寫。
+
+相關指令: alias

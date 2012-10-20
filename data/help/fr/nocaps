@@ -1,0 +1,14 @@
+
+usage: nocaps
+
+La commande nocaps doit être utilisée avant que le joueur
+demandeur ne pose son premier coup.
+
+Cela permet/interdit les captures pendant la partie, ce qui est
+pratique si vous jouez le jeu "connecter 5" (morpion) par exemple.
+
+N'importe quel joueur peut taper 'nocaps', tant que c'est avant son
+premier coup.
+
+Voir Aussi: match
+

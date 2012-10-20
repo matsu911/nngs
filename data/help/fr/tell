@@ -1,0 +1,53 @@
+
+   TELL pseudo commentaire
+
+Envoyer votre remarque à quelqu'un d'autre. La personne recevant votre
+remarque verra votre pseudo (c'est votre nom sur le serveur) entouré
+d'astérisques et suivi de la remarque. Selon le client, le récepteur
+entendra aussi un bip ou verra des flash à l'écran.
+Attention: une commande n'inclut pas les guillemets (") l'entourant.
+
+EXEMPLE RAPIDE ("donw" est votre pseudo ou nom sur le serveur):
+
+  Commande:  "tell KenW Salut, ça va?" (Cette commande, sans les
+              guillemets est: tell KenW Salut, ça va?)
+   Result:  KenW verra, "*donw*: Salut, ça va?" (et pas de guillemets)
+
+TRUC: Pour voir si vous le faites correctement, vous pouvez essayer
+      quelques unes de ces commandes sur vous même. Essayez 
+      "tell votre_pseudo Yo! :)" 
+      Par exemple "tell donw Yo! :)". (Souvenez vous de n'utiliser que
+      votre propre pseudo).
+
+
+
+RACCOURCIS:
+
+. commentaire   Envoyer votre remarque à la dernière personne pour qui
+                vous avez utilisé "tell" pendant cette connexion sur le
+                serveur.
+
+^ commentaire   Envoyer votre remarque à la dernière personne qui vous a
+                contacté avec un tell lors de cette connexion sur le
+                serveur. En utilisant "^" vous n'avez pas besoin
+                d'épeler le nom de la personne. Vous pouvez continuer
+                à utiliser "^" après, ou bien "."
+
+EXEMPLES DE RACCOURCIS (à nouveau, comme dans le premier exemple, vous
+êtes "donw" et l'autre est "Kenw"): 
+
+   Commande:  ".tu ne m'as pas  répondu tout à l'heure, salut"
+   Résultat:  KenW verra maintenant, "*donw*: tu ne m'as pas  répondu
+              tout à l'heure, salut"
+
+    D'abord:  KenW tape "tell donw Comment vas-tu aujourd'hui?"
+   Résultat:  Vous verrez KenW*: Comment vas-tu aujourd'hui?"
+    Ensuite:  Maintenant vous tapez simplement: "^ fine"
+   Résultat:  KenW voit "*donw*: fine"
+	    (Il a eu votre message sans que vous ayez tapé son nom!)
+
+     Aussi:  Plus tard dans le dialogue vous pouvez utiliser ou bien "."
+     ou "^".
+
+Voir Aussi:   shout say who awho set channel
+

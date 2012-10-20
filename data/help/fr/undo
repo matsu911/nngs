@@ -1,0 +1,15 @@
+
+Usage: undo [#]
+
+  Voici un exemple: Imaginez que vous jouez Blanc et que votre
+adversaire vient juste de poser une pierre facilement capturable.
+Votre adversaire peut réaliser son erreur et demander à reprendre son
+coup. Vous tapez juste "undo" pour annuler son coup.
+
+  Dans les parties "teaching" et "fteaching", le joueur peut préciser un
+numéro, comme suit:
+
+    undo 5
+
+et cela annulera les 5 derniers coups.
+

@@ -1,0 +1,25 @@
+-------------------------------------------------------------------
+-- AUTHORS
+-------------------------------------------------------------------
+
+This is a list of people who have done significant work on the
+server in rough reverse chronological order.
+
+    Nils Lohner         lohner@debian.org
+    Adriaan van Kessel  adriaan.van.kessel@rivm.nl
+    Per-Erik Martin     pem@nexus.se
+    Erik Van Riper      geek@imageek.york.cuny.edu
+    John Tromp          tromp@daisy.uwaterloo.ca/tromp@cwi.nl
+
+    Carl Gay, Bill Shubert
+
+    Copyright (C) 1995  Erik Van Riper (geek@imageek.york.cuny.edu)
+    and John Tromp (tromp@daisy.uwaterloo.ca/tromp@cwi.nl)
+
+    Adapted from:
+    fics - An internet chess server.
+    Copyright (C) 1993  Richard V. Nash
+
+[please see the file 'THANKS' for past programmers and the origins
+ of the server source code.  For license information see 'COPYING']
+

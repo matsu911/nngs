@@ -1,0 +1,85 @@
+
+                         *** ANNOUNCEMENT ***
+
+                              Opening of
+
+                                 NNGS
+
+                         The No-Name Go Server
+
+                            August 5, 1995
+
+
+Friends,
+
+I'd like to express my gratitude.
+
+In less than two years, the Internet Go Community has helped me learn how
+to play Go, introduced me to hundreds of friends, and added great pleasure
+to my life.
+
+The time has come, I feel, to return something to the community.
+
+In less than three months, twenty of us have succeeded at the
+programming and testing of a new Go server.  We have affectionately
+named it "NNGS" or "No Name Go Server", hoping that the right name will
+come to us at some time.  NNGS has been carefully designed so that the
+client programmers will not have to change their programs, so it will
+be mostly compatible with your favorite client.
+
+Some notable items at NNGS:
+
+1)  Currently, no rating system exists.  We are working hard at
+    designing one, and are constantly collecting data and ideas.
+
+2)  We do have a great Ladder System, which is a continuously running
+    tournament for serious players.  By winning just one even game,
+    the challenger replaces the opponent's place on the ladder.
+
+3)  Many new commands such as awho, censor, and gshout (Go related
+    shout).
+
+4)  Source code availability.  I am a strong believer in the GNU
+    project.  Once the server is stable (should not be too long), we
+    will make the entire source code available for anonymous ftp.
+
+5)  Many friends who will respond to your ideas and questions.
+
+Before telling you how to reach us, I would like to make a few more
+comments, so please bear with me.
+
+I wish to state clearly that we are, in no way, competing with IGS.  I
+feel that all the Go servers can co-exist harmoniously.
+
+My thanks to tim, tweet, and fmc for all the hard work they have put
+into making IGS what it is today.  Had IGS never existed, I never would
+have learned the game, and I certainly never would have worked on the
+NNGS project.
+
+Thanks to all the client authors for providing me with immense technical
+information.  Without their help and support, this project would have
+taken a much longer time to complete.
+
+My special gratitude to the wonderful people at the Free Internet Chess
+Server for giving us a huge head start by making their programming code
+freely available in the true spirit of the Internet!
+
+Ok, enough of the speech.  Here is the address:
+
+                   localhost 9696
+
+PLEASE NOTE the port number which is not the same as that of the IGS.
+
+If you have any questions or difficulties, or just want to send us
+your good wishes, visit one of the forums at:
+
+                   http://sourceforge.net/projects/nngs/
+
+Enjoy.
+
+
+--
+Erik Van Riper                                                 (718) 262-2667
+Systems Administrator            Go player                     Photon Counter
+Language design is 10% science and 90% psychology. -- Larry Wall, Perl Author
+

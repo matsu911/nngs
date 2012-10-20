@@ -1,0 +1,6 @@
+Usage: stored [joueur]
+
+  Affiche toutes les parties enregistrées de 'joueur' ou de vous-même si
+on a omis 'joueur'.
+
+Voir Aussi: load look

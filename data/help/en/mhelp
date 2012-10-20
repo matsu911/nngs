@@ -1,0 +1,14 @@
+
+USAGE: mhelp filename
+
+Mail a copy of a help file to your email address.
+
+QUICK-START EXAMPLES:
+
+   mhelp overview  mail yourself a copy of the "overview" file
+   mhelp tell      mail "tell" file
+   mhelp channel   mail "channel" file
+   mhelp           list all help commands on the screen (same as ?)
+
+SEE ALSO: help ? overview
+

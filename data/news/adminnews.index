@@ -1,0 +1,36 @@
+796096852 1 Introducing admin-news! :)
+796499471 2 the server has been crashing all day today (Wed 29-3-95) I asked the users whether any of them though they cashed it - no one thought they did. The server has crashed about 7-8 times so it needs to be looked at urgently.
+796499535 3 news 2 was put on my me (POOKIEWOOKIE) - shouldnt createadnews put that in automatically????? :)
+798824029 4 Wild chess coming really soon, please don't edit the code - DAV
+798824201 5 Don't use asetblitz and asetstd until next reboot - the don't calculate the new RD number yet.. - DAV
+799224518 6 What is going to be our policy about keeping strong player's anonymity?  Finger Godsend.. Shane, is that what you want?  Ok keep me posted. :)
+799224587 7 That last message is from river by the way :)
+799248364 8 Also players like Goob have Full Name as Fish, and email as fish@noth.sea.com.  Is someone just playing about, or is this allowed?
+799339419 9 timelog.c keeps crashing the system - line 49 while (tmp) {   with a seg fault - please can someone fix..
+799551167 10 In the next restart, there should be complete logging of all logins/logouts, in the FICS/data/stats/logons.log file --- Shane
+799573514 11 How do you challenge wild?
+799615336 12 match hersco 2 12 2 12 wild 2 will ask hersco for a wild/2 match.
+799744158 13 What about adding a NM list, for uscf masters
+799847589 14 to ban someone type +ban [name]
+799847865 15 asetwild std and blitz work ok now - if the person has a rating with 0 games the command will give the person 1 draw
+799847915 16 new command summon     summon [name]      gives a beep and a message to wake someone up...  useful for sleepy admins and ignorant players...   admin use only
+799955776 17 I changed the source directory in the program to 5000, so players can mail themselves the code for the CURRENTLY running server; not the code under development.
+800252250 18 quotas are now on
+800252308 19 +quota (name) -quota (name) to add / remove people  These people have 2 shouts per n seconds (default on server init is 60)
+800252341 20 quota n    sets the number of seconds
+800252466 21 21 help shout_abuse give a list of offenses...
+800253225 22 type admin to show (*)   on who    note you can still execute admin commands with it off
+800294878 23 Rank and hrank are now working.  See help files for details.
+800313630 24 Don't panic, I've already fixed the bug in counting allocs (shows in "uptime"), in the 5001 code.  --mann
+800337940 25 The last crash was because there was some garbage in the stats/logons file, and the code that reads it is not bulletproof.  I deleted the garbage from the file but did not work on the code.  --mann
+800342748 26 There was a bug in truncate_file that was garbling game histories and the login/out file.  (That explains the garbling that caused the last crash.)  I have fixed the bug and am deleting all the garbled game histories---too many to fix.  --mann
+800735740 27 best and hbest now go through the same routines as rank and hrank (on 5001).  They also take an optional argument consisting of the letters b, s, and/or w to show only some of the columns.
+800735830 28 I also wrote a "rerank" command to fix a player's rank if it's misset.  "rerank hersco" fixes my rank.  -- hersco
+800807785 29 ban unreg logins from a site - do +filter ip     where ip is a full or partial ip address 123.124.125.126  will ban a machine  where 123.124.125 will ban the server  and 123.124  will probably ban the whole site
+800807828 30 removed muzzle and cmuzzle - please use +muzzle -muzzle +cmuzzle -cmuzzle
+800807861 31 nuke puts a comment on someones file - so no nuking people for fun from now
+800807902 32 if a ghost exists ie didn't log out - the person can log on again to kick the old one out - note unregs can't kick out other unregs
+800807954 33 +muzzle and +cmuzzle  inform the user that they have been added....
+800808053 34 aliases fixed (thanks especially to mann)    @ is now allowed in aliases
+801023339 35 I am testing the admin news
+805485359 36 This is a test.

@@ -1,0 +1,47 @@
+   
+   
+suggest adversaire1 [adversaire2]
+
+   La commande suggest laisse l'ordinateur donner ses conseils pour le
+nombre de pierres de handicap et la valeur du komi adéquats contre un
+adversaire. Cela peut aussi vous donner la même info à propos de 2
+autres joueurs.
+   
+   
+EXEMPLE 1:
+   
+   (Vous êtes pem, avec un ratingFIXME de 2653, et eek a un rating de
+   2921.)
+   
+   Vous tapez:    suggest eek
+   
+   Vous recevez:  I suggest that pem play Black against eek:
+                  For 19x19:  Take 3 handicap stones and set komi to -2.5.
+                  For 13x13:  Take 1 handicap stones and set komi to -6.5.
+                  For   9x9:  Take 1 handicap stones and set komi to 0.5.   
+   
+   
+EXEMPLE 2: 
+   
+   (Vous êtes toujours pem.)
+   
+   Vous tapez maintenant:  suggest Erik shong
+   
+   Vous recevez:  I suggest that Erik play Black against shong:
+                  For 19x19:  Take 9 handicap stones and set komi to 5.5.
+                  For 13x13:  Take 3 handicap stones and set komi to -2.5.
+                  For   9x9:  Take 2 handicap stones and set komi to 1.5.   
+   
+NOTES:
+   
+   Si vous êtes NR, ou si vous n'avez pas encore de rating, alors le
+serveur ne peut rien suggérer. La même chose est valable pour
+l'adversaire que vous choisissez.
+   
+   
+REMERCIEMENTS:
+   
+   Remerciements pariticuliers à Erik Ekholm (d89-eek@nada.kth.se) pour
+l'idée et le code source implémentant l'idée.
+   
+Voir Aussi:  match komi handicap

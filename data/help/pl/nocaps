@@ -1,0 +1,13 @@
+
+usage: nocaps
+
+The nocaps command must be used before the issuing players first move.
+
+It en/dis-ables captures in the game, which is useful if you feel
+like playing a game of connect-5, for instance.
+
+Either user can type nocaps, as long as it is before their first move.
+
+See also: match
+
+

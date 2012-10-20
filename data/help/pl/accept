@@ -1,0 +1,9 @@
+Sk³adnia: accept [numer]
+
+Akceptuje ofertê gry o danym numerze. Jeœli numer zostanie pominiêty a masz tylko jedn¹ ofertê gry 
+to zostanie ona zaakceptowana.  Accepts match offer with given number. If number is omitted and you were made
+only one offer, it is accepted. In other case, use 'pending' to see all games
+offers made to you and use 'accept number'.
+
+See Also: match, pending, decline
+

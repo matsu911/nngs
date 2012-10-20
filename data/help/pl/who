@@ -1,0 +1,56 @@
+Sk³adnia: who [opcje]
+
+
+Przysy³a listê graczy obecnych na serwerze. 
+
+Przyk³ad:
+  who         lista wszystkich obecnych w porz¹dku przybycia. 
+  who o       lista wszystkich przyjmuj¹cych oferty gry 
+ 
+Opcje: (opcje mo¿na zmieniaæ za pomoc¹ 'toggle' lub l¹czyæ ze sob¹) 
+
+   
+  A|a         ("A" or "a" or "all") all - wszyscy
+  f           gracze nie zajêci gr¹ 
+  l           gracze szukaj¹cy gier 
+o           gracze przyjmuj¹cy oferty gry 
+r           gracze z potwierdzonym rankingiem 
+R           gracze zarejestrowani 
+U           gracze nie zarejestrowani 
+
+JAK ODCZYTYWAC WYNIKI ZAPYTAN:    1   2  3  4          5     6
+                                  -   -  -  -          -     -
+                                 Info      Name       Idle  Rank
+                                  Q   3 -- tromp       1m    1d
+                                  !  -- -- todd        0s    7k
+                                     -- 10 geek       17s    4k
+                                  QX -- -- daveg       3h    2d
+-
+  PRZYKLAD: Pierwszy gracz, tromp, nie s³yszy informacji o zmianach w obecnoœci
+  na serwerze ani o graczach, obserwuje on gre nr 3 i jest nieaktywny od jednej
+  minuty, wskaza³ swoja sile gry jako 1 dan. Gracz todd szuka ofert gry, a jako
+  swoja sile gry wskaza³ 7 kyu. Gracz geek obserwuje gre nr 10, jako sile gry 
+  wskaza³ 4 kyu a ostatni raz wprowadzi³ cos z klawiatury 17 sekund temu. 
+  Gracz daveg nie chce (podobnie jak tromp) otrzymywaæ informacji o zmianach w
+  obecnoœci czy tez o rozpoczynanych i koñczonych przez graczy grach, nie ¿yczy
+  tez sobie aby przysy³aæ mu ofert gry, jest nieaktywny od 3 godzin, si³a gry 2d. 
+-
+
+1. Pierwsza kolumna 'info' zawiera informacje o biezacym stanie gracza.
+
+
+   S   Shouts off      Nie s³yszy wiadomoœci typu shout
+     Q   Quiet           Nie s³yszy informacji o przybywaniu i odchodzeniu
+                         graczy, oraz zaczynaj¹cych i koñcz¹cych siê grach.  
+     X   Not interested  Nie jest zainteresowan gr¹ w tej chwili 
+     !   Open            Szuka ofert gry 
+
+  2. Druga kolumna podaje numer obserwowanej gry 
+  3. Numer rozgrywanej gry. 
+  4. Identyfikator  
+  5. "Idle" okreœla czas jaki up³yn¹³ od chwili gdy dana osoba wykaza³a 
+     jak¹kolwiek aktywnoœæ na serwerze (wykona³a dowoln¹ komendê)
+  6. Si³a gry 
+
+Zobacz tak¿e: awho stats toggle games rank ladder ladder19 ladder9
+

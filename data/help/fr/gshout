@@ -1,0 +1,7 @@
+Usage: gshout message
+
+  Affiche votre message pour tous les utilisateurs prêts à entendre des gshouts.
+
+  Un 'gshout' n'est pas un cri relatif au go.
+
+Voir Aussi: shout tell censor variables it alias

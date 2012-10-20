@@ -1,0 +1,8 @@
+Usage: erase
+
+  Efface tout message en attente pour vous.
+  Il y a une plafond de 40 lignes de messages, alors assurez vous
+  d'effacer les vieux messages!
+
+Voir Aussi: messages
+

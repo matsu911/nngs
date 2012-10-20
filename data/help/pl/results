@@ -1,0 +1,26 @@
+Sk³adnia: results [identyfikator]
+
+Wyœwietla wyniki gier danego gracza.  
+
+Przyk³ad:
+Winner     rank  color loser     rank  color hcap komi size  result  ident
+
+ManyFaces  [13k ] (B) jrd        [NR  ] (W) H 0 K 0.5 9x9 B+Resign 04-01-07
+jrd        [NR  ] (W) ManyFaces  [13k ] (B) H 0 K 0.5 9x9 W+Time 04-02-13
+jrd        [NR  ] (W) ManyFaces  [13k ] (B) H 0 K 0.5 9x9 W+Time 04-02-19
+buff       [NR  ] (B) daveg      [1d  ] (W) H 0 K 10.5 19x19 B+Resign 05-21-10
+
+winner:  zwyciêzca
+rank:    si³a gry zwyciêzcy 
+color:   kolor zwyciêzcy
+lose:    przegrany 
+rank:    si³a przegranego 
+color:   kolor przegranego  
+hcap:    handicap 
+komi:    komi 
+size:    rozmiar planszy 
+result:  wynik 
+ident:   ci¹g identyfikacyjny gry 
+
+
+

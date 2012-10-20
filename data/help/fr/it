@@ -1,0 +1,32 @@
+
+   IT message
+
+Ceci est une commande amusante et élégante, mais fait la même chose que
+'shout'.
+
+Affiche votre message d'une ligne aux autres utilisateurs. Excepté pour
+l'emetteur et ceux qui ont éteint leur 'shouts', les autres verront une
+flèche suivi de votre identifiant et du message.
+
+EXEMPLES RAPIDES: 
+(où "player" est votre identifiant ou votre nom sur ce serveur)
+
+    Command:  it dit s'il vous plait, aidez le novice.
+     Result:  --> john dit s'il vous plait, aidez le novice.
+ 
+ETEINDRE VOS "ITS" -- s'ils le veulent, les autres peuvent faire ainsi:
+
+   Faire "toggle s" pour arrêter tous les 'shouts' entrants et "its".
+
+   Faire "censor player" pour arrêter tous les 'tell', 'shouts' et "its"
+   *venant de vous* à partir de maintenant.
+
+POINT IMPORTANT: s'il vous plait, n'utiliser "it" uniquement s'il est
+nécessaire que tout le monde recoive votre message. Autrement, il est
+sage et apprécié, d'utiliser 'tell' pour parler avec des personnes
+spécifiques, ou d'enter dans un canal pour vous amuser avec quelques
+personnes.
+
+Voir Aussi: shout gshout tell say yell who awho toggle set variables censor
+channel alias git
+

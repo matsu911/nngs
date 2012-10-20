@@ -1,0 +1,4 @@
+Usage: time [partie,joueur]
+
+  Renvoie le temps restant dans la partie spécifiée, ou dans votre
+  partie.

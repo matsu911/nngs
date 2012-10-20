@@ -1,0 +1,63 @@
+
+   WHO options
+
+Liste les joueurs actuellement connectés. C'est une des commandes les
+plus utilisées. 
+
+EXEMPLES RAPIDES:
+  who         renvoie la liste de tout le monde, par ordre d'arrivée.
+  who o       liste ceux qui cherchent à jouer.
+  who all o   liste tous ceux qui cherchent à jouer.
+
+LES OPTIONS ( qui peuvent être changées avec la commande "toggle", ou
+combinées):
+  who         renvoie une liste complète et totale de tous les joueurs
+              et parties par ordre alphabétique.
+  A|a         ("A" ou "a" ou "all") tous
+  f           ne montre que les joueurs libres (ne jouant pas)
+  l           cherchant une partie (plus impatient que "open")
+  o           prêts à jouer
+  r           ne montre que les joueurs "rated" (avec un *)
+  R           ne montre que les joeurs inscrits
+  U           ne montre que les joeurs non inscrits
+
+
+
+
+COMPRENDRE LA LISTE WHO:          1   2  3  4          5     6
+                                  -   -  -  -          -     -
+                                 Info      Name       Idle  Rank
+                                  Q   3 -- tromp       1m    1d
+                                  !  -- -- todd        0s    7k
+                                     -- 10 geek       17s    4k
+                                  QX -- -- daveg       3h    1d
+
+  EXAMPLES RAPIDES: Le premier joueur, tromp, n'écoute pas les messages
+  d'autres joueurs, ne peut pas voir ni connection ni déconnections,
+  observe la partie 3, n'a rien dit depuis 1 minute et annonce être 1er
+  dan. Todd regarde une partie, n'a pas été inoccupé, et revendique
+  7 kyu. Geek regarde la partie 10, a effectué sa dernière touche 17
+  secondes plus tôt, et annonce 4 kyu. Daveg ne veut pas savoir qui se
+  connecte ou se déconnecte, ou qui commence ou termine une partie, ne
+  veut pas jouer, n'a eu aucune activité depuis 3 heures, et annonce 1d.
+
+  1. Sous le premier titre, "Info", on voit la situation actuelle du
+  joueur:
+
+     S   Shouts off      Ne peut entendre aucun "shout"
+     Q   Quiet           Ne reçoit pas les messages de
+                         connection/déconnection, ou des débuts/fin de
+                         partie.
+     X   Not interested  Le joueur ne veut pas jouer.
+     !   Open            Disponible pour une partie.
+
+  2. Sous le deuxième entête, le numéro de la première partie observée. 
+  3. Le nombre de parties jouées, s'il y en a.
+  4. "Name" renvoie au pseudo de la personne.
+  5. "Idle" renvoie le nombre de secondes, minutes, heures ou jours
+     depuis quand le joueur n'a tapé aucune touche. (Intéressant pour
+     savoir qui est actif ou disponible).
+  6. Renvoie le niveau ainsi qu'enregistré par la personne dans les stats 
+  ( actuellement fondé sur sa propre opinion)
+
+Voir Aussi: awho stats toggle games rank ladder ladder19 ladder9

@@ -1,0 +1,19 @@
+
+USAGE:  look whitename-blackname
+
+Looks at a stored (adjourned) game.
+
+Example:  Start by seeing what games are stored for the player you are
+interested in:
+
+#> stored tromp
+Stored games for tromp:
+             tromp-horangi                tromp-geek
+Found 2 stored games.
+
+To view tromp-horangi you would type
+
+#> look tromp-horangi
+
+SEE ALSO: stored sgf
+

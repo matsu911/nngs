@@ -1,0 +1,43 @@
+
+Sk³adnia: stats [identyfikator]
+
+Komenda ta podaje informacje o graczu. Jeœli pominiesz identyfikator otrzymasz informacje o sobie. 
+
+Przyk³ad:
+stats Jasiu
+
+Otrzymasz:
+Player:      tromp
+Game:        go (1)
+Rating:      NR    0
+Rated Games:      0
+Rank:  3k   0
+Wins:         38
+Losses:       26
+Last Access(GMT):   (Not on)    Tue July  4 15:31:26 1995
+Last Access(local): (Not on)    Tue July  4 11:31:26 1995
+Address: Jasiu@poczta.pl  
+Reg date: Sat June 24 1995, 13:47
+Ladder9 position: 1
+Ladder19 position: 2
+Rank Info: PlumBlossom 95
+Games as B:  6     Games as W : 80  
+
+Info: Jaœ Kowalski. Jestem ze Szczecina. Chêtnie gram 9x9 
+
+
+Pierwsza linia podaje imie i nazwisko. 
+Druga, trzecia i czwarta s¹ zamieszczane ze wzglêdu na zgodnoœæ z IGS
+Linia pi¹ta - Rank: ustawiane jest za pomoc¹ komendy Rank
+Linia szósta: Wygrane i przegrane  
+Linia sióda: osotatnia bytnoœæ na serwerze  
+Linia ósma: Adres e-mail 
+Linia dziewi¹ta: Data rejestracji na serwerze 
+Linia dziesi¹ta: pozycja w Laddre19 i Ladder9
+Linia jedenasta: opis Twojego rankingu (zobacz rank info)
+Linia dwunasta: Iloœæ gier czarnymi. 
+Linie nastêpne: Inforacja o graczu (ustawia siê j¹ komend¹ info - zobacz help info) 
+
+Zobacz tak¿e:  Info ladder ladder9 ladder19 rank
+
+

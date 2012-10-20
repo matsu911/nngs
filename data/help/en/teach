@@ -1,0 +1,15 @@
+
+USAGE: teach n
+
+Teach is used to provide a teaching facility to NNGS.  You would type:
+
+  teach 19
+
+to start a 19x19 match against yourself, allowing you to place stones for
+both Black and White.  
+
+This command is most often used to replay a Professional game, or to go over
+a position that you played in a game.
+
+SEE ALSO: match ginfo
+

@@ -1,0 +1,9 @@
+
+USAGE: chkip ipnumber
+
+RESTRICTED TO ADMINISTRATORS.
+
+Lists players logged in from the given IP-number.
+
+SEE ALSO: chkpl chksc aban
+

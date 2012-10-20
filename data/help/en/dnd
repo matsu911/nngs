@@ -1,0 +1,9 @@
+
+USAGE: dnd n
+
+This command sets the "do not disturb" flag on channel 'n'.  This means that
+people cannot yell into a channel if they are not in it, if this flag is
+set.  If the flag is set, then this command unsets the dnd flag.
+
+SEE ALSO: ctitle inchannel channel unlock lock zz
+

@@ -1,0 +1,20 @@
+
+USAGE: ladder19 range
+
+This command is equivalent to the "best" command, where the first
+argument is 19.  For example, typing
+
+  ladder19 3-10
+
+is the same as typing
+
+  best 19 3-10
+
+Both commands will display positions 3 through 10 on the 19x19
+ladder.  If no RANGE is given then the entire ladder will be
+displayed.
+
+See "help best" for a full description.
+
+SEE ALSO: best join drop ladder ladder9 awho
+

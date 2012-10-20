@@ -1,0 +1,22 @@
+
+USAGE: sgf [username]
+
+This command displays a list of the last few games that a player has
+played so that you can email them to yourself.
+
+Example:
+
+  sgf pem
+  Completed games for pem:
+	     pem-kenw-9509201448
+  Found 1 completed games.
+
+so you would type:
+
+  mail me pem-kenw-9509201448
+
+The date format is ISO-order: YYMMDDhhmm. The above game was played
+on September 20th, 1995 at 14:48 local server time.
+
+SEE ALSO: mail
+

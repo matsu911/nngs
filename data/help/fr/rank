@@ -1,0 +1,84 @@
+   
+   RANK numéro type
+   
+Vous choisissez votre niveau. Ce sera affiché avec la commande "who" ou
+dans la première valeur de la ligne 'rank' dans "stats".
+   
+EXAMPLES RAPIDES: En tapant "rank 3k", vous prenez le niveau de 3-kyu;
+avec "rank 2d" vous prenez le niveau de 2-dan.
+   
+SUGGESTIONS      AGA    CHINA  EUROPE    IGS    JAPAN    KOREA   NNGS
+D'EQUIVALENCES:  ---    -----  ------    ---    -----    -----   ----
+                 27K     30K     29K     30K     26K     33Gup   20K
+                 26K     29K     28K     30K     25K     32Gup
+                 25K     28K     27K     30K     24K     31Gup
+                 24K     27K     26K     30K     23K     30Gup
+                 23K     26K     25K     30K     22K     29Gup
+                 22K     25K     24K     30K     21K     28Gup
+                 21K     24K     23K     30K     20K     27Gup
+                 20K     23K     22K     30K     19K     26Gup
+                 19K     22K     21K     29K     18K     25Gup
+                 18K     21K     20K     28K     17K     24Gup
+   
+   
+                 AGA    CHINA  EUROPE    IGS   JAPAN     KOREA   NNGS
+                 ---    -----  ------    ---   -----     -----   ----
+                 17K     20K     19K     26K     16K     23Gup   20K
+                 16K     19K     18K     25K     15K     22Gup
+                 15K     18K     17K     23K     14K     21Gup
+                 14K     17K     16K     22K     13K     20Gup
+                 13K     16K     15K     21K     12K     19Gup
+                 12K     15K     14K     19K     11K     18Gup
+                 11K     14K     13K     18K     10K     17Gup   10K
+                 10K     13K     12K     17K      9K     16Gup
+                  9K     12K     11K     15K      8K     15Gup
+                  8K     11K     10K     14K      7K     14Gup
+                  7K     10K      9K     13K      6K     13Gup
+                  6K      9K      9K     11K      5K     12Gup
+                  5K      8K      7K     10K      4K     11Gup
+                  4K      7K      6K      8K      3K     10Gup
+                  3K      6K      5K      7K      2K      9Gup   
+                  2K      5K      4K      6K      1K      8Gup   3K
+                  1K      4K      3K      4K      1D      7Gup
+                  1D      3K      2K      3K      2D      6Gup
+   
+   
+SUGGESTIONS      AGA    CHINA  EUROPE     IGS   JAPAN     KOREA   NNGS
+D'EQUIVALENCES:  ---    -----  ------     ---   -----     -----   ----
+                  2D      2K      1K      2K      3D      5Gup
+                  3D      1K      1D      1K      4D      4Gup
+                  4D      1D      2D      1D    4-5D      3Gup
+                  5D      2D      3D      2D    5-6D      2Gup    3D
+                  6D      3D      4D    3-4D      6D      1Gup
+                  7D    4-5D    5-6D      5D    6-7d      1Gup
+     
+Si vous n'êtes pas certain de votre niveau, s'il vous plait, jouez
+quelques parties en tant que NR avant de décider, ou demandez conseil à
+un administrateur.
+
+ATTENTION: Au mieux, ces conversions de niveau sont approximatives, et
+           peuvent varier selon les personnes. En dessous de 9 kyu ou
+           "9 gup", elles sont sans doute moins fiables.
+
+           Vous devez aussi utiliser la commande "set rank <texte>" pour
+           détailler votre niveau d'un façon ou d'une autre, sinon votre
+           niveau ne sera pas sauvegardé entre les connections.
+
+Par exemple, 
+    "set rank 3 dan à Shanghai, China" 
+ou 
+    "3 kyu Korean, 4 dan AGA, et 1 dan* sur IGS".
+
+Tapez "stats" pour voir les résultats de toutes ces commandes, ou
+essayez la commande "awho".
+
+VOS OPTIONS: 30k-1k, 1d-6d, ???, et NR.  Tout ce qui dépasse 6d doit
+être validé par un administrateur. (Seules les associations de
+professionnels peuvent mettre le niveau "p" ou "professionel")
+
+NOTE: ce niveau n'a pas d'équivalent dans l'échelle NNGS ou les systèmes de
+classement proposés, et la deuxième entrée sur la ligne de stats restera "0"
+pour raisons techniques (pour compatibilité avec les clients IGS )
+
+Voir Aussi: best, arden, rating, ratings, who, awho, ladder.
+   

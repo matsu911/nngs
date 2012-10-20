@@ -1,0 +1,9 @@
+
+USAGE:  handicap x
+
+Where x is equal to 2 - 9, for the number of stones B is to take as
+handicap stones.  Either W or B can enter this command as the first
+move of the game.
+
+SEE ALSO: match komi
+

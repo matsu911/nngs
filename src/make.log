@@ -1,0 +1,150 @@
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT network.o -MD -MP -MF .deps/network.Tpo -c -o network.o network.c
+network.c: In function ‘do_read_udp’:
+network.c:517: warning: pointer targets in passing argument 6 of ‘recvfrom’ differ in signedness
+network.c:519: warning: comparison between signed and unsigned
+network.c: In function ‘do_accept’:
+network.c:552: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness
+mv -f .deps/network.Tpo .deps/network.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT bm.o -MD -MP -MF .deps/bm.Tpo -c -o bm.o bm.c
+mv -f .deps/bm.Tpo .deps/bm.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT channel.o -MD -MP -MF .deps/channel.Tpo -c -o channel.o channel.c
+mv -f .deps/channel.Tpo .deps/channel.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT utils.o -MD -MP -MF .deps/utils.Tpo -c -o utils.o utils.c
+utils.c: In function ‘pprintf’:
+utils.c:355: warning: comparison between signed and unsigned
+utils.c: In function ‘pcvprintf’:
+utils.c:397: warning: null argument where non-null required (argument 1)
+utils.c:397: warning: null argument where non-null required (argument 1)
+utils.c: In function ‘my_vsnprintf’:
+utils.c:422: warning: comparison between signed and unsigned
+utils.c: At top level:
+utils.c:453: warning: no previous prototype for ‘fake_vsnprintf’
+utils.c: In function ‘fake_vsnprintf’:
+utils.c:461: warning: assignment discards qualifiers from pointer target type
+utils.c:477: warning: comparison between signed and unsigned
+utils.c:478: warning: comparison between signed and unsigned
+utils.c: In function ‘xpsend_dir’:
+utils.c:752: warning: suggest parentheses around assignment used as truth value
+utils.c: In function ‘search_directory’:
+utils.c:1324: warning: suggest parentheses around assignment used as truth value
+mv -f .deps/utils.Tpo .deps/utils.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT language.o -MD -MP -MF .deps/language.Tpo -c -o language.o language.c
+language.c: In function ‘find_format’:
+language.c:92: warning: passing argument 1 of ‘sprintf’ discards qualifiers from pointer target type
+mv -f .deps/language.Tpo .deps/language.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT variable.o -MD -MP -MF .deps/variable.Tpo -c -o variable.o variable.c
+mv -f .deps/variable.Tpo .deps/variable.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT legal.o -MD -MP -MF .deps/legal.Tpo -c -o legal.o legal.c
+mv -f .deps/legal.Tpo .deps/legal.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT gameproc.o -MD -MP -MF .deps/gameproc.Tpo -c -o gameproc.o gameproc.c
+mv -f .deps/gameproc.Tpo .deps/gameproc.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT adminproc.o -MD -MP -MF .deps/adminproc.Tpo -c -o adminproc.o adminproc.c
+adminproc.c: In function ‘com_anews’:
+adminproc.c:169: warning: passing argument 1 of ‘time2str_local’ from incompatible pointer type
+adminproc.c:173: warning: passing argument 1 of ‘time2str_local’ from incompatible pointer type
+adminproc.c:181: warning: passing argument 1 of ‘time2str_local’ from incompatible pointer type
+adminproc.c:202: warning: passing argument 1 of ‘time2str_local’ from incompatible pointer type
+mv -f .deps/adminproc.Tpo .deps/adminproc.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT nngsmain.o -MD -MP -MF .deps/nngsmain.Tpo -c -o nngsmain.o nngsmain.c
+nngsmain.c: In function ‘reapchild’:
+nngsmain.c:153: warning: implicit declaration of function ‘wait3’
+nngsmain.c: In function ‘daemonise’:
+nngsmain.c:385: warning: suggest parentheses around assignment used as truth value
+nngsmain.c:386: warning: suggest parentheses around assignment used as truth value
+mv -f .deps/nngsmain.Tpo .deps/nngsmain.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT multicol.o -MD -MP -MF .deps/multicol.Tpo -c -o multicol.o multicol.c
+mv -f .deps/multicol.Tpo .deps/multicol.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT mink.o -MD -MP -MF .deps/mink.Tpo -c -o mink.o mink.c
+mink.c: In function ‘mink_raw_printboard’:
+mink.c:698: warning: ‘len’ is used uninitialized in this function
+mv -f .deps/mink.Tpo .deps/mink.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT alias.o -MD -MP -MF .deps/alias.Tpo -c -o alias.o alias.c
+mv -f .deps/alias.Tpo .deps/alias.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT censor.o -MD -MP -MF .deps/censor.Tpo -c -o censor.o censor.c
+mv -f .deps/censor.Tpo .deps/censor.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT plan.o -MD -MP -MF .deps/plan.Tpo -c -o plan.o plan.c
+mv -f .deps/plan.Tpo .deps/plan.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT ip_ban.o -MD -MP -MF .deps/ip_ban.Tpo -c -o ip_ban.o ip_ban.c
+mv -f .deps/ip_ban.Tpo .deps/ip_ban.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT chkaddr.o -MD -MP -MF .deps/chkaddr.Tpo -c -o chkaddr.o chkaddr.c
+mv -f .deps/chkaddr.Tpo .deps/chkaddr.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT command.o -MD -MP -MF .deps/command.Tpo -c -o command.o command.c
+command.c: In function ‘process_heartbeat’:
+command.c:993: warning: comparison between signed and unsigned
+command.c:999: warning: comparison between signed and unsigned
+command.c:1006: warning: comparison between signed and unsigned
+command.c:1017: warning: comparison between signed and unsigned
+mv -f .deps/command.Tpo .deps/command.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT comproc.o -MD -MP -MF .deps/comproc.Tpo -c -o comproc.o comproc.c
+comproc.c: In function ‘com_news’:
+comproc.c:279: warning: dereferencing type-punned pointer will break strict-aliasing rules
+comproc.c:310: warning: dereferencing type-punned pointer will break strict-aliasing rules
+comproc.c: In function ‘plogins’:
+comproc.c:2077: warning: format ‘%d’ expects type ‘int *’, but argument 5 has type ‘time_t *’
+comproc.c: In function ‘get_nrating’:
+comproc.c:2961: warning: unused parameter ‘p’
+comproc.c:2961: warning: unused parameter ‘ratp’
+comproc.c: In function ‘com_accept’:
+comproc.c:3395: warning: initialization discards qualifiers from pointer target type
+comproc.c:3408: warning: assignment discards qualifiers from pointer target type
+comproc.c:3410: warning: assignment discards qualifiers from pointer target type
+comproc.c: At top level:
+comproc.c:4399: warning: no previous prototype for ‘com_nrating’
+comproc.c: In function ‘com_nrating’:
+comproc.c:4398: warning: unused parameter ‘p’
+comproc.c:4398: warning: unused parameter ‘param’
+comproc.c: In function ‘com_translate’:
+comproc.c:4550: warning: implicit declaration of function ‘popen’
+comproc.c:4550: warning: assignment makes pointer from integer without a cast
+comproc.c:4553: warning: implicit declaration of function ‘pclose’
+comproc.c: At top level:
+comproc.c:2962: warning: ‘get_nrating’ defined but not used
+mv -f .deps/comproc.Tpo .deps/comproc.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT gamedb.o -MD -MP -MF .deps/gamedb.Tpo -c -o gamedb.o gamedb.c
+gamedb.c: In function ‘game_write_complete’:
+gamedb.c:983: warning: dereferencing type-punned pointer will break strict-aliasing rules
+mv -f .deps/gamedb.Tpo .deps/gamedb.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT playerdb.o -MD -MP -MF .deps/playerdb.Tpo -c -o playerdb.o playerdb.c
+playerdb.c: In function ‘player_lastconnect’:
+playerdb.c:1333: warning: dereferencing type-punned pointer will break strict-aliasing rules
+playerdb.c:1334: warning: format ‘%d’ expects type ‘int *’, but argument 6 has type ‘time_t *’
+mv -f .deps/playerdb.Tpo .deps/playerdb.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT emote2.o -MD -MP -MF .deps/emote2.Tpo -c -o emote2.o emote2.c
+mv -f .deps/emote2.Tpo .deps/emote2.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT pending.o -MD -MP -MF .deps/pending.Tpo -c -o pending.o pending.c
+mv -f .deps/pending.Tpo .deps/pending.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT udp_commands.o -MD -MP -MF .deps/udp_commands.Tpo -c -o udp_commands.o udp_commands.c
+udp_commands.c: In function ‘udp_shutdown’:
+udp_commands.c:234: warning: initialization discards qualifiers from pointer target type
+mv -f .deps/udp_commands.Tpo .deps/udp_commands.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT conffile.o -MD -MP -MF .deps/conffile.Tpo -c -o conffile.o conffile.c
+In file included from conffile.c:55:
+conffile.h:112: warning: missing initializer
+conffile.h:112: warning: (near initialization for ‘conffile.chroot_dir’)
+conffile.c: In function ‘conf_file_fixup1’:
+conffile.c:398: warning: suggest parentheses around assignment used as truth value
+mv -f .deps/conffile.Tpo .deps/conffile.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT mailer.o -MD -MP -MF .deps/mailer.Tpo -c -o mailer.o mailer.c
+mv -f .deps/mailer.Tpo .deps/mailer.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT ladder.o -MD -MP -MF .deps/ladder.Tpo -c -o ladder.o ladder.c
+ladder.c:187: warning: ‘ladder_by_pos’ defined but not used
+mv -f .deps/ladder.Tpo .deps/ladder.Po
+gcc  -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89   -o nngssrv network.o bm.o channel.o utils.o language.o variable.o legal.o gameproc.o adminproc.o nngsmain.o multicol.o mink.o alias.o censor.o plan.o ip_ban.o chkaddr.o command.o comproc.o gamedb.o playerdb.o emote2.o pending.o udp_commands.o conffile.o mailer.o ladder.o ../mlrate/src/libmlr.a -lcrypt -lm 
+utils.o: In function `fake_vsnprintf':
+/home/nngs/src/nngs-1.1.22/src/utils.c:460: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+gcc -DHAVE_CONFIG_H -I. -I.. -I../mlrate/src    -g -O2 -Wall -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wp,-std=c89 -MT adminproc.o -MD -MP -MF .deps/adminproc.Tpo -c -o adminproc.o adminproc.c
+adminproc.c: In function ‘com_anews’:
+adminproc.c:165: warning: format ‘%d’ expects type ‘int *’, but argument 3 has type ‘time_t *’
+adminproc.c:198: warning: dereferencing type-punned pointer will break strict-aliasing rules
+adminproc.c: At top level:
+adminproc.c:993: error: conflicting types for ‘CreateAdmin’
+adminproc.h:36: error: previous declaration of ‘CreateAdmin’ was here
+adminproc.c: In function ‘CreateAdmin’:
+adminproc.c:996: error: ‘param’ undeclared (first use in this function)
+adminproc.c:996: error: (Each undeclared identifier is reported only once
+adminproc.c:996: error: for each function it appears in.)
+adminproc.c:1000: error: ‘oldLevel’ undeclared (first use in this function)
+adminproc.c:1005: error: too many arguments to function ‘player_new’
+adminproc.c:1012: error: expected ‘)’ before ‘sizeof’
+adminproc.c:1012: error: too few arguments to function ‘do_copy’
+make: *** [adminproc.o] Error 1

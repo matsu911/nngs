@@ -1,0 +1,9 @@
+
+USAGE: accept [n]
+
+Accept an offer (for adjournment for instance). If there is more than
+one offer to accept, one must be specified with an index, or 'all'. The
+list of offers is given by the command 'pending'.
+
+SEE ALSO: pending decline match adjourn
+

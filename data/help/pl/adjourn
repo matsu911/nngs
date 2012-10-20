@@ -1,0 +1,27 @@
+Sk³adnia: ADJOURN
+-
+  Jest to proœba o od³o¿enie gry i zakoñczenie jej w innym terminie.  
+Jeœli przeciwnik poprosi o od³o¿enie gry komenda 'accept' przyjmie jego
+proœbê. Gry od³o¿one mog¹ zostaæ wznowione za pomoc¹ komendy 'load'
+gdy przeciwnik bêdzie obecny na serwerze.
+ -
+PRZYPADKI SZCZEGOLNE: 
+-
+  Zdarzaj¹ siê przypadki gdy gracz traci po³¹czenie z Internetem lecz  
+wci¹¿ jest obecny na serwerze. W takiej sytuacji wygl¹daæ to bêdzie dla niego tak
+jak gdyby przeciwnik zastanawia³ siê nad ruchem. Jednoczeœnie przeciwnik  bêdzie 
+uwa¿a³, Iz to on z kolei zastanawia siê nad ruchem.  
+W takiej sytuacji po up³ywie czasu gry gracz, który starci po³¹czenie przegra  
+przez czas. Aby tego unikn¹æ mo¿emy: 
+-
+  
+(1) Wpisaæ 'adjourn' aby natychmiast od³o¿yæ grê.  W tym przypadku jeœli
+    przeciwnikowi skoñczy³ siê czas gra zostanie automatycznie od³o¿ona bez 
+    oczekiwania na jego akceptacje od³o¿enia gry.  Czas gry zatrzymany zostanie
+    w chwili utraty po³¹czenia.  Dziêki takim rozwi¹zaniu gra nie zakoñczy siê
+    natychmiastowa przegrana przez czas po wznowieniu gry komenda 'load'.  
+(2) Dodaj czas za pomoc¹ 'addtime'.  
+-
+  Zawsze zacznij próby jak opisano w pkt. (1). Powinno pomóc.  
+-
+Zobacz tak¿e: ACCEPT, DECLINE, LOAD, STORED

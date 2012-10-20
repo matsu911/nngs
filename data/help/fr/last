@@ -1,0 +1,5 @@
+Usage: last
+
+  Montre les dernières 30 connections et déconnections du serveur.
+
+Voir Aussi: logons

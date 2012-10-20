@@ -1,0 +1,47 @@
+
+
+Usage: set variable [valeur]
+
+  Il y a un nombre prédéfini de variables qui règlent le comportement de votre
+compte. Cette commande vous permet de modifier ces variables. Généralement, si
+on omet "valeur", la variable est basculée.
+
+Nom         Fonction
+---         --------
+automail    Si 'Yes' vos parties vous seront mailées après achèvement.
+bell        Si 'Yes' un CTRL-G on une sonnerie vous est envoyée sous 
+            certaines conditions.
+busy        Cela initialise votre chaine "busy".
+byo_stones  Cela initialise vos pierres de byo-yomi par défaut.
+byo_time    Cela initialise votre temps de byo-yomi par défaut. 
+extprompt   (mode non-client seulement) Donne une invite étendue.
+ginform     Si Yes vous serez informé du début ou de la fin des parties.
+kibitz      Si Yes vous entendrez les kibbitz.
+open        Si Yes vous voulez accepter les demandes de match.
+pinform     Si Yes, vous serez informés des joueurs qui se connectent ou
+            se déconnectent du serveur.
+private     Si Yes alors toutes les parties que vous jouez seront privées
+            quelque soit la variable private de votre adversaire.
+prompt      Cette chaine sera votre invite. Utilisez "set prompt" pour
+            revenir à la valeur par défaut du sytème.
+rank        Cela initialise votre champ  "Rank Info:" à ce que vous tapez.
+realname    "set realname george" place votre vrai nom à "george".
+shout       Si Yes vous entendrez les "shouts".
+gshout      Si Yes vous entendrez les "shouts" sur le Go.
+size        Taille par défaut de vos goban.
+tell        Vous entendrez les 'tell' et 'say' non inscrits.
+time        C'est la valeur par défaut du paramètre 'time' pour 
+            la command match.
+0-9         Cela fixe votre info de plan qui est affichée lorsque quelqu'un 
+            vous 'stat'. Vous pouvez passer des chaines quelconques.
+width       Cela fixe la largeur de votre terminal.
+height      Cela fixe la hauteur de votre terminal.
+client      Si Yes, le serveur vous enverra des codes client "style" IGS.
+verbose     Si Yes, le serveur vous enverra des goban "style" IGS.
+notifiedby  Si Yes, on vous signalera ceux qui sont prévenus de vos 
+            connexion/déconnexion du serveur.
+looking     Si Yes, place un ! près de votre nom en réponse à la commande
+            'who', signalant à tout le monde que vous voulez jouer.
+
+
+Voir Aussi: variables 

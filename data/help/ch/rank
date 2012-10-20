@@ -1,0 +1,79 @@
+指令: rank
+
+用法: rank number type
+
+說明:
+
+你可以用此設定自己的棋力。然後在 "who" 或 "stats" 指令之下可以被人看見。
+
+速成範例: 輸入 "rank 3k", 你就設定自己為三級。 "rank 2d" 則是設為兩段。
+
+建議            台灣     LGS     IGS
+比較值:         ----    ----    ----
+                 30K     30K     30K
+                 29K     29K     30K
+                 28K     28K     30K
+                 27K     27K     30K
+                 26K     26K     30K
+                 25K     25K     30K
+                 24K     24K     30K
+                 23K     23K     30K
+                 22K     22K     30K
+                 21K     21K     29K
+
+
+
+
+                台灣     LGS     IGS
+                ----    ----    ----
+                 20K     20K     28K
+                 19K     19K     26K
+                 18K     18K     25K
+                 17K     17K     23K
+                 16K     16K     22K
+                 15K     15K     21K
+                 14K     14K     19K
+                 13K     13K     18K
+                 12K     12K     17K
+                 11K     11K     15K
+                 10K     10K     14K
+                  9K      9K     13K
+                  8K      8K     11K
+                  7K      7K     10K
+                  6K      6K      8K
+                  5K      5K      7K
+                  4K      4K      6K
+                  3K      3K      5K
+
+
+
+建議            台灣     LGS     IGS
+比較值:         ----    ----    ----
+                  2K      2K      4K
+                  1K      1K      3K
+                  1D      1D      2K
+                  2D      2D      1K
+                  3D      3D      1D
+                  4D      4D      2D
+                  5D      5D      3D
+                  6D      6D      4D
+                  7D      7D   4D-5D
+
+如果不確定自己棋力的等級, 請先以 NR 的棋力下幾局棋, 再作決定, 或是詢問站上
+的系統管理員, 請他給你建議。
+
+注意: 棋力等級的設定頂多只是一種估計, 在個別情況上變異性也相當大。在 9 級以
+      下, 等級更加不可靠。
+
+         你也可以使用 "set rank <text>" 這個指令來以另一種方式解釋你的棋力,
+         如果不這麼做的話, 自訂棋力不會儲存起來。
+
+例如: "set rank 3 dan in Shanghai, China" or "3 kyu Korean, 4 dan AGA and
+       1 dan* on IGS"。輸入 "stats" 可以看見剛才那個指令所產生的結果, 或使
+       用 "awho" 指令亦可。
+
+可設定的範圍: 30k-1k, 1d-6d, ??? 和 NR。高於 6d 必須由系統管理員來設定, 且
+只有職業棋士可以設成 "p" (professional dan 職業段位)。
+
+相關指令: best, who, awho, ladder.
+

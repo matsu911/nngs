@@ -1,0 +1,44 @@
+指令: alias
+
+用法: alias [word [string]]
+
+說明:
+
+設定一個 alias，使得 "word" 和 "string" 等價。如果省略 "string"，會顯示目前
+"word" 的設定值。如果兩個參數都省略，會顯示目前使用中的 aliases。
+
+  "alias" -- 顯示所有目前的aliases。
+  "alias word"  -- 顯示對指令"word"的alias。
+  "alias word string" -- 新增/更新一個alias，使得"word"和"string"等價。
+
+註一: Aliases不具遞移性。以下的指令序列:
+
+    alias foo bar
+    alias bar baz
+
+不會使"foo"和"baz"等價。
+
+註二:指令"quit"無法設alias。
+
+這裡有一些標準的alias（每個人都預設可以用）:
+
+  a             accept
+  bye           quit
+  exit          quit
+  h             help
+  hi            history
+  logout        quit
+  m             match
+  p             who a
+  players       who a
+  sh            shout
+  s             shownote
+  t             tell
+  vars          variables
+  w             who
+  .             tell .
+  ,             tell ,
+  !             shout
+  ?             help 
+
+相關指令: unalias [當然, 還有這些指令本身]

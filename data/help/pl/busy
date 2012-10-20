@@ -1,0 +1,17 @@
+Sk³adnia: set busy _wiadomoœæ
+
+Ustawia informacje jak bêdzie pokazywa³a siê do czasu wyzerowania parametru busy
+za ka¿dym razem gdy ktoœ bêdzie próbowa³ nawi¹zaæ z Tob¹ ³¹cznoœæ lub 
+zaprosiæ do gry.  
+
+Przyk³ady: 
+  set busy Jestem teraz zajêty, mo¿e póŸniej - przepraszam jasio
+  set busy wracam za 5 minut
+  set busy pracujê .... mo¿e po 16:00 
+
+Wprowadzenie samego 'set busy' powoduje wyzerowanie tego parametru i powrót 
+do normalnego trybu pracy  
+
+zobacz tak¿e: set tell stats
+
+

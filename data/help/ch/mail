@@ -1,0 +1,30 @@
+指令: mail
+
+用法: mail me sgf_filename
+
+說明:
+
+此指令可以將你所指令的棋局檔寄回到你的電子郵件信箱。
+輸入 "sgf username" 便可得到 username 所有可供寄回的棋局。
+
+操作實例: 假如你對 ssyu 的棋有興趣, 輸入 sgf ssyu
+
+得到以下訊息:
+Completed games for ssyu:
+     ssyu-manyfaces-9607291759          ssyu-tolo-9607301822
+     ssyu-manyfaces-9607301835     ssyu-manyfaces-9607301846
+     ssyu-manyfaces-9608021016     ssyu-manyfaces-9608021035
+     ssyu-manyfaces-9608021055     ssyu-manyfaces-9608021112
+     ssyu-manyfaces-9608021752          rock-ssyu-9608021904
+            ssyu-mj-9608071317     ssyu-manyfaces-9608072015
+            mj-ssyu-9608081253            mj-ssyu-9608091205
+        ssyu-chuang-9608101419        ssyu-chuang-9608101449
+        ssyu-chuang-9608101552        ssyu-chuang-9608101655
+
+Found 18 completed games.                                    
+
+再挑一局你想看的, 例如可輸入: mail me ssyu-chuang-9608101655
+那麼該局便會寄到你的電子郵件信箱中
+
+相關指令: sgf mhelp
+

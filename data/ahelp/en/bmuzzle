@@ -1,0 +1,9 @@
+
+USAGE: bmuzzle player
+
+RESTRICTED TO ADMINISTRATORS.
+
+Prevents a player from using "beep". Please use sparingly.
+
+SEE ALSO: muzzle gmuzzle
+

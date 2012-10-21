@@ -1,3 +1,5 @@
 *~
 *.o
 .deps
+build
+.lock-waf_darwin_build
